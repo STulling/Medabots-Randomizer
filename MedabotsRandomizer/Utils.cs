@@ -51,32 +51,6 @@ namespace MedabotsRandomizer
             return read_int;
         }
 
-        public static List<int> findAllOffsets(byte[] bytes)
-        {
-            List<int> result = new List<int>();
-            for (int i = 0; i < bytes.Length - 1; i++)
-            {
-                if (bytes[i] == 'L' && bytes[i+1] == 'e')
-                {
-                    result.Add(i);
-                }
-            }
-            return result;
-        }
-
-        public static List<int> findAllLZ77(byte[] bytes)
-        {
-            List<int> result = new List<int>();
-            for (int i = 0; i < bytes.Length - 1; i++)
-            {
-                if (bytes[i] == 'L' && bytes[i + 1] == 'e')
-                {
-                    result.Add(i);
-                }
-            }
-            return result;
-        }
-
         public static void Shuffle<T>(IList<T> list)
         {
             Random rng = new Random();

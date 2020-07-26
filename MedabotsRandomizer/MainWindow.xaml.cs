@@ -240,18 +240,19 @@ namespace MedabotsRandomizer
         {
             List<ImageWrapper> images = new List<ImageWrapper>();
             int i = 0;
-            List<int> offsets = Utils.findAllOffsets(file);
             //List<int> offsets = Utils.findAllLZ77(file);
-            foreach (int offset in offsets)
+            for (int offset = 0; offset < (file.Length - 1); offset++)
             {
-                int size = Utils.GetIntAtPosition(file, offset+2);
-                if (size > 0 && size < 0x10000)
+                if (file[offset] == 'L' && file[offset + 1] == 'e')
                 {
-                    byte[] slice = new byte[size*4];
-                    Array.Copy(file, offset, slice, 0, size);
-                    ImageWrapper result = CompressionUtils.Decompress(slice, i, offset);
-                    images.Add(result);
-                    i++;
+                    int size = Utils.GetIntAtPosition(file, offset + 2);
+                    if (size > 0 && size < 0x20000)
+                    {
+                        ArrayPtr arrayPtr = new ArrayPtr(file, offset);
+                        ImageWrapper result = CompressionUtils.Decompress(arrayPtr, i, offset);
+                        images.Add(result);
+                        i++;
+                    }
                 }
             }
             imagesList.ItemsSource = images;

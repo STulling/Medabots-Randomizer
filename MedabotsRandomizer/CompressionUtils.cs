@@ -3,48 +3,20 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace MedabotsRandomizer
 {
     public static class CompressionUtils
     {
-        private static int readint(List<byte> bytes) {
-            int read_int = 0;
-            read_int += bytes[0];
-            bytes.RemoveAt(0);
-            read_int += bytes[0] << 8;
-            bytes.RemoveAt(0);
-            read_int += bytes[0] << 16;
-            bytes.RemoveAt(0);
-            read_int += bytes[0] << 24;
-            bytes.RemoveAt(0);
-            return read_int;
-        }
-
-        private static int readshort(List<byte> bytes)
+        private static byte[] OtherMalias2Decompression(ArrayPtr bytes, out byte[] data)
         {
-            int read_short = 0;
-            read_short += bytes[0];
-            bytes.RemoveAt(0);
-            read_short += bytes[0] << 8;
-            bytes.RemoveAt(0);
-            return read_short;
-        }
-
-        private static int readbyte(List<byte> bytes)
-        {
-            int read_byte = bytes[0];
-            bytes.RemoveAt(0);
-            return read_byte;
-        }
-
-        private static byte[] OtherMalias2Decompression(List<byte> bytes)
-        {
-            short magic = (short)readshort(bytes);
+            short magic = (short)bytes.readshort();
             if (magic != 0x654c) throw new InvalidGraphicsException("Wrong magic.");
-            int total = readint(bytes);
+            int total = bytes.readint();
             if (total > 0x10000) throw new InvalidGraphicsException("Insane size: " + total.ToString("X8"));
-            byte[] data = new byte[total];
+            data = new byte[total];
             int head = 0;
             bool first = true;
 
@@ -52,7 +24,7 @@ namespace MedabotsRandomizer
             {
                 while (head < total)
                 {
-                    byte modes = (byte)readbyte(bytes);
+                    byte modes = (byte)bytes.readbyte();
                     for (byte i = 0; i < 4; i++)
                     {
                         if (head >= total) break;
@@ -61,7 +33,7 @@ namespace MedabotsRandomizer
                         first = false;
                         if (mode == 0)
                         {
-                            int lz = readshort(bytes);
+                            int lz = bytes.readshort();
                             int loc = (lz & 0b111111111111) + 5;
                             int num = (lz >> 12) + 3;
                             uint uVar4 = (uint)(head - loc);
@@ -101,7 +73,7 @@ namespace MedabotsRandomizer
                         }
                         else if (mode == 1)
                         {
-                            int lz = readbyte(bytes);
+                            int lz = bytes.readbyte();
                             int loc = (lz & 3) + 1;
                             int num = (lz >> 2) + 2;
                             uint uVar4 = (uint)(head - loc);
@@ -145,11 +117,11 @@ namespace MedabotsRandomizer
                             int tmp_head = (int)(head & 0xfffffffe);
                             if ((head & 1) == 0)
                             {
-                                data[tmp_head] = (byte)readbyte(bytes);
+                                data[tmp_head] = (byte)bytes.readbyte();
                             }
                             else
                             {
-                                data[tmp_head + 1] = (byte)readbyte(bytes);
+                                data[tmp_head + 1] = (byte)bytes.readbyte();
                             }
                             head++;
                         }
@@ -160,11 +132,11 @@ namespace MedabotsRandomizer
                                 int tmp_head = (int)(head & 0xfffffffe);
                                 if ((head & 1) == 0)
                                 {
-                                    data[tmp_head] = (byte)readbyte(bytes);
+                                    data[tmp_head] = (byte)bytes.readbyte();
                                 }
                                 else
                                 {
-                                    data[tmp_head+1] = (byte)readbyte(bytes);
+                                    data[tmp_head+1] = (byte)bytes.readbyte();
                                 }
                                 head++;
                             }
@@ -176,20 +148,21 @@ namespace MedabotsRandomizer
             return data.Take(total).ToArray();
         }
 
-        private static byte[] RegularMalias2Decompression(List<byte> bytes)
+        private static bool RegularMalias2Decompression(ArrayPtr bytes, out byte[] data)
         {
-            short magic = (short)readshort(bytes);
+            short magic = (short)bytes.readshort();
             if (magic != 0x654c) throw new InvalidGraphicsException("Wrong magic.");
-            int total = readint(bytes);
+            int total = bytes.readint();
             if (total > 0x10000) throw new InvalidGraphicsException("Insane size: " + total.ToString("X8"));
-            List<byte> data = new List<byte>();
+            data = new byte[total];
+            int head = 0;
             bool first = true;
 
             if (total > 0)
             {
-                while (data.Count < total)
+                while (head < total)
                 {
-                    byte modes = (byte)readbyte(bytes);
+                    byte modes = (byte)bytes.readbyte();
                     for (int i = 0; i < 4; i++)
                     {
                         byte mode = Convert.ToByte(((modes >> (i * 2 + 1)) % 2 << 1) + ((modes >> i * 2) % 2));
@@ -197,60 +170,62 @@ namespace MedabotsRandomizer
                         first = false;
                         if (mode == 0)
                         {
-                            int lz = readshort(bytes);
+                            int lz = bytes.readshort();
                             int loc = (lz & 0b111111111111) + 5;
                             int num = (lz >> 12) + 3;
+                            if (head - loc < 0 || head >= total) return false;
                             for (int j = 0; j < num; j++)
                             {
-                                data.Add(data[data.Count - loc]);
+                                data[head] = data[head - loc];
+                                head++;
                             }
                         }
                         else if (mode == 1)
                         {
-                            int lz = readbyte(bytes);
+                            int lz = bytes.readbyte();
                             int loc = (lz & 0b11) + 1;
                             int num = (lz >> 2) + 2;
+                            if (head - loc < 0 || head >= total) return false;
                             for (int j = 0; j < num; j++)
                             {
-                                data.Add(data[data.Count - loc]);
+                                data[head] = data[head - loc];
+                                head++;
                             }
                         }
                         else if (mode == 2)
                         {
-                            data.Add((byte)readbyte(bytes));
+                            data[head] = (byte)bytes.readbyte();
+                            head++;
                         }
                         else if (mode == 3)
                         {
                             for (int j = 0; j < mode; j++)
                             {
-                                data.Add((byte)readbyte(bytes));
+                                data[head] = (byte)bytes.readbyte();
+                                head++;
                             }
                         }
                     }
                 }
             }
-
-            return data.Take(total).ToArray();
+            return true;
         }
 
-        public static ImageWrapper Decompress(byte[] start, int index, int memory_address)
+        public static ImageWrapper Decompress(ArrayPtr bytes, int index, int memory_address)
         {
             //
             //  Stolen from: https://github.com/Sanqui/romhacking/blob/master/telefang/puneedle.py
             //  and converted to C#.
             //
-            List<byte> bytes = start.ToList();
-            List<byte> bytes2 = start.ToList();
-            byte[] res;
+            ArrayPtr bytes2 = bytes.Copy();
             string compression_method;
-            try
+            if (RegularMalias2Decompression(bytes, out byte[] res))
             {
-                res = RegularMalias2Decompression(bytes);
                 compression_method = "Malias2";
             }
-            catch 
+            else
             {
-                res = OtherMalias2Decompression(bytes2);
+                OtherMalias2Decompression(bytes2, out res);
                 compression_method = "Custom";
             }
             return new ImageWrapper(index, memory_address, res, compression_method);
