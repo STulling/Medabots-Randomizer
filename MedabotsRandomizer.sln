@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedabotsRandomizer", "MedabotsRandomizer\MedabotsRandomizer.csproj", "{5F27B3A9-A474-459A-8DDE-333266D53FF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {820753A2-0A0B-4920-A16E-53FAF50CD75A}
+	EndGlobalSection
+EndGlobal
