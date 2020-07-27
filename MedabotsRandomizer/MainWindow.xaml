@@ -79,6 +79,7 @@
                     <DataGrid x:Name="imagesList" Margin="0,0,583,0" Height="467" VerticalAlignment="Top" SelectionChanged="imagesList_SelectionChanged"/>
                     <Canvas x:Name="canvas" Margin="434,0,0,0"/>
                     <TextBox x:Name="widthImage" HorizontalAlignment="Right" Margin="0,0,798,10" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="widthImage_TextChanged"/>
+                    <CheckBox x:Name="bit_mode" Content="CheckBox" HorizontalAlignment="Left" Margin="251,524,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -26,13 +26,13 @@ namespace MedabotsRandomizer
 
         public string Compression_Method => method;
 
-        public List<byte[]> getTiles()
+        public List<byte[]> getTiles(int tilesize)
         {
             List<byte[]> result = new List<byte[]>();
-            for (int i = 0; i < this.data.Length / 0x20; i++)
+            for (int i = 0; i < this.data.Length / tilesize; i++)
             {
-                byte[] tile = new byte[0x20];
-                Array.Copy(this.data, i * 0x20, tile, 0, 0x20);
+                byte[] tile = new byte[tilesize];
+                Array.Copy(this.data, i * tilesize, tile, 0, tilesize);
                 result.Add(tile);
             }
             return result;

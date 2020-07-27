@@ -240,55 +240,102 @@ namespace MedabotsRandomizer
         {
             List<ImageWrapper> images = new List<ImageWrapper>();
             int i = 0;
-            //List<int> offsets = Utils.findAllLZ77(file);
             for (int offset = 0; offset < (file.Length - 1); offset++)
             {
                 if (file[offset] == 'L' && file[offset + 1] == 'e')
                 {
                     int size = Utils.GetIntAtPosition(file, offset + 2);
-                    if (size > 0 && size < 0x20000)
+                    if (size > 0 && size < 0x8000)
                     {
-                        ArrayPtr arrayPtr = new ArrayPtr(file, offset);
-                        ImageWrapper result = CompressionUtils.Decompress(arrayPtr, i, offset);
+                        //ArrayPtr arrayPtr = new ArrayPtr(file, offset);
+                        byte[] data = Malias2.Decompress(file, offset);
+                        ImageWrapper result = new ImageWrapper(i, offset, data, "Malias2");
                         images.Add(result);
                         i++;
+                    }
+                }
+                else if (file[offset] == 0x10)
+                {
+                    int size = file[offset + 1] | file[offset + 2] << 8 | file[offset + 3] << 16;
+                    if (size > 0 && size < 0x8000 && size % 0x20 == 0)
+                    {
+                        byte[] data = LZ77.Decompress(file, offset);
+                        if (data != null)
+                        {
+                            ImageWrapper result = new ImageWrapper(i, offset, data, "LZ77");
+                            images.Add(result);
+                            i++;
+                        }
                     }
                 }
             }
             imagesList.ItemsSource = images;
         }
-        private void AddPixel(double x, double y)
+
+        private byte[] flip(byte[] tile)
         {
-            Rectangle rec = new Rectangle();
-            Canvas.SetTop(rec, y);
-            Canvas.SetLeft(rec, x);
-            rec.Width = 1;
-            rec.Height = 1;
-            rec.Fill = new SolidColorBrush(Colors.Red);
-            canvas.Children.Add(rec);
+            byte[] result = new byte[tile.Length];
+            for (int i = 0; i < tile.Length; i++)
+            {
+                result[i] = (byte)((byte)(tile[i] << 4) + (byte)(tile[i] >> 4));
+            }
+            return result;
         }
 
-        private void showImage(ImageWrapper imageWrapper, int width = 256)
+        private void showImage(ImageWrapper imageWrapper)
         {
             canvas.Children.Clear();
-            if (imageWrapper.data.Length % 0x20 == 0)
+            int width = 256;
+            if (Int32.TryParse(widthImage.Text, out int result))
             {
-                List<byte[]> tiles = imageWrapper.getTiles();
-                int height = (65536 / width);
-                WriteableBitmap wbm = new WriteableBitmap(width, height, 48, 48, PixelFormats.Gray4, null);
-                for (int y = 0; y < height/8; y++)
+                if (result > 0)
                 {
-                    for (int x = 0; x < width/8; x++)
-                    {
-                        if (x + y * (width/8) >= tiles.Count) break;
-                        wbm.WritePixels(new Int32Rect(x * 8, y * 8, 8, 8), tiles[x + y * (width / 8)], 4, 0);
-                    }
+                    width = result * 8;
                 }
-                Image tile = new Image();
-                tile.Source = wbm;
-                Canvas.SetTop(tile, 0);
-                Canvas.SetLeft(tile, 0);
-                canvas.Children.Add(tile);
+            }
+            if (bit_mode.IsChecked.Value)
+            {
+                if (imageWrapper.data.Length % 0x40 == 0)
+                {
+                    List<byte[]> tiles = imageWrapper.getTiles(0x40);
+                    int height = (int)Math.Ceiling((double)tiles.Count / (width / 8)) * 8;
+                    WriteableBitmap wbm = new WriteableBitmap(width, height, 48, 48, PixelFormats.Gray8, null);
+                    for (int y = 0; y < height / 8; y++)
+                    {
+                        for (int x = 0; x < width / 8; x++)
+                        {
+                            if (x + y * (width / 8) >= tiles.Count) break;
+                            wbm.WritePixels(new Int32Rect(x * 8, y * 8, 8, 8), tiles[x + y * (width / 8)], 8, 0);
+                        }
+                    }
+                    Image tile = new Image();
+                    tile.Source = wbm;
+                    Canvas.SetTop(tile, 0);
+                    Canvas.SetLeft(tile, 0);
+                    canvas.Children.Add(tile);
+                }
+            }
+            else
+            {
+                if (imageWrapper.data.Length % 0x20 == 0)
+                {
+                    List<byte[]> tiles = imageWrapper.getTiles(0x20);
+                    int height = (int)Math.Ceiling((double)tiles.Count / (width / 8)) * 8;
+                    WriteableBitmap wbm = new WriteableBitmap(width, height, 48, 48, PixelFormats.Gray4, null);
+                    for (int y = 0; y < height / 8; y++)
+                    {
+                        for (int x = 0; x < width / 8; x++)
+                        {
+                            if (x + y * (width / 8) >= tiles.Count) break;
+                            wbm.WritePixels(new Int32Rect(x * 8, y * 8, 8, 8), flip(tiles[x + y * (width / 8)]), 4, 0);
+                        }
+                    }
+                    Image tile = new Image();
+                    tile.Source = wbm;
+                    Canvas.SetTop(tile, 0);
+                    Canvas.SetLeft(tile, 0);
+                    canvas.Children.Add(tile);
+                }
             }
         }
 
@@ -306,9 +353,15 @@ namespace MedabotsRandomizer
             {
                 if (result > 0)
                 {
-                    showImage(imageWrapper, result * 8);
+                    showImage(imageWrapper);
                 }
             }
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            ImageWrapper imageWrapper = (ImageWrapper)imagesList.SelectedItem;
+            showImage(imageWrapper);
         }
     }
 }
