@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedabotsRandomizer"
         mc:Ignorable="d"
-        Title="Medabots Randomizer / Explorer (1.0.3)" Height="640" Width="1018" ResizeMode="CanResizeWithGrip" Icon="icon.png">
+        Title="Medabots Randomizer / Explorer (1.1.0)" Height="640" Width="1018" ResizeMode="CanResizeWithGrip" Icon="icon.png">
     <Grid>
         <TabControl Margin="0,42,0,0">
             <TabItem Header="Randomizer Settings" Margin="-3,-2,-1,0">
@@ -80,6 +80,14 @@
                     <Canvas x:Name="canvas" Margin="434,0,0,0"/>
                     <TextBox x:Name="widthImage" HorizontalAlignment="Right" Margin="0,0,798,10" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="widthImage_TextChanged"/>
                     <CheckBox x:Name="bit_mode" Content="CheckBox" HorizontalAlignment="Left" Margin="251,524,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked"/>
+                    <TextBox x:Name="offsetImage" HorizontalAlignment="Right" Margin="0,0,798,33" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="widthImage_TextChanged"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Text" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Right" Margin="0,0,954,10" VerticalAlignment="Bottom" Click="Button_Click_3"/>
+                    <DataGrid x:Name="textList" Margin="0,0,583,0" Height="467" VerticalAlignment="Top" SelectionChanged="textList_SelectionChanged"/>
+                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="506,66,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="351" Width="389"/>
                 </Grid>
             </TabItem>
         </TabControl>

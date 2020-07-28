@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using System.Security.Cryptography;
 using System.IO;
 using System.Diagnostics;
+using System.Windows.Media.TextFormatting;
+using System.Printing.IndexedProperties;
 
 namespace MedabotsRandomizer
 {
@@ -286,6 +288,7 @@ namespace MedabotsRandomizer
         {
             canvas.Children.Clear();
             int width = 256;
+            int offset = 0;
             if (Int32.TryParse(widthImage.Text, out int result))
             {
                 if (result > 0)
@@ -293,11 +296,19 @@ namespace MedabotsRandomizer
                     width = result * 8;
                 }
             }
+            if (Int32.TryParse(offsetImage.Text, out result))
+            {
+                if (result > 0)
+                {
+                    offset = result;
+                }
+            }
             if (bit_mode.IsChecked.Value)
             {
                 if (imageWrapper.data.Length % 0x40 == 0)
                 {
                     List<byte[]> tiles = imageWrapper.getTiles(0x40);
+                    tiles.RemoveRange(0, offset);
                     int height = (int)Math.Ceiling((double)tiles.Count / (width / 8)) * 8;
                     WriteableBitmap wbm = new WriteableBitmap(width, height, 48, 48, PixelFormats.Gray8, null);
                     for (int y = 0; y < height / 8; y++)
@@ -320,6 +331,7 @@ namespace MedabotsRandomizer
                 if (imageWrapper.data.Length % 0x20 == 0)
                 {
                     List<byte[]> tiles = imageWrapper.getTiles(0x20);
+                    tiles.RemoveRange(0, offset);
                     int height = (int)Math.Ceiling((double)tiles.Count / (width / 8)) * 8;
                     WriteableBitmap wbm = new WriteableBitmap(width, height, 48, 48, PixelFormats.Gray4, null);
                     for (int y = 0; y < height / 8; y++)
@@ -349,19 +361,92 @@ namespace MedabotsRandomizer
         private void widthImage_TextChanged(object sender, TextChangedEventArgs e)
         {
             ImageWrapper imageWrapper = (ImageWrapper)imagesList.SelectedItem;
-            if (Int32.TryParse(widthImage.Text, out int result))
-            {
-                if (result > 0)
-                {
-                    showImage(imageWrapper);
-                }
-            }
+            showImage(imageWrapper);
         }
 
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             ImageWrapper imageWrapper = (ImageWrapper)imagesList.SelectedItem;
             showImage(imageWrapper);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            List<TextWrapper> texts = new List<TextWrapper>();
+            int i = 0;
+            for (int offset = 0; offset < (file.Length - 1); offset++)
+            {
+                if (file[offset] < 0x4f && file[offset] > 0)
+                {
+                    int saveoffset = offset;
+                    int len = 0;
+                    while (file[offset] < 0xff && offset < file.Length-1)
+                    {
+                        if (file[offset] < 0x4f || file[offset] == 0xf8
+                            || file[offset] == 0xfc || file[offset] == 0xfd
+                            || file[offset] == 0xfe)
+                        {
+                            len++;
+                            offset++;
+                        }
+                        else if (file[offset] == 0xf7 || file[offset] == 0xf9
+                            || file[offset] == 0xfa)
+                        {
+                            len+=2;
+                            offset+=2;
+                        }
+                        else if (file[offset] == 0xfb)
+                        {
+                            len += 4;
+                            offset += 4;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    if ((file[offset] == 0xFF) && len > 4)
+                    {
+                        byte[] slice = new byte[len+1];
+                        Array.Copy(file, saveoffset, slice, 0, len);
+                        texts.Add(new TextWrapper(i, saveoffset, slice));
+                    }
+                }
+            }
+            textList.ItemsSource = texts;
+        }
+
+        private char[] encoding = new char[]
+        {
+            ' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
+            'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O',
+            'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+            'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e',
+            'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+            'v', 'w', 'x', 'y', 'z', '0', '1', '2',
+            '3', '4', '5', '6', '7', '8', '9', '·',
+            '.', ',', '\'', '-', '/', ':', '?', '!',
+            '"', '(', ')', '♥', '£', '&', '%'
+
+        };
+
+        private string decode(byte[] data)
+        {
+            string result = "";
+            foreach (int i in data)
+            {
+                if (i < 0x4f) result += encoding[i];
+            }
+            return result;
+        }
+
+        private void textList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid dataGrid = sender as DataGrid;
+            TextWrapper textWrapper = (TextWrapper)dataGrid.SelectedItem;
+            string text = decode(textWrapper.data);
+            textBlock.Text = text;
         }
     }
 }
