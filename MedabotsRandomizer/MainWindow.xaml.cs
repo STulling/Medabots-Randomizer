@@ -373,6 +373,7 @@ namespace MedabotsRandomizer
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             int textPtrPtrOffset = 0x47df44;
+            //int textPtrPtrOffset = 0x44f3d0;
             HashSet<int> textAdresses = new HashSet<int>();
             List<TextWrapper> texts = new List<TextWrapper>();
             int amount_of_ptrs = 15;
@@ -403,17 +404,24 @@ namespace MedabotsRandomizer
                 while (true)
                 {
                     byte currByte = file[textAddress + i];
-                    if (currByte != 0xFF)
+                    if (currByte == 0xF7)
                     {
                         data.Add(currByte);
                         i++;
+                        data.Add(file[textAddress + i]);
+                        i++;
                     }
-                    else
+                    else if(currByte == 0xFF)
                     {
                         data.Add(currByte);
                         i++;
                         data.Add(file[textAddress + i]);
                         break;
+                    }
+                    else
+                    {
+                        data.Add(currByte);
+                        i++;
                     }
                 }
                 texts.Add(new TextWrapper(0, textAddress, data.ToArray()));
@@ -442,7 +450,6 @@ namespace MedabotsRandomizer
             foreach (byte i in data)
             {
                 if (i < 0x4f) result += encoding[i];
-                else if (i == 0xf7) result += "-----------------------------------------------------------------------------------------------";
                 else result += i.ToString("X2");
             }
             return result;
