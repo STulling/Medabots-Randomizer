@@ -78,15 +78,15 @@ namespace MedabotsRandomizer
 
         private void PopulateData(string id_string)
         {
-            DataPopulator.Populate_Battles(file, memory_offsets[id_string]["Battles"], allBattles);
+            DataPopulator.Populate_Battles(file, 0xf5, 0x28, memory_offsets[id_string]["Battles"], allBattles);
             battleList.ItemsSource = allBattles;
             battle_offset = memory_offsets[id_string]["Battles"];
 
-            DataPopulator.Populate_Encounters(file, memory_offsets[id_string]["Encounters"], allEncounters);
+            DataPopulator.Populate_Encounters(file, 480, 0x10, memory_offsets[id_string]["Encounters"], allEncounters);
             encounterList.ItemsSource = allEncounters;
             encounters_offset = memory_offsets[id_string]["Encounters"];
 
-            DataPopulator.Populate_Parts(file, memory_offsets[id_string]["Parts"], allParts);
+            DataPopulator.Populate_Parts(file, 0xbf, 0x10, memory_offsets[id_string]["Parts"], allParts);
             partData.ItemsSource = allParts;
             parts_offset = memory_offsets[id_string]["Parts"];
         }

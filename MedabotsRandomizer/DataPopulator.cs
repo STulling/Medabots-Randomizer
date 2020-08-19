@@ -6,10 +6,8 @@ namespace MedabotsRandomizer
 {
     public static class DataPopulator
     {
-        public static void Populate_Battles(byte[] file, int battle_offset, List<BattleWrapper> battles)
+        public static void Populate_Battles(byte[] file, int amount_of_battles, int battle_size, int battle_offset, List<BattleWrapper> battles)
         {
-            int amount_of_battles = 0xf5;
-            int battle_size = 0x28;
             for (int i = 0; i <= amount_of_battles; i++)
             {
                 int battle_address = Utils.GetAdressAtPosition(file, battle_offset + 4 * i);
@@ -20,10 +18,8 @@ namespace MedabotsRandomizer
             }
         }
 
-        public static void Populate_Parts(byte[] file, int part_offset, List<PartWrapper> parts)
+        public static void Populate_Parts(byte[] file, int amount_of_parts, int part_size, int part_offset, List<PartWrapper> parts)
         {
-            int amount_of_parts = 480;
-            int part_size = 0x10;
             for (int i = 0; i < amount_of_parts; i++)
             {
                 int part_address = part_offset + part_size * i;
@@ -34,10 +30,8 @@ namespace MedabotsRandomizer
             }
         }
 
-        public static void Populate_Encounters(byte[] file, int encounter_offset, List<EncountersWrapper> encounterlist)
+        public static void Populate_Encounters(byte[] file, int amount_of_maps, int encounters_size, int encounter_offset, List<EncountersWrapper> encounterlist)
         {
-            int amount_of_maps = 0xbf;
-            int encounters_size = 0x10;
             for (int i = 0; i <= amount_of_maps; i++)
             {
                 int encounters_address = encounter_offset + 4 * i;
@@ -47,5 +41,6 @@ namespace MedabotsRandomizer
                 encounterlist.Add(new EncountersWrapper(i, encounters_address, encounters));
             }
         }
+
     }
 }
