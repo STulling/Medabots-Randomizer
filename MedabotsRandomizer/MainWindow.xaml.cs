@@ -372,46 +372,43 @@ namespace MedabotsRandomizer
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            int textPtrPtrOffset = 0x47df44;
+            HashSet<int> textAdresses = new HashSet<int>();
             List<TextWrapper> texts = new List<TextWrapper>();
-            int i = 0;
-            for (int offset = 0; offset < (file.Length - 1); offset++)
+            int amount_of_ptrs = 15;
+            for (int i = 0; i <= amount_of_ptrs; i++)
             {
-                if (file[offset] < 0x4f && file[offset] > 0)
+                int textPtrOffset = Utils.GetAdressAtPosition(file, textPtrPtrOffset + 4 * i);
+                int j = 0;
+                while(true)
                 {
-                    int saveoffset = offset;
-                    int len = 0;
-                    while (file[offset] < 0xff && offset < file.Length-1)
+                    int textOffset = Utils.GetAdressAtPosition(file, textPtrOffset + 4 * j);
+                    j++;
+                    if (textOffset == -0x08000000) break;
+                    textAdresses.Add(textOffset);
+                }
+            }
+            foreach (int textAddress in textAdresses)
+            {
+                List<byte> data = new List<byte>();
+                int i = 0;
+                while (true)
+                {
+                    byte currByte = file[textAddress + i];
+                    if (currByte != 0xFF)
                     {
-                        if (file[offset] < 0x4f || file[offset] == 0xf8
-                            || file[offset] == 0xfc || file[offset] == 0xfd
-                            || file[offset] == 0xfe)
-                        {
-                            len++;
-                            offset++;
-                        }
-                        else if (file[offset] == 0xf7 || file[offset] == 0xf9
-                            || file[offset] == 0xfa)
-                        {
-                            len+=2;
-                            offset+=2;
-                        }
-                        else if (file[offset] == 0xfb)
-                        {
-                            len += 4;
-                            offset += 4;
-                        }
-                        else
-                        {
-                            break;
-                        }
+                        data.Add(currByte);
+                        i++;
                     }
-                    if ((file[offset] == 0xFF) && len > 4)
+                    else
                     {
-                        byte[] slice = new byte[len+1];
-                        Array.Copy(file, saveoffset, slice, 0, len);
-                        texts.Add(new TextWrapper(i, saveoffset, slice));
+                        data.Add(currByte);
+                        i++;
+                        data.Add(file[textAddress + i]);
+                        break;
                     }
                 }
+                texts.Add(new TextWrapper(0, textAddress, data.ToArray()));
             }
             textList.ItemsSource = texts;
         }
@@ -434,9 +431,11 @@ namespace MedabotsRandomizer
         private string decode(byte[] data)
         {
             string result = "";
-            foreach (int i in data)
+            foreach (byte i in data)
             {
                 if (i < 0x4f) result += encoding[i];
+                else if (i == 0xf7) result += "-----------------------------------------------------------------------------------------------";
+                else result += i.ToString("X2");
             }
             return result;
         }

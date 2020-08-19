@@ -21,9 +21,4 @@ namespace MedabotsRandomizer
         public string Memory_Location => (memory_location + 0x8000000).ToString("X8");
         public string Size => data.Length.ToString("X8");
     }
-
-    public class DialoguePart
-    {
-
-    }
 }
