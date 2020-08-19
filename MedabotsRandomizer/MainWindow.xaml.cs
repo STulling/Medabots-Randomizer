@@ -91,7 +91,7 @@ namespace MedabotsRandomizer
             parts_offset = memory_offsets[id_string]["Parts"];
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Load_ROM_event(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)

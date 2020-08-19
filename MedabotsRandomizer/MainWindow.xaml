@@ -91,7 +91,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Content="Load ROM" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Button_Click" IsDefault="True"/>
+        <Button Content="Load ROM" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Click="Load_ROM_event" IsDefault="True"/>
         <Label x:Name="romLabel" Content="No ROM" HorizontalAlignment="Left" Margin="75,7,0,0" VerticalAlignment="Top" Width="194" Background="White" Foreground="Red"/>
         <Label Content="By: Simon381#9384" HorizontalAlignment="Right" Margin="0,7,10,0" Width="119" Background="White" Foreground="#FFB9B9B9" Height="26" VerticalAlignment="Top"/>
 
