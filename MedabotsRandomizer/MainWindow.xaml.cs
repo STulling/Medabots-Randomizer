@@ -388,6 +388,14 @@ namespace MedabotsRandomizer
                     textAdresses.Add(textOffset);
                 }
             }
+            int b = 0;
+            while (true)
+            {
+                int textOffset = Utils.GetAdressAtPosition(file, 0x411b00 + 4 * b);
+                b++;
+                if (textOffset > 0x500000 || textOffset < 0) break;
+                textAdresses.Add(textOffset);
+            }
             foreach (int textAddress in textAdresses)
             {
                 List<byte> data = new List<byte>();
