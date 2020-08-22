@@ -78,17 +78,9 @@ namespace MedabotsRandomizer
 
         private void PopulateData(string id_string)
         {
-            DataPopulator.Populate_Battles(file, 0xf5, 0x28, memory_offsets[id_string]["Battles"], allBattles);
-            battleList.ItemsSource = allBattles;
-            battle_offset = memory_offsets[id_string]["Battles"];
-
-            DataPopulator.Populate_Encounters(file, 480, 0x10, memory_offsets[id_string]["Encounters"], allEncounters);
-            encounterList.ItemsSource = allEncounters;
-            encounters_offset = memory_offsets[id_string]["Encounters"];
-
-            DataPopulator.Populate_Parts(file, 0xbf, 0x10, memory_offsets[id_string]["Parts"], allParts);
-            partData.ItemsSource = allParts;
-            parts_offset = memory_offsets[id_string]["Parts"];
+            battleList.ItemsSource = DataPopulator.Populate_Data<BattleWrapper>(file, 0xf5, 0x28, memory_offsets[id_string]["Battles"], true);
+            encounterList.ItemsSource = DataPopulator.Populate_Data<EncountersWrapper>(file, 0xbf, 4, memory_offsets[id_string]["Encounters"], false);
+            partData.ItemsSource = DataPopulator.Populate_Data<PartWrapper>(file, 480, 0x10, memory_offsets[id_string]["Parts"], false);
         }
 
         private void Load_ROM_event(object sender, RoutedEventArgs e)
@@ -126,10 +118,10 @@ namespace MedabotsRandomizer
         {
             DataGrid dataGrid = sender as DataGrid;
             EncountersWrapper encounters = (EncountersWrapper)dataGrid.SelectedItem;
-            encounters_1.Text = encounters.encounters.battle[0].ToString("X2");
-            encounters_2.Text = encounters.encounters.battle[1].ToString("X2");
-            encounters_3.Text = encounters.encounters.battle[2].ToString("X2");
-            encounters_4.Text = encounters.encounters.battle[3].ToString("X2");
+            encounters_1.Text = encounters.content.battle[0].ToString("X2");
+            encounters_2.Text = encounters.content.battle[1].ToString("X2");
+            encounters_3.Text = encounters.content.battle[2].ToString("X2");
+            encounters_4.Text = encounters.content.battle[3].ToString("X2");
         }
 
         private void save_encounters(object sender, RoutedEventArgs e)
@@ -151,10 +143,10 @@ namespace MedabotsRandomizer
                 MessageBox.Show("Invalid encounters");
                 return;
             }
-            encounters.encounters.battle[0] = enc1;
-            encounters.encounters.battle[1] = enc2;
-            encounters.encounters.battle[2] = enc3;
-            encounters.encounters.battle[3] = enc4;
+            encounters.content.battle[0] = enc1;
+            encounters.content.battle[1] = enc2;
+            encounters.content.battle[2] = enc3;
+            encounters.content.battle[3] = enc4;
             encounterList.Items.Refresh();
         }
 
@@ -213,7 +205,7 @@ namespace MedabotsRandomizer
             for (int i = 0; i <= amount_of_battles; i++)
             {
                 int battle_address = Utils.GetAdressAtPosition(file, battle_offset + 4 * i);
-                byte[] battle = allBattles[i].battle.getBytes();
+                byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 //byte[] battle = randomizer.GenerateRandomBattle(false).getBytes();
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
@@ -276,18 +268,18 @@ namespace MedabotsRandomizer
             DataGrid dataGrid = sender as DataGrid;
             BattleWrapper battle = (BattleWrapper)dataGrid.SelectedItem;
             characterLabel.Content = battle.Character;
-            charId.Text = battle.battle.characterId.ToString("X2");
-            numBots.Text = battle.battle.number_of_bots.ToString("X2");
-            bot_1_grid.ItemsSource = battle.battle.bots[0].toDataSource();
-            bot_2_grid.ItemsSource = battle.battle.bots[1].toDataSource();
-            bot_3_grid.ItemsSource = battle.battle.bots[2].toDataSource();
+            charId.Text = battle.content.characterId.ToString("X2");
+            numBots.Text = battle.content.number_of_bots.ToString("X2");
+            bot_1_grid.ItemsSource = battle.content.bots[0].toDataSource();
+            bot_2_grid.ItemsSource = battle.content.bots[1].toDataSource();
+            bot_3_grid.ItemsSource = battle.content.bots[2].toDataSource();
         }
 
         private void partData_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataGrid dataGrid = sender as DataGrid;
             PartWrapper part = (PartWrapper)dataGrid.SelectedItem;
-            partDataView.ItemsSource = part.part.toDataSource(part.Type);
+            partDataView.ItemsSource = part.content.toDataSource(part.Type);
         }
 
         private void ContinuityCheckBox_Checked(object sender, RoutedEventArgs e)

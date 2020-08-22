@@ -5,17 +5,11 @@ using System.Text;
 namespace MedabotsRandomizer
 {
 
-    public class PartWrapper
+    public class PartWrapper : Wrapper<Part>
     {
-        int id;
-        int memory_location;
-        public Part part;
-
-        public PartWrapper(int id, int memory_location, Part part)
+        public PartWrapper(int id, int memory_location, byte[] data) : base(id, memory_location, data)
         {
-            this.id = id;
-            this.memory_location = memory_location;
-            this.part = part;
+            
         }
         public string PartId => ((byte)Math.Floor(((double)id / 4))).ToString("X2");
         public string Memory_Location => (memory_location + 0x8000000).ToString("X8");

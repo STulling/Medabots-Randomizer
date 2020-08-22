@@ -77,25 +77,5 @@ namespace MedabotsRandomizer
             }
             return fields;
         }
-
-        public static Part FromBytes(byte[] bytes)
-        {
-            GCHandle gcHandle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-            Part battle = (Part)Marshal.PtrToStructure(gcHandle.AddrOfPinnedObject(), typeof(Part));
-            gcHandle.Free();
-            return battle;
-        }
-
-        public byte[] getBytes()
-        {
-            int size = Marshal.SizeOf(this);
-            byte[] arr = new byte[size];
-
-            IntPtr ptr = Marshal.AllocHGlobal(size);
-            Marshal.StructureToPtr(this, ptr, true);
-            Marshal.Copy(ptr, arr, 0, size);
-            Marshal.FreeHGlobal(ptr);
-            return arr;
-        }
     }
 }

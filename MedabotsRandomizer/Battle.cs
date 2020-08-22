@@ -43,25 +43,5 @@ namespace MedabotsRandomizer
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
         public BattleBot[] bots = new BattleBot[3];
         public byte always_0;
-
-        public static Battle FromBytes(byte[] bytes)
-        {
-            GCHandle gcHandle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-            Battle battle = (Battle)Marshal.PtrToStructure(gcHandle.AddrOfPinnedObject(), typeof(Battle));
-            gcHandle.Free();
-            return battle;
-        }
-
-        public byte[] getBytes()
-        {
-            int size = Marshal.SizeOf(this);
-            byte[] arr = new byte[size];
-
-            IntPtr ptr = Marshal.AllocHGlobal(size);
-            Marshal.StructureToPtr(this, ptr, true);
-            Marshal.Copy(ptr, arr, 0, size);
-            Marshal.FreeHGlobal(ptr);
-            return arr;
-        }
     }
 }

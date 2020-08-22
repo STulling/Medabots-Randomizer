@@ -53,9 +53,9 @@ namespace MedabotsRandomizer
                         foreach (int i in entry.Value)
                         {
                             BattleWrapper battle = battles[i];
-                            for (int botIndex = 0; botIndex < battle.battle.number_of_bots; botIndex++)
+                            for (int botIndex = 0; botIndex < battle.content.number_of_bots; botIndex++)
                             {
-                                BattleBot bot = battle.battle.bots[botIndex];
+                                BattleBot bot = battle.content.bots[botIndex];
                                 if (!diffBots.Contains(bot.head))
                                     diffBots.Add(bot.head);
                             }
@@ -68,13 +68,13 @@ namespace MedabotsRandomizer
                         foreach (int i in entry.Value)
                         {
                             BattleWrapper battle = battles[i];
-                            for (int botIndex = 0; botIndex < battle.battle.number_of_bots; botIndex++)
+                            for (int botIndex = 0; botIndex < battle.content.number_of_bots; botIndex++)
                             {
-                                BattleBot bot = battle.battle.bots[botIndex];
+                                BattleBot bot = battle.content.bots[botIndex];
                                 BattleBot newBot = newBots[diffBots.IndexOf(bot.head)];
                                 if (balanced_medal_level)
                                     newBot.medal_level = bot.medal_level;
-                                battle.battle.bots[botIndex] = newBot;
+                                battle.content.bots[botIndex] = newBot;
                             }
                         }
                     }
@@ -83,15 +83,15 @@ namespace MedabotsRandomizer
                 {
                     foreach (BattleWrapper battle in battles)
                     {
-                        Dictionary<byte, List<int>> uniques = findUniques(battle.battle.bots, battle.battle.number_of_bots);
+                        Dictionary<byte, List<int>> uniques = findUniques(battle.content.bots, battle.content.number_of_bots);
                         foreach (KeyValuePair<byte, List<int>> entry in uniques)
                         {
                             BattleBot newBot = GenerateRandomBot(mixedchance);
                             foreach (int i in entry.Value)
                             {
                                 if (balanced_medal_level)
-                                    newBot.medal_level = battle.battle.bots[i].medal_level;
-                                battle.battle.bots[i] = newBot;
+                                    newBot.medal_level = battle.content.bots[i].medal_level;
+                                battle.content.bots[i] = newBot;
                             }
                         }
                     }
@@ -101,12 +101,12 @@ namespace MedabotsRandomizer
             {
                 foreach (BattleWrapper battle in battles)
                 {
-                    for (int i = 0; i < battle.battle.number_of_bots; i++)
+                    for (int i = 0; i < battle.content.number_of_bots; i++)
                     {
                         BattleBot newBot = GenerateRandomBot(mixedchance);
                         if (balanced_medal_level)
-                            newBot.medal_level = battle.battle.bots[i].medal_level;
-                        battle.battle.bots[i] = newBot;
+                            newBot.medal_level = battle.content.bots[i].medal_level;
+                        battle.content.bots[i] = newBot;
                     }
                 }
             }
@@ -117,13 +117,13 @@ namespace MedabotsRandomizer
             Dictionary<byte, List<int>> uniques = new Dictionary<byte, List<int>>();
             foreach (BattleWrapper battle in battlelist)
             {
-                if (uniques.ContainsKey(battle.battle.characterId))
+                if (uniques.ContainsKey(battle.content.characterId))
                 {
-                    uniques[battle.battle.characterId].Add(Convert.ToByte(battle.FightId, 16));
+                    uniques[battle.content.characterId].Add(Convert.ToByte(battle.FightId, 16));
                 }
                 else
                 {
-                    uniques.Add(battle.battle.characterId, new List<int>() { Convert.ToByte(battle.FightId, 16) });
+                    uniques.Add(battle.content.characterId, new List<int>() { Convert.ToByte(battle.FightId, 16) });
                 }
             }
             return uniques;
@@ -141,7 +141,7 @@ namespace MedabotsRandomizer
                     byte character = (byte)possibleChars[index];
                     foreach (int id in entry.Value)
                     {
-                        battles[id].battle.characterId = character;
+                        battles[id].content.characterId = character;
                     }
                     possibleChars.RemoveAt(index);
                 }
@@ -150,7 +150,7 @@ namespace MedabotsRandomizer
             {
                 foreach (BattleWrapper battle in battles)
                 {
-                    battle.battle.characterId = (byte)rng.Next(1, 0x60);
+                    battle.content.characterId = (byte)rng.Next(1, 0x60);
                 }
             }
         }
@@ -165,13 +165,13 @@ namespace MedabotsRandomizer
                 bot.left_arm = (byte)rng.Next(0, 0x78);
                 bot.right_arm = (byte)rng.Next(0, 0x78);
                 bot.legs = (byte)rng.Next(0, 0x78);
-                bot.medal = parts[bot.head * 4].part.medal_compatibility;
+                bot.medal = parts[bot.head * 4].content.medal_compatibility;
                 bot.medal_level = (byte)rng.Next(1, 101);
             }
             else
             {
                 byte set = (byte)rng.Next(0, 0x78);
-                byte medal = parts[set * 4].part.medal_compatibility;
+                byte medal = parts[set * 4].content.medal_compatibility;
                 bot.head = set;
                 bot.left_arm = set;
                 bot.right_arm = set;
