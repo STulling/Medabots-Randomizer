@@ -5,24 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MedabotsRandomizer"
         mc:Ignorable="d"
-        Title="Medabots Randomizer / Explorer (1.1.0)" Height="640" Width="1018" ResizeMode="CanResizeWithGrip" Icon="icon.png">
+        Title="Medabots Randomizer / Explorer (1.1.0)" Height="640" Width="1018" ResizeMode="CanMinimize" Icon="icon.png">
     <Grid>
         <TabControl Margin="0,42,0,0">
             <TabItem Header="Randomizer Settings" Margin="-3,-2,-1,0">
                 <Grid Background="#FFE5E5E5">
-                    <Button Margin="10,0,10,10" Click="Button_Click_1" Content="Randomize" Height="20" VerticalAlignment="Bottom"/>
-                    <GroupBox Header="Battles" Margin="0,0,506,276" Background="White">
+                    <Button Margin="10,473,10,0" Click="Button_Click_1" Content="Apply" Height="51" VerticalAlignment="Top" FontSize="20"/>
+                    <GroupBox Header="Battles" Margin="10,0,506,66" Background="White">
                         <Grid Background="#FFF">
                             <CheckBox x:Name="randomizecharacters" Content="Randomize Characters" HorizontalAlignment="Left" Margin="10,10,0,0" Height="15" VerticalAlignment="Top" Checked="ContinuityCheckBox_Checked" Unchecked="ContinuityCheckBox_Checked"/>
                             <CheckBox x:Name="randomizebattles" Content="Randomize battles" HorizontalAlignment="Left" Margin="10,50,0,0" Height="15" VerticalAlignment="Top" Unchecked="RandomizeBattlesCheckBox_checked" Checked="RandomizeBattlesCheckBox_checked"/>
                             <CheckBox x:Name="mixedbots" Content="Allow mixed bots" HorizontalAlignment="Left" Margin="28,70,0,0" VerticalAlignment="Top" Unchecked="MixedCheckBox_Checked" Checked="MixedCheckBox_Checked" IsEnabled="False"/>
                             <Label Content="Percentage mixed bots" HorizontalAlignment="Left" Margin="43,87,0,0" VerticalAlignment="Top" Width="150"/>
                             <Slider x:Name="mixedslider" HorizontalAlignment="Left" Margin="180,93,0,0" VerticalAlignment="Top" Width="120" IsEnabled="False" ValueChanged="mixedslider_ValueChanged" Maximum="100" SmallChange="1"/>
-                            <Label x:Name="mixedpercentage" Content="0%" HorizontalAlignment="Left" Margin="300,87,0,0" VerticalAlignment="Top" Width="60"/>
+                            <Label x:Name="mixedpercentage" Content="0%" HorizontalAlignment="Left" Margin="300,87,0,0" VerticalAlignment="Top" Width="60" Grid.ColumnSpan="2"/>
                             <CheckBox x:Name="balancedlevels" Content="Balanced bot levels" HorizontalAlignment="Left" Margin="28,115,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                             <CheckBox x:Name="keepstructure" Content="Keep battle structure" HorizontalAlignment="Left" Margin="28,135,0,0" VerticalAlignment="Top" IsEnabled="False" Checked="keepstructure_Checked" Unchecked="keepstructure_Checked"/>
                             <CheckBox x:Name="continuitycheck" Content="Keep character continuity" HorizontalAlignment="Left" Margin="25,30,0,0" VerticalAlignment="Top" IsEnabled="False"/>
                             <CheckBox x:Name="battlecontinuity" Content="Battle continuity" HorizontalAlignment="Left" Margin="50,155,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+                            <CheckBox x:Name="randomizeStarter" Content="Randomize Starter Bot" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="169"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Patches" Margin="511,0,10,66" Background="White">
+                        <Grid Background="#FFF">
+                            <CheckBox x:Name="shouldPatch" Content="Enable Rom Patches" HorizontalAlignment="Left" Margin="10,10,0,284" Width="333"/>
                         </Grid>
                     </GroupBox>
                 </Grid>

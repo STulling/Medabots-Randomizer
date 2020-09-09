@@ -114,7 +114,7 @@ namespace Medabots_Patcher
             uint[] jumpPayload = new uint[]
             {
                 0xE92D8000,                         // push r15
-                0xE51FF004,                         // ldr r15, traineraddr
+                0xE51FF004,                         // ldr r15, hookAddress
                 0x08000000 + hookOffset             // hookOffset
             };
             uint[] hookPayload = new uint[]
