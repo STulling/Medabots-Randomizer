@@ -34,7 +34,8 @@ namespace MedabotsRandomizer
                     { "Encounters", 0x3bf230 },
                     { "Parts", 0x3b841c },
                     { "Starter", 0x7852f4},
-                    { "Equipped", 0x044b6c}
+                    { "Equipped", 0x044b6c},
+                    { "StartMedal", 0x78549c}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
