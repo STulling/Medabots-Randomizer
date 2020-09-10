@@ -5,7 +5,7 @@ The project provides insight to information obtained from within the ROM file.
 The project was created to created a modded version of the metabots game.
 
 # Screenshots
-![Battle](https://i.ibb.co/5YJ3LHb/Hd-DZJEp3w-Z.png)
+![Battle](https://i.imgur.com/Xj2eyei_d.webp?maxwidth=728&fidelity=grand)
 
 # How to use?
 1. Run the MedabotsRandomizer.sln
