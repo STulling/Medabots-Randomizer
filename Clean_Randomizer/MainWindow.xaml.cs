@@ -237,7 +237,6 @@ namespace Clean_Randomizer
 
             if (chk_randomize_starter.IsOn)
             {
-                uint funcOffset = 0x044b6c;
                 byte randomBot = (byte)rng.Next(0, 0x78);
                 while (blacklist.Contains(randomBot))
                 {
@@ -245,6 +244,7 @@ namespace Clean_Randomizer
                 }
                 byte medal = IdTranslator.botMedal(randomBot);
                 int offset = memory_offsets[game_id]["Starter"];
+                uint funcOffset = 0x044b6c;
                 for (int i = 0; i < 4; i++)
                 {
                     file[offset + 4 * i] = randomBot;
@@ -253,12 +253,22 @@ namespace Clean_Randomizer
                 {
                     file[offset + 16] = 1;
                 }
-                file[funcOffset] = randomBot;
-                file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
-                file[funcOffset - 0xE] = medal;
-                MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
-                MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 file[memory_offsets[game_id]["StartMedal"]] = medal;
+                file[funcOffset] = randomBot;
+                if (game_id == "MEDABOTSRKSVA9BPE9" || game_id == "MEDABOTSRKSVA9BEE9")
+                {
+                    file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
+                    file[funcOffset - 0xE] = medal;
+                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
+                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
+                }
+                else
+                {
+                    file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
+                    file[funcOffset - 0x4] = medal;
+                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
+                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
+                }
             }
 
             File.WriteAllBytes("Converted_Medabots.gba", file);
