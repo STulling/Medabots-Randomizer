@@ -1,19 +1,18 @@
-# MedabotsExplorer
-The project provides insight to information obtained from within the ROM file.
-
-# Motivation
-The project was created to created a modded version of the metabots game.
+# Medabots Randomizer
+The project is a randomizer for the game Medabots for the Gameboy Advance.
 
 # Screenshots
-![Battle](https://i.ibb.co/5YJ3LHb/Hd-DZJEp3w-Z.png)
+![Battle](https://i.imgur.com/Xj2eyei_d.webp?maxwidth=728&fidelity=grand)
 
 # How to use?
-1. Run the MedabotsRandomizer.sln
-2. Load one of the following ROM files:
-	* Medabots Rokusho Version (E) (Recommended)
+1. Download the latest [Medabots_Randomizer.exe](https://github.com/STulling/Medabots-Randomizer/releases).
+2. Run Medabots_Randomizer
+3. Load one of the following ROM files:
+	* Medabots Rokusho Version (E)
 	* Medabots Rokusho Version (U)
 	* Medabots Metabee Version (E)
 	* Medabots Metabee Version (U)
+4. Randomize
 
 # Credits
 [STulling](https://github.com/STulling)
