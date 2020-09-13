@@ -30,6 +30,11 @@ namespace MedabotsRandomizer
             fields.Add(new ByteWrapper(medal_level, "Medal Level"));
             return fields;
         }
+
+        public bool isComplete()
+        {
+            return head == right_arm && right_arm == left_arm && left_arm == legs;
+        }
     }
 
     [StructLayout(LayoutKind.Sequential, Pack = 1)]

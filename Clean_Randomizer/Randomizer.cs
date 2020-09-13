@@ -157,6 +157,54 @@ namespace MedabotsRandomizer
             return IdTranslator.botMedal(bot.head);
         }
 
+        public void fixSoftlock()
+        {
+            BattleWrapper odoroBattle = battles[0xA4];
+            byte firstFixedPart = 0x0;
+            if (odoroBattle.content.bots[0].isComplete())
+            {
+                odoroBattle.content.bots[0].head = firstFixedPart;
+                odoroBattle.content.bots[0].right_arm = firstFixedPart;
+                odoroBattle.content.bots[0].left_arm = firstFixedPart;
+                odoroBattle.content.bots[0].legs = firstFixedPart;
+                odoroBattle.content.bots[0].medal = IdTranslator.botMedal(firstFixedPart);
+            }
+            else
+            {
+                odoroBattle.content.bots[0].head = firstFixedPart;
+            }
+
+            byte secondFixedPart = 0x4;
+            if (odoroBattle.content.bots[1].isComplete())
+            {
+                odoroBattle.content.bots[1].head = secondFixedPart;
+                odoroBattle.content.bots[1].right_arm = secondFixedPart;
+                odoroBattle.content.bots[1].left_arm = secondFixedPart;
+                odoroBattle.content.bots[1].legs = secondFixedPart;
+                odoroBattle.content.bots[1].medal = IdTranslator.botMedal(secondFixedPart);
+            }
+            else
+            {
+                odoroBattle.content.bots[1].right_arm = secondFixedPart;
+            }
+
+            BattleWrapper kappaBattle = battles[0x39];
+            int i = rng.Next(0, 3);
+            byte kappaFixedPart = 0x6C;
+            if (kappaBattle.content.bots[i].isComplete())
+            {
+                kappaBattle.content.bots[i].head = kappaFixedPart;
+                kappaBattle.content.bots[i].right_arm = kappaFixedPart;
+                kappaBattle.content.bots[i].left_arm = kappaFixedPart;
+                kappaBattle.content.bots[i].legs = kappaFixedPart;
+                kappaBattle.content.bots[i].medal = IdTranslator.botMedal(kappaFixedPart);
+            }
+            else
+            {
+                kappaBattle.content.bots[i].head = kappaFixedPart;
+            }
+        }
+
         public BattleBot GenerateRandomBot(float mixedchance)
         {
             BattleBot bot = new BattleBot();

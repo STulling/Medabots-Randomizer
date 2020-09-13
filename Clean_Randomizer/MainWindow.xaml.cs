@@ -163,6 +163,7 @@ namespace Clean_Randomizer
                 bool continuity = chk_character_continuity.IsOn;
                 randomizer.RandomizeCharacters(continuity);
             }
+            randomizer.fixSoftlock();
             int amount_of_battles = 0xf5;
             int battle_size = 0x28;
             for (int i = 0; i <= amount_of_battles; i++)
