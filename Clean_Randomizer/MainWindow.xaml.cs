@@ -127,26 +127,35 @@ namespace Clean_Randomizer
             }
         }
 
+        public static string RandomString(int length)
+        {
+            Random random = new Random();
+            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
         private void Randomize(object sender, RoutedEventArgs e)
         {
             if (file == null)
             {
-                ShowNotification("Error!", "Please select a ROM befora applying.");
+                ShowNotification("Error!", "Please select a ROM before applying.");
                 return;
             }
             PopulateData(game_id);
-            Random rng;
+            string seedtext;
             if (seed_input.Text != "")
             {
-                MD5 md5Hasher = MD5.Create();
-                byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seed_input.Text));
-                int ivalue = BitConverter.ToInt32(hashed, 0);
-                rng = new Random(ivalue);
+                seedtext = seed_input.Text;
             }
             else
             {
-                rng = new Random();
+                seedtext = RandomString(12);
             }
+            MD5 md5Hasher = MD5.Create();
+            byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seedtext));
+            int ivalue = BitConverter.ToInt32(hashed, 0);
+            Random rng = new Random(ivalue);
             randomizer = new Randomizer(allBattles, allEncounters, allParts, rng);
             if (chk_randomize_battles.IsOn)
             {
@@ -172,11 +181,11 @@ namespace Clean_Randomizer
                 byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
-            if (chk_code_patches.IsOn)
+            if (chk_code_patches.IsOn && chk_instant_text.IsOn)
             {
                 uint jumpOffset = 0x104;
-                uint hookOffset = 0x7f3530;
-                uint trainerOffset = 0x7f3600;
+                uint hookOffset = 0x7f4500;
+                uint trainerOffset = hookOffset + 0xD0;
                 uint instr1 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset);
                 uint instr2 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 4);
                 uint instr3 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 8);
@@ -272,8 +281,8 @@ namespace Clean_Randomizer
                 }
             }
 
-            File.WriteAllBytes("Converted_Medabots.gba", file);
-            ShowNotification("Done!", "The ROM has been converted and is saved as \"Converted_Medabots.gba\"");
+            File.WriteAllBytes(seedtext + ".gba", file);
+            ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
         }
     }
 }
