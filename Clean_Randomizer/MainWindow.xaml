@@ -63,7 +63,8 @@
                   Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="437" VerticalAlignment="Top">
             <AdornerDecorator>
                 <StackPanel Margin="0">
-                    <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Starter Bot" ToolTip="Randomizes the starter robot.&#x0a;This consists of getting random full set bot.&#x0a;Bots that would make the start of the game impossible have been removed from the choice."/>
+                    <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
+                    <ComboBox x:Name="cmb_starter" Margin="{StaticResource ControlMargin}" Width="300"/>
                     <Grid Height="10"/>
                     <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#x0a;If for instance Erika would be replaced by Karin,&#x0a;then throughout the whole game every battle with Erika will use the Karin portrait."/>

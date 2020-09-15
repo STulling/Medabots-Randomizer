@@ -605,7 +605,7 @@
             return parts[id, part];
         }
 
-        private static string[] bots = new string[]
+        public static string[] bots = new string[]
         {
             "Noctobat",
             "Wonder Angel",

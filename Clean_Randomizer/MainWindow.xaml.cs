@@ -61,6 +61,10 @@ namespace Clean_Randomizer
             allBattles = new List<BattleWrapper>();
             allEncounters = new List<EncountersWrapper>();
             allParts = new List<PartWrapper>();
+            List<string> bots = IdTranslator.bots.ToList();
+            bots.Remove("");
+            cmb_starter.ItemsSource = new List<string>(){ "Random" }.Concat(bots);
+            cmb_starter.SelectedItem = "Random";
         }
 
         byte[] file;
@@ -247,10 +251,18 @@ namespace Clean_Randomizer
 
             if (chk_randomize_starter.IsOn)
             {
-                byte randomBot = (byte)rng.Next(0, 0x78);
-                while (blacklist.Contains(randomBot))
+                byte randomBot;
+                if ((string)cmb_starter.SelectedItem == "Random")
                 {
                     randomBot = (byte)rng.Next(0, 0x78);
+                    while (blacklist.Contains(randomBot))
+                    {
+                        randomBot = (byte)rng.Next(0, 0x78);
+                    }
+                }
+                else
+                {
+                    randomBot = (byte)(cmb_starter.SelectedIndex - 1);
                 }
                 byte medal = IdTranslator.botMedal(randomBot);
                 int offset = memory_offsets[game_id]["Starter"];
