@@ -1,6 +1,9 @@
 # Medabots Randomizer
 The project is a randomizer for the game Medabots for the Gameboy Advance. Join the Discord [here](https://discord.gg/tnpzeMN)
 
+# Trailer
+[![Medabots Randomizer](http://img.youtube.com/vi/LmZgAKpgLuc/0.jpg)](http://www.youtube.com/watch?v=LmZgAKpgLuc "Trailer")
+
 # Screenshots
 ![Battle](https://i.imgur.com/ycBjiAV_d.webp?maxwidth=728&fidelity=grand)
 
