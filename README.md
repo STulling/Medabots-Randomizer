@@ -16,10 +16,6 @@ The project is a randomizer for the game Medabots for the Gameboy Advance. Join 
 
 # Credits
 [STulling](https://github.com/STulling)
-[DMoonen](https://github.com/DMoonen)
-
-# License
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # Project status
 Active development
