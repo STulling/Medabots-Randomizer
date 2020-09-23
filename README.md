@@ -1,8 +1,11 @@
 # Medabots Randomizer
 The project is a randomizer for the game Medabots for the Gameboy Advance. Join the Discord [here](https://discord.gg/tnpzeMN)
 
+# Trailer
+[![Medabots Randomizer](http://img.youtube.com/vi/LmZgAKpgLuc/0.jpg)](http://www.youtube.com/watch?v=LmZgAKpgLuc "Trailer")
+
 # Screenshots
-![Battle](https://i.imgur.com/Xj2eyei_d.webp?maxwidth=728&fidelity=grand)
+![Battle](https://i.imgur.com/ycBjiAV_d.webp?maxwidth=728&fidelity=grand)
 
 # How to use?
 1. Download the latest [Medabots_Randomizer.exe](https://github.com/STulling/Medabots-Randomizer/releases).
@@ -16,10 +19,6 @@ The project is a randomizer for the game Medabots for the Gameboy Advance. Join 
 
 # Credits
 [STulling](https://github.com/STulling)
-[DMoonen](https://github.com/DMoonen)
-
-# License
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # Project status
 Active development
