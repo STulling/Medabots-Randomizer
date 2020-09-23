@@ -38,7 +38,7 @@
                                                Content="Enable Randomizer"/>
                         <Controls:ToggleSwitch x:Name="chk_code_patches" Margin="{StaticResource ControlMargin}"
                                                Width="220"
-                                               Content="Enable Code Patches"/>
+                                               Content="Enable Code Patches" IsOn="True"/>
                     </StackPanel>
                     <Button x:Name="btn_apply" Width="220"
                             Style="{DynamicResource MahApps.Styles.Button.Square}" Click="Randomize" Margin="5,147,5.4,0">
@@ -95,6 +95,7 @@
             <AdornerDecorator>
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_instant_text" Margin="{StaticResource ControlMargin}" Width="220" Content="Instant Text" ToolTip="Speeds up the dialogue, making the game faster."/>
+                    <Controls:ToggleSwitch x:Name="chk_encounters" Margin="{StaticResource ControlMargin}" Width="220" Content="School Encounters" ToolTip="Allows for encounters on the school yard before having to fight the screws." IsOn="True"/>
                 </StackPanel>
             </AdornerDecorator>
         </GroupBox>

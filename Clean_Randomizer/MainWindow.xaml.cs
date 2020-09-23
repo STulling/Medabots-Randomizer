@@ -4,6 +4,7 @@ using MedabotsRandomizer;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -34,7 +35,8 @@ namespace Clean_Randomizer
                     { "Encounters", 0x3bf230 },
                     { "Parts", 0x3b841c },
                     { "Starter", 0x7852f4},
-                    { "StartMedal", 0x78549c}
+                    { "StartMedal", 0x78549c},
+                    { "Events", 0x765ee4}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
@@ -185,7 +187,7 @@ namespace Clean_Randomizer
                 byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
-            if (chk_code_patches.IsOn && chk_instant_text.IsOn)
+            if (chk_code_patches.IsOn)
             {
                 uint jumpOffset = 0x104;
                 uint hookOffset = 0x7f4500;
@@ -217,21 +219,40 @@ namespace Clean_Randomizer
                     instr3,                             // --- original instruction #3 ---
                     0xE8BD8000                          // pop r15
                 };
-                uint[] trainerPayload = new uint[]
+                List<uint> trainerPayloadList = new List<uint>();
+                Dictionary<uint, ushort> codePatches = new Dictionary<uint, ushort>();
+                if (chk_instant_text.IsOn)
                 {
-                    // Set text_speed to instant
-                    0xE3A01403,                         // mov r1, #0x3000000
-                    0xE3A000FF,                         // mov r0, #0xFF
-                    0xE5C1045A,                         // strb r0, [r1, #0x45A]
+                    trainerPayloadList.AddRange(new uint[]{
+                        // Set text_speed to instant
+                        0xE3A01403,                         // mov r1, #0x3000000
+                        0xE3A000FF,                         // mov r0, #0xFF
+                        0xE5C1045A,                         // strb r0, [r1, #0x45A]
+                    });
+                    codePatches = codePatches.Union(new Dictionary<uint, ushort>
+                    {
+                        // Instant Character Popup
+                        { 0x3F5F6, 0x3008 },
+                        { 0x3F600, 0xDC08 }
+                    }).ToDictionary(k => k.Key, v => v.Value);
+                }
+
+                if (chk_encounters.IsOn)
+                {
+                    trainerPayloadList.AddRange(new uint[]{
+                        // Allow encounters
+                        0xE3A01403,                         // mov r1, #0x3000000
+                        0xE2811B19,                         // add r1, #0x6400
+                        0xE3A00000,                         // mov r0, #0x0
+                        0xE5C1000C,                         // strb r0, [r1, #0xc]
+                    });
+                }
+
+                trainerPayloadList.Add(
                     // Return
                     0xE12FFF1E                          // bx r15
-                };
-                Dictionary<uint, ushort> codePatches = new Dictionary<uint, ushort>
-                {
-                    // Instant Character Popup
-                    { 0x3F5F6, 0x3008 },
-                    { 0x3F600, 0xDC08 }
-                };
+                );
+                uint[] trainerPayload = trainerPayloadList.ToArray();
                 MedabotsRandomizer.Utils.WritePayload(file, jumpOffset, jumpPayload);
                 MedabotsRandomizer.Utils.WritePayload(file, hookOffset, hookPayload);
                 MedabotsRandomizer.Utils.WritePayload(file, trainerOffset, trainerPayload);
@@ -292,7 +313,15 @@ namespace Clean_Randomizer
                     MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 }
             }
-
+            /*
+            for (int i  = memory_offsets[game_id]["Events"]; i < 0x785ee4; i++ )
+            {
+                if (file[i] == 0x3C)
+                {
+                    Trace.WriteLine(file[i + 1]);
+                }
+            }
+            */
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
         }
