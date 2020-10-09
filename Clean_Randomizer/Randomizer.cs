@@ -23,6 +23,7 @@ namespace MedabotsRandomizer
         public Dictionary<byte, List<int>> findUniques(BattleBot[] bots, int num_bots)
         {
             Dictionary<byte, List<int>> uniques = new Dictionary<byte, List<int>>();
+
             for (int i = 0; i < num_bots; i++)
             {
                 if (uniques.ContainsKey(bots[i].head))
@@ -34,6 +35,7 @@ namespace MedabotsRandomizer
                     uniques.Add(bots[i].head, new List<int>() { i });
                 }
             }
+
             return uniques;
         }
 
@@ -44,33 +46,43 @@ namespace MedabotsRandomizer
                 if (continuity)
                 {
                     Dictionary<byte, List<int>> uniques = findCharacterOccurences(battles);
+
                     foreach (KeyValuePair<byte, List<int>> entry in uniques)
                     {
                         List<byte> diffBots = new List<byte>();
+
                         foreach (int i in entry.Value)
                         {
                             BattleWrapper battle = battles[i];
+
                             for (int botIndex = 0; botIndex < battle.content.number_of_bots; botIndex++)
                             {
                                 BattleBot bot = battle.content.bots[botIndex];
+
                                 if (!diffBots.Contains(bot.head))
                                     diffBots.Add(bot.head);
                             }
                         }
+
                         List<BattleBot> newBots = new List<BattleBot>();
+
                         foreach (byte i in diffBots)
                         {
                             newBots.Add(GenerateRandomBot(mixedchance));
                         }
+
                         foreach (int i in entry.Value)
                         {
                             BattleWrapper battle = battles[i];
+
                             for (int botIndex = 0; botIndex < battle.content.number_of_bots; botIndex++)
                             {
                                 BattleBot bot = battle.content.bots[botIndex];
                                 BattleBot newBot = newBots[diffBots.IndexOf(bot.head)];
+
                                 if (balanced_medal_level)
                                     newBot.medal_level = bot.medal_level;
+
                                 battle.content.bots[botIndex] = newBot;
                             }
                         }
@@ -81,13 +93,16 @@ namespace MedabotsRandomizer
                     foreach (BattleWrapper battle in battles)
                     {
                         Dictionary<byte, List<int>> uniques = findUniques(battle.content.bots, battle.content.number_of_bots);
+
                         foreach (KeyValuePair<byte, List<int>> entry in uniques)
                         {
                             BattleBot newBot = GenerateRandomBot(mixedchance);
+
                             foreach (int i in entry.Value)
                             {
                                 if (balanced_medal_level)
                                     newBot.medal_level = battle.content.bots[i].medal_level;
+
                                 battle.content.bots[i] = newBot;
                             }
                         }
@@ -101,8 +116,10 @@ namespace MedabotsRandomizer
                     for (int i = 0; i < battle.content.number_of_bots; i++)
                     {
                         BattleBot newBot = GenerateRandomBot(mixedchance);
+
                         if (balanced_medal_level)
                             newBot.medal_level = battle.content.bots[i].medal_level;
+
                         battle.content.bots[i] = newBot;
                     }
                 }
@@ -112,6 +129,7 @@ namespace MedabotsRandomizer
         public Dictionary<byte, List<int>> findCharacterOccurences(List<BattleWrapper> battlelist)
         {
             Dictionary<byte, List<int>> uniques = new Dictionary<byte, List<int>>();
+
             foreach (BattleWrapper battle in battlelist)
             {
                 if (uniques.ContainsKey(battle.content.characterId))
@@ -123,6 +141,7 @@ namespace MedabotsRandomizer
                     uniques.Add(battle.content.characterId, new List<int>() { Convert.ToByte(battle.FightId, 16) });
                 }
             }
+
             return uniques;
         }
 
@@ -132,14 +151,17 @@ namespace MedabotsRandomizer
             {
                 Dictionary<byte, List<int>> uniques = findCharacterOccurences(battles);
                 List<int> possibleChars = Enumerable.Range(1, 0x5f).ToList();
+
                 foreach (KeyValuePair<byte, List<int>> entry in uniques)
                 {
                     int index = rng.Next(possibleChars.Count);
                     byte character = (byte)possibleChars[index];
+
                     foreach (int id in entry.Value)
                     {
                         battles[id].content.characterId = character;
                     }
+
                     possibleChars.RemoveAt(index);
                 }
             }
@@ -160,6 +182,7 @@ namespace MedabotsRandomizer
         public void fixSoftlock()
         {
             BattleWrapper odoroBattle = battles[0xA4];
+
             byte firstFixedPart = 0x0;
             if (odoroBattle.content.bots[0].isComplete())
             {
@@ -190,6 +213,7 @@ namespace MedabotsRandomizer
 
             BattleWrapper kappaBattle = battles[0x39];
             int i = rng.Next(0, 3);
+
             byte kappaFixedPart = 0x6C;
             if (kappaBattle.content.bots[i].isComplete())
             {
@@ -209,6 +233,7 @@ namespace MedabotsRandomizer
         {
             BattleBot bot = new BattleBot();
             bot.unknown = 1;
+
             if (mixedchance != 0 && mixedchance >= rng.NextDouble())
             {
                 bot.head = (byte)rng.Next(0, 0x78);
@@ -226,6 +251,7 @@ namespace MedabotsRandomizer
                 bot.legs = set;
                 bot.medal_level = (byte)rng.Next(1, 100);
             }
+
             bot.medal = getBestMedal(bot);
             return bot;
         }
