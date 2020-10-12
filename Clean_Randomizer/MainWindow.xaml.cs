@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using Utils = MedabotsRandomizer.Utils;
 
 namespace Clean_Randomizer
 {
@@ -89,39 +90,7 @@ namespace Clean_Randomizer
                 AffirmativeButtonText = "OK",
                 ColorScheme = MetroDialogOptions.ColorScheme
             };
-
-            MessageDialogResult result = await this.ShowMessageAsync(big, error, MessageDialogStyle.Affirmative, mySettings);
-        }
-
-        static int search(byte[] haystack, byte[] needle)
-        {
-            for (int i = 0; i <= haystack.Length - needle.Length; i++)
-            {
-                if (match(haystack, needle, i))
-                {
-                    return i;
-                }
-            }
-            return -1;
-        }
-
-        static bool match(byte[] haystack, byte[] needle, int start)
-        {
-            if (needle.Length + start > haystack.Length)
-            {
-                return false;
-            }
-            else
-            {
-                for (int i = 0; i < needle.Length; i++)
-                {
-                    if (needle[i] != haystack[i + start])
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
+            await this.ShowMessageAsync(big, error, MessageDialogStyle.Affirmative, mySettings);
         }
 
         private void addOffsets()
@@ -131,11 +100,11 @@ namespace Clean_Randomizer
             byte[] encounterBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x9B, 0xF5, 0x9B, 0xA7, 0x9B, 0xF5 };
             byte[] partBytes = new byte[] { 0x0F, 0x22, 0x02, 0x00, 0x23, 0x15, 0x08, 0x01, 0x08, 0x00 };
             byte[] startMedalBytes = new byte[] { 0x01, 0x02, 0x00, 0x56, 0x5D, 0x01, 0x62, 0x17, 0x01 };
-            memory_offsets[game_id].Add("ShopContents", search(file, shopBytes));
-            memory_offsets[game_id].Add("Events", search(file, eventBytes));
-            memory_offsets[game_id].Add("Encounters", search(file, encounterBytes));
-            memory_offsets[game_id].Add("Parts", search(file, partBytes));
-            memory_offsets[game_id].Add("StartMedal", search(file, startMedalBytes) - 1);
+            memory_offsets[game_id].Add("ShopContents", Utils.Search(file, shopBytes));
+            memory_offsets[game_id].Add("Events", Utils.Search(file, eventBytes));
+            memory_offsets[game_id].Add("Encounters", Utils.Search(file, encounterBytes));
+            memory_offsets[game_id].Add("Parts", Utils.Search(file, partBytes));
+            memory_offsets[game_id].Add("StartMedal", Utils.Search(file, startMedalBytes) - 1);
         }
 
         private void Load_ROM(object sender, RoutedEventArgs e)
@@ -181,16 +150,6 @@ namespace Clean_Randomizer
             }
         }
 
-        public static string RandomString(int length)
-        {
-            Random random = new Random();
-
-            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
-
         private void Randomize(object sender, RoutedEventArgs e)
         {
             if (file == null)
@@ -209,7 +168,7 @@ namespace Clean_Randomizer
             }
             else
             {
-                seedtext = RandomString(12);
+                seedtext = Utils.RandomString(12);
             }
 
             MD5 md5Hasher = MD5.Create();
