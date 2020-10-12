@@ -36,7 +36,8 @@ namespace Clean_Randomizer
                     { "Parts", 0x3b841c },
                     { "Starter", 0x7852f4},
                     { "StartMedal", 0x78549c},
-                    { "Events", 0x765ee4}
+                    { "ShopContents", 0x483904},
+                    { "Events", 0x76dee4}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
@@ -187,6 +188,16 @@ namespace Clean_Randomizer
                 byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
+            if (chk_random_shops.IsOn)
+            {
+                for (int i = 0; i <= 0x3B; i++)
+                {
+                    if (file[memory_offsets[game_id]["ShopContents"] + i] != 0xff)
+                    {
+                        file[memory_offsets[game_id]["ShopContents"] + i] = (byte)rng.Next(0, 0x78);
+                    }
+                }
+            }
             if (chk_code_patches.IsOn)
             {
                 uint jumpOffset = 0x104;
@@ -313,17 +324,49 @@ namespace Clean_Randomizer
                     MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 }
             }
-            /*
-            for (int i  = memory_offsets[game_id]["Events"]; i < 0x785ee4; i++ )
-            {
-                if (file[i] == 0x3C)
+
+            CountingDict opCount = new CountingDict();
+            for (int i  = memory_offsets[game_id]["Events"]; i < 0x785ee4;  )
+            { 
+                byte op = file[i];
+                // Trace.WriteLine(op.ToString("X2") + " " + (i + 0x8000000).ToString("X2"));
+                opCount.Add(op);
+                if (op == 0x3C)
                 {
-                    Trace.WriteLine(file[i + 1]);
+                    Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(file[i + 1]));
+                    if (i + 1 == memory_offsets[game_id]["StartMedal"])
+                    {
+                        Trace.WriteLine("Is random starter, skipping...");
+                    }
+                    else
+                    {
+                        file[i + 1] = (byte)rng.Next(0, 0x1D);
+                        Trace.WriteLine("Set Medal to: " + IdTranslator.IdToMedal(file[i + 1]));
+                    }
+                }
+                if (op == 0x2F)
+                {
+                    i += file[i+1] + 1;
+                }
+                else {
+                    i += IdTranslator.operationBytes[op];
                 }
             }
-            */
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
         }
+    }
+}
+
+public class CountingDict
+{
+    Dictionary<byte, int> countingList = new Dictionary<byte, int>();
+
+    public void Add(byte s)
+    {
+        if (countingList.ContainsKey(s))
+            countingList[s]++;
+        else
+            countingList.Add(s, 1);
     }
 }

@@ -69,6 +69,8 @@
                     <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#x0a;If for instance Erika would be replaced by Karin,&#x0a;then throughout the whole game every battle with Erika will use the Karin portrait."/>
                     <Grid Height="10"/>
+                    <Controls:ToggleSwitch x:Name="chk_random_shops" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Shops" ToolTip="Randomizes shops. It does what it says on the tin."/>
+                    <Grid Height="10"/>
                     <Controls:ToggleSwitch x:Name="chk_randomize_battles" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Battles" ToolTip="Whether you want the battles to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_allow_mixed_bots" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Allow Mixed Bots" ToolTip="Whether you want battles to use bots made up of random parts."/>
                     <Slider x:Name="sl_mixed_bots" Width="200"
