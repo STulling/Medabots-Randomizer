@@ -480,7 +480,7 @@ namespace MedabotsRandomizer
         {
             int textPtrPtrOffset = 0x47df44;
             //int textPtrPtrOffset = 0x44f3d0;
-            HashSet<int> textAdresses = new HashSet<int>();
+            HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
             List<TextWrapper> texts = new List<TextWrapper>();
             int amount_of_ptrs = 15;
             for (int i = 0; i <= amount_of_ptrs; i++)
@@ -492,9 +492,10 @@ namespace MedabotsRandomizer
                     int textOffset = Utils.GetAdressAtPosition(file, textPtrOffset + 4 * j);
                     j++;
                     if (textOffset == -0x08000000) break;
-                    textAdresses.Add(textOffset);
+                    textAdresses.Add((textOffset, i, j));
                 }
             }
+            /*
             int b = 0;
             while (true)
             {
@@ -504,21 +505,16 @@ namespace MedabotsRandomizer
                 textAdresses.Add(textOffset);
             }
             int x = 0;
-            foreach (int textAddress in textAdresses)
+            */
+            foreach ((int, int, int) textData in textAdresses)
             {
+                int textAddress = textData.Item1;
                 List<byte> data = new List<byte>();
                 int i = 0;
                 while (true)
                 {
                     byte currByte = file[textAddress + i];
-                    if (currByte == 0xF7)
-                    {
-                        data.Add(currByte);
-                        i++;
-                        data.Add(file[textAddress + i]);
-                        i++;
-                    }
-                    else if(currByte == 0xFF || currByte == 0xFE)
+                    if(currByte == 0xFF || currByte == 0xFE)
                     {
                         data.Add(currByte);
                         i++;
@@ -531,9 +527,7 @@ namespace MedabotsRandomizer
                         i++;
                     }
                 }
-                if (data.Contains(13))
-                    texts.Add(new TextWrapper(x, textAddress, data.ToArray()));
-                x++;
+                texts.Add(new TextWrapper(textData.Item2, textData.Item3, textAddress, data.ToArray()));
             }
             textList.ItemsSource = texts;
         }
@@ -556,10 +550,52 @@ namespace MedabotsRandomizer
         private string decode(byte[] data)
         {
             string result = "";
-            foreach (byte i in data)
+            for (int i = 0; i < data.Length; i++)
             {
-                if (i < 0x4f) result += encoding[i];
-                else result += i.ToString("X2");
+                byte chr = data[i];
+                if (chr < 0x4f)
+                {
+                    result += encoding[data[i]];
+                }
+                else if (chr == 0xf7)
+                {
+                    result += "<SPEED:" + data[i + 1] + ">";
+                    i++;
+                }
+                else if (chr == 0xf8)
+                {
+                    result += "<I>";
+                }
+                else if (chr == 0xf9)
+                {
+                    result += "<MEM:" + data[i + 1] + ">";
+                    i++;
+                }
+                else if (chr == 0xfa)
+                {
+                    result += "<?>";
+                }
+                else if (chr == 0xfb)
+                {
+                    result += "<PORTRAIT:" + data[i + 1] + ", " + data[i + 2] + ", " + data[i+3] + ">";
+                    i += 3;
+                }
+                else if (chr == 0xfc)
+                {
+                    result += "<NB>";
+                }
+                else if (chr == 0xfD)
+                {
+                    result += "<NL>";
+                }
+                else if (chr == 0xfe)
+                {
+                    result += "<ENDLST>";
+                }
+                else if (chr == 0xff)
+                {
+                    result += "<END:"+ data[i + 1] + ">";
+                }
             }
             return result;
         }
