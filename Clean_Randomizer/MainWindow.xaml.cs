@@ -10,7 +10,6 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
-using Utils = MedabotsRandomizer.Utils;
 
 namespace Clean_Randomizer
 {
@@ -38,10 +37,7 @@ namespace Clean_Randomizer
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
-                    { "Encounters", 0x3bf090 },
-                    { "Parts", 0x3b827c },
-                    { "Starter", 0x7840c0},
-                    { "StartMedal", 0x784268}
+                    { "Starter", 0x7840c0}
                 }},
                 { "MEDABOTSMTBVA8BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c19e0 },
@@ -49,10 +45,7 @@ namespace Clean_Randomizer
                 }},
                 { "MEDABOTSMTBVA8BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1b80 },
-                    { "Encounters", 0x3bf210 },
-                    { "Parts", 0x3b83fc },
-                    { "Starter", 0x7852cf},
-                    { "StartMedal", 0x785477}
+                    { "Starter", 0x7852cf}
                 }}
             };
 
@@ -100,11 +93,11 @@ namespace Clean_Randomizer
             byte[] encounterBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x9B, 0xF5, 0x9B, 0xA7, 0x9B, 0xF5 };
             byte[] partBytes = new byte[] { 0x0F, 0x22, 0x02, 0x00, 0x23, 0x15, 0x08, 0x01, 0x08, 0x00 };
             byte[] startMedalBytes = new byte[] { 0x01, 0x02, 0x00, 0x56, 0x5D, 0x01, 0x62, 0x17, 0x01 };
-            memory_offsets[game_id].Add("ShopContents", Utils.Search(file, shopBytes));
-            memory_offsets[game_id].Add("Events", Utils.Search(file, eventBytes));
-            memory_offsets[game_id].Add("Encounters", Utils.Search(file, encounterBytes));
-            memory_offsets[game_id].Add("Parts", Utils.Search(file, partBytes));
-            memory_offsets[game_id].Add("StartMedal", Utils.Search(file, startMedalBytes) - 1);
+            memory_offsets[game_id].Add("ShopContents", MedabotsRandomizer.Utils.Search(file, shopBytes));
+            memory_offsets[game_id].Add("Events", MedabotsRandomizer.Utils.Search(file, eventBytes));
+            memory_offsets[game_id].Add("Encounters", MedabotsRandomizer.Utils.Search(file, encounterBytes));
+            memory_offsets[game_id].Add("Parts", MedabotsRandomizer.Utils.Search(file, partBytes));
+            memory_offsets[game_id].Add("StartMedal", MedabotsRandomizer.Utils.Search(file, startMedalBytes) - 1);
         }
 
         private void Load_ROM(object sender, RoutedEventArgs e)
@@ -142,6 +135,7 @@ namespace Clean_Randomizer
                 {
                     romLabel.Content = recognizedFile;
                     addOffsets();
+                    PopulateData(game_id);
                 }
                 else
                 {
@@ -156,21 +150,12 @@ namespace Clean_Randomizer
             {
                 ShowNotification("Error!", "Please select a ROM before applying.");
                 return;
-            } 
-
-            PopulateData(game_id);
-
-            string seedtext;
-
-            if (seed_input.Text != "")
-            {
-                seedtext = seed_input.Text;
-            }
-            else
-            {
-                seedtext = Utils.RandomString(12);
             }
 
+            //////////////////////////////////////////////////////
+            /// SETUP RANDOMIZER AND SEED
+            //////////////////////////////////////////////////////
+            string seedtext = (seed_input.Text != "") ? seed_input.Text : MedabotsRandomizer.Utils.RandomString(12);
             MD5 md5Hasher = MD5.Create();
             byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seedtext));
             int ivalue = BitConverter.ToInt32(hashed, 0);
@@ -178,6 +163,18 @@ namespace Clean_Randomizer
             Random rng = new Random(ivalue);
             randomizer = new Randomizer(allBattles, allEncounters, allParts, rng);
 
+            //////////////////////////////////////////////////////
+            /// RANDOMIZE CHARACTERS
+            //////////////////////////////////////////////////////
+            if (chk_randomize_characters.IsOn)
+            {
+                bool continuity = chk_character_continuity.IsOn;
+                randomizer.RandomizeCharacters(continuity);
+            }
+
+            //////////////////////////////////////////////////////
+            /// RANDOMIZE BATTLES
+            //////////////////////////////////////////////////////
             if (chk_randomize_battles.IsOn)
             {
                 float mixedchance = 0;
@@ -191,12 +188,6 @@ namespace Clean_Randomizer
                 randomizer.RandomizeBattles(keep_team_structure, balanced_medal_level, mixedchance, keep_battle_continuity);
             }
 
-            if (chk_randomize_characters.IsOn)
-            {
-                bool continuity = chk_character_continuity.IsOn;
-                randomizer.RandomizeCharacters(continuity);
-            }
-
             randomizer.fixSoftlock();
             int amount_of_battles = 0xf5;
             int battle_size = 0x28;
@@ -207,6 +198,9 @@ namespace Clean_Randomizer
                 byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
+            //////////////////////////////////////////////////////
+            /// RANDOM SHOPS
+            //////////////////////////////////////////////////////
             if (chk_random_shops.IsOn)
             {
                 for (int i = 0; i <= 0x3B; i++)
@@ -217,6 +211,9 @@ namespace Clean_Randomizer
                     }
                 }
             }
+            //////////////////////////////////////////////////////
+            /// CODE PATCHES
+            //////////////////////////////////////////////////////
             if (chk_code_patches.IsOn)
             {
                 uint jumpOffset = 0x104;
@@ -296,6 +293,9 @@ namespace Clean_Randomizer
                 MedabotsRandomizer.Utils.WritePatches(file, codePatches);
             }
 
+            //////////////////////////////////////////////////////
+            /// RANDOM STARTER
+            //////////////////////////////////////////////////////
             byte[] blacklist = new byte[]{1, 3, 6, 7, 8,
                                             14, 15, 17, 18,
                                             19, 20, 22, 23,
@@ -357,6 +357,9 @@ namespace Clean_Randomizer
                 }
             }
 
+            //////////////////////////////////////////////////////
+            /// RANDOM MEDALS
+            //////////////////////////////////////////////////////
             for (int i  = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;  )
             { 
                 byte op = file[i];
@@ -382,6 +385,10 @@ namespace Clean_Randomizer
                     i += IdTranslator.operationBytes[op];
                 }
             }
+
+            //////////////////////////////////////////////////////
+            /// WRITE TO FILE
+            //////////////////////////////////////////////////////
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
         }

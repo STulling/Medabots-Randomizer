@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace MedabotsRandomizer
@@ -65,10 +66,10 @@ namespace MedabotsRandomizer
         public static int GetAdressAtPosition(byte[] bytes, int address)
         {
             int new_address = 0;
-            new_address = new_address + (bytes[address + 3] << 24);
-            new_address = new_address + (bytes[address + 2] << 16);
-            new_address = new_address + (bytes[address + 1] << 8);
-            new_address = new_address + bytes[address];
+            new_address += (bytes[address + 3] << 24);
+            new_address += (bytes[address + 2] << 16);
+            new_address += (bytes[address + 1] << 8);
+            new_address += bytes[address];
             return new_address - 0x08000000;
         }
 
