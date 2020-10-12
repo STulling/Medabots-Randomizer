@@ -84,6 +84,7 @@
                             TickPlacement="TopLeft"
                             Value="50"
                             ToolTip="Percentage of bots that are made up of random parts."/>
+                    <Controls:ToggleSwitch x:Name="chk_random_medal" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Medals" ToolTip="Randomizes medals throughout the game"/>
                     <Controls:ToggleSwitch x:Name="chk_balanced_bot_levels" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Balanced Bot Levels" ToolTip="Keeps the bot levels balanced, highly recommended to keep this on.&#x0a;Otherwise the game will be most likely very hard or impossible to complete."/>
                     <Controls:ToggleSwitch x:Name="chk_keep_battle_structure" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Keep Battle Structure" ToolTip="A battle with just 1 bot will be turned into a random battle with 1 bot for instance.&#x0a;Also in battles that have for instance 3 of the same bots,&#x0a;it will be replaced by a battle with 3 of the same random bot."/>
                     <Controls:ToggleSwitch x:Name="chk_battle_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Battle Continuity" ToolTip="Makes battles keep using the same randomized bots.&#x0a;For instance makes Erika keep her random bot throughout the whole game.&#x0a;Instead of having a new random bot every time you meet her."/>
@@ -103,7 +104,7 @@
         </GroupBox>
         <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="157,11,9.8,0" Width="434" Height="38" VerticalAlignment="Top" />
         <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Height="141" Width="581"/>
-        <Label Content="By: Simon381" HorizontalAlignment="Left" Margin="512,552,-0.2,0" VerticalAlignment="Top" Height="30" Width="89"/>
+        <Label Content="By: Simon381, WhiteCherry" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"/>
 
     </Grid>
 </Controls:MetroWindow>
