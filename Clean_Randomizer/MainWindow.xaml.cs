@@ -32,12 +32,7 @@ namespace Clean_Randomizer
             {
                 { "MEDABOTSRKSVA9BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1ba0 },
-                    { "Encounters", 0x3bf230 },
-                    { "Parts", 0x3b841c },
-                    { "Starter", 0x7852f4},
-                    { "StartMedal", 0x78549c},
-                    { "ShopContents", 0x483904},
-                    { "Events", 0x76dee4}
+                    { "Starter", 0x7852f4}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
@@ -48,10 +43,7 @@ namespace Clean_Randomizer
                 }},
                 { "MEDABOTSMTBVA8BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c19e0 },
-                    { "Encounters", 0x3bf070 },
-                    { "Parts", 0x3b825c },
-                    { "Starter", 0x78409B},
-                    { "StartMedal", 0x784243}
+                    { "Starter", 0x78409B}
                 }},
                 { "MEDABOTSMTBVA8BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1b80 },
@@ -97,6 +89,51 @@ namespace Clean_Randomizer
             MessageDialogResult result = await this.ShowMessageAsync(big, error, MessageDialogStyle.Affirmative, mySettings);
         }
 
+        static int search(byte[] haystack, byte[] needle)
+        {
+            for (int i = 0; i <= haystack.Length - needle.Length; i++)
+            {
+                if (match(haystack, needle, i))
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        static bool match(byte[] haystack, byte[] needle, int start)
+        {
+            if (needle.Length + start > haystack.Length)
+            {
+                return false;
+            }
+            else
+            {
+                for (int i = 0; i < needle.Length; i++)
+                {
+                    if (needle[i] != haystack[i + start])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
+        private void addOffsets()
+        {
+            byte[] shopBytes  = new byte[] { 0x13, 0x00, 0xFF, 0xFF, 0x13, 0x00, 0x42, 0xFF, 0x13, 0x00 };
+            byte[] eventBytes = new byte[] { 0x2F, 0x1B, 0x03, 0x11, 0x34, 0x00, 0x86, 0x01, 0x01, 0x0A };
+            byte[] encounterBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x9B, 0xF5, 0x9B, 0xA7, 0x9B, 0xF5 };
+            byte[] partBytes = new byte[] { 0x0F, 0x22, 0x02, 0x00, 0x23, 0x15, 0x08, 0x01, 0x08, 0x00 };
+            byte[] startMedalBytes = new byte[] { 0x01, 0x02, 0x00, 0x56, 0x5D, 0x01, 0x62, 0x17, 0x01 };
+            memory_offsets[game_id].Add("ShopContents", search(file, shopBytes));
+            memory_offsets[game_id].Add("Events", search(file, eventBytes));
+            memory_offsets[game_id].Add("Encounters", search(file, encounterBytes));
+            memory_offsets[game_id].Add("Parts", search(file, partBytes));
+            memory_offsets[game_id].Add("StartMedal", search(file, startMedalBytes) - 1);
+        }
+
         private void Load_ROM(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -126,6 +163,7 @@ namespace Clean_Randomizer
                 if (hashes.TryGetValue(id_string, out string recognizedFile))
                 {
                     romLabel.Content = recognizedFile;
+                    addOffsets();
                 }
                 else
                 {
@@ -325,12 +363,10 @@ namespace Clean_Randomizer
                 }
             }
 
-            CountingDict opCount = new CountingDict();
-            for (int i  = memory_offsets[game_id]["Events"]; i < 0x785ee4;  )
+            for (int i  = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;  )
             { 
                 byte op = file[i];
                 // Trace.WriteLine(op.ToString("X2") + " " + (i + 0x8000000).ToString("X2"));
-                opCount.Add(op);
                 if (op == 0x3C)
                 {
                     Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(file[i + 1]));
@@ -355,18 +391,5 @@ namespace Clean_Randomizer
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
         }
-    }
-}
-
-public class CountingDict
-{
-    Dictionary<byte, int> countingList = new Dictionary<byte, int>();
-
-    public void Add(byte s)
-    {
-        if (countingList.ContainsKey(s))
-            countingList[s]++;
-        else
-            countingList.Add(s, 1);
     }
 }
