@@ -168,8 +168,7 @@ namespace Clean_Randomizer
             //////////////////////////////////////////////////////
             if (chk_randomize_characters.IsOn)
             {
-                bool continuity = chk_character_continuity.IsOn;
-                randomizer.RandomizeCharacters(continuity);
+                randomizer.RandomizeCharacters(chk_character_continuity.IsOn);
             }
 
             //////////////////////////////////////////////////////
@@ -177,10 +176,7 @@ namespace Clean_Randomizer
             //////////////////////////////////////////////////////
             if (chk_randomize_battles.IsOn)
             {
-                float mixedchance = 0;
-                if (chk_allow_mixed_bots.IsOn)
-                    mixedchance = (float)(sl_mixed_bots.Value / 100);
-
+                float mixedchance = chk_allow_mixed_bots.IsOn ? (float)(sl_mixed_bots.Value / 100) : 0;
                 bool keep_team_structure = chk_keep_battle_structure.IsOn;
                 bool balanced_medal_level = chk_balanced_bot_levels.IsOn;
                 bool keep_battle_continuity = chk_battle_continuity.IsOn;

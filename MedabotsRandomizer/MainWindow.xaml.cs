@@ -483,7 +483,6 @@ namespace MedabotsRandomizer
             HashSet<int> textAdresses = new HashSet<int>();
             List<TextWrapper> texts = new List<TextWrapper>();
             int amount_of_ptrs = 15;
-            /*
             for (int i = 0; i <= amount_of_ptrs; i++)
             {
                 int textPtrOffset = Utils.GetAdressAtPosition(file, textPtrPtrOffset + 4 * i);
@@ -500,17 +499,6 @@ namespace MedabotsRandomizer
             while (true)
             {
                 int textOffset = Utils.GetAdressAtPosition(file, 0x411b00 + 4 * b);
-                b++;
-                if (textOffset > 0x500000 || textOffset < 0) break;
-                textAdresses.Add(textOffset);
-            }
-            */
-            // 083ba678
-            // 083bbb6c
-            int b = 0;
-            while (true)
-            {
-                int textOffset = Utils.GetAdressAtPosition(file, 0x3bbb6c + 4 * b);
                 b++;
                 if (textOffset > 0x500000 || textOffset < 0) break;
                 textAdresses.Add(textOffset);
@@ -543,7 +531,8 @@ namespace MedabotsRandomizer
                         i++;
                     }
                 }
-                texts.Add(new TextWrapper(x, textAddress, data.ToArray()));
+                if (data.Contains(13))
+                    texts.Add(new TextWrapper(x, textAddress, data.ToArray()));
                 x++;
             }
             textList.ItemsSource = texts;
