@@ -28,6 +28,7 @@ namespace Clean_Randomizer
                 { "MEDABOTSMTBVA8BEE9", "Medabots Metabee Version (U)" },
                 { "MEDABOTSMTBVA8BPE9", "Medabots Metabee Version (E)" }
             };
+
             memory_offsets = new Dictionary<string, Dictionary<string, int>>
             {
                 { "MEDABOTSRKSVA9BPE9", new Dictionary<string, int>{
@@ -53,11 +54,14 @@ namespace Clean_Randomizer
                     { "StartMedal", 0x785477}
                 }}
             };
+
             allBattles = new List<BattleWrapper>();
             allEncounters = new List<EncountersWrapper>();
             allParts = new List<PartWrapper>();
             List<string> bots = IdTranslator.bots.ToList();
+
             bots.Remove("");
+
             cmb_starter.ItemsSource = new List<string>(){ "Random" }.Concat(bots);
             cmb_starter.SelectedItem = "Random";
         }
@@ -137,29 +141,34 @@ namespace Clean_Randomizer
         private void Load_ROM(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
             if (openFileDialog.ShowDialog() == true)
             {
                 allBattles.Clear();
                 allEncounters.Clear();
                 allParts.Clear();
+
                 string chosenFile = openFileDialog.FileName;
                 file = File.ReadAllBytes(chosenFile);
                 byte[] id_bytes = new byte[0x12];
                 Array.Copy(file, 0xa0, id_bytes, 0, 0x12);
                 string id_string = Encoding.Default.GetString(id_bytes);
                 game_id = id_string;
+
                 if (id_string.Contains("MEDACORE"))
                 {
                     file = null;
                     ShowNotification("Error!", "Please select an English Medabots ROM\nThe game id corresponds with a Japanese ROM, which is not supported.");
                     return;
                 }
+
                 if (!id_string.Contains("MEDABOTS"))
                 {
                     file = null;
                     ShowNotification("Error!", "Please select a Medabots ROM\nThe game id does not correspond to any Medabots ROM.");
                     return;
                 }
+
                 if (hashes.TryGetValue(id_string, out string recognizedFile))
                 {
                     romLabel.Content = recognizedFile;
@@ -175,7 +184,9 @@ namespace Clean_Randomizer
         public static string RandomString(int length)
         {
             Random random = new Random();
+
             const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
@@ -186,9 +197,12 @@ namespace Clean_Randomizer
             {
                 ShowNotification("Error!", "Please select a ROM before applying.");
                 return;
-            }
+            } 
+
             PopulateData(game_id);
+
             string seedtext;
+
             if (seed_input.Text != "")
             {
                 seedtext = seed_input.Text;
@@ -197,29 +211,37 @@ namespace Clean_Randomizer
             {
                 seedtext = RandomString(12);
             }
+
             MD5 md5Hasher = MD5.Create();
             byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seedtext));
             int ivalue = BitConverter.ToInt32(hashed, 0);
+
             Random rng = new Random(ivalue);
             randomizer = new Randomizer(allBattles, allEncounters, allParts, rng);
+
             if (chk_randomize_battles.IsOn)
             {
                 float mixedchance = 0;
                 if (chk_allow_mixed_bots.IsOn)
                     mixedchance = (float)(sl_mixed_bots.Value / 100);
+
                 bool keep_team_structure = chk_keep_battle_structure.IsOn;
                 bool balanced_medal_level = chk_balanced_bot_levels.IsOn;
                 bool keep_battle_continuity = chk_battle_continuity.IsOn;
+
                 randomizer.RandomizeBattles(keep_team_structure, balanced_medal_level, mixedchance, keep_battle_continuity);
             }
+
             if (chk_randomize_characters.IsOn)
             {
                 bool continuity = chk_character_continuity.IsOn;
                 randomizer.RandomizeCharacters(continuity);
             }
+
             randomizer.fixSoftlock();
             int amount_of_battles = 0xf5;
             int battle_size = 0x28;
+
             for (int i = 0; i <= amount_of_battles; i++)
             {
                 int battle_address = MedabotsRandomizer.Utils.GetAdressAtPosition(file, memory_offsets[game_id]["Battles"] + 4 * i);
@@ -241,15 +263,18 @@ namespace Clean_Randomizer
                 uint jumpOffset = 0x104;
                 uint hookOffset = 0x7f4500;
                 uint trainerOffset = hookOffset + 0xD0;
+
                 uint instr1 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset);
                 uint instr2 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 4);
                 uint instr3 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 8);
+
                 uint[] jumpPayload = new uint[]
                 {
                     0xE92D8000,                         // push r15
                     0xE51FF004,                         // ldr r15, traineraddr
                     0x08000000 + hookOffset             // hookOffset
                 };
+
                 uint[] hookPayload = new uint[]
                 {
                     0xE92D4000,                         // push r14
@@ -268,8 +293,10 @@ namespace Clean_Randomizer
                     instr3,                             // --- original instruction #3 ---
                     0xE8BD8000                          // pop r15
                 };
+
                 List<uint> trainerPayloadList = new List<uint>();
                 Dictionary<uint, ushort> codePatches = new Dictionary<uint, ushort>();
+
                 if (chk_instant_text.IsOn)
                 {
                     trainerPayloadList.AddRange(new uint[]{
@@ -301,7 +328,9 @@ namespace Clean_Randomizer
                     // Return
                     0xE12FFF1E                          // bx r15
                 );
+
                 uint[] trainerPayload = trainerPayloadList.ToArray();
+
                 MedabotsRandomizer.Utils.WritePayload(file, jumpOffset, jumpPayload);
                 MedabotsRandomizer.Utils.WritePayload(file, hookOffset, hookPayload);
                 MedabotsRandomizer.Utils.WritePayload(file, trainerOffset, trainerPayload);
@@ -322,6 +351,7 @@ namespace Clean_Randomizer
             if (chk_randomize_starter.IsOn)
             {
                 byte randomBot;
+
                 if ((string)cmb_starter.SelectedItem == "Random")
                 {
                     randomBot = (byte)rng.Next(0, 0x78);
@@ -334,19 +364,24 @@ namespace Clean_Randomizer
                 {
                     randomBot = (byte)(cmb_starter.SelectedIndex - 1);
                 }
+
                 byte medal = IdTranslator.botMedal(randomBot);
                 int offset = memory_offsets[game_id]["Starter"];
                 uint funcOffset = 0x044b6c;
+
                 for (int i = 0; i < 4; i++)
                 {
                     file[offset + 4 * i] = randomBot;
                 }
+
                 if (IdTranslator.isFemale(randomBot))
                 {
                     file[offset + 16] = 1;
                 }
+
                 file[memory_offsets[game_id]["StartMedal"]] = medal;
                 file[funcOffset] = randomBot;
+
                 if (game_id == "MEDABOTSRKSVA9BPE9" || game_id == "MEDABOTSRKSVA9BEE9")
                 {
                     file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);

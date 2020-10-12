@@ -108,8 +108,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Randomizer.cs" />
-    <Compile Include="StructUtils.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="Util\StructUtils.cs" />
+    <Compile Include="Util\Utils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,13 +118,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseWrapper.cs" />
-    <Compile Include="Battle.cs" />
-    <Compile Include="BattleWrapper.cs" />
-    <Compile Include="DataPopulator.cs" />
-    <Compile Include="Encounter.cs" />
-    <Compile Include="EncountersWrapper.cs" />
-    <Compile Include="FieldWrappers.cs" />
+    <Compile Include="Wrappers\BaseWrapper.cs" />
+    <Compile Include="Data\Battle.cs" />
+    <Compile Include="Wrappers\BattleWrapper.cs" />
+    <Compile Include="Data\DataPopulator.cs" />
+    <Compile Include="Data\Encounter.cs" />
+    <Compile Include="Wrappers\EncountersWrapper.cs" />
+    <Compile Include="Wrappers\FieldWrappers.cs" />
     <Compile Include="IdTranslator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -132,8 +132,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Part.cs" />
-    <Compile Include="PartWrapper.cs" />
+    <Compile Include="Data\Part.cs" />
+    <Compile Include="Wrappers\PartWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -173,6 +173,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
