@@ -490,9 +490,9 @@ namespace MedabotsRandomizer
                 while(true)
                 {
                     int textOffset = Utils.GetAdressAtPosition(file, textPtrOffset + 4 * j);
-                    j++;
                     if (textOffset == -0x08000000) break;
                     textAdresses.Add((textOffset, i, j));
+                    j++;
                 }
             }
             /*
