@@ -321,6 +321,9 @@ namespace Clean_Randomizer
                 }
 
                 byte medal = IdTranslator.botMedal(randomBot);
+
+                randomizer.starterMedal = medal;
+
                 int offset = memory_offsets[game_id]["Starter"];
                 uint funcOffset = 0x044b6c;
 
@@ -356,29 +359,37 @@ namespace Clean_Randomizer
             //////////////////////////////////////////////////////
             /// RANDOM MEDALS
             //////////////////////////////////////////////////////
-            for (int i  = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;  )
-            { 
-                byte op = file[i];
-                // Trace.WriteLine(op.ToString("X2") + " " + (i + 0x8000000).ToString("X2"));
-                if (op == 0x3C)
+            if (chk_random_medal.IsOn)
+            {
+                for (int i = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;)
                 {
-                    Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(file[i + 1]));
-                    if (i + 1 == memory_offsets[game_id]["StartMedal"])
+                    byte op = file[i];
+                    // Trace.WriteLine(op.ToString("X2") + " " + (i + 0x8000000).ToString("X2"));
+                    if (op == 0x3C)
                     {
-                        Trace.WriteLine("Is random starter, skipping...");
+                        Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(file[i + 1]));
+                        if (i + 1 == memory_offsets[game_id]["StartMedal"])
+                        {
+                            Trace.WriteLine("Is random starter, skipping...");
+                        }
+                        else
+                        {
+                            var randomMedal = randomizer.GetRandomMedal();
+
+                            file[i + 1] = randomMedal;
+                            //file[i + 1] = (byte)rng.Next(0, 0x1D);
+                            Trace.WriteLine("Set Medal to: " + IdTranslator.IdToMedal(file[i + 1]));
+                        }
+                    }
+
+                    if (op == 0x2F)
+                    {
+                        i += file[i + 1] + 1;
                     }
                     else
                     {
-                        file[i + 1] = (byte)rng.Next(0, 0x1D);
-                        Trace.WriteLine("Set Medal to: " + IdTranslator.IdToMedal(file[i + 1]));
+                        i += IdTranslator.operationBytes[op];
                     }
-                }
-                if (op == 0x2F)
-                {
-                    i += file[i+1] + 1;
-                }
-                else {
-                    i += IdTranslator.operationBytes[op];
                 }
             }
 

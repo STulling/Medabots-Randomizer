@@ -12,12 +12,16 @@ namespace MedabotsRandomizer
         List<PartWrapper> parts;
         Random rng;
 
+        List<int> randomizedMedals;
+        public int starterMedal;
+
         public Randomizer(List<BattleWrapper> battles, List<EncountersWrapper> encounters, List<PartWrapper> parts, Random rng)
         {
             this.battles = battles;
             this.encounters = encounters;
             this.parts = parts;
             this.rng = rng;
+            this.randomizedMedals = new List<int>();
         }
 
         public Dictionary<byte, List<int>> findUniques(BattleBot[] bots, int num_bots)
@@ -254,6 +258,32 @@ namespace MedabotsRandomizer
 
             bot.medal = getBestMedal(bot);
             return bot;
+        }
+
+        public byte GetRandomMedal()
+        {
+            var medalId = (byte)rng.Next(0, 0x1D);
+
+            while (true)
+            {
+                //new medal
+                if (!randomizedMedals.Contains(medalId) && medalId != starterMedal)
+                {
+                    randomizedMedals.Add(medalId);
+                    return medalId;
+                }
+
+                //pick next closest medal to randomly selected, otherwise we would have to wait for rng to pick a new one itself
+                                //29 - max id of medal
+                if (medalId == 0x1D)
+                {
+                    medalId = 0x00;
+                }
+                else
+                {
+                    medalId++;
+                }
+            }
         }
     }
 }
