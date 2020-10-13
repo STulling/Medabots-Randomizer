@@ -89,11 +89,11 @@
                     <TextBox x:Name="offsetImage" HorizontalAlignment="Right" Margin="0,0,798,33" Text="" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="120" TextChanged="widthImage_TextChanged"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Text" HorizontalAlignment="Center" Height="22" VerticalAlignment="Center" Width="54">
+            <TabItem Header="Text" HorizontalAlignment="Center" Height="22" VerticalAlignment="Bottom" Width="54" Margin="0,0,0,1">
                 <Grid Background="#FFE5E5E5">
                     <Button Content="Button" HorizontalAlignment="Right" Margin="0,0,954,10" VerticalAlignment="Bottom" Click="Button_Click_3"/>
                     <DataGrid x:Name="textList" Margin="0,0,583,0" Height="467" VerticalAlignment="Top" SelectionChanged="textList_SelectionChanged"/>
-                    <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="506,66,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="351" Width="389"/>
+                    <TextBox  x:Name="textBlock" HorizontalAlignment="Left" Margin="506,66,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="351" Width="389"/>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -1,6 +1,152 @@
 [
 	{ 
 		name: "Kuwagata",
-		
+		ikki_text: "<PORTRAIT:1, 0, 4>This "KUWAGATA" Medal is cool!<NB>Just hit it till it dies!<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Kabuto",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Tortoise",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Jellyfish",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Bear",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Spider",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Snake",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Queen",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Squid",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Phoenix",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Unicorn",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Ghost",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Knight",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Mermaid",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Penguin",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Bat",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Kappa",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Mouse",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Chameleon",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Rabbit",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Monkey",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Devil",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Angel",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Dragon",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Ninja",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Alien",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Cat",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "?",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "Botro",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
+	},
+	{ 
+		name: "!",
+		ikki_text: "<PORTRAIT:1, 0, 4>Cooool!  It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<END:0>",
+		collect_text: "<PORTRAIT:1, 0, 0>It's a "BAT" Medal.<NB>It's very compatible with Medaparts<NL>that target Air Type Medabots.<NB>Should I take this Medal?<END:2>B"
 	}
 ]
