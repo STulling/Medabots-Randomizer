@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 
-namespace MedabotsRandomizer
+namespace Clean_Randomizer
 {
     public static class Utils
     {

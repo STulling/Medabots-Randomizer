@@ -13,6 +13,7 @@ namespace MedabotsRandomizer
         Random rng;
 
         List<int> randomizedMedals;
+        public Dictionary<byte, byte> medalExchanges;
         public int starterMedal;
 
         public Randomizer(List<BattleWrapper> battles, List<EncountersWrapper> encounters, List<PartWrapper> parts, Random rng)
@@ -22,6 +23,7 @@ namespace MedabotsRandomizer
             this.parts = parts;
             this.rng = rng;
             this.randomizedMedals = new List<int>();
+            this.medalExchanges = new Dictionary<byte, byte>();
         }
 
         public Dictionary<byte, List<int>> findUniques(BattleBot[] bots, int num_bots)
@@ -260,9 +262,9 @@ namespace MedabotsRandomizer
             return bot;
         }
 
-        public byte GetRandomMedal()
+        public byte GetRandomMedal(byte medal)
         {
-            var medalId = (byte)rng.Next(0, 0x1D);
+            var medalId = (byte)rng.Next(0, 0x1E);
 
             while (true)
             {
@@ -270,6 +272,7 @@ namespace MedabotsRandomizer
                 if (!randomizedMedals.Contains(medalId) && medalId != starterMedal)
                 {
                     randomizedMedals.Add(medalId);
+                    medalExchanges.Add(medal, medalId);
                     return medalId;
                 }
 

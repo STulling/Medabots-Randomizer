@@ -436,7 +436,7 @@
             return maps[id];
         }
 
-        private static string[] medals = new string[]
+        public static string[] medals = new string[]
         {
             "Kuwagata",
             "Kabuto",

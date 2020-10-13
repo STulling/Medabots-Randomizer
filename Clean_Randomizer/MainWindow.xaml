@@ -4,7 +4,7 @@
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       Title="Medabots Randomizer"
-                      Height="615.6"
+                      Height="674.8"
                       Width="607.4" ResizeMode="CanMinimize">
     <Grid Background="#222">
         <Button x:Name="Open_ROM_Button" Width="142"
@@ -60,17 +60,14 @@
         <GroupBox Grid.Row="0"
                   Grid.Column="0"
                   Margin="255,61,0,0"
-                  Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="437" VerticalAlignment="Top">
+                  Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="497" VerticalAlignment="Top">
             <AdornerDecorator>
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
                     <ComboBox x:Name="cmb_starter" Margin="{StaticResource ControlMargin}" Width="300"/>
-                    <Grid Height="10"/>
                     <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#x0a;If for instance Erika would be replaced by Karin,&#x0a;then throughout the whole game every battle with Erika will use the Karin portrait."/>
-                    <Grid Height="10"/>
                     <Controls:ToggleSwitch x:Name="chk_random_shops" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Shops" ToolTip="Randomizes shops. It does what it says on the tin."/>
-                    <Grid Height="10"/>
                     <Controls:ToggleSwitch x:Name="chk_randomize_battles" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Battles" ToolTip="Whether you want the battles to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_allow_mixed_bots" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Allow Mixed Bots" ToolTip="Whether you want battles to use bots made up of random parts."/>
                     <Slider x:Name="sl_mixed_bots" Width="200"
@@ -94,7 +91,7 @@
         <GroupBox Grid.Row="0"
                   Grid.Column="0"
                   Margin="10,300,0,0"
-                  Header="Code Patches" HorizontalAlignment="Left" Width="240" Height="198" VerticalAlignment="Top">
+                  Header="Code Patches" HorizontalAlignment="Left" Width="240" Height="258" VerticalAlignment="Top">
             <AdornerDecorator>
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_instant_text" Margin="{StaticResource ControlMargin}" Width="220" Content="Instant Text" ToolTip="Speeds up the dialogue, making the game faster."/>
@@ -103,7 +100,7 @@
             </AdornerDecorator>
         </GroupBox>
         <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="157,11,9.8,0" Width="434" Height="38" VerticalAlignment="Top" />
-        <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Height="141" Width="581"/>
+        <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Height="76" Width="581"/>
         <Label Content="By: Simon381, WhiteCherry" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"/>
 
     </Grid>
