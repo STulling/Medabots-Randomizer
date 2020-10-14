@@ -393,25 +393,6 @@ namespace Clean_Randomizer
                 };
 
                 Utils.WritePayload(file, funcOffset, replacedFunction);
-
-                /*
-                file[funcOffset] = randomBot;
-
-                if (game_id == "MEDABOTSRKSVA9BPE9" || game_id == "MEDABOTSRKSVA9BEE9")
-                {
-                    file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
-                    file[funcOffset - 0xE] = medal;
-                    Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
-                    Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
-                }
-                else
-                {
-                    file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
-                    file[funcOffset - 0x4] = medal;
-                    Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
-                    Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
-                }
-                */
             }
 
             //////////////////////////////////////////////////////
