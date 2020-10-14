@@ -414,6 +414,15 @@ namespace Clean_Randomizer
                     textParser.addMessage(messages[i].Item2, medals[replacedMedals[i]].collect_text);
                 }
 
+                //////////////////////////////////////////////////////
+                /// ADD MESSAGES
+                //////////////////////////////////////////////////////
+                List<Message> patchedMessages = loadFile<List<Message>>("./Patched_Messages.json");
+                foreach (Message message in patchedMessages)
+                {
+                    textParser.addMessage((message.id[0], message.id[1]), message.message);
+                }
+
                 TextPatcher textPatcher = new TextPatcher(ref file, 0x47df44, 0x7f5500, textParser.getEncodedMessages());
                 textPatcher.PatchText();
             }
@@ -423,6 +432,12 @@ namespace Clean_Randomizer
             //////////////////////////////////////////////////////
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
+        }
+
+        struct Message
+        {
+            public int[] id;
+            public string message;
         }
 
         struct Medal
