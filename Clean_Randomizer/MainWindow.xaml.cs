@@ -312,39 +312,89 @@ namespace Clean_Randomizer
 
             if (chk_randomize_starter.IsOn)
             {
-                byte randomBot;
+                byte part;
 
                 if ((string)cmb_starter.SelectedItem == "Random")
                 {
-                    randomBot = (byte)rng.Next(0, 0x78);
-                    while (blacklist.Contains(randomBot))
+                    part = (byte)rng.Next(0, 0x78);
+                    while (blacklist.Contains(part))
                     {
-                        randomBot = (byte)rng.Next(0, 0x78);
+                        part = (byte)rng.Next(0, 0x78);
                     }
                 }
                 else
                 {
-                    randomBot = (byte)(cmb_starter.SelectedIndex - 1);
+                    part = (byte)(cmb_starter.SelectedIndex - 1);
                 }
 
-                byte medal = IdTranslator.botMedal(randomBot);
+                byte medal = IdTranslator.botMedal(part);
 
                 randomizer.starterMedal = medal;
 
                 int offset = memory_offsets[game_id]["Starter"];
-                uint funcOffset = 0x044b6c;
+                uint funcOffset = 0x044b58;
 
                 for (int i = 0; i < 4; i++)
                 {
-                    file[offset + 4 * i] = randomBot;
+                    file[offset + 4 * i] = part;
                 }
 
-                if (IdTranslator.isFemale(randomBot))
+                if (IdTranslator.isFemale(part))
                 {
                     file[offset + 16] = 1;
                 }
 
                 file[memory_offsets[game_id]["StartMedal"]] = medal;
+
+                ushort[] replacedFunction = new ushort[]
+                {
+                    //Equip_parts 
+                    0x4a0e,                         //ldr        r2,[PTR_DAT_]
+                    0x7811,           				//ldrb       r1,[r2,#0x0 ]=>DAT_03000be0
+                    0x20c0,                         //mov        r0,#0xc0
+                    (ushort)(0x2300 + medal),        //mov        r3,#medal
+                    0x4308,                         //orr        r0, r1
+                    0x7010,                         //strb       r0,[r2,#0x0 ]=>DAT_03000be0
+                    0x490c,                         //ldr        r1,[PTR_DAT_]
+                    0x2003,           				//mov        r0,#0x3
+                    0x7008,                         //strb       r0,[r1,#0x0 ]=>DAT_030017a0
+                    0x708b,                         //strb       r3,[r1,#0x2 ]=>DAT_030017a2
+                    (ushort)(0x2000 + part),         //mov        r0,#part
+                    0x70c8,                         //strb       r0,[r1,#0x3 ]=>DAT_030017a3
+                    0x7108,                         //strb       r0,[r1,#0x4 ]=>DAT_030017a4
+                    0x7148,                         //strb       r0,[r1,#0x5 ]=>DAT_030017a5
+                    0x7188,                         //strb       r0,[r1,#0x6 ]=>DAT_030017a6
+                    0x4909,                         //ldr        r1,[->parts_in_inventory]
+                    0x1c08,           				//add        r0, r1,#0x0
+                    (ushort)(0x3000 + part * 2 + 1), //add        r0,#part_offset
+                    0x2201,                         //mov        r2,#0x1
+                    0x7002,           				//strb       r2,[r0,#0x0 ]=>DAT_03004c95
+                    0x4b07,                         //ldr        r3,[DAT_]
+                    0x18c8,           				//add        r0, r1, r3
+                    0x7002,                         //strb       r2,[r0,#0x0 ]=>DAT_03004d85
+                    0x33f0,                         //add        r3,#0xf0
+                    0x18c8,                         //add        r0, r1, r3
+                    0x7002,                         //strb       r2,[r0,#0x0 ]=>DAT_03004e75
+                    0x4805,                         //ldr        r0,[DAT_]
+                    0x1809,           				//add        r1, r1, r0
+                    0x700a,                         //strb       r2,[r1,#0x0 ]=>DAT_03004f65
+                    0x4770,                         //bx         lr
+                    // Data and pointers
+                    0x0be0,
+                    0x0300,
+                    0x17a0,
+                    0x0300,
+                    0x4c40,
+                    0x0300,
+                    (ushort)(part * 2 + 1 + 0xf0),
+                    0x0000,
+                    (ushort)(part * 2 + 1 + 3 * 0xf0),
+                    0x0000
+                };
+
+                Utils.WritePayload(file, funcOffset, replacedFunction);
+
+                /*
                 file[funcOffset] = randomBot;
 
                 if (game_id == "MEDABOTSRKSVA9BPE9" || game_id == "MEDABOTSRKSVA9BEE9")
@@ -361,6 +411,7 @@ namespace Clean_Randomizer
                     Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
                     Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 }
+                */
             }
 
             //////////////////////////////////////////////////////

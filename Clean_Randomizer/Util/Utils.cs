@@ -58,6 +58,14 @@ namespace Clean_Randomizer
             }
         }
 
+        public static void WritePayload(byte[] bytes, uint offset, ushort[] payload)
+        {
+            for (uint i = 0; i < payload.Length; i++)
+            {
+                WriteShort(bytes, offset + 2 * i, payload[i]);
+            }
+        }
+
         public static string GetHash(string filename)
         {
             return BytesToString(GetHashSha256(filename));
