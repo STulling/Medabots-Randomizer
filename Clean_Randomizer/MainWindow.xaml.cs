@@ -35,19 +35,24 @@ namespace Clean_Randomizer
             {
                 { "MEDABOTSRKSVA9BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1ba0 },
-                    { "Starter", 0x7852f4}
+                    { "Starter", 0x7852f4},
+                    { "Text", 0x47df44}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
-                    { "Starter", 0x7840c0}
+                    { "Starter", 0x7840c0},
+                    { "Text", 0x47e45c}
                 }},
                 { "MEDABOTSMTBVA8BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c19e0 },
-                    { "Starter", 0x78409B}
+                    { "Starter", 0x78409B},
+                    { "Text", 0x47e43c}
                 }},
                 { "MEDABOTSMTBVA8BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1b80 },
-                    { "Starter", 0x7852cf}
+                    { "Starter", 0x7852cf},
+                    { "Text", 0x47df24}
+
                 }}
             };
 
@@ -407,7 +412,7 @@ namespace Clean_Randomizer
                 messages.Add(((0x00, 0x7b), (0x00, 0x78)));
                 messages.Add(((0x00, 0x7f), (0x00, 0x7c)));
 
-                TextParser textParser = new TextParser(file, 0x47df44);
+                TextParser textParser = new TextParser(file, memory_offsets[game_id]["Text"]);
                 for (int i = 0; i < replacedMedals.Count; i++)
                 {
                     textParser.addMessage(messages[i].Item1, medals[replacedMedals[i]].ikki_text);
@@ -423,7 +428,7 @@ namespace Clean_Randomizer
                     textParser.addMessage((message.id[0], message.id[1]), message.message);
                 }
 
-                TextPatcher textPatcher = new TextPatcher(ref file, 0x47df44, 0x7f5500, textParser.getEncodedMessages());
+                TextPatcher textPatcher = new TextPatcher(ref file, memory_offsets[game_id]["Text"], 0x7f5500, textParser.getEncodedMessages());
                 textPatcher.PatchText();
             }
 
