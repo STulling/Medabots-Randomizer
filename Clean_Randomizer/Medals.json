@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Kuwagata",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"KUWAGATA\" Medal is cool!<NB>Just hit bots until they die!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"KUWAGATA\" Medal is cool!<NB>Just hit bots until they die!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Kabuto",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"KABUTO\" Medal is awesome!<NB>Just shoot bots until they die!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"KABUTO\" Medal is awesome!<NB>Just shoot bots until they die!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Tortoise",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"TORTOISE\" Medal looks interesting!<NB>Shoot high powered lasers that will<NL>surely destroy anything it hits!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"TORTOISE\" Medal looks interesting!<NB>Shoot high powered lasers that will<NL>surely destroy anything it hits!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Jellyfish",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"JELLYFISH\" Medal looks neat!<NB>This very explosive medal will<NL>leave nothing but a Tinpet!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"JELLYFISH\" Medal looks neat!<NB>This very explosive medal will<NL>leave nothing but a Tinpet!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Bear",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"BEAR\" Medal almost looks cuddly!<NB>Damage your opponents with the<NL>power of gravity!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"BEAR\" Medal almost looks cuddly!<NB>Damage your opponents with the<NL>power of gravity!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Spider",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"SPIDER\" Medal looks ready to attack!<NB>Lay traps and punish your opponents<NL>for even thinking of attacking!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"SPIDER\" Medal looks ready to attack!<NB>Lay traps and punish your opponents<NL>for even thinking of attacking!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Snake",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"SNAKE\" Medal looks very cunning!<NB>You'll be impossible to hit once<NL>striking your enemy!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"SNAKE\" Medal looks very cunning!<NB>You'll be impossible to hit once<NL>striking your enemy!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Queen",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"QUEEN\" Medal looks regal!<NB>Stop enemies dead in their tracks<NL>with your beauty!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"QUEEN\" Medal looks regal!<NB>Stop enemies dead in their tracks<NL>with your beauty!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Squid",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"SQUID\" Medal looks ready to strike!<NB>You'll slow your enemies down<NL>to a crawl!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"SQUID\" Medal looks ready to strike!<NB>You'll slow your enemies down<NL>to a crawl!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Phoenix",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"PHOENIX\" Medal looks majestic!<NB>Get ready to incinerate your<NL>opponents!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"PHOENIX\" Medal looks majestic!<NB>Get ready to incinerate your<NL>opponents!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Unicorn",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"UNICORN\" Medal looks beautiful!<NB>No more Medaforce for anyone!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"UNICORN\" Medal looks beautiful!<NB>No more Medaforce for anyone!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Ghost",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"GHOST\" Medal looks spooky!<NB>You'll be immune to lots of attack<NL>types!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"GHOST\" Medal looks spooky!<NB>You'll be immune to lots of attack<NL>types!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Knight",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"KNIGHT\" Medal looks honorable!<NB>No one will get through your Defense!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"KNIGHT\" Medal looks honorable!<NB>No one will get through your Defense!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Mermaid",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"MERMAID\" Medal looks pretty!<NB>You can't die if your parts are<NL>never destroyed!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"MERMAID\" Medal looks pretty!<NB>You can't die if your parts are<NL>never destroyed!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Penguin",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"PENGUIN\" Medal looks adorable!<NB>You can't cease function if your parts<NL>never stay destroyed!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"PENGUIN\" Medal looks adorable!<NB>You can't cease function if your parts<NL>never stay destroyed!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Bat",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"BAT\" Medal looks like it's flying!<NB>Flying Medabots? In your airspace?<NL>Not likely.<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"BAT\" Medal looks like it's flying!<NB>Flying Medabots? In your airspace?<NL>Not likely.<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Kappa",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"KAPPA\" Medal looks like it's swimming!<NB>Swimming Medabots? In your waters?<NL>Not likely.<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"KAPPA\" Medal looks like it's swimming!<NB>Swimming Medabots? In your waters?<NL>Not likely.<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Mouse",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"MOUSE\" Medal looks cute.<NB>Surefire way to win is to always hit<NL>and never get hit!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"MOUSE\" Medal looks cute.<NB>Surefire way to win is to always hit<NL>and never get hit!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Chameleon",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"CHAMELEON\" Medal looks transparent.<NB>Dex nerd incarnate!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"CHAMELEON\" Medal looks transparent.<NB>Dex nerd incarnate!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Rabbit",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"RABBIT\" Medal looks speedy!<NB>Gotta go fast!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"RABBIT\" Medal looks speedy!<NB>Gotta go fast!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Monkey",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"MONKEY\" Medal looks entertaining!<NB>Stop hitting yourself,<NL>stop hitting yourself!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"MONKEY\" Medal looks entertaining!<NB>Stop hitting yourself,<NL>stop hitting yourself!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Devil",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"DEVIL\" Medal looks scary!<NB>Fucks shit up without really trying!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"DEVIL\" Medal looks scary!<NB>Fucks shit up without really trying!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Angel",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"ANGEL\" Medal looks graceful!<NB>If you revive a medabot does that make it<NL>a Zombot or a Medabie?<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"ANGEL\" Medal looks graceful!<NB>If you revive a medabot does that make it<NL>a Zombot or a Medabie?<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Dragon",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"DRAGON\" Medal looks intimidating!<NB>Coordinated attacks for massive damage,<NL>just don't lose your teammates!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"DRAGON\" Medal looks intimidating!<NB>Coordinated attacks for massive damage,<NL>just don't lose your teammates!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Ninja",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"NINJA\" Medal looks stealthy!<NB>Punish opponents for hitting you!<NL>That'll teach em!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"NINJA\" Medal looks stealthy!<NB>Punish opponents for hitting you!<NL>That'll teach em!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Alien",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"ALIEN\" Medal looks out of this world!<NB>Spin the wheel!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"ALIEN\" Medal looks out of this world!<NB>Spin the wheel!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Cat",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"CAT\" Medal looks agile!<NB>Congrats, you lucked into an end-game Medal!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"CAT\" Medal looks agile!<NB>Congrats, you lucked into an end-game Medal!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "?",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"?\" Medal looks confusing!<NB>Congrats, you lucked into an end-game Medal!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"?\" Medal looks confusing!<NB>Congrats, you lucked into an end-game Medal!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "Botro",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"BOTRO\" Medal looks badass!<NB>Attack, attack, and attack is the name<NL>of the game!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"BOTRO\" Medal looks badass!<NB>Attack, attack, and attack is the name<NL>of the game!<NB>Should I take this Medal?<END:2>"
+  },
+  {
+    "name": "!",
+    "ikki_text": "<PORTRAIT:1, 0, 4>This \"!\" Medal looks alarming!<NB>The best medal in the game, have a fun run!<END:0>",
+    "collect_text": "<PORTRAIT:1, 0, 0>This \"!\" Medal looks alarming!<NB>The best medal in the game, have a fun run!<NB>Should I take this Medal?<END:2>"
+  }
+]

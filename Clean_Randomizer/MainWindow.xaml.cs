@@ -2,6 +2,8 @@
 using MahApps.Metro.Controls.Dialogs;
 using MedabotsRandomizer;
 using Microsoft.Win32;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,43 +30,39 @@ namespace Clean_Randomizer
                 { "MEDABOTSMTBVA8BEE9", "Medabots Metabee Version (U)" },
                 { "MEDABOTSMTBVA8BPE9", "Medabots Metabee Version (E)" }
             };
+
             memory_offsets = new Dictionary<string, Dictionary<string, int>>
             {
                 { "MEDABOTSRKSVA9BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1ba0 },
-                    { "Encounters", 0x3bf230 },
-                    { "Parts", 0x3b841c },
                     { "Starter", 0x7852f4},
-                    { "StartMedal", 0x78549c},
-                    { "Events", 0x765ee4}
+                    { "Text", 0x47df44}
                 }},
                 { "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1a00 },
-                    { "Encounters", 0x3bf090 },
-                    { "Parts", 0x3b827c },
                     { "Starter", 0x7840c0},
-                    { "StartMedal", 0x784268}
+                    { "Text", 0x47e45c}
                 }},
                 { "MEDABOTSMTBVA8BEE9", new Dictionary<string, int>{
                     { "Battles", 0x3c19e0 },
-                    { "Encounters", 0x3bf070 },
-                    { "Parts", 0x3b825c },
                     { "Starter", 0x78409B},
-                    { "StartMedal", 0x784243}
+                    { "Text", 0x47e43c}
                 }},
                 { "MEDABOTSMTBVA8BPE9", new Dictionary<string, int>{
                     { "Battles", 0x3c1b80 },
-                    { "Encounters", 0x3bf210 },
-                    { "Parts", 0x3b83fc },
                     { "Starter", 0x7852cf},
-                    { "StartMedal", 0x785477}
+                    { "Text", 0x47df24}
+
                 }}
             };
+
             allBattles = new List<BattleWrapper>();
             allEncounters = new List<EncountersWrapper>();
             allParts = new List<PartWrapper>();
             List<string> bots = IdTranslator.bots.ToList();
+
             bots.Remove("");
+
             cmb_starter.ItemsSource = new List<string>(){ "Random" }.Concat(bots);
             cmb_starter.SelectedItem = "Random";
         }
@@ -92,53 +90,65 @@ namespace Clean_Randomizer
                 AffirmativeButtonText = "OK",
                 ColorScheme = MetroDialogOptions.ColorScheme
             };
+            await this.ShowMessageAsync(big, error, MessageDialogStyle.Affirmative, mySettings);
+        }
 
-            MessageDialogResult result = await this.ShowMessageAsync(big, error, MessageDialogStyle.Affirmative, mySettings);
+        private void addOffsets()
+        {
+            byte[] shopBytes  = new byte[] { 0x13, 0x00, 0xFF, 0xFF, 0x13, 0x00, 0x42, 0xFF, 0x13, 0x00 };
+            byte[] eventBytes = new byte[] { 0x2F, 0x1B, 0x03, 0x11, 0x34, 0x00, 0x86, 0x01, 0x01, 0x0A };
+            byte[] encounterBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x9B, 0xF5, 0x9B, 0xA7, 0x9B, 0xF5 };
+            byte[] partBytes = new byte[] { 0x0F, 0x22, 0x02, 0x00, 0x23, 0x15, 0x08, 0x01, 0x08, 0x00 };
+            byte[] startMedalBytes = new byte[] { 0x01, 0x02, 0x00, 0x56, 0x5D, 0x01, 0x62, 0x17, 0x01 };
+            memory_offsets[game_id].Add("ShopContents", Utils.Search(file, shopBytes));
+            memory_offsets[game_id].Add("Events", Utils.Search(file, eventBytes));
+            memory_offsets[game_id].Add("Encounters", Utils.Search(file, encounterBytes));
+            memory_offsets[game_id].Add("Parts", Utils.Search(file, partBytes));
+            memory_offsets[game_id].Add("StartMedal", Utils.Search(file, startMedalBytes) - 1);
         }
 
         private void Load_ROM(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+
             if (openFileDialog.ShowDialog() == true)
             {
                 allBattles.Clear();
                 allEncounters.Clear();
                 allParts.Clear();
+
                 string chosenFile = openFileDialog.FileName;
                 file = File.ReadAllBytes(chosenFile);
                 byte[] id_bytes = new byte[0x12];
                 Array.Copy(file, 0xa0, id_bytes, 0, 0x12);
                 string id_string = Encoding.Default.GetString(id_bytes);
                 game_id = id_string;
+
                 if (id_string.Contains("MEDACORE"))
                 {
                     file = null;
                     ShowNotification("Error!", "Please select an English Medabots ROM\nThe game id corresponds with a Japanese ROM, which is not supported.");
                     return;
                 }
+
                 if (!id_string.Contains("MEDABOTS"))
                 {
                     file = null;
                     ShowNotification("Error!", "Please select a Medabots ROM\nThe game id does not correspond to any Medabots ROM.");
                     return;
                 }
+
                 if (hashes.TryGetValue(id_string, out string recognizedFile))
                 {
                     romLabel.Content = recognizedFile;
+                    addOffsets();
+                    PopulateData(game_id);
                 }
                 else
                 {
                     romLabel.Content = "Unknown ROM";
                 }
             }
-        }
-
-        public static string RandomString(int length)
-        {
-            Random random = new Random();
-            const string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         private void Randomize(object sender, RoutedEventArgs e)
@@ -148,59 +158,82 @@ namespace Clean_Randomizer
                 ShowNotification("Error!", "Please select a ROM before applying.");
                 return;
             }
-            PopulateData(game_id);
-            string seedtext;
-            if (seed_input.Text != "")
-            {
-                seedtext = seed_input.Text;
-            }
-            else
-            {
-                seedtext = RandomString(12);
-            }
+
+            //////////////////////////////////////////////////////
+            /// SETUP RANDOMIZER AND SEED
+            //////////////////////////////////////////////////////
+            string seedtext = (seed_input.Text != "") ? seed_input.Text : Utils.RandomString(12);
             MD5 md5Hasher = MD5.Create();
             byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seedtext));
             int ivalue = BitConverter.ToInt32(hashed, 0);
+
             Random rng = new Random(ivalue);
             randomizer = new Randomizer(allBattles, allEncounters, allParts, rng);
+
+            //////////////////////////////////////////////////////
+            /// RANDOMIZE CHARACTERS
+            //////////////////////////////////////////////////////
+            if (chk_randomize_characters.IsOn)
+            {
+                randomizer.RandomizeCharacters(chk_character_continuity.IsOn);
+            }
+
+            //////////////////////////////////////////////////////
+            /// RANDOMIZE BATTLES
+            //////////////////////////////////////////////////////
             if (chk_randomize_battles.IsOn)
             {
-                float mixedchance = 0;
-                if (chk_allow_mixed_bots.IsOn)
-                    mixedchance = (float)(sl_mixed_bots.Value / 100);
+                float mixedchance = chk_allow_mixed_bots.IsOn ? (float)(sl_mixed_bots.Value / 100) : 0;
                 bool keep_team_structure = chk_keep_battle_structure.IsOn;
                 bool balanced_medal_level = chk_balanced_bot_levels.IsOn;
                 bool keep_battle_continuity = chk_battle_continuity.IsOn;
+
                 randomizer.RandomizeBattles(keep_team_structure, balanced_medal_level, mixedchance, keep_battle_continuity);
             }
-            if (chk_randomize_characters.IsOn)
-            {
-                bool continuity = chk_character_continuity.IsOn;
-                randomizer.RandomizeCharacters(continuity);
-            }
+
             randomizer.fixSoftlock();
             int amount_of_battles = 0xf5;
             int battle_size = 0x28;
+
             for (int i = 0; i <= amount_of_battles; i++)
             {
-                int battle_address = MedabotsRandomizer.Utils.GetAdressAtPosition(file, memory_offsets[game_id]["Battles"] + 4 * i);
+                int battle_address = Utils.GetAdressAtPosition(file, memory_offsets[game_id]["Battles"] + 4 * i);
                 byte[] battle = StructUtils.getBytes(allBattles[i].content);
                 Array.Copy(battle, 0, file, battle_address, battle_size);
             }
+            //////////////////////////////////////////////////////
+            /// RANDOM SHOPS
+            //////////////////////////////////////////////////////
+            if (chk_random_shops.IsOn)
+            {
+                for (int i = 0; i <= 0x3B; i++)
+                {
+                    if (file[memory_offsets[game_id]["ShopContents"] + i] != 0xff)
+                    {
+                        file[memory_offsets[game_id]["ShopContents"] + i] = (byte)rng.Next(0, 0x78);
+                    }
+                }
+            }
+            //////////////////////////////////////////////////////
+            /// CODE PATCHES
+            //////////////////////////////////////////////////////
             if (chk_code_patches.IsOn)
             {
                 uint jumpOffset = 0x104;
                 uint hookOffset = 0x7f4500;
                 uint trainerOffset = hookOffset + 0xD0;
-                uint instr1 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset);
-                uint instr2 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 4);
-                uint instr3 = (uint)MedabotsRandomizer.Utils.GetIntAtPosition(file, (int)jumpOffset + 8);
+
+                uint instr1 = (uint)Utils.GetIntAtPosition(file, (int)jumpOffset);
+                uint instr2 = (uint)Utils.GetIntAtPosition(file, (int)jumpOffset + 4);
+                uint instr3 = (uint)Utils.GetIntAtPosition(file, (int)jumpOffset + 8);
+
                 uint[] jumpPayload = new uint[]
                 {
                     0xE92D8000,                         // push r15
                     0xE51FF004,                         // ldr r15, traineraddr
                     0x08000000 + hookOffset             // hookOffset
                 };
+
                 uint[] hookPayload = new uint[]
                 {
                     0xE92D4000,                         // push r14
@@ -219,8 +252,10 @@ namespace Clean_Randomizer
                     instr3,                             // --- original instruction #3 ---
                     0xE8BD8000                          // pop r15
                 };
+
                 List<uint> trainerPayloadList = new List<uint>();
                 Dictionary<uint, ushort> codePatches = new Dictionary<uint, ushort>();
+
                 if (chk_instant_text.IsOn)
                 {
                     trainerPayloadList.AddRange(new uint[]{
@@ -252,13 +287,18 @@ namespace Clean_Randomizer
                     // Return
                     0xE12FFF1E                          // bx r15
                 );
+
                 uint[] trainerPayload = trainerPayloadList.ToArray();
-                MedabotsRandomizer.Utils.WritePayload(file, jumpOffset, jumpPayload);
-                MedabotsRandomizer.Utils.WritePayload(file, hookOffset, hookPayload);
-                MedabotsRandomizer.Utils.WritePayload(file, trainerOffset, trainerPayload);
-                MedabotsRandomizer.Utils.WritePatches(file, codePatches);
+
+                Utils.WritePayload(file, jumpOffset, jumpPayload);
+                Utils.WritePayload(file, hookOffset, hookPayload);
+                Utils.WritePayload(file, trainerOffset, trainerPayload);
+                Utils.WritePatches(file, codePatches);
             }
 
+            //////////////////////////////////////////////////////
+            /// RANDOM STARTER
+            //////////////////////////////////////////////////////
             byte[] blacklist = new byte[]{1, 3, 6, 7, 8,
                                             14, 15, 17, 18,
                                             19, 20, 22, 23,
@@ -272,58 +312,201 @@ namespace Clean_Randomizer
 
             if (chk_randomize_starter.IsOn)
             {
-                byte randomBot;
+                byte part;
+
                 if ((string)cmb_starter.SelectedItem == "Random")
                 {
-                    randomBot = (byte)rng.Next(0, 0x78);
-                    while (blacklist.Contains(randomBot))
+                    part = (byte)rng.Next(0, 0x78);
+                    while (blacklist.Contains(part))
                     {
-                        randomBot = (byte)rng.Next(0, 0x78);
+                        part = (byte)rng.Next(0, 0x78);
                     }
                 }
                 else
                 {
-                    randomBot = (byte)(cmb_starter.SelectedIndex - 1);
+                    part = (byte)(cmb_starter.SelectedIndex - 1);
                 }
-                byte medal = IdTranslator.botMedal(randomBot);
+
+                byte medal = IdTranslator.botMedal(part);
+
+                randomizer.starterMedal = medal;
+
                 int offset = memory_offsets[game_id]["Starter"];
-                uint funcOffset = 0x044b6c;
+                uint funcOffset = 0x044b58;
+
                 for (int i = 0; i < 4; i++)
                 {
-                    file[offset + 4 * i] = randomBot;
+                    file[offset + 4 * i] = part;
                 }
-                if (IdTranslator.isFemale(randomBot))
+
+                if (IdTranslator.isFemale(part))
                 {
                     file[offset + 16] = 1;
                 }
+
                 file[memory_offsets[game_id]["StartMedal"]] = medal;
+
+                ushort[] replacedFunction = new ushort[]
+                {
+                    //Equip_parts 
+                    0x4a0e,                         //ldr        r2,[PTR_DAT_]
+                    0x7811,           				//ldrb       r1,[r2,#0x0 ]=>DAT_03000be0
+                    0x20c0,                         //mov        r0,#0xc0
+                    (ushort)(0x2300 + medal),        //mov        r3,#medal
+                    0x4308,                         //orr        r0, r1
+                    0x7010,                         //strb       r0,[r2,#0x0 ]=>DAT_03000be0
+                    0x490c,                         //ldr        r1,[PTR_DAT_]
+                    0x2003,           				//mov        r0,#0x3
+                    0x7008,                         //strb       r0,[r1,#0x0 ]=>DAT_030017a0
+                    0x708b,                         //strb       r3,[r1,#0x2 ]=>DAT_030017a2
+                    (ushort)(0x2000 + part),         //mov        r0,#part
+                    0x70c8,                         //strb       r0,[r1,#0x3 ]=>DAT_030017a3
+                    0x7108,                         //strb       r0,[r1,#0x4 ]=>DAT_030017a4
+                    0x7148,                         //strb       r0,[r1,#0x5 ]=>DAT_030017a5
+                    0x7188,                         //strb       r0,[r1,#0x6 ]=>DAT_030017a6
+                    0x4909,                         //ldr        r1,[->parts_in_inventory]
+                    0x1c08,           				//add        r0, r1,#0x0
+                    (ushort)(0x3000 + part * 2 + 1), //add        r0,#part_offset
+                    0x2201,                         //mov        r2,#0x1
+                    0x7002,           				//strb       r2,[r0,#0x0 ]=>DAT_03004c95
+                    0x4b07,                         //ldr        r3,[DAT_]
+                    0x18c8,           				//add        r0, r1, r3
+                    0x7002,                         //strb       r2,[r0,#0x0 ]=>DAT_03004d85
+                    0x33f0,                         //add        r3,#0xf0
+                    0x18c8,                         //add        r0, r1, r3
+                    0x7002,                         //strb       r2,[r0,#0x0 ]=>DAT_03004e75
+                    0x4805,                         //ldr        r0,[DAT_]
+                    0x1809,           				//add        r1, r1, r0
+                    0x700a,                         //strb       r2,[r1,#0x0 ]=>DAT_03004f65
+                    0x4770,                         //bx         lr
+                    // Data and pointers
+                    0x0be0,
+                    0x0300,
+                    0x17a0,
+                    0x0300,
+                    0x4c40,
+                    0x0300,
+                    (ushort)(part * 2 + 1 + 0xf0),
+                    0x0000,
+                    (ushort)(part * 2 + 1 + 3 * 0xf0),
+                    0x0000
+                };
+
+                Utils.WritePayload(file, funcOffset, replacedFunction);
+
+                /*
                 file[funcOffset] = randomBot;
+
                 if (game_id == "MEDABOTSRKSVA9BPE9" || game_id == "MEDABOTSRKSVA9BEE9")
                 {
                     file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
                     file[funcOffset - 0xE] = medal;
-                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
-                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
+                    Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
+                    Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 }
                 else
                 {
                     file[funcOffset + 0xE] = (byte)(randomBot * 2 + 1);
                     file[funcOffset - 0x4] = medal;
-                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
-                    MedabotsRandomizer.Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
+                    Utils.WriteInt(file, funcOffset + 0x34, (uint)(randomBot * 2 + 1) + 0xf0);
+                    Utils.WriteInt(file, funcOffset + 0x38, (uint)(randomBot * 2 + 1) + 3 * 0xf0);
                 }
+                */
             }
-            /*
-            for (int i  = memory_offsets[game_id]["Events"]; i < 0x785ee4; i++ )
+
+            //////////////////////////////////////////////////////
+            /// RANDOM MEDALS
+            //////////////////////////////////////////////////////
+            if (chk_random_medal.IsOn)
             {
-                if (file[i] == 0x3C)
+                for (int i = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;)
                 {
-                    Trace.WriteLine(file[i + 1]);
+                    byte op = file[i];
+                    if (op == 0x3C)
+                    {
+                        Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(file[i + 1]));
+                        if (i + 1 == memory_offsets[game_id]["StartMedal"])
+                        {
+                            Trace.WriteLine("Is random starter, skipping...");
+                        }
+                        else
+                        {
+                            var randomMedal = randomizer.GetRandomMedal(file[i + 1]);
+
+                            file[i + 1] = randomMedal;
+                            Trace.WriteLine("Set Medal to: " + IdTranslator.IdToMedal(file[i + 1]));
+                        }
+                    }
+
+                    if (op == 0x2F)
+                    {
+                        //multiconditional jump
+                        i += file[i + 1] + 1;
+                    }
+                    else
+                    {
+                        i += IdTranslator.operationBytes[op];
+                    }
                 }
+                //////////////////////////////////////////////////////
+                /// FIX MESSAGES
+                //////////////////////////////////////////////////////
+                List<byte> origMedals = new List<byte> { 15, 16, 17, 18, 19, 20 };
+                List<byte> replacedMedals = origMedals.Select(x => randomizer.medalExchanges[x]).ToList();
+
+                List<Medal> medals = loadFile<List<Medal>>("./Medals.json");
+                List<((int, int), (int, int))> messages = new List<((int, int), (int, int))>();
+                messages.Add(((0x00, 0x6b), (0x00, 0x68)));
+                messages.Add(((0x00, 0x6f), (0x00, 0x6c)));
+                messages.Add(((0x00, 0x73), (0x00, 0x70)));
+                messages.Add(((0x00, 0x77), (0x00, 0x74)));
+                messages.Add(((0x00, 0x7b), (0x00, 0x78)));
+                messages.Add(((0x00, 0x7f), (0x00, 0x7c)));
+
+                TextParser textParser = new TextParser(file, memory_offsets[game_id]["Text"]);
+                for (int i = 0; i < replacedMedals.Count; i++)
+                {
+                    textParser.addMessage(messages[i].Item1, medals[replacedMedals[i]].ikki_text);
+                    textParser.addMessage(messages[i].Item2, medals[replacedMedals[i]].collect_text);
+                }
+
+                //////////////////////////////////////////////////////
+                /// ADD MESSAGES
+                //////////////////////////////////////////////////////
+                List<Message> patchedMessages = loadFile<List<Message>>("./Patched_Messages.json");
+                foreach (Message message in patchedMessages)
+                {
+                    textParser.addMessage((message.id[0], message.id[1]), message.message);
+                }
+
+                TextPatcher textPatcher = new TextPatcher(ref file, memory_offsets[game_id]["Text"], 0x7f5500, textParser.getEncodedMessages());
+                textPatcher.PatchText();
             }
-            */
+
+            //////////////////////////////////////////////////////
+            /// WRITE TO FILE
+            //////////////////////////////////////////////////////
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
+        }
+
+        struct Message
+        {
+            public int[] id;
+            public string message;
+        }
+
+        struct Medal
+        {
+            public string name;
+            public string ikki_text;
+            public string collect_text;
+        }
+
+        private T loadFile<T>(string fileName)
+        {
+            using (StreamReader file = File.OpenText(fileName))
+                return JsonConvert.DeserializeObject<T>(file.ReadToEnd());
         }
     }
 }

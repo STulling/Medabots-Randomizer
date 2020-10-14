@@ -40,6 +40,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,9 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -108,8 +112,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Randomizer.cs" />
-    <Compile Include="StructUtils.cs" />
-    <Compile Include="Utils.cs" />
+    <Compile Include="TextParser.cs" />
+    <Compile Include="TextPatcher.cs" />
+    <Compile Include="Util\StructUtils.cs" />
+    <Compile Include="Util\Utils.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,13 +124,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseWrapper.cs" />
-    <Compile Include="Battle.cs" />
-    <Compile Include="BattleWrapper.cs" />
-    <Compile Include="DataPopulator.cs" />
-    <Compile Include="Encounter.cs" />
-    <Compile Include="EncountersWrapper.cs" />
-    <Compile Include="FieldWrappers.cs" />
+    <Compile Include="Wrappers\BaseWrapper.cs" />
+    <Compile Include="Data\Battle.cs" />
+    <Compile Include="Wrappers\BattleWrapper.cs" />
+    <Compile Include="Data\DataPopulator.cs" />
+    <Compile Include="Data\Encounter.cs" />
+    <Compile Include="Wrappers\EncountersWrapper.cs" />
+    <Compile Include="Wrappers\FieldWrappers.cs" />
     <Compile Include="IdTranslator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -132,8 +138,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Part.cs" />
-    <Compile Include="PartWrapper.cs" />
+    <Compile Include="Data\Part.cs" />
+    <Compile Include="Wrappers\PartWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -151,7 +157,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Bots.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Medals.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="Patched_Messages.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -173,6 +188,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Objects\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
