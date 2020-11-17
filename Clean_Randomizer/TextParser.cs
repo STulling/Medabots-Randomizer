@@ -29,8 +29,9 @@ namespace Clean_Randomizer
 
         public void addMessage((int, int) id, string message)
         {
-            messages.Add(id, message);
-        }
+            if (!messages.ContainsKey(id))
+                messages.Add(id, message);
+        }   
 
         private char[] encoding = new char[]
         {

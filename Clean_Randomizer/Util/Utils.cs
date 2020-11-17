@@ -66,6 +66,14 @@ namespace Clean_Randomizer
             }
         }
 
+        public static void WritePayload(byte[] bytes, uint offset, byte[] payload)
+        {
+            for (uint i = 0; i < payload.Length; i++)
+            {
+                bytes[offset + i] =  payload[i];
+            }
+        }
+
         public static string GetHash(string filename)
         {
             return BytesToString(GetHashSha256(filename));
@@ -115,6 +123,19 @@ namespace Clean_Randomizer
                 }
             }
             return -1;
+        }
+
+        public static List<int> SearchAll(byte[] haystack, byte[] needle)
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i <= haystack.Length - needle.Length; i++)
+            {
+                if (match(haystack, needle, i))
+                {
+                    result.Add(i);
+                }
+            }
+            return result;
         }
 
         private static bool match(byte[] haystack, byte[] needle, int start)

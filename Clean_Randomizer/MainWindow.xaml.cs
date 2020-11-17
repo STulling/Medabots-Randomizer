@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using Clean_Randomizer.Util;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using MedabotsRandomizer;
 using Microsoft.Win32;
@@ -119,6 +120,9 @@ namespace Clean_Randomizer
 
                 string chosenFile = openFileDialog.FileName;
                 file = File.ReadAllBytes(chosenFile);
+                Trace.WriteLine(file.Length);
+                int newsize = 8388608 * 2;
+                Array.Resize<byte>(ref file, newsize);
                 byte[] id_bytes = new byte[0x12];
                 Array.Copy(file, 0xa0, id_bytes, 0, 0x12);
                 string id_string = Encoding.Default.GetString(id_bytes);
@@ -467,6 +471,106 @@ namespace Clean_Randomizer
 
             TextPatcher textPatcher = new TextPatcher(ref file, memory_offsets[game_id]["Text"], 0x7f5500, textParser2.getEncodedMessages());
             textPatcher.PatchText();
+
+            //////////////////////////////////////////////////////
+            /// Gender-Neutral Bots
+            //////////////////////////////////////////////////////
+
+            byte[] palette = new byte[] { 0x00, 0x00, 0xbc, 0xff, 0xf7, 0xee, 0x51, 0x56, 0x28, 
+                                          0x2D, 0x7f, 0x8f, 0x7e, 0x92, 0x78, 0x95, 0xae, 0xfe,
+                                          0xa9, 0x75, 0x68, 0x65, 0xc4, 0x4c, 0x83, 0x1c, 0xff, 
+                                          0xff, 0xff, 0xff, 0xff, 0xff };
+
+            byte[] newPalette = new byte[] {  0x00, 0x00, 0xbc, 0xff, 0xf7, 0xee, 0x51, 0x56, 0x28,
+                                              0x2D, 0x7f, 0x8f, 0x7e, 0x92, 0x78, 0x95, 0xff, 0x7f,
+                                              0x39, 0x67, 0x94, 0x52, 0x10, 0x42, 0x83, 0x1c, 0xff,
+                                              0xff, 0xff, 0xff, 0xff, 0xff };
+
+            foreach (uint loc in Utils.SearchAll(file, palette))
+            {
+                Utils.WritePayload(file, loc, newPalette);
+            }
+
+            foreach (PartWrapper part in allParts)
+            {
+                part.content.gender = 0;
+            }
+
+            for (int i = 0; i < allParts.Count; i++)
+            {
+                byte[] battle = StructUtils.getBytes(allParts[i].content);
+                int part_address = memory_offsets[game_id]["Parts"] + battle.Length * i;
+                Array.Copy(battle, 0, file, part_address, battle.Length);
+            }
+
+            for (int i = memory_offsets[game_id]["Events"]; i < memory_offsets[game_id]["Events"] + 0x18000;)
+            {
+                byte op = file[i];
+                if (op == 0x3D)
+                {
+                    file[i + 1] = 0;
+                }
+                if (op == 0x2F)
+                {
+                    //multiconditional jump
+                    i += file[i + 1] + 1;
+                }
+                else
+                {
+                    i += IdTranslator.operationBytes[op];
+                }
+            }
+
+            //////////////////////////////////////////////////////
+            /// DOG MODE
+            //////////////////////////////////////////////////////
+
+            byte[] salty = new byte[] { 0x13, 0x1b, 0x26, 0x2e, 0x33, 0xfe};
+
+            uint ptr = 0x483714;
+            Utils.WritePayload(file, ptr, salty);
+            //Utils.WriteInt(file, 0x3f7ea0, 0x085D81c4);
+
+            // Change sprite to salty.
+            for (int i = 0; i <= 191; i++)
+            {
+                int address = Utils.GetAdressAtPosition(file, 0x413180 + 4 * i);
+                int j = 0;
+                while (true)
+                {
+                    if (file[address + j] != 0xff)
+                    {
+                        if (file[address + j] == 0x00)
+                        {
+                            file[address + j] = 0x05;
+                        }
+                        else if (file[address + j] == 0x05)
+                        {
+                            file[address + j] = 0x00;
+                        }
+                        j++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            // New Sprite
+            List<ImageData> patchedPortraits = new List<ImageData>();
+            string[] files = Directory.GetFiles(".\\portraits\\", "*.bmp");
+            foreach (string file in files)
+            {
+                patchedPortraits.Add(ImageLoader.LoadImage(Path.GetFileName(file).Split('.')[0]));
+            }
+            for (int i = 0; i < patchedPortraits.Count; i++)
+            {
+                uint portraitLocation = (uint)(0x08900000 + 0x1200 * i);
+                Utils.WriteInt(file, (uint)(0x3afea8 + (patchedPortraits[i].character * 9 + patchedPortraits[i].expression) * 4), portraitLocation);
+                Utils.WritePayload(file, portraitLocation - 0x8000000, Malias2.Compress(patchedPortraits[i].data));
+                Utils.WritePayload(file, (uint)(0x4bf088 + patchedPortraits[i].character * 4), patchedPortraits[i].palette);
+            }
 
             //////////////////////////////////////////////////////
             /// WRITE TO FILE

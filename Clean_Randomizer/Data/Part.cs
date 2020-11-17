@@ -11,7 +11,7 @@ namespace MedabotsRandomizer
         public byte medal_compatibility;
         byte technique_legtype;
         byte speciality;
-        byte gender;
+        public byte gender;
         byte armor;
         byte RoS;
         byte power;

@@ -9,6 +9,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.IO;
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Encodings.Web;
 
 namespace MedabotsRandomizer
 {
@@ -530,6 +532,28 @@ namespace MedabotsRandomizer
                 texts.Add(new TextWrapper(textData.Item2, textData.Item3, textAddress, data.ToArray()));
             }
             textList.ItemsSource = texts;
+            List<Message> messages = new List<Message>();
+            foreach (TextWrapper text in texts)
+            {
+                messages.Add(new Message(new int[] { int.Parse(text.Id1), int.Parse(text.Id2) }, decode(text.data)));
+            }
+            JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions();
+            jsonSerializerOptions.WriteIndented = true;
+            jsonSerializerOptions.Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping;
+            string jsonString = JsonSerializer.Serialize(messages, options: jsonSerializerOptions);
+            File.WriteAllText("./messages.json", jsonString);
+        }
+
+        struct Message
+        {
+            public Message(int[] id, string message)
+            {
+                this.id = id;
+                this.message = message;
+            }
+
+            public int[] id { get; }
+            public string message { get; }
         }
 
         private char[] encoding = new char[]

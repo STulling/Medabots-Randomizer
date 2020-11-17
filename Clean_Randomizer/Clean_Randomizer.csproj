@@ -92,6 +92,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
@@ -114,6 +115,8 @@
     <Compile Include="Randomizer.cs" />
     <Compile Include="TextParser.cs" />
     <Compile Include="TextPatcher.cs" />
+    <Compile Include="Util\ImageLoader.cs" />
+    <Compile Include="Util\Malias2.cs" />
     <Compile Include="Util\StructUtils.cs" />
     <Compile Include="Util\Utils.cs" />
     <Page Include="MainWindow.xaml">
@@ -167,6 +170,14 @@
     <None Include="Patched_Messages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Portraits\grit\doc\wingrit.hhc" />
+    <None Include="Portraits\grit\doc\wingrit.hhp" />
+    <None Include="Portraits\grit\grind.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\wingrit.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -191,6 +202,49 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Objects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Portraits\0_4.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Portraits\grit\doc\html\grit.htm" />
+    <Content Include="Portraits\grit\doc\html\gritmake.htm" />
+    <Content Include="Portraits\grit\doc\html\index.htm" />
+    <Content Include="Portraits\grit\doc\html\tonc.css" />
+    <Content Include="Portraits\grit\doc\html\tonc.js" />
+    <Content Include="Portraits\grit\doc\html\wingrit.htm" />
+    <Resource Include="Portraits\grit\doc\img\numbers.png" />
+    <Resource Include="Portraits\grit\doc\img\wingrit.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_area.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_base.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_file.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_img.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_map.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_meta.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_pal.png" />
+    <None Include="Portraits\grit\FreeImage.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\grit.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\grit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\gxplog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\licence-mit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\wingrit.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\grit\wingrit.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
