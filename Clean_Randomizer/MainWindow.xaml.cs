@@ -167,6 +167,7 @@ namespace Clean_Randomizer
             /// SETUP RANDOMIZER AND SEED
             //////////////////////////////////////////////////////
             string seedtext = (seed_input.Text != "") ? seed_input.Text : Utils.RandomString(12);
+            seedtext = "Salty's-Quest";
             MD5 md5Hasher = MD5.Create();
             byte[] hashed = md5Hasher.ComputeHash(Encoding.UTF8.GetBytes(seedtext));
             int ivalue = BitConverter.ToInt32(hashed, 0);

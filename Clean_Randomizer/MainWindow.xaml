@@ -34,11 +34,11 @@
                                  Controls:TextBoxHelper.UseFloatingWatermark="True" />
                         <Controls:ToggleSwitch x:Name="chk_enable_randomizer" Margin="{StaticResource ControlMargin}"
                                                Width="220"
-                                               IsOn="True"
+                                               IsOn="False"
                                                Content="Enable Randomizer"/>
                         <Controls:ToggleSwitch x:Name="chk_code_patches" Margin="{StaticResource ControlMargin}"
                                                Width="220"
-                                               Content="Enable Code Patches" IsOn="True"/>
+                                               Content="Enable Code Patches" IsOn="False"/>
                     </StackPanel>
                     <Button x:Name="btn_apply" Width="220"
                             Style="{DynamicResource MahApps.Styles.Button.Square}" Click="Randomize" Margin="5,147,5.4,0">
