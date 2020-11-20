@@ -570,7 +570,7 @@ namespace Clean_Randomizer
                 uint portraitLocation = (uint)(0x08900000 + 0x1200 * i);
                 Utils.WriteInt(file, (uint)(0x3afea8 + (patchedPortraits[i].character * 9 + patchedPortraits[i].expression) * 4), portraitLocation);
                 Utils.WritePayload(file, portraitLocation - 0x8000000, Malias2.Compress(patchedPortraits[i].data));
-                Utils.WritePayload(file, (uint)(0x4bf088 + patchedPortraits[i].character * 4), patchedPortraits[i].palette);
+                Utils.WritePayload(file, (uint)Utils.GetIntAtPosition(file, 0x3b1768 + patchedPortraits[i].character * 4) - 0x08000000, patchedPortraits[i].palette);
             }
 
             //////////////////////////////////////////////////////
