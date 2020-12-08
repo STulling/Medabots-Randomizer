@@ -208,19 +208,6 @@ namespace Clean_Randomizer
                     byte[] battle = StructUtils.getBytes(allBattles[i].content);
                     Array.Copy(battle, 0, file, battle_address, battle_size);
                 }
-                //////////////////////////////////////////////////////
-                /// RANDOM SHOPS
-                //////////////////////////////////////////////////////
-                if (chk_random_shops.IsOn)
-                {
-                    for (int i = 0; i <= 0x3B; i++)
-                    {
-                        if (file[memory_offsets[game_id]["ShopContents"] + i] != 0xff)
-                        {
-                            file[memory_offsets[game_id]["ShopContents"] + i] = (byte)rng.Next(0, 0x78);
-                        }
-                    }
-                }
 
                 //////////////////////////////////////////////////////
                 /// RANDOM STARTER
@@ -523,6 +510,29 @@ namespace Clean_Randomizer
             }
 
             //////////////////////////////////////////////////////
+            /// PATCH SHOPS
+            //////////////////////////////////////////////////////
+
+            int shop_address = memory_offsets[game_id]["ShopContents"];
+
+            List<ShopData> shops = loadFile<List<ShopData>>("shops.json");
+
+            foreach (ShopData shop in shops)
+            {
+                int shop_id = shop.id;
+                int[] json_shop_data = shop.shopContents;
+                int shop_size = json_shop_data.Length;
+                byte[] newShop = new byte[shop_size];
+                for (int i = 0; i < shop_size; i++)
+                {
+                    newShop[i] = (byte)json_shop_data[i];
+                }
+                uint specific_shop_address = (uint)(shop_address + shop_size * shop_id);
+                Utils.WritePayload(file, specific_shop_address, newShop);
+            }
+
+
+            //////////////////////////////////////////////////////
             /// DOG MODE
             //////////////////////////////////////////////////////
 
@@ -591,6 +601,12 @@ namespace Clean_Randomizer
             public string name;
             public string ikki_text;
             public string collect_text;
+        }
+
+        struct ShopData
+        {
+            public int id;
+            public int[] shopContents;
         }
 
         private T loadFile<T>(string fileName)

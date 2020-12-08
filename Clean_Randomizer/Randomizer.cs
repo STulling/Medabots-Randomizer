@@ -24,6 +24,7 @@ namespace MedabotsRandomizer
             this.rng = rng;
             this.randomizedMedals = new List<int>();
             this.medalExchanges = new Dictionary<byte, byte>();
+
         }
 
         public Dictionary<byte, List<int>> findUniques(BattleBot[] bots, int num_bots)
