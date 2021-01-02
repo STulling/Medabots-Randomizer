@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 
 static unsafe class LZ77
@@ -28,6 +29,10 @@ static unsafe class LZ77
     /// <returns>Decompressed data or null if decompression fails</returns>
     static public byte[] Decompress(byte[] data, int offset)
     {
+        if (offset == 0x912B82)
+        {
+            Trace.WriteLine("okie");
+        }
         fixed (byte* ptr = &data[offset])
         {
             return Decompress(ptr);

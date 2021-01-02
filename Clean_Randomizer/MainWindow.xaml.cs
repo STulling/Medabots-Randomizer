@@ -75,6 +75,7 @@ namespace Clean_Randomizer
         List<EncountersWrapper> allEncounters;
         List<PartWrapper> allParts;
         Randomizer randomizer;
+        MemoryPatcher memoryPatcher;
         string game_id;
 
         private void PopulateData(string id_string)
@@ -147,6 +148,7 @@ namespace Clean_Randomizer
                     romLabel.Content = recognizedFile;
                     addOffsets();
                     PopulateData(game_id);
+                    memoryPatcher = new MemoryPatcher(file, 0x08900000);
                 }
                 else
                 {
@@ -570,17 +572,30 @@ namespace Clean_Randomizer
 
             // New Sprite
             List<ImageData> patchedPortraits = new List<ImageData>();
-            string[] files = Directory.GetFiles(".\\portraits\\", "*.bmp");
-            foreach (string file in files)
+            foreach (string file in Directory.GetFiles(".\\portraits\\", "*.bmp"))
             {
-                patchedPortraits.Add(ImageLoader.LoadImage(Path.GetFileName(file).Split('.')[0]));
+                patchedPortraits.Add(ImageLoader.LoadImage(Path.GetFileName(file).Split('.')[0], "portraits"));
             }
             for (int i = 0; i < patchedPortraits.Count; i++)
             {
-                uint portraitLocation = (uint)(0x08900000 + 0x1200 * i);
-                Utils.WriteInt(file, (uint)(0x3afea8 + (patchedPortraits[i].character * 9 + patchedPortraits[i].expression) * 4), portraitLocation);
-                Utils.WritePayload(file, portraitLocation - 0x8000000, Malias2.Compress(patchedPortraits[i].data));
-                Utils.WritePayload(file, (uint)Utils.GetIntAtPosition(file, 0x3b1768 + patchedPortraits[i].character * 4) - 0x08000000, patchedPortraits[i].palette);
+                byte[] compressedPortrait = DataCompression.CompressPortrait(patchedPortraits[i].data);
+                memoryPatcher.PatchMemoryAndStoreAddress(compressedPortrait, (uint)(0x3afea8 + (patchedPortraits[i].metadata[0] * 9 + patchedPortraits[i].metadata[1]) * 4));
+                memoryPatcher.PatchMemoryAndStoreAddress(patchedPortraits[i].palette, (uint)(0x3b1768 + patchedPortraits[i].metadata[0] * 4));
+            }
+
+            // Overworld Sprites
+            // 083f7ea0 sprites
+            // 083f83e0 palettes
+            List<ImageData> patchedSprites = new List<ImageData>();
+            foreach (string file in Directory.GetFiles(".\\sprites\\", "*.bmp"))
+            {
+                patchedSprites.Add(ImageLoader.LoadImage(Path.GetFileName(file).Split('.')[0], "sprites"));
+            }
+            for (int i = 0; i < patchedSprites.Count; i++)
+            {
+                byte[] compressedSprite = DataCompression.CompressSprite(patchedSprites[i].data);
+                memoryPatcher.PatchMemoryAndStoreAddress(compressedSprite, (uint)(0x3f7ea0 + patchedSprites[i].metadata[0] * 4));
+                memoryPatcher.PatchMemoryAndStoreAddress(patchedSprites[i].palette, (uint)(0x3f83e0 + patchedSprites[i].metadata[0] * 4));
             }
 
             //////////////////////////////////////////////////////

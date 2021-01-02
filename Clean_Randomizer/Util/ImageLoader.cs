@@ -13,17 +13,16 @@ namespace Clean_Randomizer.Util
     {
         public byte[] data;
         public byte[] palette;
-        public int character;
-        public int expression;
+        public int[] metadata;
 
-        public ImageData(int character, int expression, byte[] data, byte[] palette)
+        public ImageData(int[] metadata, byte[] data, byte[] palette)
         {
-            this.character = character;
-            this.expression = expression;
+            this.metadata = metadata;
             this.data = data;
             this.palette = palette;
         }
     }
+
     public static class ImageLoader
     {
         private static void swap(byte[] data, int one, int other)
@@ -33,26 +32,24 @@ namespace Clean_Randomizer.Util
             data[other] = tmp;
         }
 
-        public static ImageData LoadImage(string file)
+        public static ImageData LoadImage(string file, string folder)
         {
             string[] parts = file.Split('_');
-            int character = int.Parse(parts[0]);
-            int expression = int.Parse(parts[1]);
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
             {
                 WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,
-                FileName = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\portraits\\grit\\grit.exe",
-                WorkingDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\portraits\\",
+                FileName = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\grit\\grit.exe",
+                WorkingDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location) + "\\" + folder + "\\",
                 Arguments = file + ".bmp -gu16 -gt -ftbin -fh! -pn16"
             };
             process.StartInfo = startInfo;
             process.Start();
             process.WaitForExit();
-            byte[] palette = File.ReadAllBytes(".\\portraits\\" + file + ".pal.bin");
-            File.Delete(".\\portraits\\" + file + ".pal.bin");
-            byte[] data = File.ReadAllBytes(".\\portraits\\" + file + ".img.bin");
-            File.Delete(".\\portraits\\" + file + ".img.bin");
+            byte[] palette = File.ReadAllBytes(".\\" + folder + "\\" + file + ".pal.bin");
+            byte[] data = File.ReadAllBytes(".\\" + folder + "\\" + file + ".img.bin");
+            File.Delete(".\\" + folder + "\\" + file + ".pal.bin");
+            File.Delete(".\\" + folder + "\\" + file + ".img.bin");
 
             if (data.Length > 0x1000)
             {
@@ -85,7 +82,7 @@ namespace Clean_Randomizer.Util
                 indexedColors[i] = (byte)((data[2*i + 1] << 4) | (byte)data[2*i]);
             }
 
-            return new ImageData(character, expression, indexedColors, palette);
+            return new ImageData(parts.Select(x => int.Parse(x)).ToArray(), indexedColors, palette);
         }
     }
 }

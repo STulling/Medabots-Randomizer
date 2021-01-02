@@ -367,6 +367,10 @@ namespace MedabotsRandomizer
                 else if (file[offset] == 0x10)
                 {
                     int size = file[offset + 1] | file[offset + 2] << 8 | file[offset + 3] << 16;
+                    if (offset > 0x900000)
+                    {
+                        Trace.WriteLine(offset.ToString("X2") + "  --  " + size.ToString("X2"));
+                    }
                     if (size > 0 && size < 0x8000 && size % 0x20 == 0)
                     {
                         byte[] data = LZ77.Decompress(file, offset);
