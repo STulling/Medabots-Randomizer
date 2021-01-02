@@ -219,7 +219,7 @@
     <Content Include="grit\doc\html\tonc.css" />
     <Content Include="grit\doc\html\tonc.js" />
     <Content Include="grit\doc\html\wingrit.htm" />
-    <None Include="sprites\0.bmp">
+    <None Include="sprites\5.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Resource Include="sprites\pixil-frame-0.png" />

@@ -32,7 +32,7 @@ namespace Clean_Randomizer.Util
         }
         public static byte[] CompressSprite(byte[] data)
         {
-            byte[] padded = new byte[data.Length + 200];
+            byte[] padded = new byte[data.Length + 10];
             Array.Copy(data, 0, padded, 0, data.Length);
             List<byte> compressed = new List<byte>();
             compressed.Add(0x10);

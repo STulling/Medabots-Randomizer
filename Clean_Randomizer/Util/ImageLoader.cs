@@ -51,7 +51,8 @@ namespace Clean_Randomizer.Util
             File.Delete(".\\" + folder + "\\" + file + ".pal.bin");
             File.Delete(".\\" + folder + "\\" + file + ".img.bin");
 
-            if (data.Length > 0x1000)
+            /*
+            if (data.Length > 0x1800)
             {
                 byte[] tmp = new byte[data.Length / 2];
                 for (int i = 0; i < tmp.Length; i++)
@@ -60,6 +61,7 @@ namespace Clean_Randomizer.Util
                 }
                 data = tmp;
             }
+            */
 
             
             if (data[0] != 0)
