@@ -485,7 +485,11 @@ namespace MedabotsRandomizer
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             int textPtrPtrOffset = 0x47df44;
+            HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
+            List<TextWrapper> texts = new List<TextWrapper>();
             //int textPtrPtrOffset = 0x44f3d0;
+            //int textPtrOffset = 0x4144d4
+            /*
             HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
             List<TextWrapper> texts = new List<TextWrapper>();
             int amount_of_ptrs = 15;
@@ -501,17 +505,15 @@ namespace MedabotsRandomizer
                     j++;
                 }
             }
-            /*
+            */
             int b = 0;
             while (true)
             {
-                int textOffset = Utils.GetAdressAtPosition(file, 0x411b00 + 4 * b);
+                int textOffset = Utils.GetAdressAtPosition(file, 0x4144d4 + 4 * b);
                 b++;
                 if (textOffset > 0x500000 || textOffset < 0) break;
-                textAdresses.Add(textOffset);
+                textAdresses.Add((textOffset, 0, b));
             }
-            int x = 0;
-            */
             foreach ((int, int, int) textData in textAdresses)
             {
                 int textAddress = textData.Item1;

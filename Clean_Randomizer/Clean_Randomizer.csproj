@@ -167,6 +167,9 @@
     <None Include="Medals.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="operations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Patched_Messages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

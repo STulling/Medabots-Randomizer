@@ -1,0 +1,162 @@
+{
+	"00": {
+		"name": "Nop",
+		"args": []
+	},
+	"01": {
+		"name": "Show_Message_A",
+		"args": [
+			{
+				"name": "id1",
+				"type": "event_bank"
+			},
+			{
+				"name": "id2", 
+				"type": "short"
+			}
+		]
+	},
+	"02": {
+		"name": "Show_Message_B",
+		"args": [
+			{
+				"name": "id1",
+				"type": "event_bank"
+			},
+			{
+				"name": "id2", 
+				"type": "short"
+			}
+		]
+	},
+	"03": {
+		"name": "Close_Message_Box",
+		"args": []
+	},
+	"04": {
+		"name": "Wait_X_Frames",
+		"args": [
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"05": {
+		"name": "Wait_For_Button_Press",
+		"args": []
+	},
+	"0D": {
+		"name": "Player_Face_Direction",
+		"args": [
+			{
+				"name": "dir",
+				"type": "direction"
+			}
+		]
+	},
+	"10": {
+		"name": "Move_Player",
+		"args": [
+			{
+				"name": "step1",
+				"type": "move"
+			},
+			{
+				"name": "step2",
+				"type": "move"
+			},
+			{
+				"name": "step3",
+				"type": "move"
+			},
+			{
+				"name": "step4",
+				"type": "move"
+			}
+		]
+	},
+	"17": {
+		"name": "Set_Event_Variable",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			},
+			{
+				"name": "value",
+				"type": "byte"
+			}
+		]
+	},
+	"1C": {
+		"name": "Rotate_NPC",
+		"args": [
+			{
+				"name": "dir",
+				"type": "direction"
+			}
+		]
+	},
+	"31": {
+		"name": "Yes_or_No_Box",
+		"args": [
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"33": {
+		"name": "Start_Battle",
+		"args": [
+			{
+				"name": "battle",
+				"type": "byte"
+			},
+			{
+				"name": "unk1",
+				"type": "byte"
+			},
+			{
+				"name": "unk2",
+				"type": "byte"
+			}
+		]
+	},
+	"3C": {
+		"name": "Get_Medal",
+		"args": [
+			{
+				"name": "medal",
+				"type": "medal"
+			}
+		]
+	},
+	"3D": {
+		"name": "Get_Tinpet",
+		"args": [
+			{
+				"name": "tinpet",
+				"type": "byte"
+			}
+		]
+	},
+	"59": {
+		"name": "Open_Shop",
+		"args": [
+			{
+				"name": "shop_id",
+				"type": "byte"
+			}
+		]
+	},
+	"62": {
+		"name": "Equip_Starter_Parts",
+		"args": []
+	},
+	"76": {
+		"name": "Start_Medabot_Link",
+		"args": []
+	}
+}

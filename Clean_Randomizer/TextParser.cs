@@ -8,14 +8,18 @@ namespace Clean_Randomizer
 {
     public class TextParser
     {
+        public Dictionary<(int, int), string> origMessages;
         Dictionary<(int, int), string> messages;
         byte[] file;
         int offset;
+        public static TextParser instance;
         public TextParser(byte[] file, int offset)
         {
             this.file = file;
             this.offset = offset;
             messages = new Dictionary<(int, int), string>();
+            origMessages = parseAll();
+            instance = this;
         }
         public Dictionary<(int, int), byte[]> getEncodedMessages()
         {
@@ -59,9 +63,9 @@ namespace Clean_Randomizer
                 while (true)
                 {
                     int textOffset = Utils.GetAdressAtPosition(file, textPtrOffset + 4 * j);
-                    j++;
                     if (textOffset == -0x08000000) break;
                     textAdresses.Add((i, j), parseBytes(textOffset));
+                    j++;
                 }
             }
             return textAdresses;

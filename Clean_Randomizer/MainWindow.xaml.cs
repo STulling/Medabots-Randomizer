@@ -76,6 +76,7 @@ namespace Clean_Randomizer
         List<PartWrapper> allParts;
         Randomizer randomizer;
         MemoryPatcher memoryPatcher;
+        Dictionary<string, Operation> operations;
         string game_id;
 
         private void PopulateData(string id_string)
@@ -598,11 +599,234 @@ namespace Clean_Randomizer
                 memoryPatcher.PatchMemoryAndStoreAddress(patchedSprites[i].palette, (uint)(0x3f83e0 + patchedSprites[i].metadata[0] * 4));
             }
 
+            operations = loadFile<Dictionary<string, Operation>>("operations.json");
+            uint event_table_offset = 0x00769EE4;
+            List<Event> allEvents = new List<Event>();
+            for (short event_id = 0; event_id < 0x8F0; event_id++)
+            {
+                //if (event_id == 0x20) continue;
+                uint bank_offset = (uint)file[event_table_offset + 0x11E0 + event_id] * 0x4000;
+                uint address_in_bank = ((uint)file[event_table_offset + event_id * 2 + 1] << 8) + (uint)file[event_table_offset + event_id * 2] - 0x4000;
+                uint event_offset = (event_table_offset - 0x4000) + address_in_bank + bank_offset;
+                uint i = event_offset;
+                allEvents.Add(Event.fromData(file, event_offset, operations));
+            }
+            Trace.WriteLine("OH SHIT WADUP");
+
             //////////////////////////////////////////////////////
             /// WRITE TO FILE
             //////////////////////////////////////////////////////
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
+        }
+
+        class Event
+        {
+            public Dictionary<uint, string> event_operations;
+
+            private Event(Dictionary<uint, string> event_operations)
+            {
+                this.event_operations = event_operations;
+            }
+
+            public static Event fromData(byte[] file, uint offset, Dictionary<string, Operation> operations)
+            {
+                Dictionary<uint, string> operationMap = new Dictionary<uint, string>();
+                buildEvent(file, offset, operationMap, operations);
+                return new Event(operationMap);
+            }
+
+            public static void buildEvent(byte[] file, uint offset, Dictionary<uint, string> operationMap, Dictionary<string, Operation> operations)
+            {
+                while (true)
+                {
+                    byte op = file[offset];
+                    if (op == 0x2F)
+                    {
+                        //multiconditional jump
+                        List<int> jumps = new List<int>();
+                        jumps.Add(file[offset + 1]);
+                        jumps.Add(file[offset + 2]);
+                        int nArgs = 0;
+                        for (int i = 2; i < 8; i++)
+                        {
+                            int minJump = jumps.Min();
+                            if (minJump == jumps.Count)
+                            {
+                                nArgs = minJump;
+                                break;
+                            }
+                            else
+                            {
+                                jumps.Add(file[offset + 1 + i]);
+                            }
+                        }
+                        int[] args = new int[nArgs];
+                        for (int i = 0; i < nArgs; i++)
+                        {
+                            args[i] = file[offset + 1 + i];
+                        }
+                        string argString = String.Join(",", args);
+                        operationMap[offset] = $"<Multiconditional_Jump: {argString}>";
+                        foreach (uint jump in args)
+                        {
+                            buildEvent(file, offset + jump + 1, operationMap, operations);
+                        }
+                        break;
+                    }
+                    else if (op == 0x06)
+                    {
+                        operationMap[offset] = "<END>";
+                        break;
+                    }
+                    else if (op == 0x19)
+                    {
+                        ushort goto_event = (ushort)((ushort)(file[offset + 1] << 8) + (ushort)file[offset + 2]);
+                        operationMap[offset] = $"<GOTO_EVENT: {goto_event}>";
+                        break;
+                    }
+                    else
+                    {
+                        if (!operations.TryGetValue(op.ToString("X2"), out Operation operation))
+                        {
+                            uint opLength = IdTranslator.operationBytes[op];
+                            IdTranslator.opNames.TryGetValue(op, out string opName);
+                            if (opName == "" || opName == null) opName = $"UNKNOWN({op.ToString("X2")})";
+                            if (opLength > 1)
+                            {
+                                int[] args = new int[opLength - 1];
+                                for (int i = 0; i < opLength - 1; i++)
+                                {
+                                    args[i] = file[offset + i + 1];
+                                }
+                                string argString = String.Join(",", args);
+                                operationMap[offset] = $"<{opName}: {argString}>";
+                            }
+                            else
+                            {
+                                operationMap[offset] = $"<{opName}>";
+                            }
+                            offset += opLength;
+                        }
+                        else
+                        {
+                            uint opLength = (uint)operation.getArgLength() + 1;
+
+                            operationMap[offset] = $"{operation.name}({operation.getArgString(file, offset+1)})";
+
+                            offset += opLength;
+                        }
+                    }
+                }
+            }
+        }
+
+        struct OperationArgument
+        {
+            public string name;
+            public string type;
+
+            public int getByteCount()
+            {
+                switch (type)
+                {
+                    case "short":
+                        return 2;
+                    default:
+                        return 1;
+                }
+            }
+
+            public object readValue(byte[] file, uint offset)
+            {
+                switch (type)
+                {
+                    case "short":
+                        return (file[offset] << 8) + file[offset + 1];
+                    case "medal":
+                        return IdTranslator.IdToMedal(file[offset]);
+                    case "direction":
+                        switch (file[offset])
+                        {
+                            case 0:
+                                return "north";
+                            case 1:
+                                return "south";
+                            case 2:
+                                return "west";
+                            case 3:
+                                return "east";
+                            default:
+                                return file[offset];
+                        }
+                    case "move":
+                        if (file[offset] == 0xFF) return "-";
+                        string direction = "";
+                        switch (file[offset] & 0xF0)
+                        {
+                            case 0x00:
+                                direction = "north";
+                                break;
+                            case 0x10:
+                                direction = "south";
+                                break;
+                            case 0x20:
+                                direction = "west";
+                                break;
+                            case 0x30:
+                                direction = "east";
+                                break;
+                            default:
+                                direction = "?";
+                                break;
+                        }
+                        string length = (file[offset] & 0x0F).ToString();
+                        return $"({direction}, {length})";
+                    case "event_bank":
+                        return file[offset] - 2;
+                    default:
+                        return file[offset];
+                }
+            }
+
+            public Tuple<string, int, object> parseData(byte[] file, uint offset)
+            {
+                object value = readValue(file, offset);
+                int bytes_read = getByteCount();
+                return new Tuple<string, int, object>($"{name}: {value}", bytes_read, value);
+            }
+        }
+
+        struct Operation
+        {
+            public string name;
+            public List<OperationArgument> args;
+
+            public int getArgLength()
+            {
+                int result = 0;
+                foreach (OperationArgument arg in args)
+                {
+                    result += arg.getByteCount();
+                }
+                return result;
+            }
+
+            public string getArgString(byte[] file, uint offset)
+            {
+                List<string> result = new List<string>();
+                List<object> argValues = new List<object>();
+                foreach (OperationArgument arg in args)
+                {
+                    Tuple<string, int, object> res = arg.parseData(file, offset);
+                    offset += (uint)res.Item2;
+                    result.Add(res.Item1);
+                    argValues.Add(res.Item3);
+                }
+                if (name == "Show_Message_A" || name == "Show_Message_B")
+                    return string.Join(", ", result) + " - " + TextParser.instance.origMessages[((int)argValues[0], (int)argValues[1])];
+                return string.Join(", ", result);
+            }
         }
 
         struct Message

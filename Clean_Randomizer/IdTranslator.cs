@@ -1,4 +1,6 @@
-﻿namespace MedabotsRandomizer
+﻿using System.Collections.Generic;
+
+namespace MedabotsRandomizer
 {
     public static class IdTranslator
     {
@@ -949,6 +951,23 @@
         {
             return bestMedal[bot];
         }
+
+        public static Dictionary<byte, string> opNames = new Dictionary<byte, string>()
+        {
+            { 0x0, "nop"},
+            { 0x01, "Show_Message"},
+            { 0x04, "Wait_X_Frames"},
+            { 0x21, "Initiate_NPC??"},
+            { 0x23, "NPC_Schedule_Walk??"},
+            { 0x31, "Yes_or_No_Box"},
+            { 0x33, "Start_Battle"},
+            { 0x3C, "Get_Medal"},
+            { 0x3D, "Get_Tinpet"},
+            { 0x48, "Play_Music"},
+            { 0x59, "Open_Shop"},
+            { 0x62, "Equip_Starter_Parts"}
+        };
+
 
         public static byte[] operationBytes = new byte[] {
         1, //0
