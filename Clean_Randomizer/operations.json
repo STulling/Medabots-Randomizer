@@ -46,6 +46,31 @@
 		"name": "Wait_For_Button_Press",
 		"args": []
 	},
+	"0B": {
+		"name": "Warp",
+		"args": [
+			{
+				"name": "map_id",
+				"type": "byte"
+			},
+			{
+				"name": "unk1",
+				"type": "byte"
+			},
+			{
+				"name": "unk2",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			}
+		]
+	},
 	"0D": {
 		"name": "Player_Face_Direction",
 		"args": [
@@ -76,6 +101,28 @@
 			}
 		]
 	},
+	"13": {
+		"name": "Remove_Event_Permanentely",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			}
+		]
+	},
+	"14": {
+		"name": "Remove_Current_Event_Now",
+		"args": []
+	},
+	"16": {
+		"name": "Remove_Event_Now",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			}
+		]
+	},
 	"17": {
 		"name": "Set_Event_Variable",
 		"args": [
@@ -90,7 +137,7 @@
 		]
 	},
 	"1C": {
-		"name": "Rotate_NPC",
+		"name": "Rotate_Event_NPC",
 		"args": [
 			{
 				"name": "dir",
@@ -98,8 +145,60 @@
 			}
 		]
 	},
+	"21": {
+		"name": "Initiate_NPC",
+		"args": [
+			{
+				"name": "unk1",
+				"type": "byte"
+			},
+			{
+				"name": "sprite_id",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			}
+		]
+	},
+	"23": {
+		"name": "Move_NPC",
+		"args": [
+			{
+				"name": "dir",
+				"type": "direction"
+			},
+			{
+				"name": "steps",
+				"type": "byte"
+			}
+		]
+	},
+	"30": {
+		"name": "Relative_Long_Jump",
+		"args": [
+			{
+				"name": "jump",
+				"type": "short"
+			}
+		]
+	},
 	"31": {
 		"name": "Yes_or_No_Box",
+		"args": [
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"32": {
+		"name": "No_or_Yes_Box",
 		"args": [
 			{
 				"name": "jump",
@@ -124,6 +223,97 @@
 			}
 		]
 	},
+	"34": {
+		"name": "Rotate_NPC",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			},
+			{
+				"name": "dir",
+				"type": "direction"
+			}
+		]
+	},
+	"36": {
+		"name": "Get_Item",
+		"args": [
+			{
+				"name": "item_id",
+				"type": "byte"
+			},
+			{
+				"name": "amount",
+				"type": "byte"
+			}
+		]
+	},
+	"37": {
+		"name": "Lose_Item",
+		"args": [
+			{
+				"name": "item_id",
+				"type": "byte"
+			},
+			{
+				"name": "amount",
+				"type": "byte"
+			}
+		]
+	},
+	"38": {
+		"name": "Get_Part",
+		"args": [
+			{
+				"name": "part",
+				"type": "byte"
+			},
+			{
+				"name": "part_type",
+				"type": "byte"
+			},
+			{
+				"name": "amount",
+				"type": "byte"
+			}
+		]
+	},
+	"39": {
+		"name": "Lose_Part",
+		"args": [
+			{
+				"name": "part",
+				"type": "byte"
+			},
+			{
+				"name": "part_type",
+				"type": "byte"
+			},
+			{
+				"name": "amount",
+				"type": "byte"
+			}
+		]
+	},
+	"3A": {
+		"name": "Get_Money",
+		"args": [
+			{
+				"name": "amount",
+				"type": "short"
+			}
+		]
+	},
+	"3B": {
+		"name": "Lose_Money",
+		"args": [
+			{
+				"name": "amount",
+				"type": "short"
+			}
+		]
+	},
 	"3C": {
 		"name": "Get_Medal",
 		"args": [
@@ -138,6 +328,88 @@
 		"args": [
 			{
 				"name": "tinpet",
+				"type": "byte"
+			}
+		]
+	},
+	"44": {
+		"name": "Play_Sound",
+		"args": [
+			{
+				"name": "sound_id",
+				"type": "byte"
+			}
+		]
+	},
+	"48": {
+		"name": "Play_Music",
+		"args": [
+			{
+				"name": "music_id",
+				"type": "byte"
+			}
+		]
+	},
+	"49": {
+		"name": "Reset_Music",
+		"args": []
+	},
+	"4A": {
+		"name": "Jump_If_Not_Player_Direction",
+		"args": [
+			{
+				"name": "dir",
+				"type": "direction"
+			},
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"4B": {
+		"name": "Jump_If_More_Than_Amount_of_Item",
+		"args": [
+			{
+				"name": "item_id",
+				"type": "byte"
+			},
+			{
+				"name": "amount",
+				"type": "byte"
+			},
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"4C": {
+		"name": "Jump_If_Has_Part",
+		"args": [
+			{
+				"name": "part",
+				"type": "byte"
+			},
+			{
+				"name": "part_type",
+				"type": "byte"
+			},
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"4D": {
+		"name": "Jump_If_Not_Has_Medal",
+		"args": [
+			{
+				"name": "medal_id",
+				"type": "medal_id"
+			},
+			{
+				"name": "jump",
 				"type": "byte"
 			}
 		]
