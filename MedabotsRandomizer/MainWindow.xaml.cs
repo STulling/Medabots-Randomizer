@@ -485,11 +485,10 @@ namespace MedabotsRandomizer
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             int textPtrPtrOffset = 0x47df44;
-            HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
-            List<TextWrapper> texts = new List<TextWrapper>();
+            //HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
+            //List<TextWrapper> texts = new List<TextWrapper>();
             //int textPtrPtrOffset = 0x44f3d0;
             //int textPtrOffset = 0x4144d4
-            /*
             HashSet<(int, int, int)> textAdresses = new HashSet<(int, int, int)>();
             List<TextWrapper> texts = new List<TextWrapper>();
             int amount_of_ptrs = 15;
@@ -505,7 +504,7 @@ namespace MedabotsRandomizer
                     j++;
                 }
             }
-            */
+            /*
             int b = 0;
             while (true)
             {
@@ -514,6 +513,7 @@ namespace MedabotsRandomizer
                 if (textOffset > 0x500000 || textOffset < 0) break;
                 textAdresses.Add((textOffset, 0, b));
             }
+            */
             foreach ((int, int, int) textData in textAdresses)
             {
                 int textAddress = textData.Item1;
@@ -528,6 +528,20 @@ namespace MedabotsRandomizer
                         i++;
                         data.Add(file[textAddress + i]);
                         break;
+                    }
+                    else if (currByte == 0xF7 || currByte == 0xFA || currByte == 0xF9)
+                    {
+                        data.Add(currByte);
+                        data.Add(file[textAddress + i + 1]);
+                        i+=2;
+                    }
+                    else if (currByte == 0xFB)
+                    {
+                        data.Add(currByte);
+                        data.Add(file[textAddress + i + 1]);
+                        data.Add(file[textAddress + i + 2]);
+                        data.Add(file[textAddress + i + 3]);
+                        i += 4;
                     }
                     else
                     {

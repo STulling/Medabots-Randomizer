@@ -759,6 +759,22 @@ namespace Clean_Randomizer
                             default:
                                 return file[offset];
                         }
+                    case "part":
+                        switch (file[offset])
+                        {
+                            case 0:
+                                return "head";
+                            case 1:
+                                return "right";
+                            case 2:
+                                return "left";
+                            case 3:
+                                return "legs";
+                            default:
+                                return "?";
+                        }
+                    case "bot":
+                        return IdTranslator.IdToBot(file[offset]);
                     case "move":
                         if (file[offset] == 0xFF) return "-";
                         string direction = "";

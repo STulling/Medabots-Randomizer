@@ -85,6 +85,20 @@ namespace Clean_Randomizer
                     data.Add(file[textAddress + i]);
                     break;
                 }
+                else if (currByte == 0xF7 || currByte == 0xFA || currByte == 0xF9)
+                {
+                    data.Add(currByte);
+                    data.Add(file[textAddress + i + 1]);
+                    i += 2;
+                }
+                else if (currByte == 0xFB)
+                {
+                    data.Add(currByte);
+                    data.Add(file[textAddress + i + 1]);
+                    data.Add(file[textAddress + i + 2]);
+                    data.Add(file[textAddress + i + 3]);
+                    i += 4;
+                }
                 else
                 {
                     data.Add(currByte);

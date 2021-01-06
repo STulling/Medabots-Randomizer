@@ -266,12 +266,12 @@
 		"name": "Get_Part",
 		"args": [
 			{
-				"name": "part",
-				"type": "byte"
+				"name": "bot",
+				"type": "bot"
 			},
 			{
-				"name": "part_type",
-				"type": "byte"
+				"name": "part",
+				"type": "part"
 			},
 			{
 				"name": "amount",
@@ -283,12 +283,12 @@
 		"name": "Lose_Part",
 		"args": [
 			{
-				"name": "part",
-				"type": "byte"
+				"name": "bot",
+				"type": "bot"
 			},
 			{
-				"name": "part_type",
-				"type": "byte"
+				"name": "part",
+				"type": "part"
 			},
 			{
 				"name": "amount",
@@ -388,12 +388,12 @@
 		"name": "Jump_If_Has_Part",
 		"args": [
 			{
-				"name": "part",
-				"type": "byte"
+				"name": "bot",
+				"type": "bot"
 			},
 			{
-				"name": "part_type",
-				"type": "byte"
+				"name": "part",
+				"type": "part"
 			},
 			{
 				"name": "jump",

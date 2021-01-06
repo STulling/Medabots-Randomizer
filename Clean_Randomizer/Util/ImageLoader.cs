@@ -50,19 +50,6 @@ namespace Clean_Randomizer.Util
             byte[] data = File.ReadAllBytes(".\\" + folder + "\\" + file + ".img.bin");
             File.Delete(".\\" + folder + "\\" + file + ".pal.bin");
             File.Delete(".\\" + folder + "\\" + file + ".img.bin");
-
-            /*
-            if (data.Length > 0x1800)
-            {
-                byte[] tmp = new byte[data.Length / 2];
-                for (int i = 0; i < tmp.Length; i++)
-                {
-                    tmp[i] = data[2 * i];
-                }
-                data = tmp;
-            }
-            */
-
             
             if (data[0] != 0)
             {
@@ -81,7 +68,7 @@ namespace Clean_Randomizer.Util
             byte[] indexedColors = new byte[data.Length / 2];
             for (int i = 0; i < indexedColors.Length; i++)
             {
-                indexedColors[i] = (byte)((data[2*i + 1] << 4) | (byte)data[2*i]);
+                indexedColors[i] = (byte)((data[2*i + 1] << 4) | data[2*i]);
             }
 
             return new ImageData(parts.Select(x => int.Parse(x)).ToArray(), indexedColors, palette);
