@@ -699,7 +699,7 @@ namespace Clean_Randomizer
                                 {
                                     args[i] = file[offset + i + 1];
                                 }
-                                string argString = String.Join(",", args);
+                                string argString = string.Join(",", args);
                                 operationMap[offset] = $"<{opName}: {argString}>";
                             }
                             else
@@ -711,9 +711,7 @@ namespace Clean_Randomizer
                         else
                         {
                             uint opLength = (uint)operation.getArgLength() + 1;
-
-                            operationMap[offset] = $"{operation.name}({operation.getArgString(file, offset+1)})";
-
+                            operationMap[offset] = operation.getString(file, offset);
                             offset += opLength;
                         }
                     }
@@ -828,7 +826,21 @@ namespace Clean_Randomizer
                 return result;
             }
 
-            public string getArgString(byte[] file, uint offset)
+            public string getString(byte[] file, uint offset)
+            {
+                Tuple<string, List<object>> args = getArgString(file, offset + 1);
+                string result = $"{this.name}({args.Item1})";
+                string comment = "";
+                if (name == "Show_Message_A" || name == "Show_Message_B")
+                    comment = TextParser.instance.origMessages[((int)args.Item2[0], (int)args.Item2[1])];
+                if (name == "Warp")
+                    comment = IdTranslator.IdToMap((byte)args.Item2[0]);
+                if (comment != "")
+                    return $"{result} #{comment}";
+                return $"{result}";
+            }
+
+            public Tuple<string, List<object>> getArgString(byte[] file, uint offset)
             {
                 List<string> result = new List<string>();
                 List<object> argValues = new List<object>();
@@ -839,9 +851,7 @@ namespace Clean_Randomizer
                     result.Add(res.Item1);
                     argValues.Add(res.Item3);
                 }
-                if (name == "Show_Message_A" || name == "Show_Message_B")
-                    return string.Join(", ", result) + " - " + TextParser.instance.origMessages[((int)argValues[0], (int)argValues[1])];
-                return string.Join(", ", result);
+                return new Tuple<string, List<object>>(string.Join(", ", result), argValues);
             }
         }
 

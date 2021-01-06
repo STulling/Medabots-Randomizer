@@ -351,7 +351,7 @@
 		]
 	},
 	"49": {
-		"name": "Reset_Music",
+		"name": "Play_Map_Music",
 		"args": []
 	},
 	"4A": {
@@ -406,7 +406,7 @@
 		"args": [
 			{
 				"name": "medal_id",
-				"type": "medal_id"
+				"type": "medal"
 			},
 			{
 				"name": "jump",
