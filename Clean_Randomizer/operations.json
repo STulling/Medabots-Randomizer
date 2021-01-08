@@ -596,7 +596,7 @@
 		"args": [
 			{
 				"name": "sound_id",
-				"type": "byte"
+				"type": "sound"
 			}
 		]
 	},
@@ -622,7 +622,7 @@
 		"args": [
 			{
 				"name": "music_id",
-				"type": "byte"
+				"type": "music"
 			}
 		]
 	},

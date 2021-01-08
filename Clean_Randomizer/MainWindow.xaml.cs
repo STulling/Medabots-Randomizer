@@ -667,7 +667,7 @@ namespace Clean_Randomizer
                             args[i] = file[offset + 1 + i];
                         }
                         string argString = String.Join(",", args);
-                        operationMap[offset] = $"<Multiconditional_Jump: {argString}>";
+                        operationMap[offset] = $"<Conditional_Multijump: {argString}>";
                         foreach (uint jump in args)
                         {
                             buildEvent(file, offset + jump + 1, operationMap, operations);
@@ -862,6 +862,9 @@ namespace Clean_Randomizer
                     comment = TextParser.instance.origMessages[((int)args.Item2[0], (int)args.Item2[1])];
                 if (name == "Warp")
                     comment = IdTranslator.IdToMap((byte)args.Item2[0]);
+                if (name == "Play_Music")
+                    if ((byte)args.Item2[0] <= 51)
+                        comment = IdTranslator.song_names[(byte)args.Item2[0]];
                 if (this.hasJump())
                     comment = (offset + getJump(args.Item2) + 1).ToString("X2");
                 if (comment != "")
