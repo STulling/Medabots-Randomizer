@@ -712,6 +712,12 @@ namespace Clean_Randomizer
                         {
                             uint opLength = (uint)operation.getArgLength() + 1;
                             operationMap[offset] = operation.getString(file, offset);
+                            /*
+                            if (operation.args.Any(x => x.name == "jump"))
+                            {
+                                buildEvent(file, offset + jump + 1, operationMap, operations);
+                            }
+                            */
                             offset += opLength;
                         }
                     }
@@ -723,6 +729,7 @@ namespace Clean_Randomizer
         {
             public string name;
             public string type;
+            public object value;
 
             public int getByteCount()
             {
@@ -740,10 +747,13 @@ namespace Clean_Randomizer
                 switch (type)
                 {
                     case "short":
-                        return (file[offset] << 8) + file[offset + 1];
+                        value = (file[offset] << 8) + file[offset + 1];
+                        return value;
                     case "medal":
+                        value = file[offset];
                         return IdTranslator.IdToMedal(file[offset]);
                     case "direction":
+                        value = file[offset];
                         switch (file[offset])
                         {
                             case 0:
@@ -758,6 +768,7 @@ namespace Clean_Randomizer
                                 return file[offset];
                         }
                     case "part":
+                        value = file[offset];
                         switch (file[offset])
                         {
                             case 0:
@@ -772,7 +783,8 @@ namespace Clean_Randomizer
                                 return "?";
                         }
                     case "bot":
-                        return IdTranslator.IdToBot(file[offset]);
+                        value = file[offset];
+                        return IdTranslator.IdToBot((byte)value);
                     case "move":
                         if (file[offset] == 0xFF) return "-";
                         string direction = "";
@@ -794,13 +806,17 @@ namespace Clean_Randomizer
                                 direction = "?";
                                 break;
                         }
+                        value = file[offset];
                         string length = (file[offset] & 0x0F).ToString();
                         return $"({direction}, {length})";
                     case "event_bank":
-                        return file[offset] - 2;
+                        value = file[offset] - 2;
+                        break;
                     default:
-                        return file[offset];
+                        value = file[offset];
+                        break;
                 }
+                return value;
             }
 
             public Tuple<string, int, object> parseData(byte[] file, uint offset)
@@ -815,6 +831,17 @@ namespace Clean_Randomizer
         {
             public string name;
             public List<OperationArgument> args;
+
+            public bool hasJump()
+            {
+                return args.Any(x => x.name == "jump");
+            }
+
+            public int getJump(List<object> values)
+            {
+                int index = args.FindIndex(x => x.name == "jump");
+                return Convert.ToInt32(values[index]);
+            }
 
             public int getArgLength()
             {
@@ -835,6 +862,8 @@ namespace Clean_Randomizer
                     comment = TextParser.instance.origMessages[((int)args.Item2[0], (int)args.Item2[1])];
                 if (name == "Warp")
                     comment = IdTranslator.IdToMap((byte)args.Item2[0]);
+                if (this.hasJump())
+                    comment = (offset + getJump(args.Item2) + 1).ToString("X2");
                 if (comment != "")
                     return $"{result} #{comment}";
                 return $"{result}";

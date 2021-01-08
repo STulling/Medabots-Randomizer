@@ -7,11 +7,11 @@
 		"name": "Show_Message_A",
 		"args": [
 			{
-				"name": "id1",
+				"name": "bank",
 				"type": "event_bank"
 			},
 			{
-				"name": "id2", 
+				"name": "id", 
 				"type": "short"
 			}
 		]
@@ -20,11 +20,11 @@
 		"name": "Show_Message_B",
 		"args": [
 			{
-				"name": "id1",
+				"name": "bank",
 				"type": "event_bank"
 			},
 			{
-				"name": "id2", 
+				"name": "id", 
 				"type": "short"
 			}
 		]
@@ -46,8 +46,69 @@
 		"name": "Wait_For_Button_Press",
 		"args": []
 	},
+	"07": {
+		"name": "Fade_To_Black",
+		"args": [
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"08": {
+		"name": "Fade_From_Black",
+		"args": [
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"09": {
+		"name": "Fade_To_White",
+		"args": [
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"0A": {
+		"name": "Fade_From_White",
+		"args": [
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
 	"0B": {
-		"name": "Warp",
+		"name": "Warp_A",
+		"args": [
+			{
+				"name": "map_id",
+				"type": "byte"
+			},
+			{
+				"name": "unk1",
+				"type": "byte"
+			},
+			{
+				"name": "unk2",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			}
+		]
+	},
+	"0C": {
+		"name": "Warp_B",
 		"args": [
 			{
 				"name": "map_id",
@@ -80,6 +141,19 @@
 			}
 		]
 	},
+	"0E": {
+		"name": "Player_Hop_In_Place",
+		"args": []
+	},
+	"0F": {
+		"name": "Player_Hop_In_Direction",
+		"args": [
+			{
+				"name": "dir",
+				"type": "direction"
+			}
+		]
+	},
 	"10": {
 		"name": "Move_Player",
 		"args": [
@@ -101,8 +175,26 @@
 			}
 		]
 	},
+	"11": {
+		"name": "Change_Player_Costume",
+		"args": [
+			{
+				"name": "costume_id",
+				"type": "byte"
+			}
+		]
+	},
+	"12": {
+		"name": "Add_Event_Permanently",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			}
+		]
+	},
 	"13": {
-		"name": "Remove_Event_Permanentely",
+		"name": "Remove_Event_Permanently",
 		"args": [
 			{
 				"name": "event_id",
@@ -112,6 +204,10 @@
 	},
 	"14": {
 		"name": "Remove_Current_Event_Now",
+		"args": []
+	},
+	"15": {
+		"name": "Remove_Current_Event_Now_Keep_Collision",
 		"args": []
 	},
 	"16": {
@@ -136,6 +232,32 @@
 			}
 		]
 	},
+	"18": {
+		"name": "Increment_Event_Variable",
+		"args": [
+			{
+				"name": "event_id",
+				"type": "short"
+			}
+		]
+	},
+	"1A": {
+		"name": "NPC_Do_Animation",
+		"args": [
+			{
+				"name": "animation_id",
+				"type": "byte"
+			},
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"1B": {
+		"name": "NPC_Reset_Animation",
+		"args": []
+	},
 	"1C": {
 		"name": "Rotate_Event_NPC",
 		"args": [
@@ -145,11 +267,74 @@
 			}
 		]
 	},
-	"21": {
-		"name": "Initiate_NPC",
+	"1D": {
+		"name": "Hop_Event_NPC",
+		"args": []
+	},
+	"1E": {
+		"name": "Flicker_Event_NPC",
 		"args": [
 			{
-				"name": "unk1",
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"1F": {
+		"name": "Initiate_Moving_Actor_A",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
+			{
+				"name": "sprite_id",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			},
+			{
+				"name": "move",
+				"type": "move"
+			}
+		]
+	},
+	"20": {
+		"name": "Initiate_Moving_Actor_B",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
+			{
+				"name": "sprite_id",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			},
+			{
+				"name": "move",
+				"type": "move"
+			}
+		]
+	},
+	"21": {
+		"name": "Initiate_Actor",
+		"args": [
+			{
+				"name": "actor_id",
 				"type": "byte"
 			},
 			{
@@ -166,15 +351,89 @@
 			}
 		]
 	},
-	"23": {
-		"name": "Move_NPC",
+	"22": {
+		"name": "Rotate_Actor",
 		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
 			{
 				"name": "dir",
 				"type": "direction"
+			}
+		]
+	},
+	"23": {
+		"name": "Move_Actor_A",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
 			},
 			{
-				"name": "steps",
+				"name": "move",
+				"type": "move"
+			}
+		]
+	},
+	"24": {
+		"name": "Move_Actor_B",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
+			{
+				"name": "move",
+				"type": "move"
+			}
+		]
+	},
+	"25": {
+		"name": "Unload_Actor",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			}
+		]
+	},
+	"26": {
+		"name": "Flicker_Actor",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"27": {
+		"name": "Actor_Do_Animation",
+		"args": [
+			{
+				"name": "actor_id",
+				"type": "byte"
+			},
+			{
+				"name": "animation_id",
+				"type": "byte"
+			},
+			{
+				"name": "frames",
+				"type": "byte"
+			}
+		]
+	},
+	"28": {
+		"name": "Hop_Actor",
+		"args": [
+			{
+				"name": "actor_id",
 				"type": "byte"
 			}
 		]
@@ -341,8 +600,25 @@
 			}
 		]
 	},
-	"48": {
+	"45": {
 		"name": "Play_Music",
+		"args": [
+			{
+				"name": "sound_id",
+				"type": "byte"
+			}
+		]
+	},
+	"46": {
+		"name": "Stop_Music",
+		"args": []
+	},
+	"47": {
+		"name": "Fade_Out_Music",
+		"args": []
+	},
+	"48": {
+		"name": "Play_Persistent_Music",
 		"args": [
 			{
 				"name": "music_id",
@@ -414,6 +690,32 @@
 			}
 		]
 	},
+	"4E": {
+		"name": "Jump_If_Not_Has_Money",
+		"args": [
+			{
+				"name": "money",
+				"type": "short"
+			},
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"4F": {
+		"name": "Jump_If_Lost_Robattle",
+		"args": [
+			{
+				"name": "jump",
+				"type": "byte"
+			}
+		]
+	},
+	"56": {
+		"name": "Load_Entities",
+		"args": []
+	},
 	"59": {
 		"name": "Open_Shop",
 		"args": [
@@ -426,6 +728,23 @@
 	"62": {
 		"name": "Equip_Starter_Parts",
 		"args": []
+	},
+	"63": {
+		"name": "Show_Effect",
+		"args": [
+			{
+				"name": "effect_id",
+				"type": "byte"
+			},
+			{
+				"name": "x",
+				"type": "byte"
+			},
+			{
+				"name": "y",
+				"type": "byte"
+			}
+		]
 	},
 	"76": {
 		"name": "Start_Medabot_Link",
