@@ -13,6 +13,8 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Clean_Randomizer
 {
@@ -545,32 +547,6 @@ namespace Clean_Randomizer
             Utils.WritePayload(file, ptr, salty);
             //Utils.WriteInt(file, 0x3f7ea0, 0x085D81c4);
 
-            // Change sprite to salty.
-            for (int i = 0; i <= 191; i++)
-            {
-                int address = Utils.GetAdressAtPosition(file, 0x413180 + 4 * i);
-                int j = 0;
-                while (true)
-                {
-                    if (file[address + j] != 0xff)
-                    {
-                        if (file[address + j] == 0x00)
-                        {
-                            file[address + j] = 0x05;
-                        }
-                        else if (file[address + j] == 0x05)
-                        {
-                            file[address + j] = 0x00;
-                        }
-                        j++;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-            }
-
             // New Sprite
             List<ImageData> patchedPortraits = new List<ImageData>();
             foreach (string file in Directory.GetFiles(".\\portraits\\", "*.bmp"))
@@ -598,6 +574,21 @@ namespace Clean_Randomizer
                 memoryPatcher.PatchMemoryAndStoreAddress(compressedSprite, (uint)(0x3f7ea0 + patchedSprites[i].metadata[0] * 4));
                 memoryPatcher.PatchMemoryAndStoreAddress(patchedSprites[i].palette, (uint)(0x3f83e0 + patchedSprites[i].metadata[0] * 4));
             }
+            /*
+            for (int i = 0; i < 256; i++)
+            {
+                int spriteAddress = Utils.GetAdressAtPosition(file, 0x3f7ea0 + i * 4);
+                if (spriteAddress != -0x8000000)
+                {
+                    int paletteAddress = Utils.GetAdressAtPosition(file, 0x3f83e0 + i * 4);
+                    byte[] overworldSprite = LZ77.Decompress(file, spriteAddress);
+                    overworldSprite = splitBytes(overworldSprite);
+                    byte[] overworldPalette = Utils.ReadBytes(file, paletteAddress, 0x20);
+                    Bitmap image = GetPictureFromData(2, 36, overworldSprite, overworldPalette);
+                    image.Save($"./spritedump/{i}.bmp", ImageFormat.Bmp);
+                }
+            }
+            */
 
             operations = loadFile<Dictionary<string, Operation>>("operations.json");
             uint event_table_offset = 0x00769EE4;
@@ -618,6 +609,73 @@ namespace Clean_Randomizer
             //////////////////////////////////////////////////////
             File.WriteAllBytes(seedtext + ".gba", file);
             ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + seedtext + "\" as \"" + seedtext + ".gba\"");
+        }
+
+        public static byte[] splitBytes(byte[] orig)
+        {
+            byte[] result = new byte[orig.Length * 2];
+            int i = 0;
+            foreach (byte val in orig)
+            {
+                result[i] = (byte)(val & 0x0f);
+                i++;
+                result[i] = (byte)((val & 0xf0) >> 4);
+                i++;
+            }
+            return result;
+        }
+
+        public static byte[] getColors(short palette)
+        {
+            short red_mask = 0x7C00;
+            short green_mask = 0x3E0;
+            short blue_mask = 0x1F;
+
+            byte red_value = (byte)((palette & red_mask) >> 10);
+            byte green_value = (byte)((palette & green_mask) >> 5);
+            byte blue_value = (byte)(palette & blue_mask);
+
+            byte red = (byte)(red_value << 3);
+            byte green = (byte)(green_value << 3);
+            byte blue = (byte)(blue_value << 3);
+
+            return new byte[] { blue, green, red };
+        }
+
+        public static List<byte[]> getTiles(byte[] data, int tilesize)
+        {
+            List<byte[]> result = new List<byte[]>();
+            for (int i = 0; i < data.Length / tilesize; i++)
+            {
+                byte[] tile = new byte[tilesize];
+                Array.Copy(data, i * tilesize, tile, 0, tilesize);
+                result.Add(tile);
+            }
+            return result;
+        }
+
+        public static Bitmap GetPictureFromData(int w, int h, byte[] data, byte[] palette)
+        {
+            Bitmap pic = new Bitmap(w * 8, h * 8, PixelFormat.Format24bppRgb);
+            Color c;
+
+            List<byte[]> tiles = getTiles(data, 0x40);
+            for (int y = 0; y < h; y++)
+            {
+                for (int x = 0; x < w; x++)
+                {
+                    byte[] tile = tiles[x + y * w];
+                    for (int i = 0; i < tile.Length; i++)
+                    {
+                        short color_byte = (short)((palette[tile[i] * 2]) + (palette[tile[i] * 2 + 1] << 8));
+                        byte[] color_bytes = getColors(color_byte);
+                        c = Color.FromArgb(color_bytes[0], color_bytes[1], color_bytes[2]);
+                        pic.SetPixel(i % 8 + x * 8, i / 8 + y * 8, c);
+                    }
+                }
+            }
+
+            return pic;
         }
 
         class Event

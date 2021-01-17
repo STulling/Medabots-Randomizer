@@ -167,5 +167,11 @@ namespace Clean_Randomizer
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+        public static byte[] ReadBytes(byte[] file, int offset, int amount)
+        {
+            byte[] result = new byte[amount];
+            Array.Copy(file, offset, result, 0, amount);
+            return result;
+        }
     }
 }
