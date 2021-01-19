@@ -223,6 +223,115 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Portraits\0_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_3.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_5.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_6.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_7.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\0_8.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_3.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_4.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_5.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_6.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_7.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\114_8.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\130_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\130_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\131_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\132_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\22_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\22_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\22_2.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\23_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\23_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\50_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\50_1.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\5_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\87_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Portraits\33_0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Portraits\grit\doc\html\grit.htm" />
+    <Content Include="Portraits\grit\doc\html\gritmake.htm" />
+    <Content Include="Portraits\grit\doc\html\index.htm" />
+    <Content Include="Portraits\grit\doc\html\tonc.css" />
+    <Content Include="Portraits\grit\doc\html\tonc.js" />
+    <Content Include="Portraits\grit\doc\html\wingrit.htm" />
+    <Resource Include="Portraits\grit\doc\img\numbers.png" />
+    <Resource Include="Portraits\grit\doc\img\wingrit.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_area.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_base.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_file.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_img.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_map.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_meta.png" />
+    <Resource Include="Portraits\grit\doc\img\xpdlg_pal.png" />
+    <None Include="Portraits\grit\FreeImage.dll">
     <Content Include="grit\doc\html\grit.htm" />
     <Content Include="grit\doc\html\gritmake.htm" />
     <Content Include="grit\doc\html\index.htm" />

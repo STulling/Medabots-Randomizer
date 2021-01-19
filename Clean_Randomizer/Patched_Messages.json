@@ -11,210 +11,210 @@
       0,
       1
     ],
-    "message": "<PORTRAIT:1, 0, 4>Good afternoon!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf!<END:0> "
   },
   {
     "id": [
       0,
       2
     ],
-    "message": "<PORTRAIT:0, 27, 0>Good afternoon.<NL>Did you come by to see Dr. Aki again?<NB><PORTRAIT:1, 0, 4>Yup!<NB><PORTRAIT:0, 27, 0>Well, then you should go check his<NL>office all the way in the back.<NB><PORTRAIT:1, 0, 1>Okay, thanks a lot!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>What's a dog doing in here?<NL>Did you come by to see Dr. Aki?<NB><PORTRAIT:1, 0, 4>Arf Arf!<NB><PORTRAIT:0, 27, 0>Well, then you should go check his<NL>office all the way in the back.<NB><PORTRAIT:1, 0, 1>Arf Arf!<NB><PORTRAIT:0, 27, 0>By the way, thanks for playing<NL>Salty's Quest.<NB>Keep in mind this mod wasn't vetted by the ESRB, so there may occasionnaly be strong language and pop culture references.<NB>For any suggestions join the discord.<NB><PORTRAIT:0, 27, 1>Have fun!<END:0>"
   },
   {
     "id": [
       0,
       3
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'm not ready to go home yet.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0><I>sniff sniff...<I><NL>(Dr. Aki's office isn't this way...)<END:0> "
   },
   {
     "id": [
       0,
       4
     ],
-    "message": "<PORTRAIT:0, 27, 0>Later, you should go visit the <NL>museum too.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>So... do you bark at your<NL>medabot?<END:0>"
   },
   {
     "id": [
       0,
       5
     ],
-    "message": "<PORTRAIT:0, 27, 0>If you're looking for Dr. Aki's room, <NL>go to the far back and make a left.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>If you're looking for Dr. Aki's room, <NL>go to the far back and make a left.<NB>(I'm not sure why I'm<NL>telling this to a dog though...)<END:0> "
   },
   {
     "id": [
       0,
       6
     ],
-    "message": "<PORTRAIT:0, 27, 0>I'm gathering data on Medabots.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Are you lost, boy?<END:0>"
   },
   {
     "id": [
       0,
       7
     ],
-    "message": "<PORTRAIT:0, 27, 0>If you love Medabots, then you should<NL>become a researcher too!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>I wish I could robbattle with<NL>my dog.<END:0>"
   },
   {
     "id": [
       0,
       8
     ],
-    "message": "<PORTRAIT:0, 27, 0>We're conducting an experiment on <NL>Medabots here.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Is it take your dog to<NL>work day already?<END:0> "
   },
   {
     "id": [
       0,
       9
     ],
-    "message": "<PORTRAIT:0, 27, 0>First we check the Medabots, and then we<NL>send them off to Medabots Corporation.<END:0> "
+    "message": "<PORTRAIT:0, 27, 1>Well hello. Would you like a treat?<END:0> "
   },
   {
     "id": [
       0,
       10
     ],
-    "message": "<PORTRAIT:0, 27, 0>Don't get in the way of our work.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>...<NB>... ...<NB>...Well now I've seen everything.<END:0> "
   },
   {
     "id": [
       0,
       11
     ],
-    "message": "<PORTRAIT:0, 27, 0>I can't stop what I'm doing now.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>I can't stop what I'm doing right-<NL>IS THAT A DOG WITH A MEDAWATCH!?<END:0> "
   },
   {
     "id": [
       0,
       12
     ],
-    "message": "<PORTRAIT:0, 27, 0>Right now we're in the middle of <NL>a test Robattle.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Right now we're in the middle of <NL>a test Robattle.<NB><PORTRAIT:0, 27, 1>Don't worry, there are no<NL>Peppercats here.<END:0> "
   },
   {
     "id": [
       0,
       13
     ],
-    "message": "<PORTRAIT:0, 27, 0>Medabots···<NB><PORTRAIT:0, 27, 1>are beautiful!!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Will you let me... pet you?<NB><PORTRAIT:0, 27, 1>Hooray!!<END:0> "
   },
   {
     "id": [
       0,
       14
     ],
-    "message": "<PORTRAIT:0, 27, 0>This room is off limits.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Shoo! This room is off limits.<END:0> "
   },
   {
     "id": [
       0,
       15
     ],
-    "message": "<PORTRAIT:0, 27, 0>You be sure to stay out of Miss Nae's way,<NL>and don't make a nuisance of yourself.<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Oh man, what am I going to tell my wife?<NB>If only I had looked up the <NL>'kick the dog' trope on TVtropes.<NB>I hope John Wick doesn't come for me...<END:0> "
   },
   {
     "id": [
       0,
       16
     ],
-    "message": "<PORTRAIT:0, 27, 0>I told you this room was<NL>off limits, kid!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Bad dog! No dogs allowed<NL>in Miss Nae's room!<END:0> "
   },
   {
     "id": [
       0,
       17
     ],
-    "message": "<PORTRAIT:0, 27, 0>I told you this room was<NL>off limits, kid!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>Mangy mutt! I told you<NL>No dogs allowed!<END:0> "
   },
   {
     "id": [
       0,
       18
     ],
-    "message": "<PORTRAIT:1, 0, 0>Um, is this room···<NB><PORTRAIT:0, 27, 0>We've got some very important <NL>research in progress here.<NB>Only those with proper clearance are···<END:0> "
+    "message": "<PORTRAIT:1, 0, 6>Arf arf! (Dang, he hit me so hard<NL>I turned into a boy for a second!)<END:0> "
   },
   {
     "id": [
       0,
       19
     ],
-    "message": "<PORTRAIT:0, 20, 0>What's going on here?<NB><PORTRAIT:0, 27, 1>Ah···<NL>My apologies, Miss Nae.<NB>This kid was trying to get into the room<NL>without permission, so I was just···<NB><PORTRAIT:1, 0, 0>Um···I···<END:0> "
+    "message": "<PORTRAIT:0, 20, 5>What's going on here?<NL>Did you just <I>fucking<I> kick that <I>puppy!?<I><NB><PORTRAIT:0, 27, 1>Ah···<NL>My apologies, Miss Nae.<NB>This stray was trying to sneak into the<NL>room, so I was just···<END:0> "
   },
   {
     "id": [
       0,
       20
     ],
-    "message": "<PORTRAIT:0, 20, 2>Pleased to meet you.<NB>My name is Nae,<NL>what's your name?<NB><PORTRAIT:1, 0, 4>Nice to meet you.<NL>My name is <MEM:0>.<NB><PORTRAIT:0, 27, 0>Nae is Dr. Aki's granddaughter.<NL>She's well known throughout the Medabot<NL>world as the authority on all things that<NL>are related to Medabots.<NB><PORTRAIT:1, 0, 4>Wow, that's amazing!<END:0> "
+    "message": "<PORTRAIT:0, 20, 3>Oh you poor thing!<NB><PORTRAIT:0, 20, 2>My name is Nae, Do you have<NL>a collar? What's your name?<NB><PORTRAIT:1, 0, 4>Arf arf!<NL>My name is <MEM:0>.<END:0>"
   },
   {
     "id": [
       0,
       21
     ],
-    "message": "<PORTRAIT:0, 20, 2>Let us drop the formalities, shall we?<NL>So, do you like Medabots?<NB><PORTRAIT:1, 0, 1>Yup!<NB><PORTRAIT:0, 20, 2>Well then, do you want to come see<NL>my research lab?<NB><PORTRAIT:1, 0, 1>Wha!?<NL>Are you sure it's okay?<NB><PORTRAIT:0, 27, 0>Miss Nae!<NB>Surely you can't be serious about showing<NL>such important research to a kid!<NB><PORTRAIT:0, 20, 2>I really don't mind. <NB>So, shall we go <MEM:0>?<NB><PORTRAIT:1, 0, 1>Okay!<END:0> "
+    "message": "<PORTRAIT:0, 27, 0>...it can talk?<NB><PORTRAIT:0, 20, 2>Oh my!<NL>You're cute and you can talk! ♥<NB>Say, do you like Medabots?<NB><PORTRAIT:1, 0, 1>Arf Arf! I sure do!<NB><PORTRAIT:0, 20, 2>Well then, I bet you'd love to see<NL>my research lab!<NB><PORTRAIT:1, 0, 1>Aaarf!?<NL>Really?<NB><PORTRAIT:0, 27, 0>Miss Nae!<NB>Surely you can't be serious about showing<NL>such important research to-!<NB><PORTRAIT:0, 20, 2>Follow me, <MEM:0>.<NB><PORTRAIT:0, 20, 0>...and I'll have security escort out this ex-resercher here.<NB><PORTRAIT:1, 0, 1>Arf Arf!<NB><PORTRAIT:0, 27, 0>B-b-but, Miss Nae...<END:0> "
   },
   {
     "id": [
       0,
       22
     ],
-    "message": "<PORTRAIT:1, 0, 0>It looks like a fight is about <NL>to begin!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0><I>sniff sniff...<I><NL>(I wonder if it'll squeek if I bite it.)<END:0> "
   },
   {
     "id": [
       0,
       23
     ],
-    "message": "<PORTRAIT:1, 0, 4>Good afternoon, Dr. Aki.<NB><PORTRAIT:0, 19, 0>Hmm? Oh, it's you.<NL>You come here quite a lot.<NB>Don't you know I'm always busy?<NL>um···uh···<NB><PORTRAIT:1, 0, 4>Dr. Akiii! <NL>You always forget my name!<NB>I'm···<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf!<NB><PORTRAIT:0, 19, 1>Hmm? Oh, it's the good boy!<NL>You come here quite a lot.<NB><PORTRAIT:0, 19, 2>I've been busy working on<NL>something for you!<NB><PORTRAIT:1, 0, 4>Woooof?<NB><PORTRAIT:0, 19, 0>It's an upgrade to your medawatch that<NL>will let you talk to humans.<NB><PORTRAIT:0, 19, 0>Let's see, now what's the<NL>name on your collar again?<END:0> "
   },
   {
     "id": [
       0,
       24
     ],
-    "message": "<PORTRAIT:0, 19, 0>Oh, of course!<NL>You're <MEM:0>.<NB>But I'm busy so I can't<NL>spend too much time with you.<NB><PORTRAIT:1, 0, 0>But I wanna learn more about<NL>Medabots!<NB><PORTRAIT:0, 19, 2>Okay, okay.<NL>If you really mean that, <NL>then it'd be best to go visit my <NL>granddaughter Nae's research room.<END:0> "
+    "message": "<PORTRAIT:0, 19, 0>There we go!<NL>You're all set, <MEM:0>.<NB>You should be able to talk with<NL>humans now.<NB><PORTRAIT:0, 19, 1>You can still bark at them<NL>if you want to, though.<NB><PORTRAIT:1, 0, 4>Arf Arf! That's great!<NB><PORTRAIT:1, 0, 0>That's also really convenient...<NB><PORTRAIT:1, 0, 4>...for translating a game to<NL>be from a dog's perspective!<NB><PORTRAIT:0, 19, 1>It sure is.<NB><PORTRAIT:0, 19, 0>Well, now that you can talk to humans,<NB>You should go visit my<NL>granddaughter Nae's research room.<END:0> "
   },
   {
     "id": [
       0,
       25
     ],
-    "message": "<PORTRAIT:1, 0, 0>Your granddaughter?<NB><PORTRAIT:0, 19, 1>My granddaughter Nae has been helping<NL>me ever since she was little.<NB><PORTRAIT:0, 19, 2>She knows almost as much as <NL>I do about Medabots.<NB><PORTRAIT:1, 0, 1>Really? Yay!<NL>Okay, well, I guess I'll be going!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Miss Nae is your granddaughter?<NB><PORTRAIT:0, 19, 0>My granddaughter Nae has been helping<NL>me ever since she was little.<NB><PORTRAIT:0, 19, 2>She knows almost as much as <NL>I do about Medabots...<NB><PORTRAIT:0, 19, 1>She also loves dogs!<NL>Even when they can't talk.<NB><PORTRAIT:0, 19, 0>Her room is just north of mine.<NB><PORTRAIT:1, 0, 1>I'll go see if she's in.<NL>Thanks Dr. Aki!<END:0> "
   },
   {
     "id": [
       0,
       26
     ],
-    "message": "<PORTRAIT:0, 19, 2>Nae really loves Medabots, so you two<NL>will probably get along very well.<END:0> "
+    "message": "<PORTRAIT:0, 19, 2>Nae really loves dogs, so you two<NL>will probably get along very well.<END:0> "
   },
   {
     "id": [
       0,
       27
     ],
-    "message": "<PORTRAIT:0, 20, 2>I'm not always here,<NL>but I'll leave the room open,<NB>so you can come in whenever you want.<NB><PORTRAIT:1, 0, 1>Okay!<END:0> "
+    "message": "<PORTRAIT:0, 20, 1>Don't forget to visit from time to time!<NL>I've got plenty of treats to give. ♥<NB><PORTRAIT:1, 0, 1>Arf Arf!<END:0> "
   },
   {
     "id": [
       0,
       28
     ],
-    "message": "<PORTRAIT:1, 0, 4>Good afternoon, Miss Nae!<NB><PORTRAIT:0, 20, 2>Good afternoon, <MEM:0>.<NB><PORTRAIT:1, 0, 1>Check out my cool new Medawatch!<NB><PORTRAIT:0, 20, 1>Well then, I'll just have to give you <NL>a present to congratulate you on<NB>your new Medabot!<NB>Please go into the room next door<NL>and select one Medal of your choice.<NB><PORTRAIT:1, 0, 1>Are you sure it's okay?<NL>Yay!  Thank you very much!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf!<NB><PORTRAIT:0, 20, 1>Oh, hello <MEM:0>!<NB><PORTRAIT:1, 0, 1>I've been robattling a lot lately!<NB>I even took on the Screws gang<NL>at the school!<NB><PORTRAIT:0, 20, 5>You beat those cheating kids??<NB><PORTRAIT:0, 20, 4>They always gang up<NL>3-on-one style!<NB>They also say incredibly lame excuses that<NL>not even grade-schoolers use anymore.<NB><PORTRAIT:1, 0, 5>Arf Arf... How did you...<NB><PORTRAIT:0, 20, 0>That's really impressive!<NL>As promised, I have a treat for you!<NB>Please go into the room next door<NL>and select one Medal of your choice.<NB><PORTRAIT:1, 0, 1>Holy Medabark! A free medal!?<NL>Thank you so much!<NB><PORTRAIT:0, 20, 0>Please come visit me again after you<NL>complete Mt. Odoro for another treat. ♥<END:0> "
   },
   {
     "id": [
       0,
       29
     ],
-    "message": "<PORTRAIT:0, 20, 0>The 4 Medabots over there are the<NL>new \"Elemental Series\" that we are<NL>developing now.<NB><PORTRAIT:1, 0, 0>Elemental Series?<NB>I've never heard of that before<NL>on \"Medabots Weekly\".<NB><PORTRAIT:0, 20, 1>Actually, it's still a secret♥<NB><PORTRAIT:1, 0, 7>Holy Medaroli! <NL>I get to see them before everyone!<NB><PORTRAIT:0, 20, 2>We're not finished with them yet,<NL>so they aren't fully functional.<NB>But you can go see them for yourself.<END:0> "
+    "message": "<PORTRAIT:0, 20, 0>The 4 Medabots over there are the<NL>new \"Elemental Series\" that we are<NL>developing now.<NB><PORTRAIT:1, 0, 0>Elemental Series?<NB>Cool!<NB><PORTRAIT:0, 20, 1>They're still in development, so you<NL>gotta keep them a secret.<NB><PORTRAIT:1, 0, 7>Holy Medabark! <NL>I get to see them before everyone!<NB><PORTRAIT:0, 20, 1>Feel free to go check them out. ♥<NB><PORTRAIT:1, 0, 7>Thank you!<NB><PORTRAIT:0, 20, 1>You know, I've never met a<NL>talking doggy before.<NB><PORTRAIT:0, 20, 2>I'm really excited to see<NL>how your journey pans out.<NB>Visit me after you do some robattles,<NL>and I'll give you a treat as a thank you.<NB><PORTRAIT:1, 0, 7>Wow, thank you Miss Nae!<NB><PORTRAIT:1, 0, 0>(If only I had a Medabot...)<END:0> "
   },
   {
     "id": [
       0,
       30
     ],
-    "message": "<PORTRAIT:1, 0, 0>This Medabot looks good at swimming.<END:0> "
+    "message": "<PORTRAIT:1, 0, 3>This Medabot reminds me of bath time.<END:0> "
   },
   {
     "id": [
@@ -228,21 +228,21 @@
       0,
       32
     ],
-    "message": "<PORTRAIT:1, 0, 0>This Medabot looks like<NL>he's gonna take off.<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>Do you think this Medabot<NL>likes to play fetch?<END:0> "
   },
   {
     "id": [
       0,
       33
     ],
-    "message": "<PORTRAIT:0, 20, 2>That's \"Windsail\", an Air Type Medabot.<NB>It can transform its Medaparts to<NL>lower enemy abilities.<END:0> "
+    "message": "<PORTRAIT:0, 20, 2>That's \"Windsail\", an Air Type Medabot.<NB>It can transform its Medaparts to<NL>lower enemy abilities.<NB><PORTRAIT:1, 0, 0>...and to play fetch?<END:0>"
   },
   {
     "id": [
       0,
       34
     ],
-    "message": "<PORTRAIT:1, 0, 0>This Medabot appears to be<NL>engulfed in flames.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This Medabot appears to be engulfed in flames.<NB><PORTRAIT:1, 0, 5>Which doesn't make much sense because<NL>the sprite is blue? (Seriously Natsume?)<END:0> "
   },
   {
     "id": [
@@ -256,7 +256,7 @@
       0,
       36
     ],
-    "message": "<PORTRAIT:1, 0, 0>This is one massive looking Medabot.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This Medabot looks like Kylo Ren.<END:0> "
   },
   {
     "id": [
@@ -270,182 +270,182 @@
       0,
       38
     ],
-    "message": "<PORTRAIT:1, 0, 4>It's the new and improved version<NL>of the Kabuto Medabot! <NB>That's so cool!!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Hey, I think I've seen this Medabot<NL>on TV!<END:0> "
   },
   {
     "id": [
       0,
       39
     ],
-    "message": "<PORTRAIT:1, 0, 4>It's the new and improved version<NL>of the Kuwagata Medabot!<NB>I wanna touch it···<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Wow, Medabot designers really<NL>must like beetles.<END:0> "
   },
   {
     "id": [
       0,
       40
     ],
-    "message": "<PORTRAIT:1, 0, 4>Hey, they don't sell the Medabots<NL>displayed here yet, right?<NB><PORTRAIT:0, 47, 0>That's right. <NL>Too bad though.<NB><PORTRAIT:1, 0, 0>Yeah···<NB><PORTRAIT:0, 47, 0>But at least you can see them for free.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf!<NB><PORTRAIT:0, 47, 0>Greetings Canine.<NL>This is the Medabot Museum.<NB>Please refrain from marking your<NL>territory on the Medabots.<NB><PORTRAIT:1, 0, 8><I>(How did she know!?)<I><END:0> "
   },
   {
     "id": [
       0,
       41
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'm not ready to go back home yet.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf!<NL>(I want to talk to everybody before I leave!)<END:0> "
   },
   {
     "id": [
       0,
       42
     ],
-    "message": "<PORTRAIT:1, 0, 8>Oh no!  Look at the time!<NB>I'd better hurry up and get home!<NL>\"Medabots Weekly\" is gonna start!<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>Oh man! I can't wait to get home<NL>and show Ikki that I can talk now!<END:0> "
   },
   {
     "id": [
       0,
       43
     ],
-    "message": "<PORTRAIT:1, 0, 8>Oh no!  Look at the time!<NB>I'd better hurry up and get home!<NL>\"Medabots Weekly\" is gonna start!<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>Oh man! I can't wait to get home<NL>and show Ikki that I can talk now!<END:0> "
   },
   {
     "id": [
       0,
       44
     ],
-    "message": "<PORTRAIT:1, 0, 6>This isn't my house!<NB>I've gotta hurry and get home<NL>before \"Medabots Weekly\" starts!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This doesn't smell like my house!<NL>My house is in the southeast corner.<END:0> "
   },
   {
     "id": [
       0,
       45
     ],
-    "message": "<PORTRAIT:0, 36, 0>This path leads to Mt. Odoro.<NB>It's a dangerous place and you <NL>can't go there alone!<END:0> "
+    "message": "<PORTRAIT:0, 36, 0>This path leads to Mt. Odoro.<NB>A scary monster lives there,<NL>it's too dangerous for little doggies.<END:0> "
   },
   {
     "id": [
       0,
       46
     ],
-    "message": "<PORTRAIT:0, 36, 0>Medaropolis has various types<NL>of facilities there.<END:0> "
+    "message": "<PORTRAIT:0, 36, 0>Medaropolis has various types<NL>of facilities there.<NB>But unfortunately, I'm standing here so...<END:0> "
   },
   {
     "id": [
       0,
       47
     ],
-    "message": "<PORTRAIT:0, 23, 0>I heard there was a big Robattle<NL>contest at school.<NB>My son was all fired up about it.<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>Well hello there little doggy!<NL>Would you like to go to school?<NB>You'd make a great teacher's pet!<END:0> "
   },
   {
     "id": [
       0,
       48
     ],
-    "message": "<PORTRAIT:0, 36, 0>My son is always playing with his <NL>Medabot and never studies.<END:0> "
+    "message": "<PORTRAIT:0, 36, 0>Maybe I should get a Medabot<NL>of my own.<NB>...or maybe I should get a dog.<END:0> "
   },
   {
     "id": [
       0,
       49
     ],
-    "message": "<PORTRAIT:0, 23, 0>The ferry to the amusement park<NL>leaves from this dock.<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>The ferry to the amusement park<NL>leaves from this dock.<NB>Sometimes, I like to just stand here and watch...<NB>...at least until a certain someone<NL>progresses the story some more.<END:0> "
   },
   {
     "id": [
       0,
       50
     ],
-    "message": "<PORTRAIT:0, 23, 0>This path is under construction.<NL>It's dangerous to go ahead.<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>Oh boy do I looove<NL>standing right here!<NB>I think I'll just stand right here<NL>allllll day!!<END:0> "
   },
   {
     "id": [
       0,
       51
     ],
-    "message": "<PORTRAIT:1, 0, 0>It's locked.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>If only I could fashon my paw<NL>into a lockpick...<END:0> "
   },
   {
     "id": [
       0,
       52
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'm home.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf!!<END:0> "
   },
   {
     "id": [
       0,
       53
     ],
-    "message": "<PORTRAIT:0, 80, 1>Where did you go?<NB>You always just disappear<NL>on me.<NB><PORTRAIT:1, 0, 6>Later!  I've gotta run!<END:0> "
+    "message": "<PORTRAIT:0, 80, 0>Oh hello, <MEM:0>!<NB>I was just looking for you!<NB><PORTRAIT:1, 0, 0>Arf?<NB><PORTRAIT:0, 80, 0>Ikki's been up in his room all<NL>day watching old movies.<NB>Do you think you to go to the<NL>store for me to pick up some-<END:0> "
   },
   {
     "id": [
       0,
       54
     ],
-    "message": "<PORTRAIT:0, 80, 0>Hold on!<END:0> "
+    "message": "<PORTRAIT:0, 80, 1>Hey! <MEM:0>! I'm talking to you!<NL>You better not pee on the carpet again!<END:0> "
   },
   {
     "id": [
       0,
       55
     ],
-    "message": "<PORTRAIT:0, 5, 0>Arf Arf!<END:0> "
+    "message": "<PORTRAIT:0, 5, 0>Yo <MEM:0>, You speak words now?<NL>The Dude abides.<END:0> "
   },
   {
     "id": [
       0,
       56
     ],
-    "message": "<PORTRAIT:0, 50, 0>Hah!  People call me the \"Blue Meteor\"!<NL>Select Blue!<END:0> "
+    "message": "<PORTRAIT:0, 50, 0>To unite all peoples within our nation!<END:0> "
   },
   {
     "id": [
       0,
       57
     ],
-    "message": "<PORTRAIT:1, 0, 0>Hi Salty, I'm home.<NB>Oh man!  I've gotta hurry and turn<NL>on the TV before it comes on.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf! How did you know!?<NB>Oh well.<NL>Wanna watch some TV?<END:0> "
   },
   {
     "id": [
       0,
       58
     ],
-    "message": "<PORTRAIT:1, 0, 0>It's TV time!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Let's see what's on!<END:0> "
   },
   {
     "id": [
       0,
       59
     ],
-    "message": "<PORTRAIT:1, 0, 4>Whew! <NB>Looks like I made it just<NL>in the nick of time.<END:0> "
-  },
+    "message": "<PORTRAIT:1, 0, 0>Oh...<NB><PORTRAIT:1, 0, 5>It's just that tutorial show...<NB>that they show to people just in case<NL>they don't know anything about Medabots.<END:0> "
+  }, 
   {
     "id": [
       0,
       60
     ],
-    "message": "<PORTRAIT:1, 0, 0>It's so great.<NB>If only I had a Medabot of my own···<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Wow, I wish the modding community knew how<NL>to make THAT less boring...<END:0> "
   },
   {
     "id": [
       0,
       61
     ],
-    "message": "<PORTRAIT:1, 0, 0>Wha?<NB>Mommmm!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Wha!?<NL>Ikki's Mommmm!<END:0> "
   },
   {
     "id": [
       0,
       62
     ],
-    "message": "<PORTRAIT:0, 80, 1>If you've got time to sit and watch<NL>TV, then you've got time to go down to the<NL>Hopmart and pick up some Spice-A-Roni for <NL>tonight's dinner.<NB><PORTRAIT:1, 0, 5>Maaaan.<NB><PORTRAIT:0, 80, 1>Do you have a problem?<NB><PORTRAIT:1, 0, 0>Okay. Okay.<NB><PORTRAIT:0, 80, 0>I don't have any change, so <NL>here's a £50 bill. <END:0> "
+    "message": "<PORTRAIT:0, 80, 1>If you've got time to sit and watch<NL>TV, then you've got time to go down to the<NL>Hopmart and pick up some Spice-A-Roni for <NL>tonight's dinner.<NB><PORTRAIT:1, 0, 5>Aw, Wooooooof.<NB><PORTRAIT:0, 80, 1>Do you have a problem?<NB><PORTRAIT:1, 0, 0>Woof.<NB><PORTRAIT:0, 80, 0>Good. This is all the money I have. <NL>It's a £50 bill. <NB>Which may seem like a lot for<NL>instant pasta but you know,<NB>We've gotta cram a story point <NL>in here somehow.<END:0> "
   },
   {
     "id": [
       0,
       63
     ],
-    "message": "<PORTRAIT:1, 0, 0>Should I watch a video of<NL>\"Medabots Weekly\"?<END:2>B"
+    "message": "<PORTRAIT:1, 0, 0>Should I watch that tutorial video again?<END:2>B"
   },
   {
     "id": [
@@ -459,35 +459,35 @@
       0,
       65
     ],
-    "message": "<PORTRAIT:1, 0, 0>Ahh, that was interesting.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Well that was condecending.<END:0> "
   },
   {
     "id": [
       0,
       66
     ],
-    "message": "<PORTRAIT:1, 0, 0>What should I do next?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Maybe I should head outside<NL>and chase some squirrels.<END:0> "
   },
   {
     "id": [
       0,
       67
     ],
-    "message": "<PORTRAIT:0, 80, 0>Hurry up and go, okay?<END:0> "
+    "message": "<PORTRAIT:0, 80, 1>Wow, we're like, a starving family you know.<NB>A starving family in NEED of Spice-A-Roni.<NB>Hopmart is north of the house.<NL>You know the one with the big sign?<NB><PORTRAIT:0, 80, 0>Wait, can you read??<END:0> "
   },
   {
     "id": [
       0,
       68
     ],
-    "message": "<PORTRAIT:0, 23, 0>It's okay to have Medabots as friends,<NL>but you need human friends too.<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>It's okay to have Medabots as friends,<NL>but you need doggy friends too.<END:0> "
   },
   {
     "id": [
       0,
       69
     ],
-    "message": "<PORTRAIT:0, 80, 0>Your father always spoils you, <NL><MEM:0>.<END:0> "
+    "message": "<PORTRAIT:0, 80, 0>Looks like it's toothpaste<NL>for dinner again.<END:0> "
   },
   {
     "id": [
@@ -501,42 +501,42 @@
       0,
       71
     ],
-    "message": "<PORTRAIT:0, 79, 1>Be good and listen to your <NL>mother.<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>Yes, that's right Doctor, <NL>I saw Batman.<NB>...That's right! And he gave me a<NL>gift for my son's talking dog!<END:0> "
   },
   {
     "id": [
       0,
       72
     ],
-    "message": "<PORTRAIT:0, 80, 0>Where's the Spice-A-Roni,<NL><MEM:0>?<NB><PORTRAIT:1, 0, 5>Um···uh···<NB><PORTRAIT:0, 80, 1>What's that box you have there?<NB><PORTRAIT:1, 0, 8>Waaah!<NL>T-that's!<NB><PORTRAIT:0, 80, 1>I can't believe you did this!<NB>You don't mean that you bought a<NL>toy with our dinner money!?<NB><PORTRAIT:1, 0, 5>I did···<NB><PORTRAIT:0, 80, 1>Go think about it in your room!<NB><PORTRAIT:1, 0, 3>Okay···<END:0> "
+    "message": "<PORTRAIT:0, 80, 0>Where's the Spice-A-Roni,<NL><MEM:0>?<NB><PORTRAIT:1, 0, 0>Um...Arrrrf?<NB><PORTRAIT:0, 80, 1>Don't act like you can't talk!<NL>I saw you on Twitter!<NB><PORTRAIT:1, 0, 8>W-whattt? Already!?!?<NB><PORTRAIT:0, 80, 1>What's that box you have there?<NB><PORTRAIT:1, 0, 8>BOOOOORK?<NL>N-NOTHING!!<NB><PORTRAIT:0, 80, 1>Did you buy a TOY with<NL>the last of our dinner money!?<NB>That was all the money we had<NL>left for FOOD!<NB>We're all going to DIE now because of you,<NL><MEM:0>!!<NB>Go think about what you've done!<NB>...<NB>...in Ikki's room, specifically!<NB><PORTRAIT:1, 0, 3>Awoo...<END:0> "
   },
   {
     "id": [
       0,
       73
     ],
-    "message": "<PORTRAIT:1, 0, 3>Wow, she was really mad.<END:0> "
+    "message": "<PORTRAIT:1, 0, 3>Dang, I might've just killed<NL>the whole family.<END:0> "
   },
   {
     "id": [
       0,
       74
     ],
-    "message": "<PORTRAIT:1, 0, 3><I>(Sigh)<I><NB>Are you gonna cheer me up, Salty?<NB><PORTRAIT:0, 5, 0>Wooof?<NB><PORTRAIT:1, 0, 0>Well, I may be stuck here, but I<NL>should at least open the box.<END:0> "
+    "message": "<PORTRAIT:1, 0, 3><I>(Sigh)<I><NB>Looks like your mom is really<NL>mad at me, Ikki.<NB><PORTRAIT:0, 5, 0><MEM:0>, you gotta tell her,<NL>this aggression will not stand, man.<NB><PORTRAIT:1, 0, 0>Well, I may be stuck here, but I<NL>should at least open the box.<END:0> "
   },
   {
     "id": [
       0,
       75
     ],
-    "message": "<PORTRAIT:1, 0, 0>This goes with this and this goes with···<NB>All done!<NB><PORTRAIT:1, 0, 5>Huh?<NB>It's not moving?<NB>What's wrong?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This goes with this and this goes with···<NB>All done!<NB><PORTRAIT:1, 0, 5>Huh?<NB>Well the sprite looks a little off,<NL>but it's not moving?<NB>What's wrong?<END:0> "
   },
   {
     "id": [
       0,
       76
     ],
-    "message": "<PORTRAIT:1, 0, 8>Oops!<NB>I forgot the most important part!<NB><PORTRAIT:1, 0, 5><I>Sniff... sniff...<I><END:0> "
+    "message": "<PORTRAIT:1, 0, 8>What!?<NB>It didn't come with a medal?<NB><PORTRAIT:1, 0, 5>That rip-off shopkeeper<NL>ripped me off!<END:0> "
   },
   {
     "id": [
@@ -550,63 +550,63 @@
       0,
       78
     ],
-    "message": "<PORTRAIT:0, 79, 0>What?<END:0> "
+    "message": "<PORTRAIT:0, 79, 0>What the-<END:0> "
   },
   {
     "id": [
       0,
       79
     ],
-    "message": "<PORTRAIT:0, 79, 0>W-who are you!<NB>I-if you want money, I'm broke!<NB><PORTRAIT:0, 13, 2>Do not fear. <NB>It is I!  The Phantom Renegade!<NB>I have come to bring you a present.<NB><PORTRAIT:0, 79, 0>????<NB>The Phantom who?<NB><PORTRAIT:0, 13, 1>Bwa ha ha ha ha!<NB>It doesn't matter!<NB>Take this Medal!<END:0> "
+    "message": "<PORTRAIT:0, 79, 0>W-who are you!<NB>I-if you want money, I'm broke!<NB><PORTRAIT:0, 13, 2>Do not fear. <NB>It is I!  The Phantom Renegade!<NB>I have come to bring you a present.<NB><PORTRAIT:0, 79, 0>????<NB>The Phantom who?<NB>Are you like Batman or something?<NB><PORTRAIT:0, 13, 1>Bwa ha ha ha ha!<NB>It doesn't matter!<NB>Take this Medal!<END:0> "
   },
   {
     "id": [
       0,
       80
     ],
-    "message": "<PORTRAIT:0, 13, 2>Give this to your child!<NB>Present this to your boy!!<NB>Put this near his pillow while <NL>he is asleep!!!<NB>Any way you want, just give it to him!<NB><PORTRAIT:0, 13, 1>Farewell!<END:0> "
+    "message": "<PORTRAIT:0, 13, 2>Give this to your dog!<NB>Present this to your dog!!<NB>Put this near his pillow while <NL>he is asleep!!!<NB>But for crying out loud,<NL>don't FEED it to your dog!!!!<NB>It is NOT meant to be eaten!!!!!<NB>If eaten it is very hard to recover!!!!!!<NB><PORTRAIT:0, 13, 1>Farewell!<END:0> "
   },
   {
     "id": [
       0,
       81
     ],
-    "message": "<PORTRAIT:0, 79, 0>What was that all about?<END:0> "
+    "message": "<PORTRAIT:0, 79, 0>Batman knows I have a dog?<END:0> "
   },
   {
     "id": [
       0,
       82
     ],
-    "message": "<PORTRAIT:0, 79, 1>I'm home, <MEM:0>.<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>I'm home, Ikki and <MEM:0>!<END:0> "
   },
   {
     "id": [
       0,
       83
     ],
-    "message": "<PORTRAIT:0, 79, 1>Oh!<NB>Isn't that a Medabot?<NB><PORTRAIT:1, 0, 3>Dad···<NB><PORTRAIT:0, 79, 0>Could this be the reason why<NL>your Mother is all bent out of shape?<NB><PORTRAIT:1, 0, 3>Yeah···<NB><PORTRAIT:0, 79, 1>Let me see.<NB>Oh, there's no Medal inside there.<NB>He can't move without a Medal.<NB>It's called a Medabot because<NL>of the Medals, you know.<NB>See, we put the Medal in <NL>just like this···<NB>Tah dah!<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>Oh!<NB>Isn't that a Medabot?<NB><PORTRAIT:1, 0, 3>Aww, Ikki's Daaad...<NB><PORTRAIT:0, 79, 1>Could this be the reason why<NL>Ikki's mom is all bent out of shape?<NB><PORTRAIT:0, 79, 0>(Shoot, what was her name again?)<NB><PORTRAIT:1, 0, 3>Yeah...<NB><PORTRAIT:0, 79, 1>Cool! Let me check it out!<NB><PORTRAIT:0, 79, 0>Oh, there's no Medal inside there.<NB>He can't move without a Medal.<NB>It's called a Medabot because<NL>of the Medals, you know.<NB>Didn't you watch the tutorial video?<NB><PORTRAIT:0, 79, 0>But don't worry,<NL>Dad brought you a present!<NB><PORTRAIT:1, 0, 4>Arf?<END:0> "
   },
   {
     "id": [
       0,
       84
     ],
-    "message": "<PORTRAIT:1, 0, 4>Whoa!  It moved!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf!<NL>Whoa! Thanks for the medal Ikki's Dad!<END:0> "
   },
   {
     "id": [
       0,
       85
     ],
-    "message": "<PORTRAIT:0, 79, 1>Next you need to have a Medawatch<NL>to command your Medabot.<NB>Here, look what Daddy got you.<NB><PORTRAIT:1, 0, 1>Wowwwwwww!!<NL>Thanks a lot, Dad!<NB><PORTRAIT:0, 79, 1>Ha ha ha.<NB>Looks like you're all better now.<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>No problem, <MEM:0>!<NB><PORTRAIT:0, 79, 0>Well, if you'll excuse me.<NB>Daddy needs go downstairs now and<NL>schedule and appointment with his therapist.<NB><PORTRAIT:0, 79, 1>Today I saw Batman and had<NL>a conversation with my son's dog!<END:0> "
   },
   {
     "id": [
       0,
       86
     ],
-    "message": "<PORTRAIT:1, 0, 1>All right!  From now on if I press the<NL>B Button I can open the menu!<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>All right! From now on if I press the<NL>B Button I can open the menu!<END:0> "
   },
   {
     "id": [
@@ -620,112 +620,112 @@
       0,
       88
     ],
-    "message": "<PORTRAIT:0, 12, 3>This is the Medafighter's Network.<NB>You can Robattle other people by linking<NL>with them, but it's not ready yet.  Sorry♥<END:0> "
+    "message": "<PORTRAIT:0, 12, 3>Hey, welcome to the black market!<NB>I don't have anything to sell right now,<NL>So it's more like a black... corner? Sorry♥<END:0> "
   },
   {
     "id": [
       0,
       89
     ],
-    "message": "<PORTRAIT:0, 87, 0>Sorry.<NB>We're still preparing.<END:0> "
+    "message": "<PORTRAIT:0, 87, 0>Oh wow, you're like a talking dog or something?<NB>That's cool, but like,<NL>hasn't that been done before?<END:0> "
   },
   {
     "id": [
       0,
       90
     ],
-    "message": "<PORTRAIT:0, 23, 0>You idiotic fool!!<END:0> "
+    "message": "<PORTRAIT:0, 23, 1>What do you MEAN<NL>we're out of Spice-A-Roni!?<END:0> "
   },
   {
     "id": [
       0,
       91
     ],
-    "message": "<PORTRAIT:0, 23, 0>Why in the world did you buy such<NL>expensive Medaparts without permission!?<NB>Just WHAT are you gonna do with them!?<NB><PORTRAIT:0, 14, 2>Well···<NB><PORTRAIT:0, 23, 0>What do you mean \"Well\"!?<NL>I said \"What are you going to do!\"<NB><PORTRAIT:0, 14, 2>Yeah, I wonder what I should do with them.<NB><PORTRAIT:0, 23, 0>If you want to keep your job, you'd better<NL>figure it out!<END:0> "
+    "message": "<PORTRAIT:0, 23, 1>Spice-A-Roni is our number one product!!<NB>This whole town depends on our<NL>supply of Spice-A-Roni!!!<NB>I can't believe you wasted our <NL>Spice-A-Roni budget on Medaparts!!!!<NB><PORTRAIT:0, 14, 2>Well... the supplier was out, sooo...<NL>At least they're cool medaparts?<NB><PORTRAIT:0, 23, 1>What if some starving family comes<NL>in here for Spice-A-Roni!?<NB><PORTRAIT:0, 14, 2>Yeah, I suppose it was a bit irresponsible.<NB><PORTRAIT:0, 23, 1>If you want to keep your job, you'd better<NL>figure something out!<NB>People's lives are at stake here!<NB>Also, my financial well being!<END:0> "
   },
   {
     "id": [
       0,
       92
     ],
-    "message": "<PORTRAIT:0, 14, 2>Man, my boss can be such a<NL>jerk sometimes.<END:0> "
+    "message": "<PORTRAIT:0, 14, 2>Aw man, I better find a way<NL>to sell these Medaparts...<END:0> "
   },
   {
     "id": [
       0,
       93
     ],
-    "message": "<PORTRAIT:1, 0, 0>Excuse me.<NB><PORTRAIT:0, 14, 1>Oh, can I help you?<NL>A Medabot? I have a great one for you.<NB><PORTRAIT:1, 0, 0>Um···no, I need Spice-A-Roni···<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! Hey, I know this is weird,<NL>but I'm a talking dog and I need-<NB><PORTRAIT:0, 14, 1>Oh, can I help you?<NL>A Medabot? I have a great one for you.<NB><PORTRAIT:1, 0, 0>Arf...no? I need Spice-A-Roni...<END:0> "
   },
   {
     "id": [
       0,
       94
     ],
-    "message": "<PORTRAIT:0, 14, 1>I've got a sweet deal on a<NL>totally awesome Kabuto model here!<NB>Your friends definitely won't have THIS!<NL>You'll be the coolest kid in town!<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>I've got a sweet deal on a<NL>totally awesome Medabot here!<NB>Your friends definitely won't have THIS!<NL>You'll be the coolest, erm, dog in town!<END:0> "
   },
   {
     "id": [
       0,
       95
     ],
-    "message": "<PORTRAIT:0, 14, 1>I've got a sweet deal on a<NL>totally awesome Kuwagata model here!<NB>Your friends definitely won't have THIS!<NL>You'll be the coolest kid in town!<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>I've got a sweet deal on a<NL>totally awesome Medabot here!<NB>Your friends definitely won't have THIS!<NL>You'll be the coolest, erm, dog in town!<END:0> "
   },
   {
     "id": [
       0,
       96
     ],
-    "message": "<PORTRAIT:1, 0, 5>Um···I···<NB><PORTRAIT:0, 14, 1>So how much do you have?<NL>£50? <NB>Perfect!  I'll give you a great deal<NL>on the whole set for £49.80!<NB><PORTRAIT:0, 14, 1>Okay, all set!<NB>I'll even throw in a Tinpet.<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>Erm.. woof?<NL>I mean that sounds cool but-<NB><PORTRAIT:0, 14, 0>So how much do you have?<NB>£50?<NL>(For Spice-A-Roni?)<NB><PORTRAIT:0, 14, 1>Uh, Perfect!  I'll give you a great deal<NL>on the whole set for £49.80!<NB><PORTRAIT:0, 14, 1>Awesome? Awesome.<NL>I'll even throw in a Tinpet.<NB><PORTRAIT:1, 0, 5>Arrrf... you actin' sus, human.<NB><PORTRAIT:1, 0, 2>You're not trying to rip me<NL>off or anything are you?<NB><PORTRAIT:0, 14, 2>No way! I wouldn't do that!<NB><PORTRAIT:0, 14, 1>Here you go! No returns!<END:0> "
   },
   {
     "id": [
       0,
       97
     ],
-    "message": "<PORTRAIT:0, 14, 1>Now you're a Medafighter!<NL>So what's your name anyway?<NB>Mine's Henry.<NL>What's yours?<NB><PORTRAIT:1, 0, 0>Well, I'm <MEM:0>, but···<NB><PORTRAIT:0, 14, 1><MEM:0> huh?<NB>That's a great name for a<NL>Medafighter, don't ya think?<NB><PORTRAIT:0, 14, 1>Well, now you're all ready to make your<NL>big debut in the Robattle world!<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>Look at that! You might be the world's first<NL>Talking-Dog-Medafighter!<NB><PORTRAIT:0, 14, 0>So what's your name anyway?<NL>Mine's Henry.<NB><PORTRAIT:1, 0, 0>Well, I'm <MEM:0>, but···<NB><PORTRAIT:0, 14, 0><MEM:0>, huh?<NB><PORTRAIT:0, 14, 1>That's a great name for a<NL>Medafighter, don't ya think?<NB><PORTRAIT:0, 14, 1>Well, now you're all ready to make your<NL>big debut in the Robattle world!<END:0> "
   },
   {
     "id": [
       0,
       98
     ],
-    "message": "<PORTRAIT:0, 14, 1><MEM:0> the Medafighter.<NL>Pretty cool huh?<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>I gotta tweet about this on Medabot<NL>Twitter! A Talking-Dog-Medafighter!<NB>This'll go viral!<NL>I'm gonna be famous!<END:0> "
   },
   {
     "id": [
       0,
       99
     ],
-    "message": "<PORTRAIT:0, 14, 1>Oh!  You've already got a Medawatch?<NB>You're doing great!<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>You're spreading all over<NL>Medabots Twitter.<NB>This is great!<END:0> "
   },
   {
     "id": [
       0,
       100
     ],
-    "message": "<PORTRAIT:1, 0, 8>Erika!<NL>You bought a camera?<NB><PORTRAIT:0, 2, 1>I need one if I'm gonna become<NL>a reporter.<NB><PORTRAIT:0, 2, 4>What about you, <MEM:0>?<NL>You've got a Medawatch, don'tcha?<NB>Have you Robattled yet?<NB><PORTRAIT:1, 0, 0>Hmm? Well, sorta···<NB><PORTRAIT:0, 2, 4>Hmmm, could it be that<NL>you haven't started to Robattle yet?<NB>If that's the case, then I'll be your<NL>first opponent!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>BARK BARK!<NL>What the BARK was that!<NB><PORTRAIT:0, 2, 1>Aww, <MEM:0>!<NL>You're just too cute!<NB><PORTRAIT:0, 2, 4>AND I heard you can talk now.<NB><PORTRAIT:0, 2, 1>You're the world's first<NL>Talking-Dog-Medafighter!<NB>This scoop is going to be all the <I>RAGE<I><NL>in the school newspaper!<NB>Have you had your first Robattle yet?<NB><PORTRAIT:1, 0, 0>Arf? Not yet.<NB><PORTRAIT:0, 2, 8>What? You've played the game this long<NL>and you <I>still<I> haven't Robattled yet?<NB><PORTRAIT:1, 0, 6>Hey come on! I had to at least<NL>watch the tutorial video once!<NB><PORTRAIT:0, 2, 0>That show doesn't teach you any<NL>of the basics!<NB><PORTRAIT:0, 2, 4>For example, you win by destroying <NL>your opponent's head medapart.<NB>When you win you claim a<NL>random part from your opponent,<NB>and when you lose your opponent<NL>takes one of yours.<NB>...<NB><PORTRAIT:0, 2, 7>Why don't you let me be your first opponent?<NB><END:0> "
   },
   {
     "id": [
       0,
       101
     ],
-    "message": "<PORTRAIT:0, 2, 4>Wow, that's a great Medabot you've got.<NB>But I won't lose next time!<END:0> "
+    "message": "<PORTRAIT:0, 2, 3>Yeah, ok, I just lost to a dog.<NB>We're just gonna pretend<NL>that didn't happen.<END:0> "
   },
   {
     "id": [
       0,
       102
     ],
-    "message": "<PORTRAIT:0, 2, 4>Don't worry, you're just getting<NL>started, right? <END:0> "
+    "message": "<PORTRAIT:0, 2, 4>Well that was a 'ruff' battle, amiright?<END:0> "
   },
   {
     "id": [
       0,
       103
     ],
-    "message": "<PORTRAIT:0, 2, 8>Oh yeah!<NB>This isn't the time or place for this.<NB>There's a big Robattle contest going<NL>on at the school, you know!<NB>I'm gonna go on ahead, okay?<NL>See you there!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Well at least I got some footage<NL>for your story in the school paper!<NB><PORTRAIT:0, 2, 0>...wait a minute...<NB><PORTRAIT:0, 2, 8>THE LENS CAP WAS STILL ON!<NB><PORTRAIT:0, 2, 1>Uhh Hey, why don't we see if anyone<NL>at the school will Robattle you?<NB><PORTRAIT:0, 2, 1>You could use the practice and<NL>I could use the footage.<NB><PORTRAIT:0, 2, 7>I'll meet you thereee!<NL>Don't make me waiiiiit!!<END:0> "
   },
   {
     "id": [
@@ -739,7 +739,7 @@
       0,
       105
     ],
-    "message": "<PORTRAIT:1, 0, 4>Okay, that's the one!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>BARK! BARK! Awww YEAH!<END:0> "
   },
   {
     "id": [
@@ -767,14 +767,14 @@
       0,
       109
     ],
-    "message": "<PORTRAIT:0, 40, 0>Yaah!  People call me the \"Yellow Hanky\"!<NB>Select Yellow!<END:0> "
+    "message": "<PORTRAIT:0, 40, 0>To denounce the evils of truth and love!<END:0> "
   },
   {
     "id": [
       0,
       110
     ],
-    "message": "<PORTRAIT:0, 46, 0>We are···THE SELECT TRIO!<END:0> "
+    "message": "<PORTRAIT:0, 46, 0>...to extend our reach to the stars above!<NB>Select Corps. blast off at the speed of light!<NB><PORTRAIT:0, 40, 0>Surrender now, or prepare to fight!<NB><PORTRAIT:0, 50, 1>...that's right.<END:0> "
   },
   {
     "id": [
@@ -795,14 +795,14 @@
       0,
       113
     ],
-    "message": "<PORTRAIT:0, 27, 1>Hey, welcome.<END:0> "
+    "message": "<PORTRAIT:0, 27, 1>Well if it isn't <MEM:0>.<NL>How's your Quest coming along?<NB>Did you save the world yet?<END:0> "
   },
   {
     "id": [
       0,
       114
     ],
-    "message": "<PORTRAIT:1, 0, 6>Wha!?  Now hold on Erika.<NL>I'm not ready for···<NB><PORTRAIT:0, 2, 0>I know!<NB>You don't want to lose any<NL>Medaparts, right?<NB>This Robattle is just for fun,<NL>so win or lose nobody will have<NL>to give up anything, okay?<NB>Now there's no reason not to, right?<NL>So let's do it!<END:0> "
+    "message": "<PORTRAIT:0, 2, 4>Don't worry, this Robattle is just for fun,<NL>so win or lose nobody will have<NL>to give up anything, okay?<NB><PORTRAIT:0, 2, 1>Now there's no reason not to, right?<NL>So let's do it!<END:0> "
   },
   {
     "id": [
@@ -823,7 +823,7 @@
       0,
       117
     ],
-    "message": "<PORTRAIT:0, 87, 0>Sorry.<NL>We're still preparing.<END:0> "
+    "message": "<PORTRAIT:0, 87, 0>Spice-A-Roni?<NB>Like, I think it's in the back,<NL>next to that disgruntled employee.<END:0>"
   },
   {
     "id": [
@@ -851,7 +851,7 @@
       0,
       121
     ],
-    "message": "<PORTRAIT:0, 2, 2>That's really strange.<NL>I could've sworn that he ran over here.<END:0> "
+    "message": "<PORTRAIT:0, 2, 2>WHERE DID THAT LITTLE JERK GO!?<NL>I could've SWORN that he ran over here!<END:0> "
   },
   {
     "id": [
@@ -907,7 +907,7 @@
       0,
       129
     ],
-    "message": "<PORTRAIT:1, 0, 0>Hey, Erika.<NL>What's up with the Robattle contest?<NB><PORTRAIT:0, 2, 6>You're late.<NL>It's already over.<NB>It looks like the leader of<NL>the Screws was the winner.<NB>They've got full control of the place.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Hey, Erika.<NL>Here I am.<NB><PORTRAIT:0, 2, 6>Took you long enough.<NB><PORTRAIT:0, 2, 0>This school is full of students<NL>that'll teach you about Robattling.<NB><PORTRAIT:0, 2, 5>The problem is, most of them would<NL>rather talk than Robattle.<NB><PORTRAIT:0, 2, 7>Hey, why not challenge the Screws?<NL>They're the 3 kids on the podium.<NB><PORTRAIT:0, 2, 2>COME ON, <MEM:0>!<NL>I NEED SOME FOOTAGE HERE!<END:0> "
   },
   {
     "id": [
@@ -921,84 +921,84 @@
       0,
       131
     ],
-    "message": "<PORTRAIT:0, 6, 0>Wait.<END:0> "
+    "message": "<PORTRAIT:0, 6, 0>Hold on a minute, <MEM:0>.<END:0> "
   },
   {
     "id": [
       0,
       132
     ],
-    "message": "<PORTRAIT:1, 0, 2>Now what!<NL>Didn't we settle this fight?<NB><PORTRAIT:0, 6, 0>We were playing by kids rules so <NL>the win doesn't count.<NB>I'll show you something amazing<NL>using the real rules.<NB>Peppercat!  Transport!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Now what?<NL>Didn't we settle this fight?<NB><PORTRAIT:0, 6, 3>We were playing by kids rules so <NL>the win doesn't count.<NB>I'll show you something amazing<NL>using the real rules.<NB><PORTRAIT:1, 6, 2>Transport Medabot!<END:0> "
   },
   {
     "id": [
       0,
       133
     ],
-    "message": "<PORTRAIT:0, 6, 0>Spyke!<NL>Sloan!<NB>Transport your Medabots too!<END:0> "
+    "message": "<PORTRAIT:0, 6, 2>Spyke!<NL>Sloan!<NB>Transport your Medabots too!<END:0> "
   },
   {
     "id": [
       0,
       134
     ],
-    "message": "<PORTRAIT:1, 0, 5>3 against one is cheating!<NB><PORTRAIT:0, 6, 1>Sorry, official rules.<NL>You'd better be prepared!<NB><PORTRAIT:1, 0, 5>H-hold on a sec···<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>Have your Medabots even recovered from the last battle?<NB>...and isn't 3 against one cheating?<NB><PORTRAIT:0, 6, 1>Sorry, official rules!<NL>You'd better be prepared!<NB><PORTRAIT:1, 0, 5>That's such an incredibly lame excuse that not even grade-schoolers use anymore.<NB><PORTRAIT:0, 6, 1>But <MEM:0>, this IS a grade school!<END:0> "
   },
   {
     "id": [
       0,
       135
     ],
-    "message": "<PORTRAIT:0, 6, 2>I dunno what you did, <NL>but I refuse to accept this loss.<END:0> "
+    "message": "<PORTRAIT:0, 6, 2>Ok, MAYBE our Medabots hadn't fully recovered yet!<NB><PORTRAIT:0, 6, 2>BOYS! Move out!<END:0> "
   },
   {
     "id": [
       0,
       136
     ],
-    "message": "<PORTRAIT:0, 8, 2>Someday you'll be the one doing laundry!<END:0> "
+    "message": "<PORTRAIT:0, 8, 2>Someday you'll be the one taking a flea bath!<END:0> "
   },
   {
     "id": [
       0,
       137
     ],
-    "message": "<PORTRAIT:0, 7, 2>You haven't seen the last of us!<END:0> "
+    "message": "<PORTRAIT:0, 7, 4>You haven't seen the last of us!<END:0> "
   },
   {
     "id": [
       0,
       138
     ],
-    "message": "<PORTRAIT:0, 2, 1>Wasn't that amazing! <NL>What WAS that just now?<NB><PORTRAIT:1, 0, 0>Umm···I don't really know.<NB>Anyway Erika, what's the headline of<NL>the school's paper's gonna be?<NB><PORTRAIT:0, 2, 4>Hmm··· How about<NL>\"Awesome Medabot Appears!\"<NB>What do you think?<NB><PORTRAIT:1, 0, 5>I like \"Awesome Medafighter Appears.\"<NB><PORTRAIT:0, 2, 0>No no, your Medabot was awesome,<NL>not you, <MEM:0>.<NB><PORTRAIT:1, 0, 5>Aw man···<NB><PORTRAIT:0, 2, 4>Okay, well I'm gonna go<NL>start writing the article, so why<NB>don't you go and look for Robattle<NL>opponents around school?<END:0> "
+    "message": "<PORTRAIT:0, 2, 8>That was amazing!<NL>I got SUCH good footage!<NB><PORTRAIT:0, 2, 1>I can't wait to write my article on this!<NB><PORTRAIT:0, 2, 2>Those journalists at the academy WILL take me seriously now!<NB>I OWN THE SCHOOL NEWSPAPER! ME!!<NB><PORTRAIT:0, 2, 1>I'm gonna go start writing the article now. <NB>I'll be on the second floor,<NL>bottom-right room at the end of the hall.<NB><PORTRAIT:0, 2, 7>Come see me soon, k?<END:0> "
   },
   {
     "id": [
       0,
       139
     ],
-    "message": "<PORTRAIT:1, 0, 0>Well, guess I'll go look around<NL>school for some Robattles.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Alright, well, there's probably a lot<NL>I can learn from the kids in there.<NB>I guess I'll do some robattles and<NL>then visit Erika on the second floor.<END:0> "
   },
   {
     "id": [
       0,
       140
     ],
-    "message": "<PORTRAIT:1, 0, 0>Let's go inside the school.<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>Aw, that teacher guy is standing in the way again.<NB><PORTRAIT:1, 0, 0>Guess I'll head in the school for now.<END:0> "
   },
   {
     "id": [
       0,
       141
     ],
-    "message": "<PORTRAIT:0, 2, 6>Those guys fight so dirty!<NB>They always say \"The 3 of us count as 1!<NB>So if you can't beat all 3 of us,<NL>then you can't win.\"<NB>They also say incredibly lame excuses that<NL>not even grade-schoolers use anymore.<NB><PORTRAIT:1, 0, 5>Erika···<NB>Don't forget that we are all<NL>still grade schoolers, you know···<END:0> "
+    "message": "<PORTRAIT:0, 2, 6>Those guys fight so dirty!<NB>They always say \"The 3 of us count as 1!<NB>So if you can't beat all 3 of us,<NL>then you can't win.\"<NB>They also say incredibly lame excuses that<NL>not even grade-schoolers use anymore.<NB><PORTRAIT:1, 0, 5>Arf Arf... Erika...<NB>Aren't YOU still a grade schooler?<END:0> "
   },
   {
     "id": [
       0,
       142
     ],
-    "message": "<PORTRAIT:0, 22, 0>My Medabot may have lost the Robattle,<NL>but he'll take anybody on in a relay race!<NB>Maybe···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Laser medaparts do a TON of damage.<NB>The problem is, they're not very accurate<NL>and they take a long time to charge.<NB>They also don't do chain-reaction damage,<NL>so they only destroy one part at a time.<END:0>"
   },
   {
     "id": [
@@ -1012,21 +1012,21 @@
       0,
       144
     ],
-    "message": "<PORTRAIT:0, 22, 0>Geez, they might be the champions<NL>again this year···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>An attack will miss if either it breaks or the part it's targeting breaks.<NB><PORTRAIT:1, 0, 5>Well that much seems obvious.<END:0> "
   },
   {
     "id": [
       0,
       145
     ],
-    "message": "<PORTRAIT:0, 22, 0>That Robattle rocked!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Alright, how about this one...<NB>When building medabots, try to match the parts to your medal.<NB>If they match, each stat will increase by a set amount.<NB><PORTRAIT:1, 0, 4>Oh yeah, that's when you get a little plus and a number next to the part, right?<NB>Good to know.<END:0> "
   },
   {
     "id": [
       0,
       146
     ],
-    "message": "<PORTRAIT:0, 7, 1>If there is someone who thinks they<NL>can stand up to the Screws, bring it on!<END:0> "
+    "message": "<PORTRAIT:0, 7, 1>We'll take on anyone!<NL>Man, woman, child...<NB><PORTRAIT:0, 7, 0>Erm, dog...?<END:0> "
   },
   {
     "id": [
@@ -1040,7 +1040,7 @@
       0,
       148
     ],
-    "message": "<PORTRAIT:0, 8, 0>I have to do laundry when I get home.<END:0> "
+    "message": "<PORTRAIT:0, 8, 0>I need a flea bath when I get home.<END:0> "
   },
   {
     "id": [
@@ -1054,14 +1054,14 @@
       0,
       150
     ],
-    "message": "<PORTRAIT:0, 6, 3>Do you want me to give you a chance?<NB>Okay, I'll take it easy on you.<END:2>B"
+    "message": "<PORTRAIT:0, 6, 3>What's this?<NL>That talking dog I heard about on Twitter?<NB><PORTRAIT:0, 6, 4>Do you think the screws would<NL>lose to some talking DOG!?<END:2>B"
   },
   {
     "id": [
       0,
       151
     ],
-    "message": "<PORTRAIT:1, 0, 6>Le···<NB>Let's do it.<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>Yeah, well,<NL>at least I’m housebroken.<END:0> "
   },
   {
     "id": [
@@ -1082,42 +1082,42 @@
       0,
       154
     ],
-    "message": "<PORTRAIT:1, 0, 5>I really don't want to fight···<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>Nah, this dog doesn't have a death wish.<END:0> "
   },
   {
     "id": [
       0,
       155
     ],
-    "message": "<PORTRAIT:0, 2, 0>Do you want the headline of the<NL>school paper to read,<NB> \"<MEM:0> Skillfully Chickens Out!\"<NL>Well, do ya?<NB><PORTRAIT:1, 0, 5>Come on Erika, gimme a break.<NB><PORTRAIT:0, 6, 3>There's no way out of it now.<NB><PORTRAIT:0, 6, 0>Go get him, Sloan!<END:0> "
+    "message": "<PORTRAIT:0, 2, 2><MEM:0>! You're supposed to be a DOG<NL>Not a CHICKEN!<NB>I need a scoop for the<NL>school NEWSPAPER!!<NB>Go SICK 'EM or something!!!<NB><PORTRAIT:1, 0, 5>Are you Arf-ing serious?<NB><PORTRAIT:0, 6, 3>There's no way out of it now.<NB><PORTRAIT:0, 6, 0>Teach him a lesson, Sloan!<END:0> "
   },
   {
     "id": [
       0,
       156
     ],
-    "message": "<PORTRAIT:0, 8, 0>I'm gonna mess your clothes up!<END:0> "
+    "message": "<PORTRAIT:0, 8, 0>I'm gonna mess up your fur!<END:0> "
   },
   {
     "id": [
       0,
       157
     ],
-    "message": "<PORTRAIT:0, 8, 4>My clothes got all messed up.<NB><PORTRAIT:0, 6, 3>Thank you for taking care of Sloan.<NB><PORTRAIT:0, 6, 0>Your next, Spyke!  Get him!<END:0> "
+    "message": "<PORTRAIT:0, 8, 4>Ugh. I think I have fleas.<NB><PORTRAIT:0, 6, 3>Thank you for taking care of Sloan.<NB><PORTRAIT:0, 6, 2>Your next, Spyke!  Get him!<END:0> "
   },
   {
     "id": [
       0,
       158
     ],
-    "message": "<PORTRAIT:0, 7, 3>I'm gonna take your useless Medaparts!<END:0> "
+    "message": "<PORTRAIT:0, 7, 3>It's a dog-eat-dog world!<END:0> "
   },
   {
     "id": [
       0,
       159
     ],
-    "message": "<PORTRAIT:0, 7, 2>It wasn't fair!<NB><PORTRAIT:0, 6, 0>How pitiful.  You lost against him.<NB><PORTRAIT:0, 6, 2>I will face you next. <END:0> "
+    "message": "<PORTRAIT:0, 7, 4>Aww, I was supposed to be<NL>the dog doing the dog-eating!<NB><PORTRAIT:0, 6, 0>How pitiful. You lost to a puppy.<NB><PORTRAIT:0, 6, 2>I will face you next!<END:0> "
   },
   {
     "id": [
@@ -1145,21 +1145,21 @@
       0,
       163
     ],
-    "message": "<PORTRAIT:0, 22, 0>The Robattle competition was exciting!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>The game designer told me to stand here until <I>after<I> you fight the screws.<END:0> "
   },
   {
     "id": [
       0,
       164
     ],
-    "message": "<PORTRAIT:1, 0, 0>They are staring at each other intensely!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0><I>sniff sniff...<I><NL>(This Medabot looks like a fire hydrant.)<END:0> "
   },
   {
     "id": [
       0,
       165
     ],
-    "message": "<PORTRAIT:1, 0, 0>Mom is waiting.<NB>I better go buy the Spice-A-Roni<NL>and hurry on home.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Ikki's mom is waiting.<NB>I better go buy the Spice-A-Roni<NL>and hurry on home.<END:0> "
   },
   {
     "id": [
@@ -1173,21 +1173,21 @@
       0,
       167
     ],
-    "message": "<PORTRAIT:1, 0, 3>I learned in school that people used to<NL>borrow some sugar from their neighbors.<NB><PORTRAIT:1, 0, 5>But, Spice-A-Roni is not the kind of <NL>thing that you ask neighbors for···<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>I've heard that some humans will ask<NL>to borrow sugar from their neighbors.<NB><PORTRAIT:1, 0, 5>But, Spice-A-Roni is not the kind of <NL>thing that you ask neighbors for...<END:0> "
   },
   {
     "id": [
       0,
       168
     ],
-    "message": "<PORTRAIT:0, 2, 1>Amazing!<NB>I got some great shots of the Robattle!<NB>I can see the headline now, <NL>\"Miracle Victory!\"<NB><PORTRAIT:1, 0, 5>\"Miracle\"?<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Amazing!<NB>I got some great shots of the Robattle!<NB>I can see the headline now, <NL>\"Talking-Dog-Medafighter Victory!\"<NB><PORTRAIT:1, 0, 5>My name is Salty, you know.<END:0> "
   },
   {
     "id": [
       0,
       169
     ],
-    "message": "<PORTRAIT:0, 12, 3>This is Medafighter's Network.<NB>You can Robattle other people by linking<NL>with them, but it's not ready yet.  Sorry♥<END:0> "
+    "message": "<PORTRAIT:0, 12, 3>Hey little doggy!<NL>I cast a spell on you!<NB><PORTRAIT:1, 0, 0>Arf Arf!<NL>Are you a witch or something?<NB><PORTRAIT:0, 12, 5>WOW! You can talk now!<NL>I didn't expect that to work!<END:0> "
   },
   {
     "id": [
@@ -1908,14 +1908,14 @@
       0,
       272
     ],
-    "message": "<PORTRAIT:0, 22, 0>I heard that someone is using a<NL>Medabot to tickle girls.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Parts that do Chain-Reaction damage can damage multiple parts in one turn.<NB>Look on a part's stats screen...<NB>If you see a blue arrow going through a circle next to its power level...<NB>that means it can do Chain-Reaction damage!<END:0> "
   },
   {
     "id": [
       0,
       273
     ],
-    "message": "<PORTRAIT:0, 22, 0>A ghost took my Medabot!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Once your medal levels up enough you'll be able to use the Medaforce.<NL>You'll learn your first Medaforce ability at level 10.<NB><PORTRAIT:0, 22, 1>Medaforce be with you.<END:0> "
   },
   {
     "id": [
@@ -1936,14 +1936,14 @@
       0,
       276
     ],
-    "message": "<PORTRAIT:0, 34, 0>Is it really true that a Medabot is only<NL>tickling cute girls?<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>Oh hi, <MEM:0>!<NB>Oh, don't be surprised if the kids here aren't alarmed that you can talk.<NB>We've all seen you on Twitter.<NB>I mean, shoot, it's 2020. Nothing surprises us anymore.<END:0> "
   },
   {
     "id": [
       0,
       277
     ],
-    "message": "<PORTRAIT:0, 34, 0>There's a ghost at the lake in Mt. Odoro<NL>that makes you leave behind Medabots.<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>That stupid kid upstairs keeps swearing and getting us all in trouble.<NB>I hope the monster from Mt. Odoro eats him.<END:0> "
   },
   {
     "id": [
@@ -1964,21 +1964,21 @@
       0,
       280
     ],
-    "message": "<PORTRAIT:0, 22, 0>This bathroom is pretty creepy.<NL>Like a ghost or something will appear.<NB>That's scary···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Oh come on.<NB>Don't make this awkward.<END:0> "
   },
   {
     "id": [
       0,
       281
     ],
-    "message": "<PORTRAIT:0, 22, 0>Show me your Medal for a second.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>You want to learn something?<NL>Allow me to teach you a lesson.<END:0> "
   },
   {
     "id": [
       0,
       282
     ],
-    "message": "<PORTRAIT:0, 22, 0>When building up your Medal,<NL>it's best to have a goal in mind.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Sometimes when I can't fall asleep at night I press A-B-SELECT-START,<NB>but I always save my game first.<END:0> "
   },
   {
     "id": [
@@ -1992,21 +1992,21 @@
       0,
       284
     ],
-    "message": "<PORTRAIT:0, 22, 0>Long, long ago···<NL>The Heroes of Justice, the Select Corps.<NB>and the Servants of Evil, <NL>the Rubberobo Gang were the same.<NB>That's the rumor I heard,<NL>but I wonder if it's really true?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>When the medawatch refers to \"CRG\" it's refering to when the medabot is facing the center of the field.<NB>\"RAD\" refers to when the medabot is facing away.<NB>They mean \"Charge\" and \"Radiation\", repectively.<END:0> "
   },
   {
     "id": [
       0,
       285
     ],
-    "message": "<PORTRAIT:0, 22, 0>Use a Medabot to tickle girls···<NL>Why didn't I think of that!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>There are 8 skills a medal can level up in:<NB>Strike, Berserk, Shoot, Aim Shot, Defend, Support, Heal, and Interrupt.<NB>The higher the skill level<NL>your medal has,<NB>the more damage it will do with a part that uses that skill.<NB>Shooting attacks do more damage if your medal has increased its shoot skill, etc.<NB>You can check your medal's skill levels with your Medawatch.<END:0> "
   },
   {
     "id": [
       0,
       286
     ],
-    "message": "<PORTRAIT:0, 22, 0>The spirit of a boy who loves Medabots<NL>is said to appear at the mountain.<NB>Is it for real?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>There are a whole lot of freaks on Mt. Odoro.<NB>A whole lot of fairy-tail freaks.<END:0> "
   },
   {
     "id": [
@@ -2027,7 +2027,7 @@
       0,
       289
     ],
-    "message": "<PORTRAIT:0, 34, 0>A Medabot that tickles girls···<NL>That's what guys who can't get girls do!<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>Shooting medaparts will aim at specific enemy parts.<NB>You can't select which part they'll aim at, it's pretty random IMO.<NB>And besides, most of the time your opponent will defend.<NB>But if you land a critial hit...<END:0> "
   },
   {
     "id": [
@@ -2055,21 +2055,21 @@
       0,
       293
     ],
-    "message": "<PORTRAIT:0, 22, 0>Is it Summer vacation now?<NL>Or is that Winter vacation?<NB>Or is it Spring vacation?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Grapple attacks are physical attacks, like hammers and swords.<NB>You can't aim them, they just hit the closest opponent.<END:0> "
   },
   {
     "id": [
       0,
       294
     ],
-    "message": "<PORTRAIT:0, 34, 0>If I study hard, maybe I can<NL>work at Medabots Corporation.<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>I read on a wiki that after using \"Berzerk\" or \"Aim Shot\" attacks,<NB>your medabot wont be able to dodge for the rest of that turn.<NB>Could just be a rumor though.<END:0> "
   },
   {
     "id": [
       0,
       295
     ],
-    "message": "<PORTRAIT:0, 22, 0>The Select Corps. and the Rubberobo<NL>Gang are still chasing each other.<NB>They've got nothing better to do.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>If you want to move faster in battle, equip legs with high propulsion.<NB>If you're using grappling attacks, you want legs with high proximity.<NB>For shooting attacks, you want high remoteness.<NB>It also helps to match the legs to the terrain type.<NB>All of these things play a factor in how fast your medabot moves.<END:0>"
   },
   {
     "id": [
@@ -2090,49 +2090,49 @@
       0,
       298
     ],
-    "message": "<PORTRAIT:0, 23, 0>It's prohibited to bring a <NL>Medawatch to school!<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>Greetings, Talking-Dog-Medafighter!<NB>Care to Robattle with the Principal?<END:0> "
   },
   {
     "id": [
       0,
       299
     ],
-    "message": "<PORTRAIT:0, 23, 0>That's what some schools say right before<NL>they take their student's Medawatch.<END:0> "
+    "message": "<PORTRAIT:0, 23, 0>Always remember to study your opponent!<END:0> "
   },
   {
     "id": [
       0,
       300
     ],
-    "message": "<PORTRAIT:0, 23, 0>I'm not the type to yell at my students to<NL>\"STUDY HARD!!!\". <END:0> "
+    "message": "<PORTRAIT:0, 23, 0>Here at Riverview-182 we welcome all kinds.<NB><PORTRAIT:1, 0, 0>(182? There's only one school here?)<END:0> "
   },
   {
     "id": [
       0,
       301
     ],
-    "message": "<PORTRAIT:0, 25, 0>Study hard!<NB>Robattle hard!  Ha ha ha!<END:0> "
+    "message": "<PORTRAIT:0, 25, 0>Oh ho ho! You're that talking dog from Twitter!<NB>I gotta twitch about this in my DMs or whatever the kids say now.<END:0> "
   },
   {
     "id": [
       0,
       302
     ],
-    "message": "<PORTRAIT:0, 36, 0>You know you're not allowed to just<NL>enter the Music Room whenever you want.<END:0> "
+    "message": "<PORTRAIT:0, 36, 0>What's a dog doing in here?<NL>Dogs aren't allowed in school!<END:0> "
   },
   {
     "id": [
       0,
       303
     ],
-    "message": "<PORTRAIT:0, 22, 0>These days it seems the incidents of<NL>tickling girls have increased···<NB>I gotta tell my girlfriend to be careful.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Missile and Napalm attacks hit 100% of the time...<NB>AND they're guranteed to do chain-reaction damage if they destroy a part.<NB><PORTRAIT:0, 22, 1>They're the fuckin' BEST.<NB><PORTRAIT:0, 23, 1>Did I hear a PROFANITY in the HALLWAYS!?<NB><PORTRAIT:0, 22, 2>Oh shit!<END:0> "
   },
   {
     "id": [
       0,
       304
     ],
-    "message": "<PORTRAIT:0, 22, 0>First we have this \"tickling girls<NL>problem\", and now we have a ghost?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>I almost got in trouble for swearing.<NB><PORTRAIT:0, 22, 1>But they'll never catch me...<NB>...<NB>...bitchessssss.<NB><PORTRAIT:0, 23, 1>Nelson! My office! Now!<NB><PORTRAIT:0, 22, 2>Oh shit!<END:0> "
   },
   {
     "id": [
@@ -2153,14 +2153,14 @@
       0,
       307
     ],
-    "message": "<PORTRAIT:0, 22, 0>There's a mystery Medafighter<NL>here in this school.<NB>However, he's pretty weak and doesn't<NL>come to school that often either.<NB>Isn't he in your class?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>There's a mystery Medafighter<NL>here in this school.<NB>However, he's pretty weak and doesn't<NL>come to school that often either.<NB>Last I heard he was, well... Batman I think?<END:0> "
   },
   {
     "id": [
       0,
       308
     ],
-    "message": "<PORTRAIT:0, 6, 0>The same trick won't work<NL>twice in a row.<END:0> "
+    "message": "<PORTRAIT:0, 6, 3>Don't you have a Bark-eology class to get to?<END:0> "
   },
   {
     "id": [
@@ -2174,7 +2174,7 @@
       0,
       310
     ],
-    "message": "<PORTRAIT:0, 7, 2>You'd better remember this!<NB>I won't take this lying down!<END:0> "
+    "message": "<PORTRAIT:0, 7, 2>Don't forget!<NB>Dog-eat-dog world!<END:0> "
   },
   {
     "id": [
@@ -2188,7 +2188,7 @@
       0,
       312
     ],
-    "message": "<PORTRAIT:0, 8, 2>I'll drop you in a washing machine<NL>and put you in the spin cycle!<END:0> "
+    "message": "<PORTRAIT:0, 8, 2>I'll drop you in a wash tub<NL>and clean all the fleas off you!<END:0> "
   },
   {
     "id": [
@@ -2202,7 +2202,7 @@
       0,
       314
     ],
-    "message": "<PORTRAIT:0, 22, 0>You're the one who beat the<NL>Screws, right?<NB>That was amazing!<NB>Don't tell them I said this, but<NL>they're always causing trouble<NB>and bothering everyone in class.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>You're the dog who beat the Screws, right?<NB>I heard about you online!<NL>That fight was amazing!<NB>I gotta post a selfie with you!<END:0> "
   },
   {
     "id": [
@@ -2223,14 +2223,14 @@
       0,
       317
     ],
-    "message": "<PORTRAIT:0, 34, 0>Dr. Aki's real name is<NL>the \"Atom Akihabara\"!<NB>At least that's what I<NL>heard the other day···<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>Ghost-type medaparts can negate certain attacks.<NB>Depending on the part, you can negate lasers, missiles, and press attacks.<END:0> "
   },
   {
     "id": [
       0,
       318
     ],
-    "message": "<PORTRAIT:0, 22, 0>Oh? You've got a Medawatch?<NL>Well···<NB>I challenge you to a Robattle!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>It's the Talking-Dog-Medafighter!<NB>I challenge you to a Robattle!<END:0> "
   },
   {
     "id": [
@@ -2244,7 +2244,7 @@
       0,
       320
     ],
-    "message": "<PORTRAIT:1, 0, 0>The school paper's headline reads<NL>\"<MEM:0> Survives Another Robattle!\"<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>The school paper's headline reads<NL>\"TALKING DOG MEDAFIGHTER UNLEASHED!\"<END:0> "
   },
   {
     "id": [
@@ -2265,14 +2265,14 @@
       0,
       323
     ],
-    "message": "<PORTRAIT:1, 0, 0>Hey Erika.<NL>Did you write a good article?<NB><PORTRAIT:0, 2, 0>Hmm?<NL>I'm writing it now.<NB>But more importantly, there is<NL>a rumor going around that some weirdo is<NL>using a Medabot to tickle girls.<NB>His hideout has to be in town<NL>for sure.<NB>Go check it out and I'll be there right<NL>after I finish this article.<NB><PORTRAIT:1, 0, 5>Why do I have to go?<NB><PORTRAIT:0, 2, 0>The culprit will escape while<NL>you stand there complaining!<NB>Get going!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf!<NB><PORTRAIT:0, 2, 1>Oh, hi <MEM:0>!<NB>This article about you is a smash hit!<NB><PORTRAIT:0, 2, 7>...and I think I've already found my next big story!<NB><PORTRAIT:0, 2, 1>I've heard rumors that some kid from the city is roaming around town Robattling the locals and causing a stir.<NB><PORTRAIT:0, 2, 2>He's disturbing the peace and MUST BE STOPPED!<NB><PORTRAIT:1, 0, 5>Arrrf? Isn't that what the police is for?<NB><PORTRAIT:0, 2, 4><MEM:0>. The city is 6 houses, a store, a school, and a research building.<NB>Do you see any cops around?<NB><PORTRAIT:0, 2, 5>Actually...<NB>There is that suspiciously shady building in the northwest corner of town as well...<NB><PORTRAIT:0, 2, 1>You should go check there for clues!<NB><PORTRAIT:1, 0, 5>You want me to check the shady building for clues about a city kid who's robattling here?<NB><PORTRAIT:0, 2, 6><MEM:0>, Don't you care about JUSTICE!?<NB><PORTRAIT:1, 0, 0>Arf, I mean...<NB><PORTRAIT:1, 0, 5>...I can't really make heads or tails of the logic here, but oh well.<END:0> "
   },
   {
     "id": [
       0,
       324
     ],
-    "message": "<PORTRAIT:0, 2, 0>Go check out any place that<NL>might be used for a hideout!<END:0> "
+    "message": "<PORTRAIT:0, 2, 8>The shady building!<NL>Clues!<NB><PORTRAIT:0, 2, 2>JUSTICE!<END:0> "
   },
   {
     "id": [
@@ -2286,350 +2286,350 @@
       0,
       326
     ],
-    "message": "<PORTRAIT:0, 34, 0>Eeek!  A boy!<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>Get outta here before I give you a bath!<END:0> "
   },
   {
     "id": [
       0,
       327
     ],
-    "message": "<PORTRAIT:0, 5, 0>Arf Arf!<NB><PORTRAIT:0, 3, 8>Eeek!<NB><PORTRAIT:1, 0, 0>That's Salty!<NL>But who was that other voice?<END:0> "
+    "message": "<PORTRAIT:1, 130, 0>Hey, kids.<NB><PORTRAIT:0, 5, 0>You talkin' to me?<NB><PORTRAIT:1, 130, 0>Yeah, I'm talkin' to you.<NB>I heard there's a guy in this town who kicks dogs.<NB><PORTRAIT:0, 3, 2>What? That's terrible!<NB>What kind of heartless person would do that?<NB><PORTRAIT:0, 5, 0>Yeah, even artichokes have hearts!<NB><PORTRAIT:1, 130, 0>...<NB>...I like you, kid.<NB>Anyway... if you see him, let me know.<NB>Can you do that for me?<NB><PORTRAIT:0, 5, 0>This is not 'Nam, This is Medabots. There are rules!<NB><PORTRAIT:1, 130, 0>You got that right, kid.<NB>I'll see you around.<NB><PORTRAIT:1, 0, 0>Arf Arf! I know that voice, it's Ikki!<END:0> "
   },
   {
     "id": [
       0,
       328
     ],
-    "message": "<PORTRAIT:0, 5, 0>Arf Arf!<NB><PORTRAIT:1, 0, 0>I told you not to go outside<NL>on your own, didn't I?<NB><PORTRAIT:0, 5, 0><I>Whimper···<I><END:0> "
+    "message": "<PORTRAIT:1, 0, 7>WHEN DOES THIS DIALOG HAPPEN?<END:0> "
   },
   {
     "id": [
       0,
       329
     ],
-    "message": "<PORTRAIT:0, 3, 0>Is this your dog?<NB><PORTRAIT:1, 0, 7>Wow, cute···<NB>Um! I mean···was my dog <NL>bothering you?<NB><PORTRAIT:0, 3, 0>Not at all.<NB>He suddenly came running out<NL>and I was just surprised.<NB><PORTRAIT:1, 0, 7>O-oh is that all?<NL>Thank goodness. Um···<END:0> "
+    "message": "<PORTRAIT:1, 0, 7>Arf Arf! Hi Ikki!<NB><PORTRAIT:0, 5, 0>Goooooood Morning Vietnam!!<NB><PORTRAIT:1, 0, 0>Wait, are we in 'Nam or not?<NB><PORTRAIT:0, 3, 4>Ikki, is this your dog you've been telling me about?<NB><PORTRAIT:0, 3, 1>Nice to meet you,<NL>My name is Karin.<NB><PORTRAIT:1, 0, 7>Arf Arf!<NL>I'm <MEM:0>!<NB><PORTRAIT:0, 3, 7>Wow! You really can talk!<NB><PORTRAIT:0, 3, 4>I'm from the next town over,<NL>so Ikki has been showing me around.<NB><PORTRAIT:0, 3, 5>I came here with a friend of mine,<NL>but we got separated.<NB><PORTRAIT:1, 0, 0>Aww.<NB><PORTRAIT:0, 3, 5>My friend can be a bit...<NL>headstrong...<NB><PORTRAIT:0, 3, 6>So I really want to find him before he gets into any trouble.<NB><PORTRAIT:0, 3, 4>Once we find him let's meet up and chat!<NB>I've never met a talking dog before.<NB><PORTRAIT:0, 3, 0>But before we go...<NB><PORTRAIT:0, 3, 7>Would you mind if I pet you?<NB><PORTRAIT:1, 0, 7>Arf Arf! Not at all!<END:0> "
   },
   {
     "id": [
       0,
       330
     ],
-    "message": "<PORTRAIT:1, 0, 4>That's one really polite girl.<NL>I wonder if she's from the next town over?<NB>Otherwise, everyone would be talking about<NL>a cute girl like that.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Well, onward to the suspicious building!<END:0> "
   },
   {
     "id": [
       0,
       331
     ],
-    "message": "<PORTRAIT:1, 0, 0>This place looks pretty shady.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This place <I>does<I> look pretty suspicious...<END:0> "
   },
   {
     "id": [
       0,
       332
     ],
-    "message": "<PORTRAIT:1, 0, 0>Oh, Erika.<NB><PORTRAIT:0, 2, 8><MEM:0>!  We've got trouble!<NB>A Medafighter came from the neighboring<NL>town's Rosewood Private School and<NL>started picking fights in our own school!<NB>He's in there now!<NB><PORTRAIT:1, 0, 0>Why?<NB><PORTRAIT:0, 2, 8>Don't ask me!<NL>Hurry and come to school!<NB><PORTRAIT:1, 0, 5>But why do I have to go?<NB><PORTRAIT:0, 2, 2>Just come!  Got it?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Oh, Erika.<NB><PORTRAIT:0, 2, 8><MEM:0>! We've got trouble!<NB>That kid from the city showed up and started picking fights at our school!<NB>He's there right now!<NB><PORTRAIT:1, 0, 0>What? Why?<NB><PORTRAIT:0, 2, 8>Do I look like a mind reader, <MEM:0>?<NB>Is that what I look like to you??<NB>Someone who can read minds???<NB>I can talk to dogs but I can't read minds!!!!<NB>Hurry and come to school!<NB><PORTRAIT:0, 2, 7>...so I can get footage of you beating him up!<NB><PORTRAIT:1, 0, 5>Is that all you care about?<NB><PORTRAIT:0, 2, 2>Just hurry up! Got it?<END:0> "
   },
   {
     "id": [
       0,
       333
     ],
-    "message": "<PORTRAIT:0, 2, 0>You walk SO slow!<NB>The Medafighter is already here!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>There you are!<NB><PORTRAIT:0, 2, 8>The Medafighter is taking on the Screws!<END:0> "
   },
   {
     "id": [
       0,
       334
     ],
-    "message": "<PORTRAIT:0, 4, 2>The culprit is one of you guys, isn't it!<NL>Show yourself, you coward!<NB><PORTRAIT:0, 6, 0>How dare you talk to me like that!<NB>I'll challenge you, but don't worry<NL>I'll go easy on you.<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>The culprit is one of you guys, isn't it!<NL>Show yourself, you coward!<NB><PORTRAIT:0, 6, 0>Bold words for a kid who can't even stand up straight.<NB><PORTRAIT:0, 4, 2>I've got a bad back, alright!?<NB><PORTRAIT:0, 6, 3>I'll take you on, but don't worry<NL>I'll go easy on you.<END:0> "
   },
   {
     "id": [
       0,
       335
     ],
-    "message": "<PORTRAIT:0, 7, 0>Hey Boss.<NB>If we beat this guy, it's gonna<NL>be a real smack in the face<NB>to Rosewood Private School!<END:0> "
+    "message": "<PORTRAIT:0, 7, 3>Hey Boss.<NB><PORTRAIT:0, 7, 2>If we beat this guy, it's gonna<NL>be a real smack in the face<NB>to Rosewood Private School!<END:0> "
   },
   {
     "id": [
       0,
       336
     ],
-    "message": "<PORTRAIT:0, 8, 0>I'm gonna mess up your clothes too!<END:0> "
+    "message": "<PORTRAIT:0, 8, 1>I'm gonna mess up your fur too!<NB><PORTRAIT:0, 4, 5>But I don't have...<END:0> "
   },
   {
     "id": [
       0,
       337
     ],
-    "message": "<PORTRAIT:0, 4, 3>I'll take you all on!<NL>Time to Robattle!<END:0> "
+    "message": "<PORTRAIT:0, 4, 3>Whatever. You guys are really going to do 3 on one?<NB><PORTRAIT:0, 6, 1>Sorry, official rules!<NB><PORTRAIT:0, 4, 2>Really?<NB>That's such an incredibly lame excuse...<NB><PORTRAIT:0, 4, 3>...I bet not even grade-schoolers use it anymore.<NB><PORTRAIT:0, 6, 2>Boy! This IS a grade school!<END:0> "
   },
   {
     "id": [
       0,
       338
     ],
-    "message": "<PORTRAIT:0, 2, 4>What a scoop!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>You tell 'em, Quasimodo!<NB><PORTRAIT:0, 4, 6>Uhh, rude!<END:0> "
   },
   {
     "id": [
       0,
       339
     ],
-    "message": "<PORTRAIT:0, 6, 5>Ahh!<NL>My Peppercat!<END:0> "
+    "message": "<PORTRAIT:0, 6, 5>Ahh!<NL>My Medabot!<END:0> "
   },
   {
     "id": [
       0,
       340
     ],
-    "message": "<PORTRAIT:0, 6, 2>Hey you!  Don't take only my bad side!<END:0> "
+    "message": "<PORTRAIT:0, 6, 2>Hey you! Don't take only my bad side!<END:0> "
   },
   {
     "id": [
       0,
       341
     ],
-    "message": "<PORTRAIT:0, 7, 5>Whoa!  Boss, we're in trouble!<NB>Medabot, retreat!<END:0> "
+    "message": "<PORTRAIT:0, 7, 5>Whoa! Boss, we're in trouble!<NB>Medabot, retreat!<END:0> "
   },
   {
     "id": [
       0,
       342
     ],
-    "message": "<PORTRAIT:0, 4, 0>Is that all you got?<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Is that all you got?<END:0> "
   },
   {
     "id": [
       0,
       343
     ],
-    "message": "<PORTRAIT:0, 6, 0><I>Phbbbbbt.<I><NB><PORTRAIT:0, 7, 0>What should we do, Boss?<NB><PORTRAIT:0, 8, 0>Now I've gotta wash my Medabot too!<NB><PORTRAIT:0, 6, 0>Men!  Resort to Plan B!<NB><PORTRAIT:0, 6, 2>Let's get outta here!<END:0> "
+    "message": "<PORTRAIT:0, 6, 0><I>Phbbbbbt.<I><NB><PORTRAIT:0, 7, 0>What should we do, Boss?<NB><PORTRAIT:0, 8, 0>These fleas are driving me crazy!<NB><PORTRAIT:0, 6, 0>Men! Resort to Plan B!<NB><PORTRAIT:0, 6, 2>Let's get outta here!<END:0> "
   },
   {
     "id": [
       0,
       344
     ],
-    "message": "<PORTRAIT:0, 4, 2>Wait, you!<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Wait, you!<NB><PORTRAIT:0, 6, 1>Just try and catch us, grandpa!<NB><PORTRAIT:0, 4, 6>Again, RUDE!<END:0> "
   },
   {
     "id": [
       0,
       345
     ],
-    "message": "<PORTRAIT:1, 0, 0>Whoa.  He's powerful···<NB><PORTRAIT:0, 2, 0>Is this the time to be impressed?<NL>Let's go!<NB><PORTRAIT:1, 0, 5>Wha?<END:0> "
+    "message": "<PORTRAIT:0, 2, 8>It looks like they headed toward the second floor of the school!<NB>Let's go after them!<END:0> "
   },
   {
     "id": [
       0,
       346
     ],
-    "message": "<PORTRAIT:0, 2, 0><MEM:0>!<NL>Hurry!<END:0> "
+    "message": "<PORTRAIT:0, 2, 8><MEM:0>!<NL>Hurry!<NB>Stand next to me so we can progress the story more!<END:0> "
   },
   {
     "id": [
       0,
       347
     ],
-    "message": "<PORTRAIT:0, 4, 2>Where did that scum run off to!?<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Where did those punks run off to!?<END:0> "
   },
   {
     "id": [
       0,
       348
     ],
-    "message": "<PORTRAIT:1, 0, 0>Ummm···<NL>He really looks ticked off.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>That is one angry kid.<END:0> "
   },
   {
     "id": [
       0,
       349
     ],
-    "message": "<PORTRAIT:0, 2, 0>Go ahead. <NL>Just do it like last time!<NB><PORTRAIT:1, 0, 8>D-don't push me!<NB>Ah ah ah!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>You can do it <MEM:0>!<NB>This footage will be all over Medabots Twitter tomorrow!<NB>Show him what for!<NB><PORTRAIT:1, 0, 8>W-w-what for?<NB><PORTRAIT:0, 2, 1>You just need a little scootin'!<END:0> "
   },
   {
     "id": [
       0,
       350
     ],
-    "message": "<PORTRAIT:0, 4, 0>You're with them, aren't you!<NL>I'm Koji Karakuchi!<NB><PORTRAIT:0, 4, 3>Robattle me man to man!<END:0> "
+    "message": "<PORTRAIT:0, 4, 1>Oh.<NL>Hello little doggy.<NB><PORTRAIT:1, 0, 6>erm... Arf... Arf?<NB><PORTRAIT:0, 4, 4>You seem a little tense. What are you doing in a school? Are you the teacher's pet?<NB><PORTRAIT:0, 4, 1>Aww, you're so cute. Do you need to go outside?<NB><PORTRAIT:0, 4, 0>Wait...<NB>Is that a Medawatch?<NB><PORTRAIT:0, 4, 6>Is this some kind of trap!?<NB><PORTRAIT:1, 0, 6>Arf Arf! N-no! I just-<NB><PORTRAIT:0, 4, 8>You can TALK?<NB>A disarmingly cute talking dog who can ROBATTLE?<NB><PORTRAIT:0, 4, 3>Are you the one who stole Karin's lunch money!?<NB><PORTRAIT:1, 0, 8>BOOOOORK!?!?<NL>You're barking up the wrong tree!!<NB><PORTRAIT:0, 4, 3>Do you think you're cute!?<NL>You're going down, demon dog!!<END:0> "
   },
   {
     "id": [
       0,
       351
     ],
-    "message": "<PORTRAIT:1, 0, 0>I-I won!<NB><PORTRAIT:0, 4, 0>You're not bad···<NB><PORTRAIT:0, 2, 6>That was so boring.<NL>You just fought normally.<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Demon dog! I'll get you yet!<NB>I won't forgive you for what you did to Karin!<NB><PORTRAIT:1, 0, 8>Huh?<NB>I didn't do anything to-<END:0> "
   },
   {
     "id": [
       0,
       352
     ],
-    "message": "<PORTRAIT:1, 0, 8>Huh?<NB><PORTRAIT:0, 2, 6>I wanted to take a picture of<NL>that thing you did last time.<NB><PORTRAIT:1, 0, 5>Why is it that I win and you still<NL>end up complaining?<END:0> "
+    "message": "<PORTRAIT:1, 0, 8><I>sniff sniff...<I><NL>Karin!<END:0> "
   },
   {
     "id": [
       0,
       353
     ],
-    "message": "<PORTRAIT:0, 5, 0>Arf Arf!<NB><PORTRAIT:1, 0, 4>You think so too, Salty?<END:0> "
+    "message": "<PORTRAIT:0, 5, 0>Yeah, well, that's just, like, your opinion, man.<END:0> "
   },
   {
     "id": [
       0,
       354
     ],
-    "message": "<PORTRAIT:1, 0, 0>When···? Ah··· Well···<NL>I don't know what's going on any more.<NB>What's happening?<NB><PORTRAIT:0, 3, 7>That is to say···<NL>The truth is I···um···<NB><PORTRAIT:1, 0, 0>Huh?<NB><PORTRAIT:0, 4, 2>Karin!<NB>It's not necessary to ask him anything!<NL>Get away from him!<NB><PORTRAIT:0, 3, 5>But···<END:0> "
+    "message": "<PORTRAIT:0, 3, 8>Koji! I finally found you!<NB><PORTRAIT:0, 4, 2>Karin! Stay back!<NB>I'll protect you from this demon dog!<NB><PORTRAIT:1, 0, 0>Huh?<NB><PORTRAIT:0, 3, 3>Koji, that's not a demon-dog...<NL>that's just a <MEM:0>-dog.<NB><PORTRAIT:0, 4, 6>You... you know this... demon?<END:0>"
   },
   {
     "id": [
       0,
       355
     ],
-    "message": "<PORTRAIT:0, 4, 2>Say it!  Say it!  You know<NL>who the culprit is, don't you?<NB><PORTRAIT:0, 4, 5>Who did···to Karin···<NB>they···uh<END:0> "
+    "message": "<PORTRAIT:0, 4, 5>I'm so confused. I guess I shouldn't have attacked you like that.<NB><PORTRAIT:0, 4, 2>That's my bad.<END:0> "
   },
   {
     "id": [
       0,
       356
     ],
-    "message": "<PORTRAIT:0, 4, 0>You're <MEM:0>, right?<NB><PORTRAIT:0, 4, 3>Next time you're going down!<NB><PORTRAIT:0, 3, 5><MEM:0>,<NL>sorry about all this.<NB>I've been telling Koji to stop worrying<NL>about me so much, but···<NB><PORTRAIT:0, 4, 2>Karin!  Let's go!<NB><PORTRAIT:0, 3, 4>Well then, let's meet again<NL>sometime.<END:0> "
+    "message": "<PORTRAIT:0, 4, 6>...but he still seems suspiciously demonic to me.<NB><PORTRAIT:0, 4, 0>Anyway Karin, we still need to find the person who DID steal your lunch money.<NB><PORTRAIT:0, 3, 3>Don't worry about it, Koji. Let's just head back home for now. I'm getting hunry.<NB><PORTRAIT:0, 4, 2>I suppose it is getting close to dinner.<NB><PORTRAIT:0, 4, 2>Gotta have that Spice-A-Roni!<NB><PORTRAIT:1, 0, 0>Rich kids eat Spice-A-Roni too?<NB><PORTRAIT:0, 3, 4>Sorry for all the trouble, <MEM:0>. Like I said, he can be a little bit...<NB><PORTRAIT:1, 0, 1>...of a bull dog?<NB><PORTRAIT:0, 4, 2>Watch it, demon!<NB><PORTRAIT:0, 3, 4>Well then, let's meet again<NL>sometime.<END:0> "
   },
   {
     "id": [
       0,
       357
     ],
-    "message": "<PORTRAIT:1, 0, 0>Well, one problem is over.<NB><PORTRAIT:0, 2, 2>What are you saying!<NL>We're not done looking yet!<NB>Don't you feel ashamed that <NL>you're the one that got in trouble?<NB><PORTRAIT:1, 0, 0>I don't care anymore, what's done is done.<NB><PORTRAIT:0, 2, 2>Are you kidddding!?<NL>Come to my house right away!<NB>I've got a great idea!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>All's well that ends well.<NB><PORTRAIT:0, 2, 8>What are you talking about!<NL>We're not done yet!<NB>There's a pick-pocket on the loose!!<NL>Come to my house right away!<NB><PORTRAIT:0, 2, 5>We need to brainstorm how to get him on camera!<END:0> "
   },
   {
     "id": [
       0,
       358
     ],
-    "message": "<PORTRAIT:1, 0, 5>Here we go again···<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Well...<NB>...at least she might have treats at her house?<END:0> "
   },
   {
     "id": [
       0,
       359
     ],
-    "message": "<PORTRAIT:0, 2, 0>I've been waiting for you a while.<NB><PORTRAIT:1, 0, 0>Hey, Erika.<NL>What are we gonna do?<NB><PORTRAIT:0, 2, 0>Wear this.<NB><PORTRAIT:1, 0, 0>This is···a SKIRT!?<NB>Wow, even YOU have a skirt, Erika?<NB><PORTRAIT:0, 2, 2>Just what do you mean by that!?<NB><PORTRAIT:0, 2, 0>Just put on this skirt<NL>and walk around town.<NB><PORTRAIT:1, 0, 5>Wha?<NL>No wayyyy.<NB><PORTRAIT:0, 2, 2>No backtalk!  Wear it!<NB>Or don't you care that I might<NL>get tickled?<NB><PORTRAIT:1, 0, 5>Okay, okay···<NB>I just gotta wear this, right?<END:0> "
+    "message": "<PORTRAIT:0, 2, 0>I've been waiting for you a while.<NB><PORTRAIT:1, 0, 0>So, what are we gonna do?<NB><PORTRAIT:0, 2, 0>You're going to wear this.<NB><PORTRAIT:1, 0, 0>A... skirt?<NB><PORTRAIT:0, 2, 0>Yeah.<NB>In a future version of Salty's Quest,<NB>we're going to make this a detective outfit or something,<NB>but for right now, it's a skirt.<NB><PORTRAIT:1, 0, 5>A detective outfit sounds WAY cooler.<NB><PORTRAIT:0, 2, 2>You try coming up with new dialog and graphics for a 17-year-old GBA game!<NB>Gotta release something sometime! Even if it's incomplete!<NB><PORTRAIT:1, 0, 5>Okay, okay···<NB>I just gotta wear this, right?<END:0> "
   },
   {
     "id": [
       0,
       360
     ],
-    "message": "<PORTRAIT:0, 2, 4>It looks good on you.<NB>Okay, let's go!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>You're adorable.<NB>Okay, let's go!<END:0> "
   },
   {
     "id": [
       0,
       361
     ],
-    "message": "<PORTRAIT:0, 46, 0>I found a cute girl!  Oops!<NB><PORTRAIT:0, 2, 8>Eeek!<NB>Why are you coming near me<NL>you stupid Medabot!<NB><PORTRAIT:0, 46, 0>I made a mistake!  It's not a cute girl!<END:0> "
+    "message": "<PORTRAIT:0, 46, 0>GREETINGS HUMAN.<NB>I WOULD LIKE TO OFFER YOU THIS ROSE FROM THE CHURCH OF RELIGIOUS CONSCIOUSNESS.<NB><PORTRAIT:0, 2, 0>Oh uh, thanks...<NB><PORTRAIT:0, 46, 0>WOULD YOU CARE TO MAKE A DONATION?<NB><PORTRAIT:0, 2, 0>N-no thanks...<NB><PORTRAIT:0, 46, 0>HOW ABOUT A DONATION TO THE REVEREND MOON?<NL>JEWS FOR JESUS?<NB>JEHOVA'S WITNESSES?<NL>HOW ABOUT BUDDISM?<NB>JERRY'S KIDS?<NL>SCIENTOLOGY?<NB>...NUCLEAR POWER?<NB><PORTRAIT:0, 2, 8>No! Get away from me you-<NB><PORTRAIT:0, 2, 2>HEY! KEEP YOUR HANDS OUT OF MY POCKETS!<END:0> "
   },
   {
     "id": [
       0,
       362
     ],
-    "message": "<PORTRAIT:0, 2, 2><I>Huff··· huff···<I><NL>Where did he go?<END:0> "
+    "message": "<PORTRAIT:0, 2, 2><I>Huff... huff... <I><NL>Where did he go?<END:0> "
   },
   {
     "id": [
       0,
       363
     ],
-    "message": "<PORTRAIT:0, 46, 0>Did I lose her?<NB><PORTRAIT:0, 2, 2>STOP RIGHT THERE!!<NB><PORTRAIT:0, 46, 0>Catch me if you can!<END:0> "
+    "message": "<PORTRAIT:0, 46, 0>LOOKS LIKE I PICKED THE WRONG WEEK TO QUIT SMOKING.<NB><PORTRAIT:0, 2, 2>Stop right there!!<END:0> "
   },
   {
     "id": [
       0,
       364
     ],
-    "message": "<PORTRAIT:0, 2, 2>Hey!<NL>I said stop!!<NB><PORTRAIT:0, 46, 0>Wheee!!<END:0> "
+    "message": "<PORTRAIT:0, 46, 0>SURELY YOU'RE TIRED BY NOW.<NB><PORTRAIT:0, 2, 2>I am NOT tired!!<NB>...and DON'T call me Shirley!!!<END:0> "
   },
   {
     "id": [
       0,
       365
     ],
-    "message": "<PORTRAIT:0, 2, 2><I>Gasp··· gasp···<I><NL>W-what the heck are you doing!<NB>Hurry and go after him!<NB><PORTRAIT:0, 34, 0>Eeek!<NB><PORTRAIT:0, 2, 0>I heard a scream come from that<NL>big building over there!<NB>Something happened again.<NL>There's no time to lose!<NB><MEM:0>, come quickly, okay?<END:0> "
+    "message": "<PORTRAIT:0, 2, 2><I>Gasp... gasp...<I><NL>W-what are you <I>doing!?<I><NB>Hurry and go after him!<NB><PORTRAIT:0, 34, 0>Eeek! A creep asking for donations!<NB><PORTRAIT:0, 2, 8>Did you hear that?<NB>It sounds like he ran towards that one suspicious building we keep referencing!<NB><MEM:0>, come quickly, okay?<END:0> "
   },
   {
     "id": [
       0,
       366
     ],
-    "message": "<PORTRAIT:1, 0, 0>Hm? <NL>Someone forced their way in!<NB>I heard that a long time ago<NL>this place used to make Medabots.<NB>Hmmmm···<NL>Very suspicious···VERY suspicious.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Hm? <NL>Someone forced their way in!<NB>Hmmmm···<NL>Very suspicious···VERY suspicious.<END:0> "
   },
   {
     "id": [
       0,
       367
     ],
-    "message": "<PORTRAIT:0, 54, 1>Another success for the Rubberobo Gang!<NL>Next time we'll find cuter girls!<END:0> "
+    "message": "<PORTRAIT:0, 54, 0>Another success for the Rubberobo Gang.<NB><PORTRAIT:0, 46, 0>SURELY THIS TOWN WILL BOW DOWN TO US SOON.<NB><PORTRAIT:0, 54, 0>They most definitely will.<NB>... but don't call me Shirley.<END:0> "
   },
   {
     "id": [
       0,
       368
     ],
-    "message": "<PORTRAIT:0, 3, 5>Oh dear, I seem to be lost again.<NL>Where in the world am I this time?<END:0> "
+    "message": "<PORTRAIT:0, 3, 5>Oh dear... Koji, where did you run off to this time?<END:0> "
   },
   {
     "id": [
       0,
       369
     ],
-    "message": "<PORTRAIT:0, 3, 0>Hello? <NL><MEM:0>, is that you?<NB><PORTRAIT:0, 3, 4>Wow, you look very nice in a skirt.<NB><PORTRAIT:0, 3, 0>By the way, what's that over there?<END:0> "
+    "message": "<PORTRAIT:0, 3, 4>Oh! It's <MEM:0>-dog!<NB><PORTRAIT:0, 3, 1>What are you doing here?<NB><PORTRAIT:0, 3, 0>...and who are they over there?<END:0> "
   },
   {
     "id": [
       0,
       370
     ],
-    "message": "<PORTRAIT:1, 0, 8>Those guys can only be the <NL>mischievous Rubberobo Gang!<NB>You're behind this aren't you?<NB><PORTRAIT:0, 54, 0>Say what?  Aha!<NB>Look!  There's another cute girl!<NL>You know what that means!<NB><PORTRAIT:1, 0, 2>Like I'm gonna let you tickle me!<END:0> "
+    "message": "<PORTRAIT:1, 0, 2>So you're the ones who have been stealing kid's lunch money!<NB><PORTRAIT:0, 54, 0>Nuts. We have been found.<NB><PORTRAIT:0, 46, 0>LOOKS LIKE I PICKED THE WRONG WEEK TO QUIT SNIFFING GLUE.<NB><PORTRAIT:0, 54, 0>I can't believe you found our secret base in Riverview City.<NB>We had already stolen so much money from the kids here,<NB>we were using it to buy out all the local stock of Spice-A-Roni.<NB>Soon, this whole city would have been at our mercy.<NB>All 6 houses. Under our control.<NL>Complete domination.<NB><PORTRAIT:1, 0, 0>Is <I>that<I> why you came to this city?<NB><PORTRAIT:0, 54, 0>I can't tell you that. It's classified.<END:0> "
   },
   {
     "id": [
       0,
       371
     ],
-    "message": "<PORTRAIT:0, 54, 3>Y-you got me···<NB><PORTRAIT:1, 0, 2>Is that all you got?<NL>Do you feel lucky, punk?  Well, do you?<NB><PORTRAIT:1, 0, 7>I've always wanted to say that line.<NL><I>(blush)<I><NB><PORTRAIT:0, 54, 3>I'm doomed.<END:0> "
+    "message": "<PORTRAIT:0, 54, 0>Double nuts.<NB><PORTRAIT:1, 0, 2>Is that all you got?<NL>Do you feel lucky, punk?  Well, do you?<NB><PORTRAIT:1, 0, 7>(I wish Ikki was here to hear me now!)<END:0> "
   },
   {
     "id": [
       0,
       372
     ],
-    "message": "<PORTRAIT:0, 3, 8>Oh!<NL>Someone's arrived.<END:0> "
+    "message": "<PORTRAIT:0, 3, 8>Oh!<NB>Someone in a white suit is here!<END:0> "
   },
   {
     "id": [
       0,
       373
     ],
-    "message": "<PORTRAIT:1, 0, 8>Wha!?<NL>Someone's here!<NB>If somebody sees me like this, I'll die.<NL>I'd better go hide.<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Wha!?<NL>A white suit?<NB>It that the dog catcher!?<NL>I'd better hide!<END:0> "
   },
   {
     "id": [
       0,
       374
     ],
-    "message": "<PORTRAIT:0, 63, 0>We've found you at last, Rubberobo Gang!<NB><PORTRAIT:0, 46, 0>Toh!  People call me the \"Red Comet\"!<NL>Select Red!<END:0> "
+    "message": "<PORTRAIT:0, 63, 0>10-4-2, Over. We've located the Rubberrobo gang.<NB><PORTRAIT:0, 46, 0>To protect the world from devastation!<END:0> "
   },
   {
     "id": [
       0,
       375
     ],
-    "message": "<PORTRAIT:0, 54, 3>Robo ow ow.<NB><PORTRAIT:0, 63, 1>Ho ho.  It looks like someone's given<NL>you the beating you deserved.<NB>How convenient for us.<NB>I do so love to take credit for<NL>the hard work of others!<NB>Take him away, Select 3!<NB><PORTRAIT:0, 46, 0>Aye aye, sir.<END:0> "
+    "message": "<PORTRAIT:0, 54, 3>It appears I picked the wrong week to quit methamphetamines...<NB><PORTRAIT:0, 63, 3>Methan-what?<NB><PORTRAIT:0, 63, 0>Let's not forget this is a kid's game, now.<NB>Take him away, Select 3!<NB><PORTRAIT:0, 46, 0>Select Corps! Blast off at the speed of light!<NB>...to jail!<END:0> "
   },
   {
     "id": [
@@ -2643,84 +2643,84 @@
       0,
       377
     ],
-    "message": "<PORTRAIT:1, 0, 8>Oh no!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Yikes! Who is THAT?<END:0> "
   },
   {
     "id": [
       0,
       378
     ],
-    "message": "<PORTRAIT:0, 64, 0>I get the feeling someone was here.<END:0> "
+    "message": "<PORTRAIT:0, 130, 1>Hmm....<NB>No dog kickers in here...<NB>I'll find you someday, my nemesis....<END:0> "
   },
   {
     "id": [
       0,
       379
     ],
-    "message": "<PORTRAIT:1, 0, 0>Whew, that was close.<NB><PORTRAIT:1, 0, 4>It would be real cool to be one of<NL>the Medafighters of Justice.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Huh...<NB><PORTRAIT:1, 0, 4>Well that last guy seemed pretty excellent.<END:0> "
   },
   {
     "id": [
       0,
       380
     ],
-    "message": "<PORTRAIT:1, 0, 4>Behold!<NB>The Medafighter of Justice,<NL><MEM:0> has arrived!<NB>Maybe that's a bit much···<NB><PORTRAIT:1, 0, 0>This skirt just isn't me.<NB>I'll go back to Erika's house<NL>to give back this skirt.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf! This is a cool old building.<NB>I wonder if anything valuble was abandoned in any of these old boxes?<NB><PORTRAIT:1, 0, 0>After I check out these old boxes I should visit Erika and tell her what happened.<END:0> "
   },
   {
     "id": [
       0,
       381
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'll go back to Erika's house to give<NL>back this skirt.  It's not even my color!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>I need to return this outfit to Erika first.<END:0> "
   },
   {
     "id": [
       0,
       382
     ],
-    "message": "<PORTRAIT:0, 2, 0>Oh, <MEM:0>.<NL>What took you so long?<NB><PORTRAIT:1, 0, 0>I thought I should give this back.<NL>And besides, I really need my pants back.<NB><PORTRAIT:0, 2, 0>It's okay, go ahead and change.<NB>After all, the incident is over, right?<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Oh, hi <MEM:0>!<NL>Where have you been?<NB><PORTRAIT:1, 0, 0>I thought I should give this back.<END:0> "
   },
   {
     "id": [
       0,
       383
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'll give you the skirt back.<NB><PORTRAIT:0, 2, 0>I don't want it.<NL>Not like I'm gonna be wearing it again.<NB><PORTRAIT:1, 0, 5>Hey, you can't do that to me.<NL>I have no reason to keep this either.<NB><PORTRAIT:0, 2, 4>Well anyway, the members of the Select<NL>Corps. were pretty cool, weren't they?<NB>They just showed up and <NL>gave the Rubberobo Gang  <NB>what was coming to them.<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Oh, don't worry about it.<NB>It's dog-sized anyway...<NB><PORTRAIT:0, 2, 3>...and I don't have a dog.<NB><PORTRAIT:0, 2, 4>The Select Corps. were pretty cool though,<NL>weren't they?<NB>They just showed up and gave the Rubberobo Gang what was coming to them.<END:0> "
   },
   {
     "id": [
       0,
       384
     ],
-    "message": "<PORTRAIT:1, 0, 0>Maybe I should go to school too?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>I guess I'll go check out what Erika's doing at the school.<NB><PORTRAIT:1, 0, 1>Oh! But first! I should see if Miss Nae has a treat for me!<END:0> "
   },
   {
     "id": [
       0,
       385
     ],
-    "message": "<PORTRAIT:0, 3, 0>Nice to meet you. <NL>My name is Karin.<NB><PORTRAIT:1, 0, 7>Wow···Karin···<NL>Uh, I'm <MEM:0> Tenryou.<NB><PORTRAIT:0, 3, 0>By the way, did you see a boy from the<NL>next town over whose name was Koji?<NB><PORTRAIT:1, 0, 7>I, I didn't see him.<NB><PORTRAIT:0, 3, 0>I see···<NL>Please tell me if you do see him.<NB><PORTRAIT:1, 0, 7>Okaaay···<NB><PORTRAIT:0, 3, 0>Well, I'll see you later then.<END:0> "
+    "message": "<PORTRAIT:0, 3, 7>Your fur is so soft!<NB><PORTRAIT:0, 3, 4>Alright, we better get going.<NB>See you later, <MEM:0>!<NB><PORTRAIT:1, 0, 7>Arf Arf!<END:0> "
   },
   {
     "id": [
       0,
       386
     ],
-    "message": "<PORTRAIT:0, 2, 0>\"Tickled Karin,\" right?<NB><PORTRAIT:1, 0, 8>What did you just say!?<NB><PORTRAIT:0, 2, 0>Now I got it.<NL>You're Koji, right? <NB>The reason you came to our school is to<NL>find the person who is using a Medabot<NB>to tickle girls, correct?<END:0> "
+    "message": "<PORTRAIT:0, 2, 0>I get it.<NB>You came to our school looking for the person who stole Karin's lunch money.<END:0> "
   },
   {
     "id": [
       0,
       387
     ],
-    "message": "<PORTRAIT:0, 4, 5>W-who the heck are you?<NB><PORTRAIT:0, 2, 4>\"The Journalist of the Future\",<NL>Erika Amazake! <NB>In any case, the culprit isn't<NL>a student of our school.<NB>In fact, we are looking for the<NL>culprit ourselves.<NB><PORTRAIT:0, 4, 0>Hmph.<NL>Seems I guessed wrong.<NB>I'll look somewhere else then.<END:0> "
+    "message": "<PORTRAIT:0, 4, 5>Right... I'm sorry, who are you?<NB><PORTRAIT:0, 2, 1>\"The Journalist of the Future\",<NL>Erika Amazake!<NB><PORTRAIT:0, 3, 8>Koji, <MEM:0> didn't steal my lunch money.<NB><PORTRAIT:0, 4, 0>Hmph. Maybe not.<END:0> "
   },
   {
     "id": [
       0,
       388
     ],
-    "message": "<PORTRAIT:1, 0, 8>Oh , really?<NB><PORTRAIT:0, 2, 0>Yeah. I saw it all myself.<NB>They were taking the Rubberobo<NL>away somewhere.<NB>What were you doing while the<NL>Select Corps. was busy beating the<NB>Rubberobos?<NB><PORTRAIT:1, 0, 5>Well···I···that is···<NB><PORTRAIT:0, 2, 0>Man, you just can't be depended<NL>on, can you?<NB>I've gotta go back and start writing up<NL>the school paper's headline.<NB>You can come too if you want, <NL>but stay out of my way, okay?<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>They did what now?<NB><PORTRAIT:0, 2, 0>Yeah. I saw it all myself.<NB>They were taking the Rubberobo<NL>away somewhere.<NB><PORTRAIT:0, 2, 6>Unfortunately, my camera missed all the action.<NB><PORTRAIT:0, 2, 0>Oh well.<NB><PORTRAIT:0, 2, 4>I've gotta go back and start writing up<NL>the school paper's headline.<NB><PORTRAIT:0, 2, 1>When you're ready, come visit me at the school newsroom again.<NB>You know, on the second floor?<END:0> "
   },
   {
     "id": [
@@ -4386,56 +4386,56 @@
       2,
       0
     ],
-    "message": "<PORTRAIT:0, 2, 2>I'm trying to write an article,<NL>so stay outta my way!<NB><PORTRAIT:0, 2, 0>··· is what I want to say.<NB>But there is much bigger news<NL>on the horizon. <NB>I heard a ghost is appearing at<NL>Mt. Odoro north of town.<NB>If I'm lucky, I can get its picture!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Hi <MEM:0>! I just finished the article on that Rubberrobo arrest.<NB><PORTRAIT:0, 2, 7>...aaaand, I think I know where my next big scoop is!<NB>Mt. Odoro, north of town.<NB><PORTRAIT:0, 2, 4>I've heard there's a monster living in the marsh that eats children and steals their medabots.<NB>If I'm lucky, I can get its picture!<END:0> "
   },
   {
     "id": [
       2,
       1
     ],
-    "message": "<PORTRAIT:0, 7, 0>Everyone, listen to me!<NB><PORTRAIT:1, 0, 0>Isn't that Spyke's voice!?<NB>Now what are they up to?<END:0> "
+    "message": "<PORTRAIT:0, 7, 1>Everyone, listen up!<NB><PORTRAIT:1, 0, 0>Is that... Spyke?<END:0> "
   },
   {
     "id": [
       2,
       2
     ],
-    "message": "<PORTRAIT:0, 7, 0>In this school we have had many kids who<NL>lost their Medabots and Medaparts to a<NL>ghost at Mt. Odoro.<NB>The Select Corps. ignores us cause we're<NL>just kids and won't help us out.<NB>So we have to take matters into <NL>our own hands!<NB>The time has come for us to take <NL>our stuff back from the ghost!<NB><PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 7, 3>We've been hearing stories of kids who lost their Medabots to a monster at Mt. Odoro.<NB>The Select Corps. ignores us cause they think we're just kids making up stories.<NB><PORTRAIT:0, 7, 2>So we have to take matters into our own hands!<NB>The time has come for us to take our stuff back from the monster!<END:0>"
   },
   {
     "id": [
       2,
       3
     ],
-    "message": "<PORTRAIT:0, 7, 0>What? <NB>You don't wanna get your stuff back!?<END:0> "
+    "message": "<PORTRAIT:0, 7, 4>What? <NB>Don't you guys want your stuff back!?<END:0> "
   },
   {
     "id": [
       2,
       4
     ],
-    "message": "<PORTRAIT:0, 22, 0>You're gonna fight with a ghost?<NB>Just how do you plan on fighting?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Just how do you plan on fighting a monster?<END:0> "
   },
   {
     "id": [
       2,
       5
     ],
-    "message": "<PORTRAIT:0, 22, 0>Losing our Medaparts is bad,<NL>but going to the mountain is worse.<NB><PORTRAIT:0, 7, 0>How pitiful ARE you guys?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>I heard he once decapitated an entire village,<NB>put their heads on a pike,<NL>got a knife,<NL>cut open their spleens,<NL>and drank their fluids.<NB><PORTRAIT:0, 7, 5>...say what now?<END:0> "
   },
   {
     "id": [
       2,
       6
     ],
-    "message": "<PORTRAIT:0, 6, 0>Oh, just give up, Spyke.<NB>No matter what you say,<NL>they won't understand.<NB><PORTRAIT:0, 7, 0>Ohh, okay, boss.<END:0> "
+    "message": "<PORTRAIT:0, 6, 0>Don't worry, Spyke.<NB>They're just kids making up stories.<NB><PORTRAIT:0, 7, 0>Ohh, ...uh, okay, boss.<END:0> "
   },
   {
     "id": [
       2,
       7
     ],
-    "message": "<PORTRAIT:0, 6, 0>Are you listening? <NB>We'll be the only ones going to<NL>Mt. Odoro.<NB>But you do realize that we'll be taking ALL<NL>the Medaparts that we get our hands on.<NB>Including all of yours! Got it?<END:0> "
+    "message": "<PORTRAIT:0, 6, 3>Alright kiddos!<NB>We'll be the only ones going to<NL>Mt. Odoro.<NB><PORTRAIT:0, 6, 1>But you do realize that we'll be taking ALL<NL>the Medaparts that we get our hands on.<NB>Including all of yours! Got it?<END:0> "
   },
   {
     "id": [
@@ -4456,56 +4456,56 @@
       2,
       10
     ],
-    "message": "<PORTRAIT:0, 2, 0><MEM:0>!<NL>We're going too!<NB><PORTRAIT:1, 0, 0>I figured I'd have to go.<NB><PORTRAIT:0, 2, 2>We're not gonna lose to the Screws!<NB>That ghost is definitely gonna <NL>get caught on film!!<NB><PORTRAIT:1, 0, 5>O-Okay···<NB><PORTRAIT:0, 2, 0>Alright then, it's settled.<NB>I'll meet you at the entrance to Mt. Odoro.<NL>Try not to get lost, okay?<END:0> "
+    "message": "<PORTRAIT:0, 2, 7>Hey <MEM:0>...<NL>Do you wanna go for a walk?<NB><PORTRAIT:1, 0, 1>A walk!?<NL>I love walks!!<NB><PORTRAIT:0, 2, 7>Yeah! We're going to go for a walk on Mt. Odoro!<NB><PORTRAIT:1, 0, 8>You mean the place with the monster?<NB>...who eats children??<NB>...and maybe dogs too???<NB><PORTRAIT:0, 2, 1>Oh <MEM:0>! I doubt he eats people!<NB>That's probably just kids making up stories!<NB><PORTRAIT:0, 2, 5>Now I just need to figure out how to get him on camera...<NB><PORTRAIT:0, 2, 4>Here's a map in case you get lost.<NB><PORTRAIT:0, 2, 7>I'll meet you at the entrance to Mt. Odoro.<NL>See you there!<END:0> "
   },
   {
     "id": [
       2,
       11
     ],
-    "message": "<PORTRAIT:1, 0, 0>Erika is as forceful as ever.<NB>For now I'll just go back home<NL>and prepare for a \"picnic\".<NB>If I tell Mom that I'm going to Mt. Odoro,<NL>I wonder what she'll say···  <I>Hmmm···<I><END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Well, I better head back home and let them know Erika is talking me on a walk.<END:0> "
   },
   {
     "id": [
       2,
       12
     ],
-    "message": "<PORTRAIT:0, 80, 0>How was school, <MEM:0>?<NB>Want something to eat?<END:0> "
+    "message": "<PORTRAIT:0, 80, 0>Hey, <MEM:0>.<NB>Guess what! Ikki's dad brought us home some food!<NL>(Shoot, what was his name again?)<NB>It's not Spice-A-Roni, but beggars can't be choosers.<END:0> "
   },
   {
     "id": [
       2,
       13
     ],
-    "message": "<PORTRAIT:1, 0, 0>Um··· I'm going out.<NL>Could you make a lunch?<NB><PORTRAIT:0, 80, 0>Where are you going?<NB><PORTRAIT:1, 0, 0>Umm···a picnic with Erika.<NB><PORTRAIT:0, 80, 0>Really?<NL>You and Erika, on a picnic!?<NB><PORTRAIT:1, 0, 0>N-No.<NL>Um, just forget what I said!<NB><PORTRAIT:0, 80, 0><MEM:0>?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! That's great!<NL>Um, I'm going out for a bit.<NB><PORTRAIT:0, 80, 0>Where are you going?<NB><PORTRAIT:1, 0, 0>Erika is taking me on a walk on Mt. Odoro.<NB><PORTRAIT:0, 80, 0>On Mt. Odoro? Isn't that the place with the monster?<NB>The one that eats children??<NB><PORTRAIT:0, 79, 1>...and maybe dogs too???<NB><PORTRAIT:1, 0, 6>I mean... I think that's just kids making up stories...<NB>(...I hope.)<NB><PORTRAIT:1, 0, 0>Anyway, I gotta let Ikki know!<END:0> "
   },
   {
     "id": [
       2,
       14
     ],
-    "message": "<PORTRAIT:1, 0, 0>I should just give up on lunch.<NB>But, I should still at least bring<NL>something else with me.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! Hi Ikki! Erika is taking me out for a walk!<NB><PORTRAIT:0, 5, 0>Hasta La Vista, baby.<NB><PORTRAIT:1, 0, 1>Arf Arf!<NB><PORTRAIT:1, 132, 0>I'll be back.<NB><PORTRAIT:1, 0, 0>...but before I go...<NB>I should see if there's anything in here that I could use to defend against a monster.<END:0> "
   },
   {
     "id": [
       2,
       15
     ],
-    "message": "<PORTRAIT:0, 5, 0>Arf Arf!<NB><PORTRAIT:1, 0, 4>Salty, were you a good doggy?<END:0> "
+    "message": "<PORTRAIT:0, 5, 0>I’m the Ikki, so that’s what you call me.<NB>That or, uh, His Ikkiness,<NL>or uh, Ikker...<NB>...or El Ikkerino,<NL>if you’re not into the whole brevity thing.<NB><PORTRAIT:1, 0, 4>You got it, El Ikkerino!<END:0> "
   },
   {
     "id": [
       2,
       16
     ],
-    "message": "<PORTRAIT:1, 0, 0>I'll take my penlight.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Hmm... what's on my shelf...<NB>Oh look! It's the world-renowned card game, Penguin SLAP!<NB>Gosh that's such a great card game.<NB>I love how easy it is to buy from PenguinSlap.com.<NB>It also makes a great gift.<NB>You know, what with the holidays around the corner and all.<NB><PORTRAIT:1, 0, 5>But... it's not a good weapon against a child-eating monster. Hm....<NB><PORTRAIT:1, 0, 4>...I guess I'll take Ikki's penlight.<END:0> "
   },
   {
     "id": [
       2,
       17
     ],
-    "message": "<PORTRAIT:1, 0, 1>Ha ha ha···!<NL>There's no time now for TV.<NB>I'd better get going.<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>If I haven't figured out how to assemble a Medabot by now,<NB>I'm in a lot of trouble.<END:0> "
   },
   {
     "id": [
@@ -4519,35 +4519,35 @@
       2,
       19
     ],
-    "message": "<PORTRAIT:0, 79, 1>Hey, <MEM:0>!<NL>Look, Mom made your lunch for you.<NB><PORTRAIT:1, 0, 4>Thanks for bringing it to me, Dad!<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>Hey, <MEM:0>! Since you're going on a walk, I made you a doggy-bag!<NB><PORTRAIT:1, 0, 4>Aww, thanks, El Ikkerino's Dad!<END:0> "
   },
   {
     "id": [
       2,
       20
     ],
-    "message": "<PORTRAIT:0, 79, 1>I've got a present for you from Daddy!<NB><PORTRAIT:1, 0, 1>Holy Medaroli!<NL>A brand new Tinpet!<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>I've also got another present for you from Batman!<NB>He's such a nice guy.<NB><PORTRAIT:1, 0, 1>Holy Medabark!<NL>A brand new Tinpet!<END:0> "
   },
   {
     "id": [
       2,
       21
     ],
-    "message": "<PORTRAIT:0, 79, 1>Take care of yourself, son.<NL>Try not to make your mother worry.<NB><PORTRAIT:1, 0, 1>Okay!<NL>Thanks a lot Dad!<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>Well, have fun <MEM:0>! And try not to get eaten.<NB><PORTRAIT:1, 0, 1>Arf Arf!<END:0> "
   },
   {
     "id": [
       2,
       22
     ],
-    "message": "<PORTRAIT:1, 0, 4>Okay!<NB>Off to Mt. Odoro!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Okay! I should set up this tinpet real quick, and then it's off to Mt. Odoro!<END:0> "
   },
   {
     "id": [
       2,
       23
     ],
-    "message": "<PORTRAIT:0, 2, 0><MEM:0>, are you ready to go?<NB><PORTRAIT:1, 0, 0>Yep.  What about you, Erika?<NB><PORTRAIT:0, 2, 4>I'm ready to roll!<NB><PORTRAIT:1, 0, 0>Let's get going then.<NB><PORTRAIT:0, 2, 4>Before we go, it's time for a little<NL>\"warm up\"!<END:0> "
+    "message": "<PORTRAIT:0, 2, 1><MEM:0>, are you ready to go?<NB><PORTRAIT:1, 0, 4>Arf Arf!<NB><PORTRAIT:0, 2, 4>I'm ready to roll!<NB><PORTRAIT:0, 2, 4>But before we go, let's do a warm-up Robattle!<NB><PORTRAIT:0, 2, 7>I just got a new Medabot and I want to try it out.<END:0> "
   },
   {
     "id": [
@@ -4561,49 +4561,49 @@
       2,
       25
     ],
-    "message": "<PORTRAIT:1, 0, 5>Gimme a break···<NB><PORTRAIT:0, 4, 0>Ah! It's you guys!<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Well that was fun!<NB><PORTRAIT:0, 60, 2>YES IT WAS! AND NOW FOR SOMETHING COMPLETELY DIFFERENT!<END:0> "
   },
   {
     "id": [
       2,
       26
     ],
-    "message": "<PORTRAIT:1, 0, 0>Oh! It's Karin.<NB><PORTRAIT:0, 3, 4>Good afternoon, <MEM:0> and Erika.<NB><PORTRAIT:0, 4, 0>So you just ignore me now?<NL>Nice, <MEM:0>.<NB><PORTRAIT:1, 0, 0>Like you don't!<NB><PORTRAIT:0, 2, 0>What are you guys doing here?<NB><PORTRAIT:0, 4, 0>Karin likes to go outside sometimes,<NL>so I come to keep an eye on her.<NB>But I don't have to tell you <NL>guys ANYTHING. <NB>Never mind that, what are YOU doing here?<NB><PORTRAIT:1, 0, 0>We've come to···<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! It's Karin and that hunchy kid.<NB><PORTRAIT:0, 3, 4>Good afternoon, <MEM:0> and Erika.<NB><PORTRAIT:0, 4, 2>Uh, rude.<NB><PORTRAIT:1, 0, 0>Arf Arf. Can't hear ya, there's a sign in the way.<NB><PORTRAIT:0, 2, 4>What are you guys doing here?<NB><PORTRAIT:0, 4, 1>Karin and I are going for a walk.<NB><PORTRAIT:0, 4, 4>It's a beautiful summer day! Perfect day for a stretch.<NB><PORTRAIT:0, 4, 0>Days... they never seem to end do they...<NB>It sure has been daytime for a long time...<NB><PORTRAIT:0, 4, 0>I wonder if that will ever change...<NB><PORTRAIT:0, 4, 2>Never mind that, what are YOU doing here?<END:0> "
   },
   {
     "id": [
       2,
       27
     ],
-    "message": "<PORTRAIT:0, 2, 0>We've come to defeat the ghost!<END:0> "
+    "message": "<PORTRAIT:0, 2, 7>We're on a mission!<END:0> "
   },
   {
     "id": [
       2,
       28
     ],
-    "message": "<PORTRAIT:0, 4, 0>Huh? Whadjya say?<NB><PORTRAIT:0, 2, 0>I said we've come to defeat the<NL>ghost in a Robattle and take<NL>back the Medaparts that everyone lost!<NB>I'm gonna catch that ghost's<NL>true identity on film perfectly.<END:0> "
+    "message": "<PORTRAIT:0, 4, 5>You mean like an exorcism for that demon dog?<NB><PORTRAIT:0, 2, 6>There's nothing wrong with <MEM:0>.<NB><PORTRAIT:0, 2, 1>We're looking for the monster of Mt. Odoro.<NB><PORTRAIT:0, 2, 4>Legend has it there's a monster out here...<NB><PORTRAIT:0, 2, 0>...that EATS children and steals their Medaparts...<NB><PORTRAIT:0, 2, 7>I'm going to catch it on camera!<NB><PORTRAIT:0, 2, 2>THAT'LL SHOW THOSE JOURNALISTS AT THE ACADEMY!<NB>THEN THEY'LL HAVE TO ACCEPT ME!!<END:0> "
   },
   {
     "id": [
       2,
       29
     ],
-    "message": "<PORTRAIT:0, 2, 4>Right, <MEM:0>?<NB><PORTRAIT:1, 0, 5>Isn't it too much···?<NB><PORTRAIT:0, 4, 4>In other words, are you <NL>trying to challenge me?<END:0> "
+    "message": "<PORTRAIT:0, 3, 7>You sure are dedicated aren't you, Erika.<NB><PORTRAIT:0, 4, 2>You really believe those stories about a big green monster?<NB><PORTRAIT:0, 4, 2>I mean, there ARE a lot of peculiar characters out here but still...<NB>...that monster just sounds like a bunch of kids making up stories.<END:0> "
   },
   {
     "id": [
       2,
       30
     ],
-    "message": "<PORTRAIT:0, 4, 3>You wanna piece of me!?<NL>Bring it on, <MEM:0>!<NB><PORTRAIT:1, 0, 5>Aw man, now what···<NB><PORTRAIT:0, 2, 4>Let's race to see who can find and<NL>beat the ghost first!<NB><PORTRAIT:0, 4, 3>Karin! Let's go!<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Whatever. Have fun looking for your monster.<NB><PORTRAIT:0, 4, 1>Karin and I will enjoy the day together.<NB><PORTRAIT:0, 4, 2>But right now I need to go sit by a tree and rest my back.<END:0> "
   },
   {
     "id": [
       2,
       31
     ],
-    "message": "<PORTRAIT:0, 3, 4>Sorry, Koji gets heated up about <NL>things very easily.<NB><PORTRAIT:1, 0, 7>It's not your fault, Karin.<NB><PORTRAIT:0, 4, 3>Karin, let's GO!<NB><PORTRAIT:0, 3, 4>Well, let's see each other again.<END:0> "
+    "message": "<PORTRAIT:0, 3, 4>I better make sure he dones't get lost.<NB><PORTRAIT:0, 3, 1>See you two later.<END:0> "
   },
   {
     "id": [
@@ -4631,56 +4631,56 @@
       2,
       35
     ],
-    "message": "<PORTRAIT:0, 2, 6>You'd better not go running home!<NL>Let's get going.<END:0> "
+    "message": "<PORTRAIT:0, 2, 2>We haven't found the monster yet! You can't abandon my SCOOP!<END:0> "
   },
   {
     "id": [
       2,
       36
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 131, 0>WECLOME TO MT. ODORO.<NL>\"BEWARE OGRE\"<END:0>"
   },
   {
     "id": [
       2,
       37
     ],
-    "message": "<PORTRAIT:0, 22, 0>What's that thing taking a nap<NL>in the tree?<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Did you see that?<NL>I saw something moving in that tree.<NL>The one to the upper left.<END:0> "
   },
   {
     "id": [
       2,
       38
     ],
-    "message": "<PORTRAIT:0, 22, 0>If you take a nap in the tree,<NL>a caterpillar will walk on you.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0><MEM:0>, the talking-dog-medafighter!<NB>...eats caterpillars!!!<END:0> "
   },
   {
     "id": [
       2,
       39
     ],
-    "message": "<PORTRAIT:1, 0, 0>There's something in the tree.<NB>If I kick it, maybe it'll fall out?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Huh. There's something in the tree.<NB>If I kick it, maybe it'll fall out?<END:0> "
   },
   {
     "id": [
       2,
       40
     ],
-    "message": "<PORTRAIT:0, 54, 0>What the heck!?<NL>The ground and sky have switched!<END:0> "
+    "message": "<PORTRAIT:0, 54, 2>You have interfered with my acorn harvesting!<NB>You must be punished!<NB><PORTRAIT:1, 0, 0>Acorns? What do you need acorns for?<END:0> "
   },
   {
     "id": [
       2,
       41
     ],
-    "message": "<PORTRAIT:0, 54, 0>I can't sleep very well here.<END:0> "
+    "message": "<PORTRAIT:0, 54, 2>Cursed dogs! Why must you dogs always cause so much trouble!<END:0> "
   },
   {
     "id": [
       2,
       42
     ],
-    "message": "<PORTRAIT:1, 0, 0>Those Rubberobos are everywhere.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf?<NL>What did I ever do to that guy?<END:0> "
   },
   {
     "id": [
@@ -4694,7 +4694,7 @@
       2,
       44
     ],
-    "message": "<PORTRAIT:0, 2, 8>What are you doing!<NL>Hurry up and take it off me!<NB><PORTRAIT:1, 0, 0>I've already got it.<NB><PORTRAIT:0, 2, 6>Grrrr!<NL>You're stupid, <MEM:0>!<END:0> "
+    "message": "<PORTRAIT:0, 2, 8>What are you doing!<NL>Hurry up and get it off me!<NB><PORTRAIT:1, 0, 0>*OM NOM NOM!*<NB><PORTRAIT:0, 2, 8>Ewww, <MEM:0>...<END:0> "
   },
   {
     "id": [
@@ -4708,63 +4708,63 @@
       2,
       46
     ],
-    "message": "<PORTRAIT:0, 22, 0>Gimme back my Medabot!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Hey! It's the talking-dog-medafighter!<END:0> "
   },
   {
     "id": [
       2,
       47
     ],
-    "message": "<PORTRAIT:0, 22, 0>I lost my Medaparts to the Rubberobos.<NB><PORTRAIT:1, 0, 0>The Rubberobos?<NL>Are they connected to the ghost?<NB><PORTRAIT:0, 22, 0>Still, those guys are like cockroaches.<NL>They're everywhere!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Oh wow, I came here to fight the monster and I got to fight <MEM:0> from =<MEM:0>'s Quest!<END:0> "
   },
   {
     "id": [
       2,
       48
     ],
-    "message": "<PORTRAIT:0, 22, 0>Maybe I should go back···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Sure hope I don't get eaten so I can tell my friends about this!<END:0> "
   },
   {
     "id": [
       2,
       49
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>Water Taxi.<NL>Ferry rides to Secret Island! £1."
   },
   {
     "id": [
       2,
       50
     ],
-    "message": "<PORTRAIT:1, 0, 8>Holy Medaroli!<NB><PORTRAIT:0, 52, 0>One ride for £1. <I>RoboRobo.<I><END:0> "
+    "message": "<PORTRAIT:1, 0, 8>ARF ARF!<NL>You startled me!<NB><PORTRAIT:0, 52, 0>Oh hey, a talking dog. Raaaadical.<END:0> "
   },
   {
     "id": [
       2,
       51
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>Secret Island! It's a secret to everybody...<END:0> "
   },
   {
     "id": [
       2,
       52
     ],
-    "message": "<PORTRAIT:0, 52, 0>Did you finish up?<END:2>B"
+    "message": "<PORTRAIT:0, 52, 0>Ready to head back?<END:2>B"
   },
   {
     "id": [
       2,
       53
     ],
-    "message": "<PORTRAIT:0, 52, 0>I'll take you back.<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>Rad, let's jet.<END:0> "
   },
   {
     "id": [
       2,
       54
     ],
-    "message": "<PORTRAIT:0, 52, 0>Finish it quickly.<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>It's all good.<END:0> "
   },
   {
     "id": [
@@ -4778,56 +4778,56 @@
       2,
       56
     ],
-    "message": "<PORTRAIT:0, 28, 0>Ooops!<NL>This place was found by someone else!<NB>Take and keep place secret.<NB>Ninja vanish!<END:0> "
+    "message": "<PORTRAIT:0, 28, 0>u have found r sekret place.<NB>take this as reward. <NL>plz keep place sekret.<NB>baiiiii<END:0> "
   },
   {
     "id": [
       2,
       57
     ],
-    "message": "<PORTRAIT:1, 0, 0>Is there something ahead of us?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>So, can we pass now?<END:0> "
   },
   {
     "id": [
       2,
       58
     ],
-    "message": "<PORTRAIT:0, 28, 0>Sasuke of the 3 Ninja Brothers!<NL>Arrives like wind!<END:0> "
+    "message": "<PORTRAIT:0, 28, 0>sasuke of the 3 ninja puppers!<NL>arrives like wind!<END:0> "
   },
   {
     "id": [
       2,
       59
     ],
-    "message": "<PORTRAIT:0, 28, 0>Oops! Ninja has used wrong exit!<NB>Ninja vanish!<END:0> "
+    "message": "<PORTRAIT:0, 28, 0>bork bork, very clear. much safe.<NB>i leave medal in box. 4 u fren.<END:0> "
   },
   {
     "id": [
       2,
       60
     ],
-    "message": "<PORTRAIT:0, 28, 0>Nothing is past here.<NB>Ninja not hide anything.<NL>It best to leave Ninja area soon.<END:0> "
+    "message": "<PORTRAIT:0, 28, 0>nothing is past here.<NB>very not sus. much normal.<NL>best to leave ninja area 4 now.<END:0> "
   },
   {
     "id": [
       2,
       61
     ],
-    "message": "<PORTRAIT:0, 2, 0>How was it, <MEM:0>?<END:0> "
+    "message": "<PORTRAIT:0, 2, 1>Welcome back! Did you find anything cool?<END:0> "
   },
   {
     "id": [
       2,
       62
     ],
-    "message": "<PORTRAIT:1, 0, 0>Nothing worth mentioning.<NB><PORTRAIT:0, 2, 5>I'm disappointed.<NB><PORTRAIT:0, 52, 0>Get out of the way.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>A few cool things, but no scoops.<NB><PORTRAIT:0, 2, 5>Hmm...<NB><PORTRAIT:0, 52, 0>Excuse me.<END:0> "
   },
   {
     "id": [
       2,
       63
     ],
-    "message": "<PORTRAIT:0, 52, 0>Before I leave for the next area,<NL><I>Mumble... mumble...<I><NB>Here we go!  Tah-dah!<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>Secret Island is kinda empty now so...<NL><I>scribble... scribble...<I><NB>Off to the next area!<END:0> "
   },
   {
     "id": [
@@ -4848,21 +4848,21 @@
       2,
       66
     ],
-    "message": "<PORTRAIT:0, 2, 0>Okay, <MEM:0>.<NL>We're going to go on ahead.<END:0> "
+    "message": "<PORTRAIT:0, 2, 0>Whatever dude.<NL><MEM:0>, let's press on ahead.<END:0> "
   },
   {
     "id": [
       2,
       67
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>Water Taxi.<NL>Services moved to Odoro Marsh.<END:0>"
   },
   {
     "id": [
       2,
       68
     ],
-    "message": "<PORTRAIT:0, 22, 0>I came to see the rumored ghost.<NL>The one scaring everyone.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>I came to see the kid-eating monster.<NB>Cuz, you know,<NL>It's 2020 and I'm pretty much done.<END:0> "
   },
   {
     "id": [
@@ -4876,189 +4876,189 @@
       2,
       70
     ],
-    "message": "<PORTRAIT:0, 22, 0>I heard that there's a hag living<NL>in the mountain, but I don't believe it.<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>I heard that there's a monster living<NL>in the mountain, but I don't believe it.<NB>How is a monster supposed to get Spice-A-Roni deleved out here?<END:0> "
   },
   {
     "id": [
       2,
       71
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>Odoro Pond<NL>Home of the <I>Secret Island!<I>!<END:0>"
   },
   {
     "id": [
       2,
       72
     ],
-    "message": "<PORTRAIT:0, 4, 0>This lake is fishy···<NB>Didn't I tell you to go check out<NL>somewhere else besides here!<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>Curse this hunchy back of mine!<END:0> "
   },
   {
     "id": [
       2,
       73
     ],
-    "message": "<PORTRAIT:0, 4, 0>Leave Karin alone, she's resting<NL>right now.<END:0> "
+    "message": "<PORTRAIT:0, 4, 2>I'd robattle you right now if my back wasn't killing me.<END:0> "
   },
   {
     "id": [
       2,
       74
     ],
-    "message": "<PORTRAIT:0, 3, 0>I'm a little embarrassed to say this,<NL>but I get pretty dizzy out on sunny days.<NB>I get all woozy and feel like I'll faint.<NL>So, I have to rest here.<END:0> "
+    "message": "<PORTRAIT:0, 3, 0>Poor Koji and his back problems.<NB>Who on earth thought it was a good idea to draw him that way?<END:0> "
   },
   {
     "id": [
       2,
       75
     ],
-    "message": "<PORTRAIT:0, 3, 0>Don't worry about me.  I'll be okay.<NL>I just need to rest a little.<END:0> "
+    "message": "<PORTRAIT:0, 3, 0>We're gonna hang out here and rest a little.<END:0> "
   },
   {
     "id": [
       2,
       76
     ],
-    "message": "<PORTRAIT:0, 3, 7>Is there something on my face<NL>or···?<END:0> "
+    "message": "<PORTRAIT:0, 3, 1>ZZZzzzz....<END:0> "
   },
   {
     "id": [
       2,
       77
     ],
-    "message": "<PORTRAIT:0, 3, 0>It looked like Erika wanted to say <NL>something just before.<NB><PORTRAIT:0, 2, 2><MEM:0>! <NB>Are you just going to hang out with girls<NL>all day or are you going to actually help?<NB>Get to work!<END:0> "
+    "message": "<PORTRAIT:0, 2, 5>Whoa, she totally passed out.<END:0> "
   },
   {
     "id": [
       2,
       78
     ],
-    "message": "<PORTRAIT:0, 22, 0>It's hard to walk on the mountain paths.<NB>Maybe if I rode on a Medabot···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>The Select Corps. are supposed to protect us right?<NB>They give me a bad feeling...<END:0> "
   },
   {
     "id": [
       2,
       79
     ],
-    "message": "<PORTRAIT:0, 34, 0>Hey, do you know about the mountain hag?<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>I need to pratice robattling if I'm going to take down the monster!<END:0> "
   },
   {
     "id": [
       2,
       80
     ],
-    "message": "<PORTRAIT:0, 34, 0>They say she searches for little kids<NL>so she can eat them!<NB>Can my Medabot beat her?<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>Thanks for the battle strange girl!<NB>Wait, did I robattle you or your dog?<END:0> "
   },
   {
     "id": [
       2,
       81
     ],
-    "message": "<PORTRAIT:0, 34, 0>If the ghost and the hag met,<NL>I wonder which would be stronger.<END:0> "
+    "message": "<PORTRAIT:0, 34, 0>How can I win against a monster if I can't win against a dog?<END:0> "
   },
   {
     "id": [
       2,
       82
     ],
-    "message": "<PORTRAIT:0, 33, 0>This is our training ground.<NB>You had best be prepared.<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>this is doge training ground.<NB>very warning. much danger. wow.<END:0> "
   },
   {
     "id": [
       2,
       83
     ],
-    "message": "<PORTRAIT:0, 33, 0>Yaaaaah!<NB>Life creates pain!<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>wow.<NL>robattle tiem.<END:0> "
   },
   {
     "id": [
       2,
       84
     ],
-    "message": "<PORTRAIT:0, 33, 0>Pain brings life!<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>such robattle.<NL>wow.<END:0> "
   },
   {
     "id": [
       2,
       85
     ],
-    "message": "<PORTRAIT:0, 33, 0>Don't neglect your training!<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>much strong.<END:0> "
   },
   {
     "id": [
       2,
       86
     ],
-    "message": "<PORTRAIT:0, 33, 0>If you fall, you must rise again!<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>moar robbattle plz<END:0> "
   },
   {
     "id": [
       2,
       87
     ],
-    "message": "<PORTRAIT:0, 33, 0>Even if you fail, you must train more!<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>oh wow, such skill.<END:0> "
   },
   {
     "id": [
       2,
       88
     ],
-    "message": "<PORTRAIT:0, 33, 0>No matter how many times you fail,<NL>you must continue. That is a true man.<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>wow how skill.<END:0> "
   },
   {
     "id": [
       2,
       89
     ],
-    "message": "<PORTRAIT:0, 33, 0>Good luck & bad come when least expected.<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>much secret here. must protecc.<END:0> "
   },
   {
     "id": [
       2,
       90
     ],
-    "message": "<PORTRAIT:0, 33, 0>Happiness and misfortune come<NL>hand in hand.<NB>If life was just good or just bad,<NL>it wouldn't be interesting.<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>u r very worthy.<NB>u may pass.<END:0> "
   },
   {
     "id": [
       2,
       91
     ],
-    "message": "<PORTRAIT:0, 33, 0>Somewhere deep in these mountains<NL>they say there is a Ninja village···<END:0> "
+    "message": "<PORTRAIT:0, 33, 0>somewhere deep in mountains<NL>they say is ninja doge village.<NB>some say entrance is to the left of me, and down a little in that little nook.<NB>but i never tell.<NL>is secret.<END:0> "
   },
   {
     "id": [
       2,
       92
     ],
-    "message": "<PORTRAIT:1, 0, 5>That's ridiculously suspicious.<END:0> "
+    "message": "<PORTRAIT:1, 0, 5>I guess we need to progress the story more before we can pass.<END:0> "
   },
   {
     "id": [
       2,
       93
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>WHERE IS THIS SIGN? BOLOGNA!<END:0>"
   },
   {
     "id": [
       2,
       94
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>Odoro Marsh Taxi.<NL>£1 a ride.<END:0>"
   },
   {
     "id": [
       2,
       95
     ],
-    "message": "<PORTRAIT:0, 52, 0>Boo!<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>Heyyyy, it's the talking dog.<END:0> "
   },
   {
     "id": [
       2,
       96
     ],
-    "message": "<PORTRAIT:0, 52, 0>Did I surprise you? Robo Robo.<NB><PORTRAIT:1, 0, 0>You're not going to surprise me<NL>the same way twice.<NB><PORTRAIT:0, 52, 0>How boring.<NB>Well anyway, I can't give you a<NL>ride now. <NB>Someone has reserved my services<NL>in advance. <NB>Go kill some time and come back.<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>Radical to see you again.<NB>Unfortunatly, I can't give you a ride right now.<NB>Someone has reserved my services in advance.<NB>Capitalism is such a drag, man.<NB><PORTRAIT:1, 0, 5>You're the entrpreneur here.<NB><PORTRAIT:0, 2, 6>Whatever, \"dude.\"<NB><PORTRAIT:0, 2, 0>In the mean time we can check out the Select Corps.' base.<END:0> "
   },
   {
     "id": [
@@ -5079,42 +5079,42 @@
       2,
       99
     ],
-    "message": "<PORTRAIT:0, 62, 0>The Select Corps. train this way everyday.<NL>One and two and three and four!<NB>Do you want to join us?<END:2>B"
+    "message": "<PORTRAIT:0, 62, 3>Oh wow! Are you <MEM:0>!?<NB>My son loves watching your robattles on Twitch!<NB><PORTRAIT:1, 0, 0>I'm on Twitch now?<NB><PORTRAIT:0, 62, 3>Would you robattle with me?<END:2>B"
   },
   {
     "id": [
       2,
       100
     ],
-    "message": "<PORTRAIT:0, 62, 0>When you want to kill free time, <NL>the best thing to do is train!<NB><PORTRAIT:1, 0, 0>Free time?<NB><PORTRAIT:0, 62, 0>It is the proof of peace!<END:0> "
+    "message": "<PORTRAIT:0, 62, 0>Thank you so much! I'll upload this now!<NB><PORTRAIT:1, 0, 0>Wait, where was the camera?<END:0> "
   },
   {
     "id": [
       2,
       101
     ],
-    "message": "<PORTRAIT:0, 62, 0>If I don't train, then I can't kill time.<END:0> "
+    "message": "<PORTRAIT:0, 62, 0>Aww man, if you change your mind please come back!<NB>Also, you kinda have to battle me to progress the story so...<END:0> "
   },
   {
     "id": [
       2,
       102
     ],
-    "message": "<PORTRAIT:0, 62, 0>I have killed time!<END:0> "
+    "message": "<PORTRAIT:0, 62, 0>Thank you so much!<END:0> "
   },
   {
     "id": [
       2,
       103
     ],
-    "message": "<PORTRAIT:0, 63, 1><I>Snore···Snore···<I><END:0> "
+    "message": "<PORTRAIT:0, 63, 2><I>float... butterfly...<NL>sting... bee...<I><END:0> "
   },
   {
     "id": [
       2,
       104
     ],
-    "message": "<PORTRAIT:0, 64, 3>You don't wanna know what'll happen<NL>if you wake the Captain up!<NB><PORTRAIT:0, 64, 0>Please be quiet.<END:0> "
+    "message": "<PORTRAIT:0, 64, 0>Please do not interrupt our yoga practice.<END:0> "
   },
   {
     "id": [
@@ -5142,63 +5142,63 @@
       2,
       108
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>bork bork, don't forget to add some text here.<END:0>"
   },
   {
     "id": [
       2,
       109
     ],
-    "message": "<PORTRAIT:1, 0, 0>Aha! The Rubberobo Gang!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! It's another one of those weird-looking humans.<END:0> "
   },
   {
     "id": [
       2,
       110
     ],
-    "message": "<PORTRAIT:0, 54, 0>Who the heck are you!?<END:0> "
+    "message": "<PORTRAIT:0, 54, 0>Troublesome canine has been located.<NB><PORTRAIT:0, 54, 2>Exterminating.<END:0> "
   },
   {
     "id": [
       2,
       111
     ],
-    "message": "<PORTRAIT:0, 54, 3>I'm beaten.<END:0> "
+    "message": "<PORTRAIT:0, 54, 2>Wretched dog. I'll get you yet.<END:0> "
   },
   {
     "id": [
       2,
       112
     ],
-    "message": "<PORTRAIT:0, 2, 0>Catch him, <MEM:0>!<NB><PORTRAIT:1, 0, 0>Gotcha!<END:0> "
+    "message": "<PORTRAIT:0, 2, 8><MEM:0>! Don't let him get away!<NB><PORTRAIT:1, 0, 2>Arf Arf! Get back here!<END:0> "
   },
   {
     "id": [
       2,
       113
     ],
-    "message": "<PORTRAIT:0, 54, 3>Roboo hoo-<END:0> "
+    "message": "<PORTRAIT:0, 54, 1>Cats rule.<NB>Dogs drool.<END:0> "
   },
   {
     "id": [
       2,
       114
     ],
-    "message": "<PORTRAIT:1, 0, 0>Don't move!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>BARK! BARK!<NL>Rude!<END:0> "
   },
   {
     "id": [
       2,
       115
     ],
-    "message": "<PORTRAIT:1, 0, 8>Wahhhh!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Awooooo!<END:0> "
   },
   {
     "id": [
       2,
       116
     ],
-    "message": "<PORTRAIT:0, 2, 8><MEM:0>!<NB><PORTRAIT:0, 54, 3>I-I didn't do it!<END:0> "
+    "message": "<PORTRAIT:0, 2, 8><MEM:0>!<NB><PORTRAIT:0, 54, 1>Success. Canine shall now drown.<END:0> "
   },
   {
     "id": [
@@ -5212,35 +5212,35 @@
       2,
       118
     ],
-    "message": "<PORTRAIT:1, 0, 8>H-Help···<NB><PORTRAIT:0, 62, 1>You're in the middle of training, eh?<NL>Try your best!<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Arf Arf!<NB><PORTRAIT:0, 62, 0>Oh hey there little doggy!<NB>Are you doing a doggy paddle?<END:0> "
   },
   {
     "id": [
       2,
       119
     ],
-    "message": "<PORTRAIT:0, 52, 0>Hey you there!<NL>Want a ride for £1? RoboRobo.<NB><PORTRAIT:1, 0, 8><I>Glub Glub<I><NB><PORTRAIT:0, 52, 0>I'm going to save all my money<NL>and buy some new Medaparts.<NB>But if I attach new Medaparts,<NL>I won't be able to transform.<NB>That's kind of harsh. RoboRobo.<NB><PORTRAIT:1, 0, 8><I>Glug Glug<I><NB><PORTRAIT:0, 52, 0>What?  You're going to go with the flow?<NL>Ok. I'll stay out of it. RoboRobo.<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>Hey there, looks like you couldn't wait for a ride!<NB><PORTRAIT:1, 0, 8><I>Glub Glub<I><NB><PORTRAIT:0, 52, 0>Sounds like you're just going with the flow.<NL>Raaaadical. I can respect.<NB>Catch ya later.<END:0> "
   },
   {
     "id": [
       2,
       120
     ],
-    "message": "<PORTRAIT:1, 0, 8>Waaaaaaaaah<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Awooo!!<NB>I wish I would have bought that Spice-A-Roni!<NB>I hope Ikki donsn't starve!<END:0> "
   },
   {
     "id": [
       2,
       121
     ],
-    "message": "<PORTRAIT:1, 0, 0>Where am I?<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf?<END:0> "
   },
   {
     "id": [
       2,
       122
     ],
-    "message": "<PORTRAIT:1, 0, 8>Wha! Why am I dressed like this?<NL>This is a girl's kimono!<NB><PORTRAIT:0, 26, 0>Oh, you're awake, are you?<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Arf Arf! Hey cool!<NL>It's a doggy kimono!<NB><PORTRAIT:0, 26, 0>You're awake! And you can TALK!<END:0> "
   },
   {
     "id": [
@@ -5408,21 +5408,21 @@
       2,
       146
     ],
-    "message": "<PORTRAIT:0, 54, 0>I wasn't sleeping!<NB>I was just doing my job, <NL>guarding the area!<END:0> "
+    "message": "<PORTRAIT:0, 54, 0>You're the dog that keeps interrupting our acorn harvesting!<END:0> "
   },
   {
     "id": [
       2,
       147
     ],
-    "message": "<PORTRAIT:0, 54, 0>Whoooo are you!?<END:0> "
+    "message": "<PORTRAIT:0, 54, 0>You must be eliminated!<END:0> "
   },
   {
     "id": [
       2,
       148
     ],
-    "message": "<PORTRAIT:1, 0, 0>The Rubberobos are even HERE!<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>Arf Arf! Yeah, you better run!<END:0> "
   },
   {
     "id": [
@@ -5583,7 +5583,7 @@
       2,
       171
     ],
-    "message": "<PORTRAIT:1, 0, 0>I shouldn't be doing this but···<NL>I gotta read it!<NB><PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:1, 0, 0>I shouldn't be doing this but···<NL>I gotta read it!<NB><PORTRAIT:0, 255, 0>You read the letter.<NL>WTF that wasn't your letter.<END:0>"
   },
   {
     "id": [
@@ -5618,7 +5618,7 @@
       2,
       176
     ],
-    "message": "<PORTRAIT:0, 52, 0>If you wanna ride, come back.<END:0> "
+    "message": "<PORTRAIT:0, 52, 0>If you wanna ride, come back.<END:0>"
   },
   {
     "id": [
@@ -5989,7 +5989,7 @@
       2,
       229
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>YOU SEE SPYKE IN THE DISTANCE. WHOA.<END:0>"
   },
   {
     "id": [
@@ -6241,7 +6241,7 @@
       2,
       265
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>THIS IS THE UPDATED SIGN AFTER YOU SAVE THE DAY<END:0>"
   },
   {
     "id": [
@@ -6353,35 +6353,35 @@
       2,
       281
     ],
-    "message": "<PORTRAIT:0, 80, 0>Hm, <MEM:0> and Erika on a date···<NL>Hee hee♥<END:0> "
+    "message": "<PORTRAIT:0, 80, 0>If you get eaten, who's going to buy the Spice-A-Roni?<NB><PORTRAIT:0, 80, 1>Ikki!?<END:0> "
   },
   {
     "id": [
       2,
       282
     ],
-    "message": "<PORTRAIT:0, 79, 1>Be careful outside.<END:0> "
+    "message": "<PORTRAIT:0, 79, 1>Where does Batman keep getting these Medaparts?<END:0> "
   },
   {
     "id": [
       2,
       283
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:1, 0, 6>Arf arf! Ow! My dog-foot!<END:0>"
   },
   {
     "id": [
       2,
       284
     ],
-    "message": "<PORTRAIT:1, 0, 2>You're one of the Rubberobo Gang!?<NB><PORTRAIT:0, 52, 0>What are you talking about?<NL>You're mistaken, man.<NB>All I did was pick up the phrase.<NB><PORTRAIT:1, 0, 8>The Rubberobo Gang? Here?<NB><PORTRAIT:0, 2, 0>My news nose tells me a scoop is here.<NB><PORTRAIT:0, 52, 0>You gonna ride or not?<NL>Hurry up and decide.<NB>But, I can only give one person<NL>a ride, buddy.<NB><PORTRAIT:0, 2, 0>We've got no choice, I guess.<NB><MEM:0>, I'll pay for you, <NL>so take a ride over there.<NB>If there's anything worth checking out,<NL>I'll come over afterwards.<END:0> "
+    "message": "<PORTRAIT:1, 0, 1>Thanks.<NB><PORTRAIT:0, 52, 0>Talking dogs are so much cooler than 10 year old kids who<NB>battle each other using robots with guns and swords<NB>that magically appear out of watches,<NB>but what do I know!<NB>Shoot, I'll give you your first ride free. You down?<NB><PORTRAIT:0, 2, 4>Why not, <MEM:0>? Let me know if there's a scoop on the secret island!<NB><PORTRAIT:1, 0, 1>Arf Arf! Ok!<END:0> "
   },
   {
     "id": [
       2,
       285
     ],
-    "message": "<PORTRAIT:0, 22, 0>My mom always told me to stay<NL>away from Mt. Odoro···<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>I heard that if he gets you, he grinds your bones to make his bread.<END:0> "
   },
   {
     "id": [
@@ -6430,7 +6430,7 @@
       2,
       292
     ],
-    "message": "<PORTRAIT:0, 255, 0>"
+    "message": "<PORTRAIT:0, 255, 0>BOOM! (A rock falls in the distance!)<END:0>"
   },
   {
     "id": [
@@ -6444,7 +6444,7 @@
       2,
       294
     ],
-    "message": "<PORTRAIT:0, 2, 5>Stop that!  What happens if a <NL>caterpillar or something falls out?<NB><PORTRAIT:1, 0, 0>I really wanna know what's up there.<NL>Should I give it a kick?<END:2>B"
+    "message": "<PORTRAIT:0, 2, 5>Stop that!  What happens if a <NL>caterpillar or something falls out?<NB><PORTRAIT:1, 0, 0>Yeah, but what if it's a squirrel!?<NL>Should I give it a kick?<END:2>B"
   },
   {
     "id": [
@@ -29390,14 +29390,14 @@
       15,
       0
     ],
-    "message": "<PORTRAIT:0, 14, 1>Okay, I've decided on that boy!<NL>Is that okay, Professor?<END:0> "
+    "message": "<PORTRAIT:0, 14, 1>IS THIS LINE USED IN THIS GAME?<END:0> "
   },
   {
     "id": [
       15,
       1
     ],
-    "message": "<PORTRAIT:0, 14, 1>Okay, I've decided on that boy!<NL>Is that okay, Professor?<END:0> "
+    "message": "<PORTRAIT:0, 14, 0>Whew! That went well.<NL>Hope I'm not forgetting anything...<END:0> "
   },
   {
     "id": [
@@ -29656,14 +29656,14 @@
       15,
       38
     ],
-    "message": "<PORTRAIT:0, 2, 0>Hey <MEM:0>.<NL>Let's go check out Odoro Pond!<NB><PORTRAIT:1, 0, 0>Why Odoro Pond?<NB><PORTRAIT:0, 2, 0>The rumor says the spirit shows<NL>up at Odoro Pond!<NB>First, we should go check out <NL>Odoro Pond and see what we can find out!<NB><PORTRAIT:1, 0, 4>Odoro Pond is to the right.<NL>Okay, let's get going.<NB><PORTRAIT:0, 2, 0>Yeah!<END:0> "
+    "message": "<PORTRAIT:0, 2, 5>Hmm... first we should check out Odoro Pond.<NB><PORTRAIT:1, 0, 0>Why Odoro Pond?<NB><PORTRAIT:0, 2, 4>The rumor says the monster shows<NL>up at Odoro Pond.<NB>Odoro Pond is up and to the right.<NB><PORTRAIT:1, 0, 4>Arf Arf! Okay, let's get going.<END:0> "
   },
   {
     "id": [
       15,
       39
     ],
-    "message": "<PORTRAIT:0, 2, 5>Hey <MEM:0>.<NL>We should go to Odoro Marsh next!<NB><PORTRAIT:1, 0, 0>Are we done here?<NB><PORTRAIT:0, 2, 6>Nothing is showing up here,<NL>so let's get going!<NB><PORTRAIT:1, 0, 4>Wow Erika, you sure are fired up<NL>about this···<NB><PORTRAIT:0, 2, 0>What did you say?<NB><PORTRAIT:1, 0, 4>Nothing. <NL>Let's go.<END:0> "
+    "message": "<PORTRAIT:0, 2, 5>Hmm....<NL>We should go to Odoro Marsh next!<NB>It's to the west. There's a Select Corp. camp there.<END:0> "
   },
   {
     "id": [
@@ -30482,49 +30482,49 @@
       15,
       156
     ],
-    "message": "<PORTRAIT:1, 0, 8>Can it be···<NL>The ultra-rare \"?\" Medal!?<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>Arf Arf! It's a \"?\" Medal.<END:0> "
   },
   {
     "id": [
       15,
       157
     ],
-    "message": "<PORTRAIT:1, 0, 8>Can it be···<NL>The ultra-rare \"CAT\" Medal!?<END:0> "
+    "message": "<PORTRAIT:1, 0, 8>Is this a... \"CAT\" Medal!?<NB>Is this some kind of joke??<END:0> "
   },
   {
     "id": [
       15,
       158
     ],
-    "message": "<PORTRAIT:1, 0, 4>It's \"Sailormate\"···<NB>The one Erika has is \"Brass\",<NL>which is the improved version<NL>of this Medabot.<NB>They don't even sell this anymore.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>It's \"Sailormate\"...<NB>The one Erika has is \"Brass\", which is the improved version of this Medabot.<END:0> "
   },
   {
     "id": [
       15,
       159
     ],
-    "message": "<PORTRAIT:1, 0, 8>Can it be···<NB>The ultra-rare \"Moon Dragon\"!?<NL>They don't even sell this anymore.<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>This Medabot looks like a fire hydrant.<END:0> "
   },
   {
     "id": [
       15,
       160
     ],
-    "message": "<PORTRAIT:1, 0, 8>Can it be···<NB>The ultra-rare \"Natural Color\"!?<NL>They don't even sell this anymore.<END:0> "
+    "message": "<PORTRAIT:1, 0, 0>This Medabot ALSO looks like a fire hydrant.<END:0> "
   },
   {
     "id": [
       15,
       161
     ],
-    "message": "<PORTRAIT:1, 0, 8>Can it be···<NL>The ultra-rare \"Betty Bear\"!?<NB>It's the old model Bear Medabot.<NL>It's small, like a stuffed animal.<END:0> "
+    "message": "<PORTRAIT:1, 0, 6>Oh man, they all look like fire hydrants!!!<NB>I think I need to go outside!!!!<END:0> "
   },
   {
     "id": [
       15,
       162
     ],
-    "message": "<PORTRAIT:0, 22, 0>This is just between you and me, okay···<NB>If you increase your Scout ability<NL>your damage is going to go up too.<NB>···I didn't know!<END:0> "
+    "message": "<PORTRAIT:0, 22, 0>Ok, how about this one...<NB>If you increase your Scout ability<NL>your damage is going to go up too.<NB>...Is that less OBVIOUS for you?<END:0> "
   },
   {
     "id": [
@@ -30783,7 +30783,7 @@
       15,
       199
     ],
-    "message": "<PORTRAIT:1, 0, 5>I don't want to be seen like this .<NL>I would just die if someone saw me···<END:0> "
+    "message": "<PORTRAIT:1, 0, 4>This place does not seem to need my detective work right now!<END:0> "
   },
   {
     "id": [
