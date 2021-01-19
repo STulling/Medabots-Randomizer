@@ -221,8 +221,6 @@
     <None Include="Portraits\0_4.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Portraits\0_0.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -316,32 +314,18 @@
     <None Include="Portraits\33_0.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="Portraits\grit\doc\html\grit.htm" />
-    <Content Include="Portraits\grit\doc\html\gritmake.htm" />
-    <Content Include="Portraits\grit\doc\html\index.htm" />
-    <Content Include="Portraits\grit\doc\html\tonc.css" />
-    <Content Include="Portraits\grit\doc\html\tonc.js" />
-    <Content Include="Portraits\grit\doc\html\wingrit.htm" />
-    <Resource Include="Portraits\grit\doc\img\numbers.png" />
-    <Resource Include="Portraits\grit\doc\img\wingrit.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_area.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_base.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_file.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_img.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_map.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_meta.png" />
-    <Resource Include="Portraits\grit\doc\img\xpdlg_pal.png" />
-    <None Include="Portraits\grit\FreeImage.dll">
     <Content Include="grit\doc\html\grit.htm" />
     <Content Include="grit\doc\html\gritmake.htm" />
     <Content Include="grit\doc\html\index.htm" />
     <Content Include="grit\doc\html\tonc.css" />
     <Content Include="grit\doc\html\tonc.js" />
     <Content Include="grit\doc\html\wingrit.htm" />
+    <None Include="sprites\0.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="sprites\5.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Resource Include="sprites\pixil-frame-0.png" />
     <Resource Include="grit\doc\img\numbers.png" />
     <Resource Include="grit\doc\img\wingrit.png" />
     <Resource Include="grit\doc\img\xpdlg_area.png" />
