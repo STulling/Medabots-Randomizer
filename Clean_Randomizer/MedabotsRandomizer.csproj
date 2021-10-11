@@ -212,6 +212,9 @@
     <Folder Include="Objects\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="sprites\33.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Portraits\0_4.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
