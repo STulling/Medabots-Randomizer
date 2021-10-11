@@ -9,7 +9,7 @@ namespace Clean_Randomizer_Test
         [TestMethod]
         public void readImage()
         {
-            ImageData imageData = ImageLoader.LoadImage("0_4");
+            //ImageData imageData = ImageLoader.LoadImage("0_4");
         }
     }
 }

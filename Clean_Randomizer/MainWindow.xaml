@@ -3,9 +3,9 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      Title="Medabots Randomizer"
-                      Height="674.8"
-                      Width="607.4" ResizeMode="CanMinimize">
+                      Title="Salty's Quest"
+                      Height="812.4"
+                      Width="1662.2" ResizeMode="CanMinimize">
     <Grid Background="#222">
         <Button x:Name="Open_ROM_Button" Width="142"
                         Margin="10,10,0,0"
@@ -19,58 +19,29 @@
                 </TextBlock>
             </Grid>
         </Button>
-        <GroupBox Grid.Row="0"
-                  Grid.Column="0"
-                  Margin="10,61,0,0"
-                  Header="Main Settings" HorizontalAlignment="Left" Width="240" Height="234" VerticalAlignment="Top">
-            <AdornerDecorator>
-                <Grid>
-                    <StackPanel Margin="0">
-                        <TextBox x:Name="seed_input" Margin="{StaticResource ControlMargin}"
+        <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="161,10,1061,0" Width="434" Height="38" VerticalAlignment="Top" />
+        <TabControl HorizontalAlignment="Left" Height="712" Margin="10,61,0,0" VerticalAlignment="Top" Width="1636">
+            <TabItem Header="Randomizer">
+                <Grid Background="#FF222222">
+                    <Controls:ToggleSwitch x:Name="chk_enable_randomizer" Margin="10,10,0,625.2"
+                                               Width="220"
+                                               IsOn="False"
+                                               Content="Enable Randomizer"/>
+                    <StackPanel Margin="3,42,646,163.2">
+                        <TextBox x:Name="seed_input" Margin="5,2,505.8,0"
                                  HorizontalContentAlignment="Stretch"
                                  Controls:TextBoxHelper.ClearTextButton="True"
                                  Controls:TextBoxHelper.IsWaitingForData="True"
                                  Controls:TextBoxHelper.Watermark="Seed (empty for random)"
                                  Controls:TextBoxHelper.UseFloatingWatermark="True" />
-                        <Controls:ToggleSwitch x:Name="chk_enable_randomizer" Margin="{StaticResource ControlMargin}"
-                                               Width="220"
-                                               IsOn="False"
-                                               Content="Enable Randomizer"/>
-                        <Controls:ToggleSwitch x:Name="chk_code_patches" Margin="{StaticResource ControlMargin}"
-                                               Width="220"
-                                               Content="Enable Code Patches" IsOn="False"/>
-                    </StackPanel>
-                    <Button x:Name="btn_apply" Width="220"
-                            Style="{DynamicResource MahApps.Styles.Button.Square}" Click="Randomize" Margin="5,147,5.4,0">
-                        <Grid Width="142" Height="38">
-                            <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="appbar_download" 
-                                                Width="20"
-                                                Height="20" 
-                                                Margin="11,7,0,0">
-                                <Path Width="13.316" Height="21" Canvas.Left="-49.258" Canvas.Top="-4.8" Stretch="Fill" Fill="#FFF" Data="F1 M 25,52L 51,52L 51,57L 25,57L 25,52 Z M 35,16L 41,16L 41,36.5L 49,27L 49,36.5L 38,49L 27,36.5L 27,27L 35,36.5L 35,16 Z "/>
-                            </Canvas>
-                            <TextBlock Margin="38,10,20,9">
-                                    Apply to ROM
-                            </TextBlock>
-                        </Grid>
-                    </Button>
-                </Grid>
-            </AdornerDecorator>
-        </GroupBox>
-        <GroupBox Grid.Row="0"
-                  Grid.Column="0"
-                  Margin="255,61,0,0"
-                  Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="497" VerticalAlignment="Top">
-            <AdornerDecorator>
-                <StackPanel Margin="0">
-                    <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
-                    <ComboBox x:Name="cmb_starter" Margin="{StaticResource ControlMargin}" Width="300"/>
-                    <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
-                    <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#x0a;If for instance Erika would be replaced by Karin,&#x0a;then throughout the whole game every battle with Erika will use the Karin portrait."/>
-                    <Controls:ToggleSwitch x:Name="chk_random_shops" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Shops" ToolTip="Randomizes shops. It does what it says on the tin."/>
-                    <Controls:ToggleSwitch x:Name="chk_randomize_battles" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Battles" ToolTip="Whether you want the battles to be randomized."/>
-                    <Controls:ToggleSwitch x:Name="chk_allow_mixed_bots" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Allow Mixed Bots" ToolTip="Whether you want battles to use bots made up of random parts."/>
-                    <Slider x:Name="sl_mixed_bots" Width="200"
+                        <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
+                        <ComboBox x:Name="cmb_starter" Margin="{StaticResource ControlMargin}" Width="300"/>
+                        <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
+                        <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#xA;If for instance Erika would be replaced by Karin,&#xA;then throughout the whole game every battle with Erika will use the Karin portrait."/>
+                        <Controls:ToggleSwitch x:Name="chk_random_shops" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Shops" ToolTip="Randomizes shops. It does what it says on the tin."/>
+                        <Controls:ToggleSwitch x:Name="chk_randomize_battles" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Battles" ToolTip="Whether you want the battles to be randomized."/>
+                        <Controls:ToggleSwitch x:Name="chk_allow_mixed_bots" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Allow Mixed Bots" ToolTip="Whether you want battles to use bots made up of random parts."/>
+                        <Slider x:Name="sl_mixed_bots" Width="200"
                             Margin="4"
                             LargeChange="10"
                             Maximum="100"
@@ -81,27 +52,45 @@
                             TickPlacement="TopLeft"
                             Value="50"
                             ToolTip="Percentage of bots that are made up of random parts."/>
-                    <Controls:ToggleSwitch x:Name="chk_random_medal" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Medals" ToolTip="Randomizes medals throughout the game"/>
-                    <Controls:ToggleSwitch x:Name="chk_balanced_bot_levels" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Balanced Bot Levels" ToolTip="Keeps the bot levels balanced, highly recommended to keep this on.&#x0a;Otherwise the game will be most likely very hard or impossible to complete."/>
-                    <Controls:ToggleSwitch x:Name="chk_keep_battle_structure" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Keep Battle Structure" ToolTip="A battle with just 1 bot will be turned into a random battle with 1 bot for instance.&#x0a;Also in battles that have for instance 3 of the same bots,&#x0a;it will be replaced by a battle with 3 of the same random bot."/>
-                    <Controls:ToggleSwitch x:Name="chk_battle_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Battle Continuity" ToolTip="Makes battles keep using the same randomized bots.&#x0a;For instance makes Erika keep her random bot throughout the whole game.&#x0a;Instead of having a new random bot every time you meet her."/>
-                </StackPanel>
-            </AdornerDecorator>
-        </GroupBox>
-        <GroupBox Grid.Row="0"
-                  Grid.Column="0"
-                  Margin="10,300,0,0"
-                  Header="Code Patches" HorizontalAlignment="Left" Width="240" Height="258" VerticalAlignment="Top">
-            <AdornerDecorator>
-                <StackPanel Margin="0">
-                    <Controls:ToggleSwitch x:Name="chk_instant_text" Margin="{StaticResource ControlMargin}" Width="220" Content="Instant Text" ToolTip="Speeds up the dialogue, making the game faster."/>
-                    <Controls:ToggleSwitch x:Name="chk_encounters" Margin="{StaticResource ControlMargin}" Width="220" Content="School Encounters" ToolTip="Allows for encounters on the school yard before having to fight the screws." IsOn="True"/>
-                </StackPanel>
-            </AdornerDecorator>
-        </GroupBox>
-        <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="157,11,9.8,0" Width="434" Height="38" VerticalAlignment="Top" />
-        <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Height="76" Width="581"/>
-        <Label Content="By: Simon381, WhiteCherry" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"/>
+                        <Controls:ToggleSwitch x:Name="chk_random_medal" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Medals" ToolTip="Randomizes medals throughout the game"/>
+                        <Controls:ToggleSwitch x:Name="chk_balanced_bot_levels" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Balanced Bot Levels" ToolTip="Keeps the bot levels balanced, highly recommended to keep this on.&#xA;Otherwise the game will be most likely very hard or impossible to complete."/>
+                        <Controls:ToggleSwitch x:Name="chk_keep_battle_structure" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Keep Battle Structure" ToolTip="A battle with just 1 bot will be turned into a random battle with 1 bot for instance.&#xA;Also in battles that have for instance 3 of the same bots,&#xA;it will be replaced by a battle with 3 of the same random bot."/>
+                        <Controls:ToggleSwitch x:Name="chk_battle_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Battle Continuity" ToolTip="Makes battles keep using the same randomized bots.&#xA;For instance makes Erika keep her random bot throughout the whole game.&#xA;Instead of having a new random bot every time you meet her."/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Codes" Background="#FF252525">
+                <Grid Background="#FF222222">
+                    <Controls:ToggleSwitch x:Name="chk_code_patches" Margin="10,10,0,625.2"
+                                               Width="220"
+                                               Content="Enable Code Patches" IsOn="False"/>
+                    <StackPanel Margin="9,45,1146.6,399.2">
+                        <Controls:ToggleSwitch x:Name="chk_instant_text" Margin="{StaticResource ControlMargin}" Width="220" Content="Instant Text" ToolTip="Speeds up the dialogue, making the game faster."/>
+                        <Controls:ToggleSwitch x:Name="chk_encounters" Margin="{StaticResource ControlMargin}" Width="220" Content="School Encounters" ToolTip="Allows for encounters on the school yard before having to fight the screws." IsOn="True"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Maps">
+                <Grid Background="#FF222222">
+                </Grid>
+            </TabItem>
+            <TabItem Header="Events">
+                <Grid Background="#FF222222">
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btn_apply" Width="220"
+                            Style="{DynamicResource MahApps.Styles.Button.Square}" Click="Randomize" Margin="1426,10,10,721.2">
+            <Grid Width="142" Height="38">
+                <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="appbar_download" 
+                                                Width="20"
+                                                Height="20" 
+                                                Margin="11,7,0,0">
+                    <Path Width="13.316" Height="21" Canvas.Left="-49.258" Canvas.Top="-4.8" Stretch="Fill" Fill="#FFF" Data="F1 M 25,52L 51,52L 51,57L 25,57L 25,52 Z M 35,16L 41,16L 41,36.5L 49,27L 49,36.5L 38,49L 27,36.5L 27,27L 35,36.5L 35,16 Z "/>
+                </Canvas>
+                <TextBlock Margin="38,10,20,9"><Run Text="Apply to ROM"/></TextBlock>
+            </Grid>
+        </Button>
 
     </Grid>
 </Controls:MetroWindow>

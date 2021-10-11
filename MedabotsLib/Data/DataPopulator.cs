@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MedabotsRandomizer
+namespace MedabotsLib.Data
 {
     public static class DataPopulator
     {

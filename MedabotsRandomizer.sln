@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedabotsRandomizer", "MedabotsRandomizer\MedabotsRandomizer.csproj", "{5F27B3A9-A474-459A-8DDE-333266D53FF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedabotsRandomizerLegacy", "MedabotsRandomizer\MedabotsRandomizerLegacy.csproj", "{5F27B3A9-A474-459A-8DDE-333266D53FF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Medabots Patcher", "Medabots Patcher\Medabots Patcher.csproj", "{FF933684-7D3B-4E81-AF1B-878A70F4AA0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedabotsRandomizer", "Clean_Randomizer\MedabotsRandomizer.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean_Randomizer", "Clean_Randomizer\Clean_Randomizer.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GBALib", "GBALib\GBALib.csproj", "{0AF9FB85-4258-4FE8-A987-A5EB01554DBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean_Randomizer_Test", "Clean_Randomizer_Test\Clean_Randomizer_Test.csproj", "{1064EB6B-11B0-4F7F-8984-348603CF0AF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedabotsLib", "MedabotsLib\MedabotsLib.csproj", "{05EB6315-F971-45EF-A200-61D7DE3983A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F27B3A9-A474-459A-8DDE-333266D53FF8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FF933684-7D3B-4E81-AF1B-878A70F4AA0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF933684-7D3B-4E81-AF1B-878A70F4AA0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF933684-7D3B-4E81-AF1B-878A70F4AA0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF933684-7D3B-4E81-AF1B-878A70F4AA0A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1064EB6B-11B0-4F7F-8984-348603CF0AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1064EB6B-11B0-4F7F-8984-348603CF0AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1064EB6B-11B0-4F7F-8984-348603CF0AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1064EB6B-11B0-4F7F-8984-348603CF0AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AF9FB85-4258-4FE8-A987-A5EB01554DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AF9FB85-4258-4FE8-A987-A5EB01554DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AF9FB85-4258-4FE8-A987-A5EB01554DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AF9FB85-4258-4FE8-A987-A5EB01554DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EB6315-F971-45EF-A200-61D7DE3983A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EB6315-F971-45EF-A200-61D7DE3983A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EB6315-F971-45EF-A200-61D7DE3983A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EB6315-F971-45EF-A200-61D7DE3983A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

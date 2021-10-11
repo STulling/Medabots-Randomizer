@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace MedabotsRandomizer
+namespace MedabotsLib.Data
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public class Encounters

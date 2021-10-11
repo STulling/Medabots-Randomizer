@@ -118,8 +118,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Event.cs" />
     <Compile Include="LZ77.cs" />
     <Compile Include="MemoryPatcher.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="OperationArgument.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="TextParser.cs" />
     <Compile Include="TextPatcher.cs" />
@@ -135,13 +138,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Wrappers\BaseWrapper.cs" />
-    <Compile Include="Data\Battle.cs" />
-    <Compile Include="Wrappers\BattleWrapper.cs" />
-    <Compile Include="Data\DataPopulator.cs" />
-    <Compile Include="Data\Encounter.cs" />
-    <Compile Include="Wrappers\EncountersWrapper.cs" />
-    <Compile Include="Wrappers\FieldWrappers.cs" />
     <Compile Include="IdTranslator.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -149,8 +145,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Part.cs" />
-    <Compile Include="Wrappers\PartWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
