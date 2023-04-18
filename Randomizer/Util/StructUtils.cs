@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace MedabotsRandomizer
+namespace MedabotsRandomizer.Util
 {
     public static class StructUtils
     {

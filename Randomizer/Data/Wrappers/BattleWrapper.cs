@@ -1,4 +1,4 @@
-﻿namespace MedabotsRandomizer
+﻿namespace MedabotsRandomizer.Data.Wrappers
 {
     public class BattleWrapper : Wrapper<Battle>
     {

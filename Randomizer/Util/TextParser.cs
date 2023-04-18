@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MedabotsRandomizer
+namespace MedabotsRandomizer.Util
 {
 	public class TextParser
     {

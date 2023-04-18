@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace MedabotsRandomizer
+namespace MedabotsRandomizer.Data
 {
     //memory offset: 0x083b841c
     //size: 0x10

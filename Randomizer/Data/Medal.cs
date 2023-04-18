@@ -1,12 +1,9 @@
-﻿namespace MedabotsRandomizer
+﻿namespace MedabotsRandomizer.Data
 {
-	public partial class Randomizer
+	struct Medal
 	{
-		struct Medal
-		{
-			public string name;
-			public string ikki_text;
-			public string collect_text;
-		}
+		public string name;
+		public string ikki_text;
+		public string collect_text;
 	}
 }

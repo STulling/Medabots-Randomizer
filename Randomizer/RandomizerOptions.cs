@@ -16,6 +16,7 @@
 		public bool balancedBotLevelsEnabled { get; set; } = false;
 		public bool shopRandomizationEnabled { get; set; } = false;
 		public bool starterRandomizationEnabled { get; set; } = false;
+		public bool starterMedalRandomizationEnabled { get; set; } = false;
 		public bool medalRandomizationEnabled { get; set; } = false;
 		public bool codePatchingEnabled { get; set; } = false;
 		public bool instantTextEnabled { get; set; } = false;

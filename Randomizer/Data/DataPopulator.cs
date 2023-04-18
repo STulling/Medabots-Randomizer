@@ -1,10 +1,9 @@
-﻿using Clean_Randomizer;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace MedabotsRandomizer
+namespace MedabotsRandomizer.Data
 {
-    public static class DataPopulator
+	public static class DataPopulator
     {
         public static List<T> Populate_Data<T>(byte[] file, int amount, int size, int offset, bool is_ptr)
         {

@@ -19,13 +19,12 @@ namespace Interface
         public MainWindow()
         {
             InitializeComponent();
-            this.randomizer.PopulateBotList();
-            List<string> bots = this.randomizer.bots.ToList();
+            this.randomizer.PopulateLists();
 
-            cmb_starter.ItemsSource = new List<string>(){ "Random Bot" }.Concat(bots);
+            cmb_starter.ItemsSource = new List<string>(){ "Random Bot" }.Concat(this.randomizer.bots.ToList());
             cmb_starter.SelectedItem = "Random Bot";
 
-			cmb_starter_medal.ItemsSource = new List<string>() { "Random Medal" }.Concat(bots);
+			cmb_starter_medal.ItemsSource = new List<string>() { "Random Medal" }.Concat(this.randomizer.medals.ToList());
 			cmb_starter_medal.SelectedItem = "Random Medal";            
 		}
 
@@ -72,6 +71,7 @@ namespace Interface
 			this.randomizer.options.balancedBotLevelsEnabled = chk_balanced_bot_levels.IsOn;
 			this.randomizer.options.shopRandomizationEnabled = chk_random_shops.IsOn;
 			this.randomizer.options.starterRandomizationEnabled = chk_randomize_starter.IsOn;
+            this.randomizer.options.starterMedalRandomizationEnabled = chk_randomize_starter_medal.IsOn;
 			this.randomizer.options.medalRandomizationEnabled = chk_random_medal.IsOn;
 			this.randomizer.options.codePatchingEnabled = chk_code_patches.IsOn;
 			this.randomizer.options.instantTextEnabled = chk_instant_text.IsOn;

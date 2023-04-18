@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MedabotsRandomizer
+namespace MedabotsRandomizer.Data.Wrappers
 {
 
     public class PartWrapper : Wrapper<Part>

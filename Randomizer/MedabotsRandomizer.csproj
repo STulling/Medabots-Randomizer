@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MedabotsRandomizer</RootNamespace>
     <AssemblyName>MedabotsRandomizer</AssemblyName>
@@ -55,7 +55,8 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Clean_Randomizer.App</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>78B8340ECC54050B8553B392EF00E18468A25E62</ManifestCertificateThumbprint>
@@ -69,9 +70,7 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
@@ -107,36 +106,28 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
     <Compile Include="Data\Message.cs" />
     <Compile Include="Data\Medal.cs" />
     <Compile Include="Exceptions\InvalidRomException.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="RandomizerHelper.cs" />
     <Compile Include="RandomizerOptions.cs" />
-    <Compile Include="TextParser.cs" />
-    <Compile Include="TextPatcher.cs" />
+    <Compile Include="Util\TextParser.cs" />
+    <Compile Include="Util\TextPatcher.cs" />
     <Compile Include="Util\StructUtils.cs" />
     <Compile Include="Util\Utils.cs" />
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Wrappers\BaseWrapper.cs" />
+    <Compile Include="Data\Wrappers\BaseWrapper.cs" />
     <Compile Include="Data\Battle.cs" />
-    <Compile Include="Wrappers\BattleWrapper.cs" />
+    <Compile Include="Data\Wrappers\BattleWrapper.cs" />
     <Compile Include="Data\DataPopulator.cs" />
     <Compile Include="Data\Encounter.cs" />
-    <Compile Include="Wrappers\EncountersWrapper.cs" />
-    <Compile Include="Wrappers\FieldWrappers.cs" />
-    <Compile Include="IdTranslator.cs" />
+    <Compile Include="Data\Wrappers\EncountersWrapper.cs" />
+    <Compile Include="Data\Wrappers\FieldWrappers.cs" />
+    <Compile Include="Util\IdTranslator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Part.cs" />
-    <Compile Include="Wrappers\PartWrapper.cs" />
+    <Compile Include="Data\Wrappers\PartWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -154,14 +145,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Bots.json">
+    <None Include="Resources\Bots.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Medals.json">
+    <None Include="Resources\Medals.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
-    <None Include="Patched_Messages.json">
+    <None Include="Resources\Patched_Messages.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Properties\app.manifest" />

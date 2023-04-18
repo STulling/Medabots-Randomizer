@@ -1,4 +1,4 @@
-﻿namespace MedabotsRandomizer
+﻿namespace MedabotsRandomizer.Util
 {
     public static class IdTranslator
     {

@@ -1,11 +1,8 @@
-﻿namespace MedabotsRandomizer
+﻿namespace MedabotsRandomizer.Data
 {
-	public partial class Randomizer
+	struct Message
 	{
-		struct Message
-		{
-			public int[] id;
-			public string message;
-		}
+		public int[] id;
+		public string message;
 	}
 }

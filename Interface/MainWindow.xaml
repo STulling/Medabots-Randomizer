@@ -65,6 +65,7 @@
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
                     <ComboBox x:Name="cmb_starter" Margin="{StaticResource ControlMargin}" Width="300"/>
+                    <Controls:ToggleSwitch x:Name="chk_randomize_starter_medal" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Medal" ToolTip="Changes the starter medal."/>
                     <ComboBox x:Name="cmb_starter_medal" Margin="{StaticResource ControlMargin}" Width="300"/>
                     <Controls:ToggleSwitch x:Name="chk_randomize_characters" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Randomize Characters" ToolTip="Whether you want the battle portraits to be randomized."/>
                     <Controls:ToggleSwitch x:Name="chk_character_continuity" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Character Continuity" ToolTip="Keeps the new battle portraits consistent throughout the run.&#x0a;If for instance Erika would be replaced by Karin,&#x0a;then throughout the whole game every battle with Erika will use the Karin portrait."/>

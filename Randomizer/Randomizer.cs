@@ -1,5 +1,7 @@
-﻿using Clean_Randomizer;
+﻿using MedabotsRandomizer.Data;
+using MedabotsRandomizer.Data.Wrappers;
 using MedabotsRandomizer.Exceptions;
+using MedabotsRandomizer.Util;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -47,6 +49,7 @@ namespace MedabotsRandomizer
 		};
 
 		public List<string> bots = new List<string>();
+		public List<string> medals = new List<string>();
 		public RandomizerOptions options = new RandomizerOptions();
 
 		private List<BattleWrapper> allBattles = new List<BattleWrapper>();
@@ -56,11 +59,13 @@ namespace MedabotsRandomizer
 		private byte[] file;
 		private RandomizerHelper randomizer;
 
-		public void PopulateBotList()
+		public void PopulateLists()
 		{
 			this.bots = IdTranslator.bots.ToList();
-			this.bots.Sort();
 			this.bots.Remove("");
+
+			this.medals = IdTranslator.medals.ToList();
+			this.medals.Remove("");
 		}
 
 		private void PopulateData()
@@ -200,31 +205,31 @@ namespace MedabotsRandomizer
 
 				if (this.options.starterRandomizationEnabled)
 				{
-					byte part;
-
+					byte part = this.options.starterBot;
 					if (this.options.starterBot == 0xF8)
 					{
-						part = (byte)rng.Next(0, 0x78);
+						part = (byte)rng.Next(0, IdTranslator.bots.Length);
 						while (blacklist.Contains(part))
 						{
-							part = (byte)rng.Next(0, 0x78);
+							part = (byte)rng.Next(0, IdTranslator.bots.Length);
+						}
+					}
+
+					byte medal = IdTranslator.botMedal(this.options.starterMedal);
+					if (this.options.starterMedalRandomizationEnabled)
+					{
+						medal = (byte)rng.Next(0, IdTranslator.medals.Length);
+						while (blacklist.Contains(medal))
+						{
+							medal = (byte)rng.Next(0, IdTranslator.medals.Length);
 						}
 					}
 					else
 					{
-						part = this.options.starterBot;
-					}
-
-					byte medal;
-
-					if (this.options.starterBot == 0xF8)
-					{
-						medal = IdTranslator.botMedal(part);
-					}
-					else
-					{
-						byte medalPart = this.options.starterMedal;
-						medal = IdTranslator.botMedal(medalPart);
+						if (this.options.starterBot == 0xF8)
+						{
+							medal = IdTranslator.botMedal(part);
+						}
 					}
 
 					this.randomizer.starterMedal = medal;

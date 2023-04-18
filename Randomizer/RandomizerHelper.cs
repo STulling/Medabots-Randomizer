@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MedabotsRandomizer.Data;
+using MedabotsRandomizer.Data.Wrappers;
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace MedabotsRandomizer
 {
-    public class RandomizerHelper
+	public class RandomizerHelper
     {
         List<BattleWrapper> battles;
         List<EncountersWrapper> encounters;
