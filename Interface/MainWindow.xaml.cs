@@ -59,7 +59,7 @@ namespace Interface
 
         private void Randomize(object sender, RoutedEventArgs e)
         {
-            this.randomizer.options.seedInput = (seed_input.Text != "") ? seed_input.Text : MedabotsRandomizer.Utils.RandomString(12);
+            this.randomizer.options.seedInput = (seed_input.Text != "") ? seed_input.Text : MedabotsRandomizer.Util.Utils.RandomString(12);
 			this.randomizer.options.randomizerEnabled = chk_enable_randomizer.IsOn;
 			this.randomizer.options.characterRandomizationEnabled = chk_randomize_characters.IsOn;
 			this.randomizer.options.characterContinuityEnabled = chk_character_continuity.IsOn;

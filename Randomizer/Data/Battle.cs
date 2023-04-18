@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MedabotsRandomizer.Data.Wrappers;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace MedabotsRandomizer.Data

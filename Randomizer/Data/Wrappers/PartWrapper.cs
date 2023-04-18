@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedabotsRandomizer.Util;
+using System;
 
 namespace MedabotsRandomizer.Data.Wrappers
 {

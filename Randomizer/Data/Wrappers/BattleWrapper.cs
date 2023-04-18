@@ -1,4 +1,6 @@
-﻿namespace MedabotsRandomizer.Data.Wrappers
+﻿using MedabotsRandomizer.Util;
+
+namespace MedabotsRandomizer.Data.Wrappers
 {
     public class BattleWrapper : Wrapper<Battle>
     {

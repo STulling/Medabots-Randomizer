@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MedabotsRandomizer.Util;
+using System;
 using System.Collections.Generic;
 
 namespace MedabotsRandomizer.Data
