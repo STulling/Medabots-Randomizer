@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patcher", "Patcher\Patcher.csproj", "{F74FDFA5-A464-4207-A1AF-B29CD1378DA8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedabotsRandomizer", "Randomizer\MedabotsRandomizer.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{6CD8FED6-3523-47F0-B583-1A9B23D329B9}"
@@ -18,10 +16,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F74FDFA5-A464-4207-A1AF-B29CD1378DA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F74FDFA5-A464-4207-A1AF-B29CD1378DA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F74FDFA5-A464-4207-A1AF-B29CD1378DA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F74FDFA5-A464-4207-A1AF-B29CD1378DA8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}.Release|Any CPU.ActiveCfg = Release|Any CPU

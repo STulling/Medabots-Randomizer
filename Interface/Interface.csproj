@@ -7,8 +7,8 @@
     <ProjectGuid>{6CD8FED6-3523-47F0-B583-1A9B23D329B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Interface</RootNamespace>
-    <AssemblyName>Interface</AssemblyName>
+    <RootNamespace>MetroApp</RootNamespace>
+    <AssemblyName>MetroApp</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,7 +55,8 @@
     <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Clean_Randomizer.App</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>78B8340ECC54050B8553B392EF00E18468A25E62</ManifestCertificateThumbprint>

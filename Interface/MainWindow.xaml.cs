@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 
-namespace Interface
+namespace MetroApp
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -54,6 +54,10 @@ namespace Interface
                 {
 					ShowNotification("Error!", exception.Message);
 				}
+                finally
+				{
+					romLabel.Content = this.randomizer.options.romLabel;
+				}
 			}
         }
 
@@ -77,27 +81,22 @@ namespace Interface
 			this.randomizer.options.instantTextEnabled = chk_instant_text.IsOn;
 			this.randomizer.options.extraEncountersEnabled = chk_encounters.IsOn;
 
-
-			byte part = (byte)(cmb_starter.SelectedIndex - 1);
-            byte medal = (byte)(cmb_starter.SelectedIndex - 1);
-
-			if ((string)cmb_starter.SelectedItem == "Random Bot")
-			{
-                part = 0xF8;
+			byte part;
+			if (this.randomizer.botDictionary.TryGetValue(cmb_starter.SelectedItem.ToString(), out part))
+            {
+				this.randomizer.options.starterBot = part;
 			}
 
-            if ((string)cmb_starter_medal.SelectedItem == "Random Medal")
-            {
-                medal = 0xF8;
-            }
-
-            this.randomizer.options.starterBot = part;
-			this.randomizer.options.starterMedal = medal;
+			byte medal;
+            if (this.randomizer.medalDictionary.TryGetValue(cmb_starter_medal.SelectedItem.ToString(), out medal))
+			{
+				this.randomizer.options.starterMedal = medal;
+			}
 
             try
             {
 				this.randomizer.Randomize();
-				ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + this.randomizer.options.seedInput + "\" as \"" + this.randomizer.options.seedInput + ".gba\"");
+				ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + this.randomizer.options.seedInput + "\" as \"" + this.randomizer.options.romLabel + " - " + this.randomizer.options.seedInput + ".gba\"");
 			}
             catch (FileNotFoundException exception)
             {

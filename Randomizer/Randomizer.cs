@@ -49,7 +49,12 @@ namespace MedabotsRandomizer
 		};
 
 		public List<string> bots = new List<string>();
+		public Dictionary<string, byte> botDictionary = new Dictionary<string, byte>();
+
 		public List<string> medals = new List<string>();
+		public Dictionary<string, byte> medalDictionary = new Dictionary<string, byte>();
+
+
 		public RandomizerOptions options = new RandomizerOptions();
 
 		private List<BattleWrapper> allBattles = new List<BattleWrapper>();
@@ -63,9 +68,20 @@ namespace MedabotsRandomizer
 		{
 			this.bots = IdTranslator.bots.ToList();
 			this.bots.Remove("");
+			for (int i = 0; i < this.bots.Count; i++)
+			{
+				this.botDictionary.Add(this.bots[i], (byte)i);
+			}
+			this.botDictionary.Add("Random Bot", 0xFF);
+			this.bots.Sort();
 
 			this.medals = IdTranslator.medals.ToList();
 			this.medals.Remove("");
+			for (int i = 0; i < this.medals.Count; i++)
+			{
+				medalDictionary.Add(this.medals[i], (byte)i);
+			}
+			this.medalDictionary.Add("Random Medal", 0xFF);
 		}
 
 		private void PopulateData()
@@ -91,41 +107,43 @@ namespace MedabotsRandomizer
 
 		public void LoadROM(string chosenFile)
 		{
-				this.allBattles.Clear();
-				this.allEncounters.Clear();
-				this.allParts.Clear();
+			this.allBattles.Clear();
+			this.allEncounters.Clear();
+			this.allParts.Clear();
 
-				this.file = File.ReadAllBytes(chosenFile);
-				byte[] id_bytes = new byte[0x12];
-				Array.Copy(file, 0xa0, id_bytes, 0, 0x12);
-				string id_string = Encoding.Default.GetString(id_bytes);
-				this.options.gameId = id_string;
+			this.file = File.ReadAllBytes(chosenFile);
+			byte[] id_bytes = new byte[0x12];
+			Array.Copy(file, 0xa0, id_bytes, 0, 0x12);
+			string id_string = Encoding.Default.GetString(id_bytes);
+			this.options.gameId = id_string;
+			this.options.romLabel = "No ROM Loaded...";
 
-				if (id_string.Contains("MEDACORE"))
-				{
-					this.file = null;
-					//ShowNotification("Error!", "Please select an English Medabots ROM\nThe game id corresponds with a Japanese ROM, which is not supported.");
-					throw new InvalidRomException("Please select an English Medabots ROM\nThe game id corresponds with a Japanese ROM, which is not supported.");
-				}
 
-				if (!id_string.Contains("MEDABOTS"))
-				{
-					this.file = null;
-					//ShowNotification("Error!", "Please select a Medabots ROM\nThe game id does not correspond to any Medabots ROM.");
-					throw new InvalidRomException("Please select a Medabots ROM\nThe game id does not correspond to any Medabots ROM.");
-				}
+			if (id_string.Contains("MEDACORE"))
+			{
+				this.file = null;
+				this.options.romLabel = "Unknown ROM";
+				throw new InvalidRomException("Please select an English Medabots ROM\nThe game id corresponds with a Japanese ROM, which is not supported.");
+			}
 
-				if (hashes.TryGetValue(id_string, out string recognizedFile))
-				{
-					this.options.romLabel = recognizedFile;
-					this.AddOffsets();
-					this.PopulateData();
-				}
-				else
-				{
-					this.options.romLabel = "Unknown ROM";
-					throw new InvalidRomException("Unknown ROM");
-				}
+			if (!id_string.Contains("MEDABOTS"))
+			{
+				this.file = null;
+				this.options.romLabel = "Unknown ROM";
+				throw new InvalidRomException("Please select a Medabots ROM\nThe game id does not correspond to any Medabots ROM.");
+			}
+
+			if (hashes.TryGetValue(id_string, out string recognizedFile))
+			{
+				this.options.romLabel = recognizedFile;
+				this.AddOffsets();
+				this.PopulateData();
+			}
+			else
+			{
+				this.options.romLabel = "Unknown ROM";
+				throw new InvalidRomException("Unknown ROM");
+			}
 		}
 
 		public void Randomize()
@@ -206,7 +224,7 @@ namespace MedabotsRandomizer
 				if (this.options.starterRandomizationEnabled)
 				{
 					byte part = this.options.starterBot;
-					if (this.options.starterBot == 0xF8)
+					if (this.options.starterBot == 0xFF)
 					{
 						part = (byte)rng.Next(0, IdTranslator.bots.Length);
 						while (blacklist.Contains(part))
@@ -226,7 +244,7 @@ namespace MedabotsRandomizer
 					}
 					else
 					{
-						if (this.options.starterBot == 0xF8)
+						if (this.options.starterBot == 0xFF)
 						{
 							medal = IdTranslator.botMedal(part);
 						}
@@ -453,7 +471,7 @@ namespace MedabotsRandomizer
 			//////////////////////////////////////////////////////
 			/// WRITE TO FILE
 			//////////////////////////////////////////////////////
-			File.WriteAllBytes(seedtext + ".gba", this.file);
+			File.WriteAllBytes(this.options.romLabel + " - " + seedtext + ".gba", this.file);
 		}
 
 		private T LoadFile<T>(string fileName)
