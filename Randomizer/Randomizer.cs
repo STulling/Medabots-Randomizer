@@ -550,7 +550,7 @@ namespace MedabotsRandomizer
 			/// ADD MESSAGES
 			//////////////////////////////////////////////////////
 			TextParser textParser2 = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
-			List<Message> patchedMessages = Utils.LoadFile<List<Message>>("./Configs/Patched_Messages.json");
+			List<Message> patchedMessages = Utils.LoadFile<List<Message>>("./Configs/PatchedMessages.json");
 			foreach (Message message in patchedMessages)
 			{
 				textParser2.addMessage(
