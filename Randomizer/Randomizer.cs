@@ -560,13 +560,15 @@ namespace MedabotsRandomizer
 				{
 					this.allBattles.ForEach(battle =>
 					{
+						bool mixedBot = false;
 						for (int i = 0; i < battle.content.number_of_bots; i++)
 						{
 							if (battle.content.bots[i].head != battle.content.bots[i].right_arm || battle.content.bots[i].head != battle.content.bots[i].left_arm || battle.content.bots[i].head != battle.content.bots[i].legs)
 							{
-								battle.content.fixed_bots = 0;
+								mixedBot = true;
 							}
 						}
+						battle.content.fixed_bots = mixedBot ? (byte)0 : (byte)1;
 					});
 				}
 			}
