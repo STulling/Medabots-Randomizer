@@ -53,7 +53,7 @@ namespace MedabotsRandomizer
 			}
 			this.medalDictionary.Add("Random Medal", 0xFF);
 
-			List<RomData> romDataList = LoadFile<List<RomData>>("./RomData.json");
+			List<RomData> romDataList = LoadFile<List<RomData>>("./Configs/RomData.json");
 			romDataList.ForEach(data =>
 			{
 				offsets.Add(data.romHash, data.GetOffsetDictionary());
@@ -363,7 +363,7 @@ namespace MedabotsRandomizer
 					List<byte> origMedals = new List<byte> { 15, 16, 17, 18, 19, 20 };
 					List<byte> replacedMedals = origMedals.Select(x => this.randomizer.medalExchanges[x]).ToList();
 
-					List<Medal> medals = LoadFile<List<Medal>>("./Medals.json");
+					List<Medal> medals = LoadFile<List<Medal>>("./Configs/Medals.json");
 					List<((int, int), (int, int))> messages = new List<((int, int), (int, int))>();
 					messages.Add(((0x00, 0x6b), (0x00, 0x68)));
 					messages.Add(((0x00, 0x6f), (0x00, 0x6c)));
@@ -529,7 +529,7 @@ namespace MedabotsRandomizer
 				//////////////////////////////////////////////////////
 				if (!this.options.shopRandomizationEnabled && this.options.shopPatchingEnabled)
 				{
-					List<ShopData> shops = LoadFile<List<ShopData>>("./Shops.json");
+					List<ShopData> shops = LoadFile<List<ShopData>>("./Configs/Shops.json");
 					foreach (ShopData shop in shops)
 					{
 						byte[] newShop = new byte[shop.shopContents.Length];
@@ -550,7 +550,7 @@ namespace MedabotsRandomizer
 			/// ADD MESSAGES
 			//////////////////////////////////////////////////////
 			TextParser textParser2 = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
-			List<Message> patchedMessages = this.LoadFile<List<Message>>("./Patched_Messages.json");
+			List<Message> patchedMessages = this.LoadFile<List<Message>>("./Configs/Patched_Messages.json");
 			foreach (Message message in patchedMessages)
 			{
 				textParser2.addMessage(
