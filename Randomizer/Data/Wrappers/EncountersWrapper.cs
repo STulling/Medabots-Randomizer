@@ -9,8 +9,6 @@ namespace MedabotsRandomizer.Data.Wrappers
 
         }
 
-        public string MapId => ((byte)id).ToString("X2");
-        public string Memory_Location => (memory_location + 0x8000000).ToString("X8");
         public string Map => IdTranslator.IdToMap((byte)id);
         public string Enc_1 => content.battle[0].ToString("X2");
         public string Enc_2 => content.battle[1].ToString("X2");

@@ -203,7 +203,7 @@ namespace MedabotsRandomizer
 						);
 				}
 
-				this.randomizer.fixSoftlock();
+				this.randomizer.FixSoftlock();
 
 				//////////////////////////////////////////////////////
 				/// RANDOM SHOPS
@@ -369,13 +369,15 @@ namespace MedabotsRandomizer
 					List<byte> replacedMedals = origMedals.Select(x => this.randomizer.medalExchanges[x]).ToList();
 
 					List<Medal> medals = Utils.LoadFile<List<Medal>>("./Configs/Medals.json");
-					List<((int, int), (int, int))> messages = new List<((int, int), (int, int))>();
-					messages.Add(((0x00, 0x6b), (0x00, 0x68)));
-					messages.Add(((0x00, 0x6f), (0x00, 0x6c)));
-					messages.Add(((0x00, 0x73), (0x00, 0x70)));
-					messages.Add(((0x00, 0x77), (0x00, 0x74)));
-					messages.Add(((0x00, 0x7b), (0x00, 0x78)));
-					messages.Add(((0x00, 0x7f), (0x00, 0x7c)));
+					List<((int, int), (int, int))> messages = new List<((int, int), (int, int))>
+					{
+						((0x00, 0x6b), (0x00, 0x68)),
+						((0x00, 0x6f), (0x00, 0x6c)),
+						((0x00, 0x73), (0x00, 0x70)),
+						((0x00, 0x77), (0x00, 0x74)),
+						((0x00, 0x7b), (0x00, 0x78)),
+						((0x00, 0x7f), (0x00, 0x7c))
+					};
 
 					TextParser textParser = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
 					for (int i = 0; i < replacedMedals.Count; i++)
@@ -393,16 +395,27 @@ namespace MedabotsRandomizer
 			}
 
 			//////////////////////////////////////////////////////
-			/// UPDATE BATTLES, ENCOUNTERS AND PARTS
+			/// UPDATE BATTLES
 			//////////////////////////////////////////////////////
-			int amount_of_battles = 0xf5;
+			int battle_amount = 0xf5;
 			int battle_size = 0x28;
-
-			for (int i = 0; i <= amount_of_battles; i++)
+			for (int i = 0; i <= battle_amount; i++)
 			{
-				int battle_address = Utils.GetAdressAtPosition(this.file, offsets[this.options.gameId][OffsetEnum.Battles] + 4 * i);
+				int battle_address = this.allBattles[i].memory_location;
 				byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
 				Array.Copy(battle, 0, this.file, battle_address, battle_size);
+			}
+
+			//////////////////////////////////////////////////////
+			/// UPDATE ENCOUNTERS
+			//////////////////////////////////////////////////////
+			int encounter_amount = 0xBF;
+			int encounter_size = 4;
+			for (int i = 0; i <= encounter_amount; i++)
+			{
+				int encounter_address = this.allEncounters[i].memory_location;
+				byte[] encounter = StructUtils.getBytes(this.allEncounters[i].content);
+				Array.Copy(encounter, 0, this.file, encounter_address, encounter_size);
 			}
 
 			//////////////////////////////////////////////////////
@@ -507,7 +520,7 @@ namespace MedabotsRandomizer
 											  0x39, 0x67, 0x94, 0x52, 0x10, 0x42, 0x83, 0x1c, 0xff,
 											  0xff, 0xff, 0xff, 0xff, 0xff };
 
-					foreach (uint loc in Utils.SearchAll(file, palette))
+					foreach (uint loc in Utils.SearchAll(file, palette).Select(v => (uint)v))
 					{
 						Utils.WritePayload(file, loc, newPalette);
 					}
