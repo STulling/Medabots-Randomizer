@@ -5,10 +5,7 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedabotsRandomizer", "Randomizer\MedabotsRandomizer.csproj", "{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interface", "Interface\Interface.csproj", "{6CD8FED6-3523-47F0-B583-1A9B23D329B9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{0F56EDA9-CF7F-4C49-A67B-3FCD434D4902} = {0F56EDA9-CF7F-4C49-A67B-3FCD434D4902}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroApp", "MetroApp\MetroApp.csproj", "{6CD8FED6-3523-47F0-B583-1A9B23D329B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
