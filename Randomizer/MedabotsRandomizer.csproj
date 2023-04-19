@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Data\Message.cs" />
     <Compile Include="Data\Medal.cs" />
+    <Compile Include="Data\ShopData.cs" />
     <Compile Include="Exceptions\InvalidRomException.cs" />
     <Compile Include="Randomizer.cs" />
     <Compile Include="RandomizerHelper.cs" />
@@ -161,6 +162,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Shops.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -93,6 +93,9 @@ namespace MetroApp
 				this.randomizer.options.starterMedal = medal;
 			}
 
+            this.randomizer.options.shopPatchingEnabled = chk_shop_patching.IsOn;
+            this.randomizer.options.genderlessBotsEnabled = chk_genderless_bots.IsOn;
+
             try
             {
 				this.randomizer.Randomize();

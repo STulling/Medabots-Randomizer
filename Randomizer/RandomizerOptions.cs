@@ -1,4 +1,6 @@
-﻿namespace MedabotsRandomizer
+﻿using System;
+
+namespace MedabotsRandomizer
 {
 	public class RandomizerOptions
 	{
@@ -24,5 +26,8 @@
 
 		public byte starterBot { get; set; } = 0xF8;
 		public byte starterMedal { get; set; } = 0xF8;
+
+		public bool shopPatchingEnabled { get; set; } = false;
+		public bool genderlessBotsEnabled { get; set; } = false;
 	}
 }

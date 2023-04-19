@@ -86,9 +86,27 @@ namespace MedabotsRandomizer
 
 		private void PopulateData()
 		{
-			this.allBattles = DataPopulator.Populate_Data<BattleWrapper>(this.file, 0xf5, 0x28, memory_offsets[this.options.gameId]["Battles"], true);
-			this.allEncounters = DataPopulator.Populate_Data<EncountersWrapper>(this.file, 0xbf, 4, memory_offsets[this.options.gameId]["Encounters"], false);
-			this.allParts = DataPopulator.Populate_Data<PartWrapper>(this.file, 480, 0x10, memory_offsets[this.options.gameId]["Parts"], false);
+			this.allBattles = DataPopulator.Populate_Data<BattleWrapper>(
+				this.file, 
+				0xf5, 
+				0x28, 
+				memory_offsets[this.options.gameId]["Battles"], 
+				true
+				);
+			this.allEncounters = DataPopulator.Populate_Data<EncountersWrapper>(
+				this.file, 
+				0xbf, 
+				4, 
+				memory_offsets[this.options.gameId]["Encounters"], 
+				false
+				);
+			this.allParts = DataPopulator.Populate_Data<PartWrapper>(
+				this.file, 
+				480, 
+				0x10, 
+				memory_offsets[this.options.gameId]["Parts"], 
+				false
+				);
 		}
 
 		private void AddOffsets()
@@ -163,7 +181,12 @@ namespace MedabotsRandomizer
 			int ivalue = BitConverter.ToInt32(hashed, 0);
 
 			Random rng = new Random(ivalue);
-			this.randomizer = new RandomizerHelper(this.allBattles, this.allEncounters, this.allParts, rng);
+			this.randomizer = new RandomizerHelper(
+				this.allBattles, 
+				this.allEncounters, 
+				this.allParts, 
+				rng
+				);
 
 			if (this.options.randomizerEnabled)
 			{
@@ -180,7 +203,12 @@ namespace MedabotsRandomizer
 				//////////////////////////////////////////////////////
 				if (this.options.battleRandomizationEnabled)
 				{
-					this.randomizer.RandomizeBattles(this.options.battleStructureEnabled, this.options.balancedBotLevelsEnabled, this.options.mixedBotsEnabled ? (float)(this.options.mixedBotPartsPercentage / 100) : 0, this.options.battleContinuityEnabled);
+					this.randomizer.RandomizeBattles(
+						this.options.battleStructureEnabled, 
+						this.options.balancedBotLevelsEnabled, 
+						this.options.mixedBotsEnabled ? (float)(this.options.mixedBotPartsPercentage / 100) : 0, 
+						this.options.battleContinuityEnabled
+						);
 				}
 
 				this.randomizer.fixSoftlock();
@@ -193,6 +221,7 @@ namespace MedabotsRandomizer
 					byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
 					Array.Copy(battle, 0, this.file, battle_address, battle_size);
 				}
+
 				//////////////////////////////////////////////////////
 				/// RANDOM SHOPS
 				//////////////////////////////////////////////////////
@@ -368,8 +397,14 @@ namespace MedabotsRandomizer
 					TextParser textParser = new TextParser(this.file, memory_offsets[this.options.gameId]["Text"]);
 					for (int i = 0; i < replacedMedals.Count; i++)
 					{
-						textParser.addMessage(messages[i].Item1, medals[replacedMedals[i]].ikki_text);
-						textParser.addMessage(messages[i].Item2, medals[replacedMedals[i]].collect_text);
+						textParser.addMessage(
+							messages[i].Item1, 
+							medals[replacedMedals[i]].ikki_text
+							);
+						textParser.addMessage(
+							messages[i].Item2, 
+							medals[replacedMedals[i]].collect_text
+							);
 					}
 				}
 			}
@@ -415,6 +450,9 @@ namespace MedabotsRandomizer
 				List<uint> trainerPayloadList = new List<uint>();
 				Dictionary<uint, ushort> codePatches = new Dictionary<uint, ushort>();
 
+				//////////////////////////////////////////////////////
+				/// Instant Text
+				//////////////////////////////////////////////////////
 				if (this.options.instantTextEnabled)
 				{
 					trainerPayloadList.AddRange(new uint[]{
@@ -431,6 +469,9 @@ namespace MedabotsRandomizer
 					}).ToDictionary(k => k.Key, v => v.Value);
 				}
 
+				//////////////////////////////////////////////////////
+				/// School Encounters
+				//////////////////////////////////////////////////////
 				if (this.options.extraEncountersEnabled)
 				{
 					trainerPayloadList.AddRange(new uint[]{
@@ -453,6 +494,78 @@ namespace MedabotsRandomizer
 				Utils.WritePayload(file, hookOffset, hookPayload);
 				Utils.WritePayload(file, trainerOffset, trainerPayload);
 				Utils.WritePatches(file, codePatches);
+
+				//////////////////////////////////////////////////////
+				/// Gender-Neutral Bots
+				//////////////////////////////////////////////////////
+				if (this.options.genderlessBotsEnabled)
+				{
+					byte[] palette = new byte[] { 0x00, 0x00, 0xbc, 0xff, 0xf7, 0xee, 0x51, 0x56, 0x28,
+										  0x2D, 0x7f, 0x8f, 0x7e, 0x92, 0x78, 0x95, 0xae, 0xfe,
+										  0xa9, 0x75, 0x68, 0x65, 0xc4, 0x4c, 0x83, 0x1c, 0xff,
+										  0xff, 0xff, 0xff, 0xff, 0xff };
+
+					byte[] newPalette = new byte[] {  0x00, 0x00, 0xbc, 0xff, 0xf7, 0xee, 0x51, 0x56, 0x28,
+											  0x2D, 0x7f, 0x8f, 0x7e, 0x92, 0x78, 0x95, 0xff, 0x7f,
+											  0x39, 0x67, 0x94, 0x52, 0x10, 0x42, 0x83, 0x1c, 0xff,
+											  0xff, 0xff, 0xff, 0xff, 0xff };
+
+					foreach (uint loc in Utils.SearchAll(file, palette))
+					{
+						Utils.WritePayload(file, loc, newPalette);
+					}
+
+					foreach (PartWrapper part in allParts)
+					{
+						part.content.gender = 0;
+					}
+
+					for (int i = 0; i < allParts.Count; i++)
+					{
+						byte[] battle = StructUtils.getBytes(allParts[i].content);
+						int part_address = memory_offsets[this.options.gameId]["Parts"] + battle.Length * i;
+						Array.Copy(battle, 0, file, part_address, battle.Length);
+					}
+
+					for (int i = memory_offsets[this.options.gameId]["Events"]; i < memory_offsets[this.options.gameId]["Events"] + 0x18000;)
+					{
+						byte op = file[i];
+						if (op == 0x3D)
+						{
+							file[i + 1] = 0;
+						}
+						if (op == 0x2F)
+						{
+							//multiconditional jump
+							i += file[i + 1] + 1;
+						}
+						else
+						{
+							i += IdTranslator.operationBytes[op];
+						}
+					}
+				}
+
+				//////////////////////////////////////////////////////
+				/// PATCH SHOPS
+				//////////////////////////////////////////////////////
+				if (!this.options.shopRandomizationEnabled && this.options.shopPatchingEnabled)
+				{
+					List<ShopData> shops = LoadFile<List<ShopData>>("./Shops.json");
+					foreach (ShopData shop in shops)
+					{
+						byte[] newShop = new byte[shop.shopContents.Length];
+						for (int i = 0; i < shop.shopContents.Length; i++)
+						{
+							newShop[i] = (byte)shop.shopContents[i];
+						}
+						Utils.WritePayload(
+							file, 
+							(uint)(memory_offsets[this.options.gameId]["ShopContents"] + shop.shopContents.Length * shop.id), 
+							newShop
+							);
+					}
+				}
 			}
 
 			//////////////////////////////////////////////////////
@@ -462,22 +575,35 @@ namespace MedabotsRandomizer
 			List<Message> patchedMessages = this.LoadFile<List<Message>>("./Patched_Messages.json");
 			foreach (Message message in patchedMessages)
 			{
-				textParser2.addMessage((message.id[0], message.id[1]), message.message);
+				textParser2.addMessage(
+					(message.id[0], message.id[1]), 
+					message.message
+					);
 			}
 
-			TextPatcher textPatcher = new TextPatcher(ref this.file, memory_offsets[this.options.gameId]["Text"], 0x7f5500, textParser2.getEncodedMessages());
+			TextPatcher textPatcher = new TextPatcher(
+				ref this.file, 
+				memory_offsets[this.options.gameId]["Text"], 
+				0x7f5500, 
+				textParser2.getEncodedMessages()
+				);
 			textPatcher.PatchText();
 
 			//////////////////////////////////////////////////////
 			/// WRITE TO FILE
 			//////////////////////////////////////////////////////
-			File.WriteAllBytes(this.options.romLabel + " - " + seedtext + ".gba", this.file);
+			File.WriteAllBytes(
+				String.Format("{0} - {1}.gba", this.options.romLabel, seedtext), 
+				this.file
+				);
 		}
 
 		private T LoadFile<T>(string fileName)
 		{
 			using (StreamReader file = File.OpenText(fileName))
+			{
 				return JsonConvert.DeserializeObject<T>(file.ReadToEnd());
+			}
 		}
 	}
 }
