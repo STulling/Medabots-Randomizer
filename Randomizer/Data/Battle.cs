@@ -44,7 +44,7 @@ namespace MedabotsRandomizer.Data
         public byte characterId;
         public byte unknown_1;
         public byte number_of_bots;
-        public byte no_shuffle;
+        public byte fixed_bots;
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
 		public BattleBot[] bots = new BattleBot[3];
     }

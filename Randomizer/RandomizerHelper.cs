@@ -88,7 +88,7 @@ namespace MedabotsRandomizer
                                 BattleBot newBot = newBots[diffBots.IndexOf(bot.head)];
                                 if (newBot.head != newBot.left_arm || newBot.head != newBot.right_arm || newBot.head != newBot.legs)
                                 {
-                                    battle.content.no_shuffle = 0;
+                                    battle.content.fixed_bots = 0;
                                 }
 
                                 if (balanced_medal_level)
