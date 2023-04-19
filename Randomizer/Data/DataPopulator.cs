@@ -6,7 +6,7 @@ namespace MedabotsRandomizer.Data
 {
 	public static class DataPopulator
     {
-        public static List<T> Populate_Data<T>(byte[] file, int amount, int size, int offset, bool is_ptr)
+        public static List<T> PopulateData<T>(byte[] file, int amount, int size, int offset, bool is_ptr)
         {
             List<T> result = new List<T>();
             for (int i = 0; i <= amount; i++)

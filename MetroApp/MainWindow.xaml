@@ -6,7 +6,12 @@
                       Title="Medabots Randomizer"
                       Height="674.8"
                       Width="607.4" ResizeMode="CanMinimize">
-    <Grid Background="#222">
+    <Grid Background="#222" Margin="0,0,0,-64">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="371*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="132*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="Open_ROM_Button" Width="142"
                         Margin="10,10,0,0"
                         Style="{DynamicResource MahApps.Styles.Button.Square}" Click="LoadROM" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top">
@@ -54,13 +59,50 @@
                             </TextBlock>
                         </Grid>
                     </Button>
+                    <Button x:Name="btn_export_data" Width="220"
+                            Style="{DynamicResource MahApps.Styles.Button.Square}" Click="ExportData" Margin="292,482,-282,-335">
+                        <Grid Width="142" Height="38">
+                            <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="appbar_export" 
+                                                Width="20"
+                                                Height="20" 
+                                                Margin="11,7,0,0">
+                                <Path Width="13.316" Height="21" Canvas.Left="-49.258" Canvas.Top="-4.8" Stretch="Fill" Fill="#FFF" Data="F1 M 25,52L 51,52L 51,57L 25,57L 25,52 Z M 35,16L 41,16L 41,36.5L 49,27L 49,36.5L 38,49L 27,36.5L 27,27L 35,36.5L 35,16 Z "/>
+                            </Canvas>
+                            <TextBlock Margin="38,10,20,9">
+                                    Export Data
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+                    <Button x:Name="btn_import_data" Width="220"
+                            Style="{DynamicResource MahApps.Styles.Button.Square}" Click="ImportData" Margin="67,482,-57,-335">
+                        <Grid Width="142" Height="38">
+                            <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Name="appbar_import" 
+                                                Width="20"
+                                                Height="20" 
+                                                Margin="11,7,0,0">
+                                <Path Width="13.316" Height="21" Canvas.Left="-49.258" Canvas.Top="-4.8" Stretch="Fill" Fill="#FFF" Data="F1 M 25,52L 51,52L 51,57L 25,57L 25,52 Z M 35,16L 41,16L 41,36.5L 49,27L 49,36.5L 38,49L 27,36.5L 27,27L 35,36.5L 35,16 Z " RenderTransformOrigin="0.5,0.5">
+                                    <Path.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="180"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Path.RenderTransform>
+                                </Path>
+                            </Canvas>
+                            <TextBlock Margin="38,10,20,9">
+                                    Import Data
+                            </TextBlock>
+                        </Grid>
+                    </Button>
                 </Grid>
             </AdornerDecorator>
         </GroupBox>
         <GroupBox Grid.Row="0"
                   Grid.Column="0"
                   Margin="255,61,0,0"
-                  Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="497" VerticalAlignment="Top">
+                  Header="Randomizer Settings" HorizontalAlignment="Left" Width="340" Height="497" VerticalAlignment="Top" Grid.ColumnSpan="3">
             <AdornerDecorator>
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_randomize_starter" Margin="{StaticResource ControlMargin}" Width="300" IsOn="True" Content="Custom Starter Bot" ToolTip="Changes the starter robot."/>
@@ -103,9 +145,9 @@
                 </StackPanel>
             </AdornerDecorator>
         </GroupBox>
-        <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="157,11,9.8,0" Width="434" Height="38" VerticalAlignment="Top" />
-        <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,563,0,0" VerticalAlignment="Top" Height="76" Width="581"/>
-        <Label Content="By: Simon381, WhiteCherry" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30"/>
+        <Label x:Name="romLabel" Content="No ROM Loaded..." Style="{DynamicResource DescriptionHeaderStyle}" Margin="160,11,0,0" Width="434" Height="38" VerticalAlignment="Top" Grid.ColumnSpan="3" HorizontalAlignment="Left" />
+        <Label Content="These are the recommended settings for running the randomizer.&#x0a;If you are familiar with the game, feel free to enable instant text.&#x0a;Otherwise it might cause you to miss some important dialog." HorizontalAlignment="Left" Margin="10,639,0,0" VerticalAlignment="Top" Height="76" Width="581" Grid.ColumnSpan="3"/>
+        <Label Content="By: Simon381, WhiteCherry" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="30" Grid.ColumnSpan="2" Grid.Column="1"/>
 
     </Grid>
 </Controls:MetroWindow>

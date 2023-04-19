@@ -61,6 +61,16 @@ namespace MetroApp
 			}
         }
 
+        private void ExportData(object sender, RoutedEventArgs e)
+        {
+            this.randomizer.ExportROMData();
+        }
+
+        private void ImportData(object sender, RoutedEventArgs e)
+        {
+            this.randomizer.ImportROMData();
+        }
+
         private void Randomize(object sender, RoutedEventArgs e)
         {
             this.randomizer.options.seedInput = (seed_input.Text != "") ? seed_input.Text : MedabotsRandomizer.Util.Utils.RandomString(12);

@@ -64,21 +64,21 @@ namespace MedabotsRandomizer
 
 		private void PopulateData()
 		{
-			this.allBattles = DataPopulator.Populate_Data<BattleWrapper>(
+			this.allBattles = DataPopulator.PopulateData<BattleWrapper>(
 				this.file, 
 				0xf5, 
 				0x28, 
 				offsets[this.options.gameId][OffsetEnum.Battles], 
 				true
 				);
-			this.allEncounters = DataPopulator.Populate_Data<EncountersWrapper>(
+			this.allEncounters = DataPopulator.PopulateData<EncountersWrapper>(
 				this.file, 
 				0xbf, 
 				4, 
 				offsets[this.options.gameId][OffsetEnum.Encounters], 
 				false
 				);
-			this.allParts = DataPopulator.Populate_Data<PartWrapper>(
+			this.allParts = DataPopulator.PopulateData<PartWrapper>(
 				this.file, 
 				480, 
 				0x10, 
@@ -142,6 +142,20 @@ namespace MedabotsRandomizer
 			}
 		}
 
+		public void ExportROMData()
+		{
+			File.WriteAllText("./Configs/Battles.json", JsonConvert.SerializeObject(this.allBattles, Formatting.Indented));
+			File.WriteAllText("./Configs/Encounters.json", JsonConvert.SerializeObject(this.allEncounters, Formatting.Indented));
+			File.WriteAllText("./Configs/Parts.json", JsonConvert.SerializeObject(this.allParts, Formatting.Indented));
+		}
+
+		public void ImportROMData()
+		{
+			this.allBattles = Utils.LoadFile<List<BattleWrapper>>("./Configs/Battles.json");
+			this.allEncounters = Utils.LoadFile<List<EncountersWrapper>>("./Configs/Encounters.json");
+			this.allParts = Utils.LoadFile<List<PartWrapper>>("./Configs/Parts.json");
+		}
+
 		public void Randomize()
 		{
 			if (this.file == null)
@@ -190,15 +204,6 @@ namespace MedabotsRandomizer
 				}
 
 				this.randomizer.fixSoftlock();
-				int amount_of_battles = 0xf5;
-				int battle_size = 0x28;
-
-				for (int i = 0; i <= amount_of_battles; i++)
-				{
-					int battle_address = Utils.GetAdressAtPosition(this.file, offsets[this.options.gameId][OffsetEnum.Battles] + 4 * i);
-					byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
-					Array.Copy(battle, 0, this.file, battle_address, battle_size);
-				}
 
 				//////////////////////////////////////////////////////
 				/// RANDOM SHOPS
@@ -386,6 +391,20 @@ namespace MedabotsRandomizer
 					}
 				}
 			}
+
+			//////////////////////////////////////////////////////
+			/// UPDATE BATTLES, ENCOUNTERS AND PARTS
+			//////////////////////////////////////////////////////
+			int amount_of_battles = 0xf5;
+			int battle_size = 0x28;
+
+			for (int i = 0; i <= amount_of_battles; i++)
+			{
+				int battle_address = Utils.GetAdressAtPosition(this.file, offsets[this.options.gameId][OffsetEnum.Battles] + 4 * i);
+				byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
+				Array.Copy(battle, 0, this.file, battle_address, battle_size);
+			}
+
 			//////////////////////////////////////////////////////
 			/// CODE PATCHES
 			//////////////////////////////////////////////////////
