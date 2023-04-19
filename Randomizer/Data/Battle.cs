@@ -7,7 +7,6 @@ namespace MedabotsRandomizer.Data
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct BattleBot
     {
-        public byte unknown;
         public byte head;
         public byte right_arm;
         public byte left_arm;
@@ -19,6 +18,7 @@ namespace MedabotsRandomizer.Data
         public byte unknown3;
         public byte unknown4;
         public byte unknown5;
+        public byte unknown6;
 
         public IEnumerable<FieldWrapper> toDataSource()
         {
@@ -44,8 +44,8 @@ namespace MedabotsRandomizer.Data
         public byte characterId;
         public byte unknown_1;
         public byte number_of_bots;
-        [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-        public BattleBot[] bots = new BattleBot[3];
-        public byte always_0;
+        public byte no_shuffle;
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+		public BattleBot[] bots = new BattleBot[3];
     }
 }

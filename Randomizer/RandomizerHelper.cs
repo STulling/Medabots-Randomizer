@@ -82,14 +82,19 @@ namespace MedabotsRandomizer
                         foreach (int i in entry.Value)
                         {
                             BattleWrapper battle = battles[i];
-
                             for (int botIndex = 0; botIndex < battle.content.number_of_bots; botIndex++)
                             {
                                 BattleBot bot = battle.content.bots[botIndex];
                                 BattleBot newBot = newBots[diffBots.IndexOf(bot.head)];
+                                if (newBot.head != newBot.left_arm || newBot.head != newBot.right_arm || newBot.head != newBot.legs)
+                                {
+                                    battle.content.no_shuffle = 0;
+                                }
 
                                 if (balanced_medal_level)
-                                    newBot.medal_level = bot.medal_level;
+                                {
+									newBot.medal_level = bot.medal_level;
+								}
 
                                 battle.content.bots[botIndex] = newBot;
                             }
@@ -239,11 +244,7 @@ namespace MedabotsRandomizer
 
         private BattleBot GenerateRandomBot(float mixedchance)
         {
-			BattleBot bot = new BattleBot
-			{
-				unknown = 1
-			};
-
+			BattleBot bot = new BattleBot();
 			if (mixedchance != 0 && mixedchance >= rng.NextDouble())
             {
                 bot.head = (byte)rng.Next(0, 0x78);
