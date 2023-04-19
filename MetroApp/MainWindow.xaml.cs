@@ -105,8 +105,10 @@ namespace MetroApp
 
             this.randomizer.options.shopPatchingEnabled = chk_shop_patching.IsOn;
             this.randomizer.options.genderlessBotsEnabled = chk_genderless_bots.IsOn;
+            this.randomizer.options.shuffledMixedBotsEnabled = chk_shuffle_mixed_bots.IsOn;
 
-            try
+
+			try
             {
 				this.randomizer.Randomize();
 				ShowNotification("Done!", "The ROM has been converted and is saved with seed: \"" + this.randomizer.options.seedInput + "\" as \"" + this.randomizer.options.romLabel + " - " + this.randomizer.options.seedInput + ".gba\"");

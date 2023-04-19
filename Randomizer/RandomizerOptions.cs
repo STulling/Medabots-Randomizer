@@ -29,5 +29,7 @@ namespace MedabotsRandomizer
 
 		public bool shopPatchingEnabled { get; set; } = false;
 		public bool genderlessBotsEnabled { get; set; } = false;
+
+		public bool shuffledMixedBotsEnabled { get; set; } = false;
 	}
 }

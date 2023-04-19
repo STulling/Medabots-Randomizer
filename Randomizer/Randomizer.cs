@@ -395,30 +395,6 @@ namespace MedabotsRandomizer
 			}
 
 			//////////////////////////////////////////////////////
-			/// UPDATE BATTLES
-			//////////////////////////////////////////////////////
-			int battle_amount = 0xf5;
-			int battle_size = 0x28;
-			for (int i = 0; i <= battle_amount; i++)
-			{
-				int battle_address = this.allBattles[i].memory_location;
-				byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
-				Array.Copy(battle, 0, this.file, battle_address, battle_size);
-			}
-
-			//////////////////////////////////////////////////////
-			/// UPDATE ENCOUNTERS
-			//////////////////////////////////////////////////////
-			int encounter_amount = 0xBF;
-			int encounter_size = 4;
-			for (int i = 0; i <= encounter_amount; i++)
-			{
-				int encounter_address = this.allEncounters[i].memory_location;
-				byte[] encounter = StructUtils.getBytes(this.allEncounters[i].content);
-				Array.Copy(encounter, 0, this.file, encounter_address, encounter_size);
-			}
-
-			//////////////////////////////////////////////////////
 			/// CODE PATCHES
 			//////////////////////////////////////////////////////
 			if (this.options.codePatchingEnabled)
@@ -576,6 +552,47 @@ namespace MedabotsRandomizer
 							);
 					}
 				}
+
+				//////////////////////////////////////////////////////
+				/// SHUFFLE MIXED BOTS
+				//////////////////////////////////////////////////////
+				if (this.options.shuffledMixedBotsEnabled)
+				{
+					this.allBattles.ForEach(battle =>
+					{
+						for (int i = 0; i < battle.content.number_of_bots; i++)
+						{
+							if (battle.content.bots[i].head != battle.content.bots[i].right_arm || battle.content.bots[i].head != battle.content.bots[i].left_arm || battle.content.bots[i].head != battle.content.bots[i].legs)
+							{
+								battle.content.fixed_bots = 0;
+							}
+						}
+					});
+				}
+			}
+
+			//////////////////////////////////////////////////////
+			/// UPDATE BATTLES
+			//////////////////////////////////////////////////////
+			int battle_amount = 0xf5;
+			int battle_size = 0x28;
+			for (int i = 0; i <= battle_amount; i++)
+			{
+				int battle_address = this.allBattles[i].memory_location;
+				byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
+				Array.Copy(battle, 0, this.file, battle_address, battle_size);
+			}
+
+			//////////////////////////////////////////////////////
+			/// UPDATE ENCOUNTERS
+			//////////////////////////////////////////////////////
+			int encounter_amount = 0xBF;
+			int encounter_size = 4;
+			for (int i = 0; i <= encounter_amount; i++)
+			{
+				int encounter_address = this.allEncounters[i].memory_location;
+				byte[] encounter = StructUtils.getBytes(this.allEncounters[i].content);
+				Array.Copy(encounter, 0, this.file, encounter_address, encounter_size);
 			}
 
 			//////////////////////////////////////////////////////
