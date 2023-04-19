@@ -108,6 +108,8 @@
   <ItemGroup>
     <Compile Include="Data\Message.cs" />
     <Compile Include="Data\Medal.cs" />
+    <Compile Include="Data\OffsetEnum.cs" />
+    <Compile Include="Data\RomData.cs" />
     <Compile Include="Data\ShopData.cs" />
     <Compile Include="Exceptions\InvalidRomException.cs" />
     <Compile Include="Randomizer.cs" />
@@ -162,7 +164,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Shops.json" />
+    <None Include="RomData.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Shops.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

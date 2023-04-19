@@ -15,38 +15,8 @@ namespace MedabotsRandomizer
 {
 	public partial class Randomizer
 	{
-		private static readonly Dictionary<string, string> hashes = new Dictionary<string, string>
-		{
-			{ "MEDABOTSRKSVA9BPE9", "Medabots Rokusho Version (E)" },
-			{ "MEDABOTSRKSVA9BEE9", "Medabots Rokusho Version (U)" },
-			{ "MEDABOTSMTBVA8BEE9", "Medabots Metabee Version (U)" },
-			{ "MEDABOTSMTBVA8BPE9", "Medabots Metabee Version (E)" }
-		};
-
-		private static readonly Dictionary<string, Dictionary<string, int>> memory_offsets = new Dictionary<string, Dictionary<string, int>>
-		{
-			{ "MEDABOTSRKSVA9BPE9", new Dictionary<string, int>{
-				{ "Battles", 0x3c1ba0 },
-				{ "Starter", 0x7852f4},
-				{ "Text", 0x47df44}
-			}},
-			{ "MEDABOTSRKSVA9BEE9", new Dictionary<string, int>{
-				{ "Battles", 0x3c1a00 },
-				{ "Starter", 0x7840c0},
-				{ "Text", 0x47e45c}
-			}},
-			{ "MEDABOTSMTBVA8BEE9", new Dictionary<string, int>{
-				{ "Battles", 0x3c19e0 },
-				{ "Starter", 0x78409B},
-				{ "Text", 0x47e43c}
-			}},
-			{ "MEDABOTSMTBVA8BPE9", new Dictionary<string, int>{
-				{ "Battles", 0x3c1b80 },
-				{ "Starter", 0x7852cf},
-				{ "Text", 0x47df24}
-
-			}}
-		};
+		private Dictionary<string, Dictionary<OffsetEnum, int>> offsets = new Dictionary<string, Dictionary<OffsetEnum, int>>();
+		private Dictionary<string, string> hashes = new Dictionary<string, string>();
 
 		public List<string> bots = new List<string>();
 		public Dictionary<string, byte> botDictionary = new Dictionary<string, byte>();
@@ -82,6 +52,14 @@ namespace MedabotsRandomizer
 				medalDictionary.Add(this.medals[i], (byte)i);
 			}
 			this.medalDictionary.Add("Random Medal", 0xFF);
+
+			List<RomData> romDataList = LoadFile<List<RomData>>("./RomData.json");
+			romDataList.ForEach(data =>
+			{
+				offsets.Add(data.romHash, data.GetOffsetDictionary());
+				hashes.Add(data.romHash, data.romName);
+			});
+
 		}
 
 		private void PopulateData()
@@ -90,21 +68,21 @@ namespace MedabotsRandomizer
 				this.file, 
 				0xf5, 
 				0x28, 
-				memory_offsets[this.options.gameId]["Battles"], 
+				offsets[this.options.gameId][OffsetEnum.Battles], 
 				true
 				);
 			this.allEncounters = DataPopulator.Populate_Data<EncountersWrapper>(
 				this.file, 
 				0xbf, 
 				4, 
-				memory_offsets[this.options.gameId]["Encounters"], 
+				offsets[this.options.gameId][OffsetEnum.Encounters], 
 				false
 				);
 			this.allParts = DataPopulator.Populate_Data<PartWrapper>(
 				this.file, 
 				480, 
 				0x10, 
-				memory_offsets[this.options.gameId]["Parts"], 
+				offsets[this.options.gameId][OffsetEnum.Parts], 
 				false
 				);
 		}
@@ -116,11 +94,11 @@ namespace MedabotsRandomizer
 			byte[] encounterBytes = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x9B, 0xF5, 0x9B, 0xA7, 0x9B, 0xF5 };
 			byte[] partBytes = new byte[] { 0x0F, 0x22, 0x02, 0x00, 0x23, 0x15, 0x08, 0x01, 0x08, 0x00 };
 			byte[] startMedalBytes = new byte[] { 0x01, 0x02, 0x00, 0x56, 0x5D, 0x01, 0x62, 0x17, 0x01 };
-			memory_offsets[this.options.gameId].Add("ShopContents", Utils.Search(this.file, shopBytes));
-			memory_offsets[this.options.gameId].Add("Events", Utils.Search(this.file, eventBytes));
-			memory_offsets[this.options.gameId].Add("Encounters", Utils.Search(this.file, encounterBytes));
-			memory_offsets[this.options.gameId].Add("Parts", Utils.Search(this.file, partBytes));
-			memory_offsets[this.options.gameId].Add("StartMedal", Utils.Search(this.file, startMedalBytes) - 1);
+			offsets[this.options.gameId].Add(OffsetEnum.ShopContents, Utils.Search(this.file, shopBytes));
+			offsets[this.options.gameId].Add(OffsetEnum.Events, Utils.Search(this.file, eventBytes));
+			offsets[this.options.gameId].Add(OffsetEnum.Encounters, Utils.Search(this.file, encounterBytes));
+			offsets[this.options.gameId].Add(OffsetEnum.Parts, Utils.Search(this.file, partBytes));
+			offsets[this.options.gameId].Add(OffsetEnum.StarterMedal, Utils.Search(this.file, startMedalBytes) - 1);
 		}
 
 		public void LoadROM(string chosenFile)
@@ -217,7 +195,7 @@ namespace MedabotsRandomizer
 
 				for (int i = 0; i <= amount_of_battles; i++)
 				{
-					int battle_address = Utils.GetAdressAtPosition(this.file, memory_offsets[this.options.gameId]["Battles"] + 4 * i);
+					int battle_address = Utils.GetAdressAtPosition(this.file, offsets[this.options.gameId][OffsetEnum.Battles] + 4 * i);
 					byte[] battle = StructUtils.getBytes(this.allBattles[i].content);
 					Array.Copy(battle, 0, this.file, battle_address, battle_size);
 				}
@@ -229,9 +207,9 @@ namespace MedabotsRandomizer
 				{
 					for (int i = 0; i <= 0x3B; i++)
 					{
-						if (this.file[memory_offsets[this.options.gameId]["ShopContents"] + i] != 0xff)
+						if (this.file[offsets[this.options.gameId][OffsetEnum.ShopContents] + i] != 0xff)
 						{
-							this.file[memory_offsets[this.options.gameId]["ShopContents"] + i] = (byte)rng.Next(0, 0x78);
+							this.file[offsets[this.options.gameId][OffsetEnum.ShopContents] + i] = (byte)rng.Next(0, 0x78);
 						}
 					}
 				}
@@ -281,7 +259,7 @@ namespace MedabotsRandomizer
 
 					this.randomizer.starterMedal = medal;
 
-					int offset = memory_offsets[this.options.gameId]["Starter"];
+					int offset = offsets[this.options.gameId][OffsetEnum.Starter];
 					uint funcOffset = 0x044b58;
 
 					for (int i = 0; i < 4; i++)
@@ -294,7 +272,7 @@ namespace MedabotsRandomizer
 						this.file[offset + 16] = 1;
 					}
 
-					this.file[memory_offsets[this.options.gameId]["StartMedal"]] = medal;
+					this.file[offsets[this.options.gameId][OffsetEnum.StarterMedal]] = medal;
 
 					ushort[] replacedFunction = new ushort[]
 					{
@@ -350,13 +328,13 @@ namespace MedabotsRandomizer
 				//////////////////////////////////////////////////////
 				if (this.options.medalRandomizationEnabled)
 				{
-					for (int i = memory_offsets[this.options.gameId]["Events"]; i < memory_offsets[this.options.gameId]["Events"] + 0x18000;)
+					for (int i = offsets[this.options.gameId][OffsetEnum.Events]; i < offsets[this.options.gameId][OffsetEnum.Events] + 0x18000;)
 					{
 						byte op = this.file[i];
 						if (op == 0x3C)
 						{
 							Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(this.file[i + 1]));
-							if (i + 1 == memory_offsets[this.options.gameId]["StartMedal"])
+							if (i + 1 == offsets[this.options.gameId][OffsetEnum.StarterMedal])
 							{
 								Trace.WriteLine("Is random starter, skipping...");
 							}
@@ -394,7 +372,7 @@ namespace MedabotsRandomizer
 					messages.Add(((0x00, 0x7b), (0x00, 0x78)));
 					messages.Add(((0x00, 0x7f), (0x00, 0x7c)));
 
-					TextParser textParser = new TextParser(this.file, memory_offsets[this.options.gameId]["Text"]);
+					TextParser textParser = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
 					for (int i = 0; i < replacedMedals.Count; i++)
 					{
 						textParser.addMessage(
@@ -523,11 +501,11 @@ namespace MedabotsRandomizer
 					for (int i = 0; i < allParts.Count; i++)
 					{
 						byte[] battle = StructUtils.getBytes(allParts[i].content);
-						int part_address = memory_offsets[this.options.gameId]["Parts"] + battle.Length * i;
+						int part_address = offsets[this.options.gameId][OffsetEnum.Parts] + battle.Length * i;
 						Array.Copy(battle, 0, file, part_address, battle.Length);
 					}
 
-					for (int i = memory_offsets[this.options.gameId]["Events"]; i < memory_offsets[this.options.gameId]["Events"] + 0x18000;)
+					for (int i = offsets[this.options.gameId][OffsetEnum.Events]; i < offsets[this.options.gameId][OffsetEnum.Events] + 0x18000;)
 					{
 						byte op = file[i];
 						if (op == 0x3D)
@@ -561,7 +539,7 @@ namespace MedabotsRandomizer
 						}
 						Utils.WritePayload(
 							file, 
-							(uint)(memory_offsets[this.options.gameId]["ShopContents"] + shop.shopContents.Length * shop.id), 
+							(uint)(offsets[this.options.gameId][OffsetEnum.ShopContents] + shop.shopContents.Length * shop.id), 
 							newShop
 							);
 					}
@@ -571,7 +549,7 @@ namespace MedabotsRandomizer
 			//////////////////////////////////////////////////////
 			/// ADD MESSAGES
 			//////////////////////////////////////////////////////
-			TextParser textParser2 = new TextParser(this.file, memory_offsets[this.options.gameId]["Text"]);
+			TextParser textParser2 = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
 			List<Message> patchedMessages = this.LoadFile<List<Message>>("./Patched_Messages.json");
 			foreach (Message message in patchedMessages)
 			{
@@ -583,7 +561,7 @@ namespace MedabotsRandomizer
 
 			TextPatcher textPatcher = new TextPatcher(
 				ref this.file, 
-				memory_offsets[this.options.gameId]["Text"], 
+				offsets[this.options.gameId][OffsetEnum.Text], 
 				0x7f5500, 
 				textParser2.getEncodedMessages()
 				);
