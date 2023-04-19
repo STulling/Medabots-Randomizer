@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -165,7 +166,15 @@ namespace MedabotsRandomizer.Util
 
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
+		}
 
-    }
+		public static T LoadFile<T>(string fileName)
+		{
+			using (StreamReader file = File.OpenText(fileName))
+			{
+				return JsonConvert.DeserializeObject<T>(file.ReadToEnd());
+			}
+		}
+
+	}
 }
