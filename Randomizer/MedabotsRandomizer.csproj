@@ -152,7 +152,9 @@
     <None Include="Configs\Bots.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Configs\MedalReplacement.json" />
+    <None Include="Configs\MedalReplacement.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Configs\Medals.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
