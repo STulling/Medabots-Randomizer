@@ -140,9 +140,10 @@
                 <StackPanel Margin="0">
                     <Controls:ToggleSwitch x:Name="chk_instant_text" Margin="{StaticResource ControlMargin}" Width="220" Content="Instant Text" ToolTip="Speeds up the dialogue, making the game faster."/>
                     <Controls:ToggleSwitch x:Name="chk_encounters" Margin="{StaticResource ControlMargin}" Width="220" Content="School Encounters" ToolTip="Allows for encounters on the school yard before having to fight the screws." IsOn="True"/>
-                    <Controls:ToggleSwitch x:Name="chk_shop_patching" Margin="{StaticResource ControlMargin}" Width="220" Content="Shop Patching" ToolTip="Replaces shop contents based on shops.json (only if Randomize Shops is false)" IsOn="False"/>
+                    <Controls:ToggleSwitch x:Name="chk_shop_patching" Margin="{StaticResource ControlMargin}" Width="220" Content="Shop Patching" ToolTip="Replaces shop contents based on Shops.json (only if Randomize Shops is false)" IsOn="False"/>
                     <Controls:ToggleSwitch x:Name="chk_genderless_bots" Margin="{StaticResource ControlMargin}" Width="220" Content="Gender-Neutral Bots" ToolTip="Makes all bot parts available regardless of tinpet gender" IsOn="False"/>
                     <Controls:ToggleSwitch x:Name="chk_shuffle_mixed_bots" Margin="{StaticResource ControlMargin}" Width="220" Content="Shuffle Mixed Bots" ToolTip="Toggles part shuffle for all battles with mixed bots" IsOn="False"/>
+                    <Controls:ToggleSwitch x:Name="chk_medal_patching" Margin="{StaticResource ControlMargin}" Width="220" Content="Medal Patching" ToolTip="Replaces medals based on MedalReplacement.json" IsOn="False"/>
                 </StackPanel>
             </AdornerDecorator>
         </GroupBox>

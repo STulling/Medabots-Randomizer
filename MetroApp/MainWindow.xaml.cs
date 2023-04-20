@@ -106,7 +106,7 @@ namespace MetroApp
             this.randomizer.options.shopPatchingEnabled = chk_shop_patching.IsOn;
             this.randomizer.options.genderlessBotsEnabled = chk_genderless_bots.IsOn;
             this.randomizer.options.shuffledMixedBotsEnabled = chk_shuffle_mixed_bots.IsOn;
-
+            this.randomizer.options.medalPatchingEnabled = chk_medal_patching.IsOn;
 
 			try
             {

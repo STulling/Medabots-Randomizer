@@ -106,6 +106,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\MedalReplacer.cs" />
     <Compile Include="Data\Message.cs" />
     <Compile Include="Data\Medal.cs" />
     <Compile Include="Data\OffsetEnum.cs" />
@@ -151,6 +152,7 @@
     <None Include="Configs\Bots.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Configs\MedalReplacement.json" />
     <None Include="Configs\Medals.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

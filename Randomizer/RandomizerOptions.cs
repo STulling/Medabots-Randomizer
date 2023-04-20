@@ -31,5 +31,6 @@ namespace MedabotsRandomizer
 		public bool genderlessBotsEnabled { get; set; } = false;
 
 		public bool shuffledMixedBotsEnabled { get; set; } = false;
+		public bool medalPatchingEnabled { get; set; } = false;
 	}
 }

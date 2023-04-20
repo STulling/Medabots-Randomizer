@@ -24,7 +24,6 @@ namespace MedabotsRandomizer
 		public List<string> medals = new List<string>();
 		public Dictionary<string, byte> medalDictionary = new Dictionary<string, byte>();
 
-
 		public RandomizerOptions options = new RandomizerOptions();
 
 		private List<BattleWrapper> allBattles = new List<BattleWrapper>();
@@ -570,6 +569,77 @@ namespace MedabotsRandomizer
 						}
 						battle.content.fixed_bots = mixedBot ? (byte)0 : (byte)1;
 					});
+				}
+
+				//////////////////////////////////////////////////////
+				/// PATCH MEDALS
+				//////////////////////////////////////////////////////
+				if (this.options.medalPatchingEnabled)
+				{
+					List<MedalReplacer> medalReplacementList = Utils.LoadFile<List<MedalReplacer>>("./Configs/MedalReplacement.json");
+					Dictionary<byte, byte> medalIdReplacementDictionary = new Dictionary<byte, byte>();
+					medalReplacementList.ForEach(replacement =>
+					{
+						medalIdReplacementDictionary[medalDictionary[replacement.originalMedal]] = medalDictionary[replacement.replacementMedal];
+					});
+
+					for (int i = offsets[this.options.gameId][OffsetEnum.Events]; i < offsets[this.options.gameId][OffsetEnum.Events] + 0x18000;)
+					{
+						byte op = this.file[i];
+						if (op == 0x3C)
+						{
+							Trace.WriteLine("Get Medal: " + IdTranslator.IdToMedal(this.file[i + 1]));
+							if (i + 1 == offsets[this.options.gameId][OffsetEnum.StarterMedal])
+							{
+								Trace.WriteLine("Is starter, skipping...");
+							}
+							else
+							{
+								var replacementMedal = this.randomizer.GetReplacementMedal(this.file[i + 1], medalIdReplacementDictionary[this.file[i + 1]]);
+								this.file[i + 1] = replacementMedal;
+								Trace.WriteLine("Set Medal to: " + IdTranslator.IdToMedal(this.file[i + 1]));
+							}
+						}
+
+						if (op == 0x2F)
+						{
+							//multiconditional jump
+							i += this.file[i + 1] + 1;
+						}
+						else
+						{
+							i += IdTranslator.operationBytes[op];
+						}
+					}
+					//////////////////////////////////////////////////////
+					/// FIX MESSAGES
+					//////////////////////////////////////////////////////
+					List<byte> origMedals = new List<byte> { 15, 16, 17, 18, 19, 20 };
+					List<byte> replacedMedals = origMedals.Select(x => this.randomizer.medalExchanges[x]).ToList();
+
+					List<Medal> medals = Utils.LoadFile<List<Medal>>("./Configs/Medals.json");
+					List<((int, int), (int, int))> messages = new List<((int, int), (int, int))>
+					{
+						((0x00, 0x6b), (0x00, 0x68)),
+						((0x00, 0x6f), (0x00, 0x6c)),
+						((0x00, 0x73), (0x00, 0x70)),
+						((0x00, 0x77), (0x00, 0x74)),
+						((0x00, 0x7b), (0x00, 0x78)),
+						((0x00, 0x7f), (0x00, 0x7c))
+					};
+
+					TextParser textParser = new TextParser(this.file, offsets[this.options.gameId][OffsetEnum.Text]);
+					for (int i = 0; i < replacedMedals.Count; i++)
+					{
+						textParser.addMessage(
+							messages[i].Item1,
+							medals[replacedMedals[i]].ikki_text
+							);
+						textParser.addMessage(
+							messages[i].Item2,
+							medals[replacedMedals[i]].collect_text
+							);
+					}
 				}
 			}
 

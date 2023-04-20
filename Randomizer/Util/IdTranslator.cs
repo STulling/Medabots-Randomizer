@@ -298,7 +298,7 @@
             "Fort Fiyun - Outside",
             "Riverview City - Docks with ship",
             "Medabot Island - Docks with ship",
-            "Medabot Islane - Castle Square",
+            "Medabot Island - Castle Square",
             "Medabot Island - Castle Square"
         };
 
@@ -438,36 +438,36 @@
 
         public static string[] medals = new string[]
         {
-            "Kuwagata",
-            "Kabuto",
-            "Tortoise",
-            "Jellyfish",
-            "Bear",
-            "Spider",
-            "Snake",
-            "Queen",
-            "Squid",
-            "Phoenix",
-            "Unicorn",
-            "Ghost",
-            "Knight",
-            "Mermaid",
-            "Penguin",
-            "Bat",
-            "Kappa",
-            "Mouse",
-            "Chameleon",
-            "Rabbit",
-            "Monkey",
-            "Devil",
-            "Angel",
-            "Dragon",
-            "Ninja",
-            "Alien",
-            "Cat",
-            "?",
-            "Botro",
-            "!"
+            "Kuwagata", //0 15
+            "Kabuto", //1
+            "Tortoise", //2
+            "Jellyfish", //3
+            "Bear", //4
+            "Spider", //5
+            "Snake", //6
+            "Queen", //7
+            "Squid", //8
+            "Phoenix", //9
+            "Unicorn", //10
+            "Ghost", //11
+            "Knight", //12
+            "Mermaid", //13
+            "Penguin", //14
+            "Bat", //15 0/1
+            "Kappa", //16 29
+            "Mouse", //17 28
+            "Chameleon", //18 27
+            "Rabbit", //19 26
+            "Monkey", //20 25
+            "Devil", //21
+            "Angel", //22
+            "Dragon", //23
+            "Ninja", //24
+            "Alien", //25 20
+            "Cat", //26 19
+            "?", //27 18
+            "Botro", //28 17
+            "!" //29 16
         };
 
         public static string IdToMedal(byte id)
