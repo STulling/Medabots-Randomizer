@@ -1,0 +1,30 @@
+[
+  {
+    "romHash": "MEDABOTSRKSVA9BPE9",
+    "romName": "Medabots Rokusho Version (E)",
+    "battlesOffset": 0x3c1ba0,
+    "starterOffset": 0x7852f4,
+    "textOffset": 0x47df44
+  },
+  {
+    "romHash": "MEDABOTSRKSVA9BEE9",
+    "romName": "Medabots Rokusho Version (U)",
+    "battlesOffset": 0x3c1a00,
+    "starterOffset": 0x7840c0,
+    "textOffset": 0x47e45c
+  },
+  {
+    "romHash": "MEDABOTSMTBVA8BEE9",
+    "romName": "Medabots Metabee Version (U)",
+    "battlesOffset": 0x3c19e0,
+    "starterOffset": 0x78409B,
+    "textOffset": 0x47e43c
+  },
+  {
+    "romHash": "MEDABOTSMTBVA8BPE9",
+    "romName": "Medabots Metabee Version (E)",
+    "battlesOffset": 0x3c1b80,
+    "starterOffset": 0x7852cf,
+    "textOffset": 0x47df24
+  }
+]
