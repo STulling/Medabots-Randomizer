@@ -195,9 +195,9 @@ namespace MedabotsRandomizer
 				if (this.options.battleRandomizationEnabled)
 				{
 					this.randomizer.RandomizeBattles(
-						this.options.battleStructureEnabled, 
-						this.options.balancedBotLevelsEnabled, 
-						this.options.mixedBotsEnabled ? (float)(this.options.mixedBotPartsPercentage / 100) : 0, 
+						this.options.battleStructureEnabled,
+						this.options.balancedBotLevelsEnabled,
+						this.options.mixedBotsEnabled ? (float)(this.options.mixedBotPartsPercentage / 100) : 0,
 						this.options.battleContinuityEnabled
 						);
 				}
@@ -232,9 +232,18 @@ namespace MedabotsRandomizer
 											96, 100, 101, 104,
 											110, 115, 117, 118};
 
+				byte part = 0xFF;
 				if (this.options.starterRandomizationEnabled)
 				{
-					byte part = this.options.starterBot;
+					part = (byte)rng.Next(0, IdTranslator.bots.Length);
+					while (blacklist.Contains(part))
+					{
+						part = (byte)rng.Next(0, IdTranslator.bots.Length);
+					}
+				}
+				else
+				{
+					//they chose random anyways even after picking custom starter bot
 					if (this.options.starterBot == 0xFF)
 					{
 						part = (byte)rng.Next(0, IdTranslator.bots.Length);
@@ -243,43 +252,59 @@ namespace MedabotsRandomizer
 							part = (byte)rng.Next(0, IdTranslator.bots.Length);
 						}
 					}
-
-					byte medal = IdTranslator.botMedal(this.options.starterMedal);
-					if (this.options.starterMedalRandomizationEnabled)
-					{
-						medal = (byte)rng.Next(0, IdTranslator.medals.Length);
-						while (blacklist.Contains(medal))
-						{
-							medal = (byte)rng.Next(0, IdTranslator.medals.Length);
-						}
-					}
 					else
 					{
-						if (this.options.starterBot == 0xFF)
-						{
-							medal = IdTranslator.botMedal(part);
-						}
+						part = this.options.starterBot;
 					}
+				}
 
-					this.randomizer.starterMedal = medal;
 
-					int offset = offsets[this.options.gameId][OffsetEnum.Starter];
-					uint funcOffset = 0x044b58;
-
-					for (int i = 0; i < 4; i++)
+				byte medal = 0xFF;
+				if (this.options.starterMedalRandomizationEnabled)
+				{
+					medal = (byte)rng.Next(0, IdTranslator.medals.Length);
+					while (blacklist.Contains(medal))
 					{
-						this.file[offset + 4 * i] = part;
+						medal = (byte)rng.Next(0, IdTranslator.medals.Length);
 					}
-
-					if (IdTranslator.isFemale(part))
+				}
+				else
+				{
+                    //they chose random anyways even after picking custom starter medal
+                    if (this.options.starterBot == 0xFF)
 					{
-						this.file[offset + 16] = 1;
+                        medal = (byte)rng.Next(0, IdTranslator.medals.Length);
+                        while (blacklist.Contains(medal))
+                        {
+                            medal = (byte)rng.Next(0, IdTranslator.medals.Length);
+                        }
+                    }
+					else
+					{
+						medal = this.options.starterMedal;
 					}
+				}
 
-					this.file[offsets[this.options.gameId][OffsetEnum.StarterMedal]] = medal;
 
-					ushort[] replacedFunction = new ushort[]
-					{
+				this.randomizer.starterMedal = medal;				
+
+				int offset = offsets[this.options.gameId][OffsetEnum.Starter];
+				uint funcOffset = 0x044b58;
+
+				for (int i = 0; i < 4; i++)
+				{
+					this.file[offset + 4 * i] = part;
+				}
+
+				if (IdTranslator.isFemale(part))
+				{
+					this.file[offset + 16] = 1;
+				}
+
+				this.file[offsets[this.options.gameId][OffsetEnum.StarterMedal]] = medal;
+
+				ushort[] replacedFunction = new ushort[]
+				{
                     //Equip_parts 
                     0x4a0e,                         //ldr        r2,[PTR_DAT_]
                     0x7811,           				//ldrb       r1,[r2,#0x0 ]=>DAT_03000be0
@@ -322,10 +347,9 @@ namespace MedabotsRandomizer
 					0x0000,
 					(ushort)(part * 2 + 1 + 3 * 0xf0),
 					0x0000
-					};
+				};
 
-					Utils.WritePayload(this.file, funcOffset, replacedFunction);
-				}
+				Utils.WritePayload(this.file, funcOffset, replacedFunction);
 
 				//////////////////////////////////////////////////////
 				/// RANDOM MEDALS
@@ -382,11 +406,11 @@ namespace MedabotsRandomizer
 					for (int i = 0; i < replacedMedals.Count; i++)
 					{
 						textParser.addMessage(
-							messages[i].Item1, 
+							messages[i].Item1,
 							medals[replacedMedals[i]].ikki_text
 							);
 						textParser.addMessage(
-							messages[i].Item2, 
+							messages[i].Item2,
 							medals[replacedMedals[i]].collect_text
 							);
 					}
