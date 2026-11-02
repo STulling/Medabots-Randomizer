@@ -84,8 +84,8 @@ namespace MetroApp
             this.randomizer.options.mixedBotPartsPercentage = sl_mixed_bots.Value;
 			this.randomizer.options.balancedBotLevelsEnabled = chk_balanced_bot_levels.IsOn;
 			this.randomizer.options.shopRandomizationEnabled = chk_random_shops.IsOn;
-			this.randomizer.options.starterRandomizationEnabled = chk_randomize_starter.IsOn;
-            this.randomizer.options.starterMedalRandomizationEnabled = chk_randomize_starter_medal.IsOn;
+            this.randomizer.options.starterRandomizationEnabled = !chk_custom_starter_bot.IsOn;//if this is off, we randomize starter, or if random is chosen
+            this.randomizer.options.starterMedalRandomizationEnabled = !chk_custom_starter_medal.IsOn;//if this is off, we randomize medal, or if random is chosen
 			this.randomizer.options.medalRandomizationEnabled = chk_random_medal.IsOn;
 			this.randomizer.options.codePatchingEnabled = chk_code_patches.IsOn;
 			this.randomizer.options.instantTextEnabled = chk_instant_text.IsOn;
